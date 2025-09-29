@@ -1,0 +1,100 @@
+.projects-videos {
+  margin: 140px 0;
+  @include xxs {
+    margin: 50px 0;
+  }
+
+  .projects-video-cont {
+    padding: 48px;
+    border: 2px solid lighten($color: $setting_primary_color, $amount: 50%);
+    border-radius: 40px;
+    @include xxs {
+      padding: 0;
+      border: none;
+    }
+    h3 {
+      margin-bottom: 48px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: $weight-bold;
+      @include xxs {
+        margin-bottom: 15px;
+        font-size: 28px;
+      }
+    }
+    .video-img {
+      width: 100%;
+      max-width: 1044px;
+      aspect-ratio: 1044/527;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      //   cursor: pointer;
+      overflow: hidden;
+      img {
+        border-radius: 24px;
+      }
+
+      .play-icon {
+        top: 50%;
+        left: 50%;
+        width: 80px;
+        height: 80px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 2;
+        color: #ffffff;
+        font-size: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: $setting_primary_color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          border: 2px solid #ffffff;
+          transition: all 0.5s;
+        }
+        &:hover {
+          &::before {
+            transform: rotate(-120deg);
+            border: 2px Dashed #ffffff;
+          }
+          & i {
+            transform: rotate(-125deg);
+            transform-origin: center;
+          }
+        }
+        @include xxs {
+          width: 50px;
+          height: 50px;
+        }
+        i {
+          //   display: flex;
+          //   top: 50%;
+          //   left: 50%;
+          //   width: 50px;
+          //   height: 50px;
+          //   transform: translate(-45%, -45%);
+          //   position: absolute;
+          //   z-index: 3;
+          font-size: 40px;
+          transition: all 0.5s;
+
+          @include xxs {
+            font-size: 28px;
+            // width: 30px;
+            // height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

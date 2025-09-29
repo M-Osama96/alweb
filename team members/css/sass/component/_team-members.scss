@@ -1,0 +1,191 @@
+.team-members {
+  padding: 70px 0;
+  @include sm {
+    padding: 40px 0;
+  }
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 44%;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    background-color: lighten($color: $setting_primary_color, $amount: 50%);
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+.team-members-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  h3 {
+    font-size: 48px;
+    font-weight: $weight_bold;
+    margin: unset;
+    @include xxs {
+      font-size: 38px;
+    }
+  }
+  .team-p {
+    max-width: 646px;
+    font-size: 20px;
+    @include xxs {
+      font-size: 16px;
+    }
+  }
+  .tablist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    @include xxs {
+      gap: 14px;
+    }
+    .tap-button {
+      padding: 12px 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      border: 2px solid $setting_primary_color;
+      width: fit-content;
+      color: $setting_primary_color;
+      font-size: 16px;
+      font-weight: $weight_bold;
+      opacity: 0.7;
+      &[aria-selected="true"] {
+        background-color: $setting_primary_color;
+        color: #ffffff;
+        opacity: 1;
+      }
+      @include xxs {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+    }
+  }
+}
+.tap-panal {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  margin: 64px auto;
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include xxs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 34px auto;
+  }
+  .profile {
+    border: 1px solid #dbe8fa;
+    border-top-left-radius: 144px;
+    border-top-right-radius: 144px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding: 16px 13px;
+    background-color: #ffffff;
+    transition: all 0.3s;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 144px;
+      border-top-right-radius: 144px;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      border: 3px solid $setting_primary_color;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    &:hover::after {
+      visibility: visible;
+      opacity: 1;
+    }
+    &:hover .profile-img::before {
+      visibility: visible;
+      opacity: 1;
+      transform: rotate(30deg);
+    }
+    &:hover h5 {
+      transform: translatey(4px);
+    }
+    &:hover p {
+      color: $setting_primary_color;
+    }
+  }
+  .profile-img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 4px Dashed lighten($color: $setting_primary_color, $amount: 35%);
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+  }
+  .profile-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    margin-top: 16px;
+
+    h5 {
+      font-size: 16px;
+      margin: 0;
+      font-weight: $weight_medium;
+      transition: all 0.3s ease-in-out;
+    }
+    p {
+      font-size: 16px;
+      font-weight: $weight_light;
+      margin: 0;
+    }
+  }
+}
+.more-members {
+  border: 2px solid $setting_primary_color;
+  padding: 15px 29px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $setting_primary_color;
+  }
+  &:hover a {
+    color: #ffffff;
+  }
+  a {
+    font-size: 16px;
+    font-weight: $weight_bold;
+    color: $setting_primary_color;
+  }
+}

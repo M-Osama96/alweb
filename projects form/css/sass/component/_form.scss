@@ -1,0 +1,169 @@
+.projects-form {
+  margin: 140px 0 22px;
+  @include sm {
+    margin-top: 50px;
+  }
+  .form-cont {
+    border: 2px solid lighten($color: $setting_primary_color, $amount: 50%);
+    border-radius: 40px;
+    padding: 64px 58px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    @include sm {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @include xxs {
+      border: none;
+      padding: 0;
+    }
+    .form {
+      @include sm {
+        order: 2;
+      }
+      h3 {
+        font-size: 32px;
+        font-weight: $weight-bold;
+        margin-bottom: 32px;
+        @include sm {
+          text-align: center;
+        }
+        @include xxs {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        max-width: 100%;
+        @include xxs {
+          gap: 16px;
+        }
+        .form-group {
+          position: relative;
+        }
+
+        .form-group input,
+        select,
+        textarea {
+          width: 100%;
+          padding: 13px 16px 8px;
+          font-size: 18px;
+          background-color: lighten(
+            $color: $setting_primary_color,
+            $amount: 50%
+          );
+          border: 1px solid
+            lighten($color: $setting_primary_color, $amount: 40%);
+          border-radius: 8px;
+          @include xxs {
+            font-size: 16px;
+          }
+        }
+
+        .form-group label {
+          position: absolute;
+          top: 50%;
+          right: 12px;
+          transform: translateY(-50%);
+          background: #fff;
+          padding: 0 8px;
+          font-size: 18px;
+          pointer-events: none;
+          transition: 0.3s ease;
+          background-color: lighten(
+            $color: $setting_primary_color,
+            $amount: 50%
+          );
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+          top: 9px;
+          font-size: 12px;
+          color: #06234d;
+        }
+        .select {
+          position: relative;
+          select:has([hidden]:checked) {
+            color: #000000;
+            option {
+              color: #000000;
+            }
+          }
+          &::before {
+            content: "\f107";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            inset-inline-end: 16px;
+            font-family: "Line Awesome Free";
+            font-size: 20px;
+            color: $setting_primary_color;
+            font-weight: 900;
+          }
+        }
+        textarea {
+          resize: none;
+          min-height: 64px;
+          &::placeholder {
+            color: #030303;
+          }
+        }
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          .send {
+            border: 2px solid $setting_primary_color;
+            padding: 10px 0;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background-color: $setting_primary_color;
+
+            &:hover {
+              background-color: #ffffff;
+            }
+            &:hover a {
+              color: $setting_primary_color;
+            }
+            &:hover i {
+              color: $setting_primary_color;
+            }
+            a {
+              font-size: 14px;
+              font-weight: $weight_bold;
+              color: #ffffff;
+            }
+            i {
+              font-size: 24px;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+    .form-img {
+      @include sm {
+        display: none;
+      }
+      img {
+        border-radius: 16px;
+        width: 100%;
+        // max-width: 515px;
+        aspect-ratio: 515/510;
+      }
+    }
+  }
+}
