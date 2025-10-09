@@ -1,0 +1,100 @@
+.desc {
+  margin: 111px 0;
+  @include sm {
+    margin: 50px 0;
+  }
+  .desc-cont {
+    border: 1px solid #dbe8fa;
+    box-shadow: 0px 20px 32px 0px #0000000a;
+    padding: 64px;
+    border-radius: 16px;
+    @include sm {
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+    .desc-title {
+      margin-bottom: 40px;
+      font-size: 40px;
+      font-weight: $weight-bold;
+      text-align: center;
+      @include xs {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+.desc-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 90px;
+  @include sm {
+    column-gap: 40px;
+  }
+  @include xs {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+  .desc-box {
+    display: flex;
+    flex-direction: column;
+    > :first-child {
+      .item,
+      .item-desc {
+        padding-top: 27px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        @include xs {
+          padding-top: 15px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+      }
+    }
+    > :last-child {
+      .item,
+      .item-desc {
+        padding-bottom: 27px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        @include xs {
+          padding-bottom: 15px;
+          border-bottom-left-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+      }
+    }
+    .desc-line {
+      display: grid;
+      grid-template-columns: 4fr 8fr;
+      column-gap: 20px;
+      .item {
+        background-color: lighten($color: $setting_primary_color, $amount: 40%);
+        padding-bottom: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: $weight-light;
+        @include xs {
+          font-size: 14px;
+          padding-bottom: 15px;
+        }
+      }
+      .item-desc {
+        background-color: lighten($color: $setting_primary_color, $amount: 50%);
+        padding-bottom: 29px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: $weight-light;
+        @include xs {
+          font-size: 14px;
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.video-img {
+  width: 1437;
+  aspect-ratio: 1437/664;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  //   cursor: pointer;
+  overflow: hidden;
+
+  .play-icon {
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+    color: #ffffff;
+    font-size: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: $setting_primary_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      transition: all 0.7s;
+    }
+    &:hover {
+      &::before {
+        transform: rotate(-120deg);
+        border: 2px Dashed #ffffff;
+      }
+      & i {
+        transform: rotate(-125deg);
+      }
+    }
+
+    @include xxs {
+      width: 50px;
+      height: 50px;
+    }
+    i {
+      // display: flex;
+      // top: 50%;
+      // left: 50%;
+      // width: 50px;
+      // height: 50px;
+      // transform: translate(-45%, -45%);
+      // position: absolute;
+      transition: all 0.7s;
+      transform-origin: center;
+      font-size: 40px;
+      z-index: 3;
+      cursor: pointer;
+      &:hover .play-icon::before {
+        transform: rotate(30deg);
+        border: 2px Dashed #ffffff;
+      }
+
+      @include xxs {
+        // width: 30px;
+        // height: 30px;
+        font-size: 30px;
+      }
+    }
+  }
+  //   &::before {
+  //     content: "";
+  //     position: absolute;
+  //     top: 0;
+  //     height: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     opacity: 0;
+  //     background-color: #000000;
+  //     z-index: 1;
+  //   }
+  //   &:hover::before {
+  //     opacity: 0.12;
+  //   }
+  // }
+  // .services-video {
+  //   img {
+  //     transition: all 0.3s ease-in-out;
+  //   }
+  //   &:hover img {
+  //     scale: 1.1;
+  //   }
+}

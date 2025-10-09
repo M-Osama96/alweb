@@ -1,0 +1,286 @@
+.about {
+  margin: 120px 0;
+  position: relative;
+  @include sm {
+    margin: 50px 0;
+  }
+  .about-bg {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    width: 52.4%;
+    @include sm {
+      display: none;
+    }
+  }
+  .container {
+    padding: 0 50px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    @include md {
+      padding: 0 20px;
+    }
+  }
+}
+.about-cont {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  @include sm {
+    flex-direction: column;
+  }
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 36.6%;
+    margin-right: 30px;
+    @include md {
+      margin: 0;
+      gap: 15px;
+    }
+
+    @include sm {
+      align-items: center;
+      text-align: center;
+      max-width: 100%;
+    }
+    .about-title {
+      font-size: 32px;
+      font-weight: $weight-bold;
+      margin: 0;
+    }
+    .about-discover {
+      font-size: 20px;
+      font-weight: $weight-bold;
+      margin: 0;
+      @include md {
+        font-size: 16px;
+      }
+    }
+    .about-p {
+      font-size: 16px;
+      font-weight: $weight-light;
+      margin: 0;
+      @include md {
+        font-size: 14px;
+      }
+    }
+    .discover {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      @include sm {
+        align-items: center;
+      }
+      .discover-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        .check-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #22c55e;
+          border-radius: 50%;
+          margin: 0;
+          flex-shrink: 0;
+          @include xxs {
+            width: 15px;
+            height: 15px;
+          }
+          i {
+            font-size: 12px;
+            font-weight: $weight-extrabold;
+            color: #22c55e;
+            @include xxs {
+              font-size: 10px;
+            }
+          }
+        }
+        .discover-p {
+          font-size: 16px;
+          font-weight: $weight_light;
+          color: #353535;
+          span {
+            @include md {
+              font-size: 12px;
+            }
+            @include sm {
+              text-align: center;
+              font-size: 14px;
+            }
+            @include xxs {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+    .know-us-ptn {
+      height: 56px;
+      max-width: 187px;
+      width: 100%;
+      border-radius: 80px;
+      font-size: 16px;
+      font-weight: $weight-bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px 0 8px;
+      color: #fff;
+      background-color: $setting_primary_color;
+      transition: all 0.5s ease;
+      @include xs {
+        height: 50px;
+      }
+      &:hover {
+        max-width: 241px;
+        width: 100%;
+        .know-us-i {
+          background-color: #ffffff;
+          color: $setting_primary_color;
+          transform: rotate(360deg);
+        }
+      }
+      .know-us-i {
+        border: 1px solid #ffffff;
+        width: 40px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+  .about-play {
+    cursor: pointer;
+    margin-right: 33px;
+    @include md {
+      margin: 0;
+    }
+    @include sm {
+      display: none;
+    }
+    .play-icon {
+      width: 80px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      i {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        transition: all 0.7s;
+        transform-origin: center;
+        color: $setting_primary_color;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid $setting_primary_color;
+        transition: all 0.7s;
+      }
+      &:hover {
+        &::before {
+          transform: rotate(-120deg);
+          border: 2px Dashed $setting_primary_color;
+        }
+        & i {
+          transform: rotate(-125deg);
+        }
+      }
+    }
+  }
+  .about-imgs {
+    display: flex;
+    width: 50.8%;
+    gap: 20px;
+    @include sm {
+      width: 100%;
+    }
+    @include xs {
+      gap: 10px;
+    }
+    .about-img-1 {
+      display: flex;
+      width: 58.5%;
+      .img-1 {
+        width: 100%;
+        aspect-ratio: 326/530;
+        img {
+          border-radius: 200px;
+          display: flex;
+        }
+      }
+    }
+    .about-img-2 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 41.5%;
+
+      .img-2 {
+        width: 100%;
+        aspect-ratio: 272/432;
+        img {
+          border-radius: 200px;
+          display: flex;
+        }
+      }
+      .experinnce {
+        width: 100%;
+        height: 78px;
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        background-color: lighten($color: $setting_primary_color, $amount: 50%);
+        border: 1px solid lighten($color: $setting_primary_color, $amount: 30%);
+        color: darken($color: $setting_primary_color, $amount: 30%);
+        font-size: 20px;
+        font-weight: $weight-bold;
+        @include xs {
+          font-size: 14px;
+          gap: 6px;
+          height: 45px;
+          border-radius: 14px;
+        }
+        strong {
+          color: darken($color: $setting_primary_color, $amount: 30%);
+          font-size: 48px;
+          font-weight: $weight-bold;
+          @include md {
+            font-size: 38px;
+          }
+          @include xs {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}

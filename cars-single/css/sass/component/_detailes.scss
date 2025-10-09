@@ -1,0 +1,110 @@
+.detailes {
+  margin: 162px 0 111px;
+  @include sm {
+    margin: 50px 0;
+  }
+  .detailes-cont {
+    border: 1px solid #dbe8fa;
+    box-shadow: 0px 20px 32px 0px #0000000a;
+    padding: 54px 40px;
+    display: flex;
+    gap: 32px;
+    border-radius: 16px;
+    @include sm {
+      flex-direction: column;
+    }
+    @include xs {
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+    .detailes-img {
+      max-width: 535px;
+      aspect-ratio: 535/539;
+      @include sm {
+        max-width: 100%;
+      }
+      img {
+        border-radius: 16px;
+      }
+    }
+    .car-info {
+      max-width: 492px;
+      @include sm {
+        max-width: 100%;
+      }
+      @include xs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .price-line {
+        .price {
+          font-size: 32px;
+          font-weight: $weight-bold;
+          color: darken($color: $setting_primary_color, $amount: 20%);
+          @include xs {
+            font-size: 30px;
+          }
+        }
+      }
+      .model {
+        font-size: 32px;
+        font-weight: $weight-bold;
+        margin: 16px 0;
+        @include xs {
+          font-size: 19px;
+          margin: 0 0 10px;
+          text-align: center;
+        }
+      }
+      .car-btns {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        .car-btn {
+          font-size: 12px;
+          color: $setting_primary_color;
+          background-color: lighten(
+            $color: $setting_primary_color,
+            $amount: 50%
+          );
+
+          border: 1px solid $setting_primary_color;
+          border-radius: 29px;
+          padding: 2px 8px;
+        }
+      }
+      .desc {
+        margin: 14px 0;
+        font-size: 16px;
+        font-weight: $weight-light;
+        @include xs {
+          font-size: 12px;
+          margin: 8px 0;
+        }
+      }
+      .order-btn {
+        font-size: 16px;
+        font-weight: $weight-bold;
+        background-color: $setting_primary_color;
+        color: #ffffff;
+        border-radius: 16px;
+        padding: 13px 44px;
+        display: inline-block;
+        @include xs {
+          font-size: 14px;
+          margin-top: 10px;
+          padding: 10px 30px;
+        }
+
+        &:hover {
+          background-color: darken(
+            $color: $setting_primary_color,
+            $amount: 10%
+          );
+        }
+      }
+    }
+  }
+}
