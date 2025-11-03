@@ -104,6 +104,9 @@
       @include md {
         padding: 20px 25px 65px;
       }
+      @include xs {
+        padding: 20px 45px 65px;
+      }
       .services-p {
         margin: 0;
         transition: all 0.4s ease;
