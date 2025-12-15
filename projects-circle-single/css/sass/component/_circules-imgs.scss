@@ -1,0 +1,229 @@
+.circules-imgs {
+  padding-bottom: 44px;
+}
+.circules-imgs-cont {
+  position: relative;
+  padding: 78px 92px;
+  @include md {
+    overflow: hidden;
+  }
+  @include sm {
+    padding: 78px 50px;
+  }
+  @include xs {
+    padding: 50px 20px;
+  }
+  @include xxs {
+    padding: 50px 10px;
+  }
+  .circules-imgs-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    @include md {
+      left: -35px;
+    }
+    @include sm {
+      left: 0;
+    }
+    .bg-svg {
+      .circle-rect {
+        fill: lighten($color: $setting_primary_color, $amount: 50%);
+        width: 100%;
+        height: 100%;
+
+        @include md {
+          width: calc(100% + 100px);
+        }
+        @include sm {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .swiper-wrapper {
+    align-items: center;
+    min-height: 300px;
+    @include md {
+      min-height: unset;
+    }
+    @include sm {
+      overflow: visible;
+    }
+  }
+  .swiper-slide {
+    width: fit-content;
+    .circule-img {
+      display: flex;
+      border-radius: 50%;
+      aspect-ratio: 148/157;
+      max-width: 148px;
+      position: relative;
+      pointer-events: none;
+      @include md {
+        max-width: unset;
+      }
+      @include xs {
+        pointer-events: unset;
+        &::after {
+          display: none;
+        }
+        &::before {
+          content: "\f00e";
+          font-family: "Line Awesome Free";
+          font-weight: 900;
+          position: absolute;
+          width: 48px;
+          height: 48px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba($color: $setting_primary_color, $alpha: 0.64);
+          border-radius: 50%;
+          color: #fff;
+          font-size: 24px;
+          padding: 5px 5px 0 0;
+          opacity: 0;
+          transition: all 0.4s ease-in-out;
+          cursor: pointer;
+          @include xs {
+            width: 35px;
+            height: 35px;
+            font-size: 20px;
+          }
+        }
+        &:hover {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+      .img-cover {
+        display: flex;
+        border-radius: 50%;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: #06234da3;
+        border-radius: 50%;
+        z-index: 10;
+      }
+    }
+  }
+  .swiper-slide-next + .swiper-slide {
+    .circule-img {
+      max-width: 282px;
+      pointer-events: unset;
+      @include md {
+        max-width: unset;
+      }
+      &::after {
+        display: none;
+      }
+      &::before {
+        content: "\f00e";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($color: $setting_primary_color, $alpha: 0.64);
+        border-radius: 50%;
+        color: #fff;
+        font-size: 24px;
+        padding: 5px 5px 0 0;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+      }
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.circules-imgs-cont {
+  .swiper-pagination {
+    position: absolute;
+    display: none;
+    @include sm {
+      display: flex;
+      justify-content: center;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include xs {
+      bottom: 0;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $setting_primary_color;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 64px;
+    height: 64px;
+    background-color: $setting_primary_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    top: 50%;
+    border: 2.67px solid $setting_primary_color;
+    &::after {
+      color: #fff;
+      font-size: 26px;
+    }
+    @include sm {
+      display: none;
+    }
+  }
+  .swiper-button-prev {
+    left: -32px;
+    @include md {
+      left: 0;
+    }
+    &::after {
+      transform: translateX(-2px);
+    }
+  }
+
+  .swiper-button-next {
+    right: -32px;
+    @include md {
+      right: 2px;
+    }
+    &::after {
+      transform: translateX(2px);
+    }
+  }
+  .swiper-button-disabled {
+    opacity: 1 !important;
+    background-color: #fff;
+    &::after {
+      color: $setting_primary_color;
+    }
+  }
+}
