@@ -1,0 +1,205 @@
+.circules2-imgs {
+  margin: 88px 0;
+  overflow: hidden;
+  @include sm {
+    margin: 40px 0;
+  }
+}
+.swiper-container {
+  margin-right: 150px;
+  padding-left: 150px;
+  overflow: hidden;
+}
+.circules2-imgs-cont {
+  padding: 85px 150px 85px 77px;
+  position: relative;
+  @include md {
+    padding: 85px 100px 85px 77px;
+  }
+  @include sm {
+    padding: 50px 80px 50px 77px;
+  }
+  @include xs {
+    padding: 20px 30px 40px 30px;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    width: 100vw;
+    inset-inline-start: 0px;
+    background: #f6f9ff;
+    z-index: -1;
+    border-top-right-radius: 264px;
+    border-bottom-right-radius: 264px;
+    @include sm {
+      inset-inline-end: 0px;
+      border-top-right-radius: 200px;
+      border-bottom-right-radius: 200px;
+    }
+    @include xs {
+      inset-inline-end: 0px;
+      border-top-right-radius: 150px;
+      border-bottom-right-radius: 150px;
+    }
+  }
+  .circules2-imgs-swiper {
+    margin-left: -272px;
+    padding-left: 272px;
+    position: relative;
+    @include md {
+      margin-left: -225px;
+      padding-left: 500px;
+    }
+    @include md {
+      margin-left: -225px;
+      padding-left: 250px;
+    }
+  }
+  .swiper-slide {
+    width: fit-content;
+    .circule-img {
+      display: flex;
+      border-radius: 50%;
+      aspect-ratio: 148/157;
+      position: relative;
+      @include md {
+      }
+      @include xs {
+      }
+      &::before {
+        content: "\f00e";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($color: $setting_primary_color, $alpha: 0.64);
+        border-radius: 50%;
+        color: #fff;
+        font-size: 24px;
+        padding: 5px 5px 0 0;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        @include xs {
+          width: 35px;
+          height: 35px;
+          font-size: 20px;
+        }
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+    .img-cover {
+      display: flex;
+      border-radius: 50%;
+    }
+  }
+  .swiper-slide-next + .swiper-slide + .swiper-slide {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  @include xs {
+    .swiper-slide-next + .swiper-slide {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+}
+
+.circules2-imgs-cont {
+  .swiper-pagination {
+    position: absolute;
+    display: none;
+    @include xs {
+      display: flex;
+      justify-content: center;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include xs {
+      bottom: 10px;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $setting_primary_color;
+  }
+  .circules2-imgs-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    @include xs {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .circules2-imgs-title {
+      font-size: 32px;
+      font-weight: $weight_bold;
+      color: #030303;
+      @include xs {
+        font-size: 24px;
+      }
+    }
+    .btns-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      transform: translateY(10px);
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: relative;
+        width: 68px;
+        height: 68px;
+        background-color: $setting_primary_color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        top: 50%;
+        border: 2.67px solid $setting_primary_color;
+        &::after {
+          color: #fff;
+          font-size: 26px;
+        }
+        @include md {
+          width: 62px;
+          height: 62px;
+        }
+        @include sm {
+          width: 55px;
+          height: 55px;
+        }
+        @include xs {
+          display: none;
+        }
+      }
+      .swiper-button-prev {
+        &::after {
+          transform: translateX(-2px);
+        }
+      }
+
+      .swiper-button-next {
+        &::after {
+          transform: translateX(2px);
+        }
+      }
+    }
+  }
+}
