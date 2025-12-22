@@ -235,12 +235,12 @@ iframe {
 
 @media (max-width: 991px) {
   .hero4-swiper {
-    aspect-ratio: 1.1;
+    aspect-ratio: 1;
   }
 }
 @media (max-width: 767px) {
   .hero4-swiper {
-    aspect-ratio: 0.6;
+    aspect-ratio: 0.5;
   }
 }
 
