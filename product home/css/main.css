@@ -452,13 +452,9 @@ iframe {
 @media (max-width: 1199px) {
   .product-home .product-home-cont .product-swiper .swiper-pagination {
     display: block;
-    transform: translateY(-110px);
-  }
-}
-@media (max-width: 991px) {
-  .product-home .product-home-cont .product-swiper .swiper-pagination {
-    display: block;
-    transform: translateY(-80px);
+    position: relative;
+    transform: unset;
+    bottom: unset;
   }
 }
 
@@ -466,6 +462,11 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 1199px) {
+  .more-button {
+    margin-top: 20px;
+  }
 }
 .more-button .more {
   border: 2px solid #1263dc;

@@ -271,7 +271,6 @@ iframe {
   }
 }
 .team-members-cont .tablist {
-  display: grid;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -372,7 +371,7 @@ iframe {
   color: #1263dc;
 }
 .tap-panal .profile-img {
-  width: 147px;
+  width: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;

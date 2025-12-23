@@ -1,7 +1,6 @@
 .hero4 {
-  height: 100vh;
-  min-height: 767px;
   position: relative;
+  overflow: hidden;
   @include xs {
     min-height: unset;
   }
@@ -11,17 +10,12 @@
 }
 .hero4-swiper {
   // height: 100%;
-  @include sm {
-    aspect-ratio: 1;
-  }
-  @include xs {
-    aspect-ratio: 0.5;
-  }
 }
 .hero4-slide {
   position: relative;
   display: flex;
-  height: 100%;
+  height: 100vh;
+  min-height: 770px;
   &::after {
     content: "";
     position: absolute;
@@ -38,12 +32,12 @@
 }
 .thumbs-swiper {
   max-width: 529px;
-  margin-top: -80px;
+  // margin-top: -80px;
   overflow: visible;
-  // position: absolute;
-  // bottom: 0;
-  // left: 50%;
-  // transform: translateX(-50%);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   @include xs {
     width: calc(100% - 40px);
     margin-top: -65px;
