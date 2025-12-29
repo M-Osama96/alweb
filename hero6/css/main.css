@@ -401,6 +401,7 @@ iframe {
   align-items: center;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 40px;
 }
 .swpiper-tools .swiper-button-next,
 .swpiper-tools .swiper-pagination,

@@ -1,0 +1,253 @@
+.hero7 {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  @include sm {
+    min-height: 500px;
+  }
+}
+.hero7-cont {
+  margin-inline-start: auto;
+  padding-block: 117px 0px;
+  padding-inline-end: 90px;
+  @include sm {
+    padding-inline-end: 30px;
+  }
+  @include xs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .hero7-info {
+    // max-width: 939px;
+    max-width: 69.5%;
+    margin-inline-start: auto;
+    @include md {
+      max-width: 62%;
+    }
+    @include xs {
+      max-width: 100%;
+      padding: 64px 20px 0 20px;
+    }
+
+    .hero7-title {
+      font-size: 64px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      margin-bottom: 39px;
+      @include md {
+        font-size: 42px;
+      }
+      @include sm {
+        font-size: 28px;
+        margin-bottom: 22px;
+      }
+      @include xs {
+        font-size: 23px;
+        margin-bottom: 14px;
+      }
+    }
+    .descandBtn {
+      padding-inline-start: 260px;
+      @include md {
+        padding-inline-start: 100px;
+      }
+      @include sm {
+        padding-inline-start: 60px;
+      }
+      @include xs {
+        padding-inline-start: unset;
+      }
+
+      .hero7-desc {
+        font-size: 16px;
+        font-weight: $weight_medium;
+        color: $setting_text_color;
+        margin-bottom: 20px;
+        max-width: 540px;
+        @include sm {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        @include xs {
+          font-weight: $weight_light;
+        }
+      }
+      .hero7-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 146px;
+        height: 146px;
+        border-radius: 200px;
+        background-color: $setting_primary_color;
+        color: #fff;
+        font-size: 16px;
+        font-weight: $weight_bold;
+        margin-inline-start: auto;
+        transition: all 0.4s ease-in-out;
+        @include sm {
+          width: 120px;
+          height: 120px;
+          font-size: 15px;
+        }
+        @include xs {
+          width: 165px;
+          height: 165px;
+          font-size: 18px;
+          position: relative;
+          z-index: 2;
+        }
+        &:hover {
+          width: 100%;
+          font-size: 48px;
+          @include sm {
+            font-size: 38px;
+          }
+          @include xs {
+            width: 165px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  .hero7-imgs {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0;
+    height: 100%;
+    width: 43%;
+
+    @include xs {
+      position: relative;
+      width: 100%;
+      height: 376px;
+      margin-top: -150px;
+      background-color: #fff;
+    }
+    .hero7-img {
+      position: absolute;
+      border: 2px solid #ffffff;
+      .img-cover {
+        display: flex;
+      }
+    }
+    .hero7-img:nth-of-type(1) {
+      inset-inline-end: 0;
+      bottom: 15px;
+      width: 241px;
+      aspect-ratio: 241/260;
+      border-radius: 32px;
+      overflow: hidden;
+      @include md {
+        width: 200px;
+        bottom: 30px;
+      }
+      @include sm {
+        width: 150px;
+        border-radius: 22px;
+      }
+      @include xs {
+        width: 133px;
+        bottom: 8px;
+        inset-inline-end: 32px;
+        border-radius: 17px;
+      }
+    }
+    .hero7-img:nth-of-type(2) {
+      inset-inline-start: 0;
+      top: 0;
+      width: 267px;
+      aspect-ratio: 267/207;
+      border-end-end-radius: 32px;
+      overflow: hidden;
+      @include md {
+        width: 200px;
+      }
+      @include sm {
+        width: 150px;
+        border-end-end-radius: 22px;
+      }
+      @include xs {
+        width: 147px;
+        border-end-end-radius: 17px;
+      }
+    }
+    .hero7-img:nth-of-type(3) {
+      inset-inline-start: 0;
+      bottom: 0;
+      width: 235px;
+      aspect-ratio: 235/193;
+      border-start-end-radius: 32px;
+      overflow: hidden;
+      @include md {
+        width: 200px;
+      }
+      @include sm {
+        width: 150px;
+        border-start-end-radius: 22px;
+      }
+      @include xs {
+        width: 130px;
+        border-start-end-radius: 17px;
+      }
+    }
+    .hero7-img:nth-of-type(4) {
+      inset-inline-start: 115px;
+      top: 51%;
+      transform: translateY(-50%);
+      width: 242px;
+      aspect-ratio: 242/239;
+      border-radius: 32px;
+      overflow: hidden;
+      @include md {
+        width: 200px;
+        top: 43%;
+        border-radius: 22px;
+      }
+      @include sm {
+        width: 150px;
+        inset-inline-start: 50px;
+      }
+      @include xs {
+        width: 134px;
+        aspect-ratio: 134/132;
+        inset-inline-start: 63px;
+        top: 190px;
+        border-radius: 17px;
+      }
+    }
+  }
+  .hero7-svg {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    height: 100%;
+    width: 45%;
+    z-index: -1;
+    @include sm {
+      width: 58%;
+    }
+    @include xs {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .hero-svg-xs {
+    display: none;
+    @include xs {
+      display: flex;
+      position: absolute;
+      inset-inline-end: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+}
