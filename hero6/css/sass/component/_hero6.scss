@@ -1,0 +1,211 @@
+.hero6 {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero6-Swiper {
+  overflow: visible;
+  .swiper-wrapper {
+    overflow: visible;
+
+    .swiper-slide-active {
+      @include lg {
+        z-index: 3;
+        opacity: 1 !important;
+      }
+    }
+    .swiper-slide-next {
+      @include lg {
+        z-index: 2;
+        opacity: 1 !important;
+      }
+    }
+    .swiper-slide-next + .swiper-slide {
+      @include lg {
+        z-index: 1;
+        opacity: 1 !important;
+      }
+    }
+  }
+}
+.hero6-slide {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 75px;
+  padding: 55px 0;
+  height: 100vh;
+  min-height: 600px;
+  @include md {
+    gap: 30px;
+  }
+  @include sm {
+    min-height: unset;
+  }
+  @include xs {
+    flex-direction: column;
+    height: unset;
+  }
+}
+.hero6-img {
+  width: 440px;
+  aspect-ratio: 440/481;
+  border-radius: 28px;
+  @include sm {
+    width: 50%;
+    border-radius: 14px;
+  }
+  @include xs {
+    width: 100%;
+  }
+
+  .img-cover {
+    border-radius: 28px;
+    display: flex;
+    position: relative;
+    @include sm {
+      border-radius: 14px;
+    }
+    .swiper-slide-next & {
+      @include lg {
+        transform: translateX(-40%) scale(0.8);
+      }
+      // &::after {
+      //   position: absolute;
+      //   content: "";
+      //   width: 100%;
+      //   height: 100%;
+      //   top: 0;
+      //   left: 0;
+      //   backdrop-filter: blur(5.424812316894531px);
+      // }
+    }
+    .swiper-slide-next + .swiper-slide & {
+      @include lg {
+        transform: translateX(-82%) scale(0.6);
+      }
+    }
+  }
+}
+.hero6-info {
+  max-width: 540px;
+  background: #ffffff;
+
+  @include sm {
+    max-width: 50%;
+  }
+  @include xs {
+    max-width: 100%;
+  }
+  .hero6-title {
+    font-size: 48px;
+    font-weight: $weight_bold;
+    color: #030303;
+    margin-bottom: 20px;
+    text-align: start;
+    @include md {
+      font-size: 38px;
+    }
+    @include sm {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+    @include xs {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+  }
+  .hero6-desc {
+    font-size: 16px;
+    font-weight: $weight_medium;
+    color: #030303;
+    margin-bottom: 32px;
+    // overflow: hidden;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 2;
+    // -webkit-box-orient: vertical;
+    // height: 45px;
+    @include sm {
+      margin-bottom: 20px;
+    }
+    @include xs {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+  .hero6-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    border-radius: 16px;
+    padding: 0 99px;
+    background-color: #fff;
+    color: $setting_primary_color;
+    width: fit-content;
+    font-size: 16px;
+    font-weight: $weight_medium;
+    border: 2px solid $setting_primary_color;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: #fff;
+      background-color: $setting_primary_color;
+    }
+    @include xs {
+      width: 100%;
+    }
+  }
+}
+.swpiper-tools {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  .swiper-button-next,
+  .swiper-pagination,
+  .swiper-button-prev {
+    position: relative;
+    width: unset;
+  }
+  .swiper-button-next {
+    width: 48px;
+    height: 48px;
+    background-color: $setting_primary_color;
+    border-radius: 10px;
+    &::after {
+      font-size: 20px;
+      content: "\f30a";
+      font-family: "Line Awesome Free";
+      font-weight: 900;
+      color: #fff;
+    }
+  }
+  .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+    background-color: $setting_primary_color;
+    border-radius: 10px;
+    &::after {
+      font-size: 20px;
+      content: "\f30b";
+      font-family: "Line Awesome Free";
+      font-weight: 900;
+      color: #fff;
+    }
+  }
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    .swiper-pagination-bullet {
+      background-color: $setting_primary_color;
+      opacity: 0.5;
+      width: 16px;
+      height: 16px;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
