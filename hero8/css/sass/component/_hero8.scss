@@ -1,0 +1,235 @@
+.hero8 {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  @include sm {
+    min-height: 500px;
+  }
+}
+.hero8-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  padding-top: 93px;
+  @include sm {
+    padding-top: 50px;
+  }
+  @include xs {
+    padding-top: 107px;
+  }
+}
+.hero8-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  .hero8-title {
+    font-size: 64px;
+    font-weight: $weight_bold;
+    color: $setting_text_color;
+    max-width: 1007px;
+    text-align: center;
+    margin-bottom: 0;
+    @include sm {
+      font-size: 48px;
+    }
+    @include xs {
+      font-size: 28px;
+    }
+  }
+  .hero8-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    .about-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      border-radius: 8px;
+      padding: 0 60px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: $weight_medium;
+      background-color: $setting_primary_color;
+      border: 2px solid $setting_primary_color;
+      transition: all 0.4s ease-in-out;
+      @include xs {
+        padding: 0 39px;
+      }
+      &:hover {
+        background-color: darken($color: $setting_primary_color, $amount: 10%);
+      }
+    }
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+      border-radius: 8px;
+      padding: 0 60px;
+      color: $setting_primary_color;
+      font-size: 16px;
+      font-weight: $weight_medium;
+      background-color: #fff;
+      border: 2px solid $setting_primary_color;
+      transition: all 0.4s ease-in-out;
+      @include xs {
+        padding: 0 36px;
+      }
+      &:hover {
+        background-color: $setting_primary_color;
+        color: #fff;
+      }
+    }
+  }
+}
+.hero8-imgs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  .expirence-circule-lg {
+    position: absolute;
+    inset-inline-start: 0;
+    top: 150px;
+    width: 118px;
+    aspect-ratio: 1;
+    border: 2px solid lighten($color: $setting_secondary_color, $amount: 30%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include md {
+      top: 50px;
+    }
+    @include sm {
+      display: none;
+    }
+    @include xs {
+    }
+    .numper {
+      font-size: 40px;
+      font-weight: $weight_bold;
+      color: $setting_secondary_color;
+      text-align: center;
+      @include xs {
+        font-size: 32px;
+      }
+    }
+    .exirence-text {
+      font-size: 14px;
+      font-weight: $weight_medium;
+      color: #353535;
+      text-align: center;
+      @include xs {
+        font-size: 12px;
+      }
+    }
+  }
+  .hero8-img-container {
+    max-width: 920px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: -50%;
+    @include md {
+      margin-bottom: -51%;
+    }
+    @include sm {
+      margin-bottom: -62%;
+    }
+    @include xs {
+      margin-bottom: -50%;
+    }
+  }
+  .hero8-img {
+    max-width: 920px;
+    aspect-ratio: 920/350;
+
+    @include md {
+      max-width: 800px;
+    }
+    @include sm {
+    }
+    @include xs {
+      aspect-ratio: 320/200;
+    }
+    .img-cover {
+    }
+  }
+}
+.wave-svg-lg {
+  position: absolute;
+  inset-inline-end: 0;
+  bottom: 90px;
+  @include sm {
+    display: none;
+  }
+}
+.bg-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  .bg-secondary {
+    fill: $setting_secondary_color;
+  }
+  .bg-primary {
+    fill: $setting_primary_color;
+  }
+}
+.hero8-bottom {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 40px 20px 55px 0;
+  @include sm {
+    display: flex;
+  }
+  .expirence-circule-sm {
+    width: 92px;
+    aspect-ratio: 1;
+    border: 2px solid lighten($color: $setting_secondary_color, $amount: 30%);
+    border-radius: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include md {
+    }
+    @include sm {
+      display: flex;
+    }
+    @include xs {
+    }
+    .numper {
+      font-size: 20px;
+      font-weight: $weight_bold;
+      color: $setting_secondary_color;
+      text-align: center;
+    }
+    .exirence-text {
+      font-size: 13px;
+      font-weight: $weight_medium;
+      color: #353535;
+      text-align: center;
+    }
+  }
+  .wave-sm {
+    display: none;
+    @include sm {
+      display: block;
+    }
+  }
+}
