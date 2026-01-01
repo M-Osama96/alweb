@@ -1,7 +1,10 @@
 .hero7 {
-  height: 100vh;
-  min-height: 600px;
+  // height: 100vh;
+  min-height: 679px;
   position: relative;
+  @media (min-width: 1500px) {
+    min-height: 750px;
+  }
   @include sm {
     min-height: 500px;
   }
@@ -22,7 +25,7 @@
   }
 
   .hero7-info {
-    // max-width: 939px;
+    max-width: 939px;
     max-width: 69.5%;
     margin-inline-start: auto;
     @include md {

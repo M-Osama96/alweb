@@ -223,9 +223,13 @@ iframe {
 }
 
 .hero7 {
-  height: 100vh;
-  min-height: 600px;
+  min-height: 679px;
   position: relative;
+}
+@media (min-width: 1500px) {
+  .hero7 {
+    min-height: 750px;
+  }
 }
 @media (max-width: 991px) {
   .hero7 {
@@ -253,6 +257,7 @@ iframe {
   }
 }
 .hero7-cont .hero7-info {
+  max-width: 939px;
   max-width: 69.5%;
   margin-inline-start: auto;
 }
