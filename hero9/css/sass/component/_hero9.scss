@@ -258,9 +258,12 @@
 }
 .arrow-svg {
   position: absolute;
-  bottom: 30%;
+  bottom: 20%;
   inset-inline-end: 50%;
   transform: translateX(-50%);
+  @media (min-width: 1800px) {
+    bottom: 30%;
+  }
   @include md {
     display: none;
   }

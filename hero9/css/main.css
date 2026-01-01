@@ -516,9 +516,14 @@ iframe {
 
 .arrow-svg {
   position: absolute;
-  bottom: 30%;
+  bottom: 20%;
   inset-inline-end: 50%;
   transform: translateX(-50%);
+}
+@media (min-width: 1800px) {
+  .arrow-svg {
+    bottom: 30%;
+  }
 }
 @media (max-width: 1199px) {
   .arrow-svg {
