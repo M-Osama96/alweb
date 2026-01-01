@@ -133,7 +133,7 @@
     height: 100%;
     width: calc(100% + 20px);
     border-start-end-radius: 162px;
-    z-index: 0;
+    z-index: -1;
     @media (min-width: 2000px) {
       top: 25%;
     }
@@ -159,7 +159,7 @@
       width: calc(100% + 40px);
       top: 0;
       height: 100%;
-      z-index: 0;
+      z-index: -1;
     }
   }
 }
