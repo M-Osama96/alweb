@@ -57,6 +57,7 @@
     position: relative;
     z-index: 2;
     padding: 53px 0 33px 0;
+    overflow: hidden;
     @include sm {
       max-width: unset;
     }
@@ -133,7 +134,7 @@
     width: calc(100% + 20px);
     border-start-end-radius: 162px;
     z-index: 0;
-    @media (min-width: 1500px) {
+    @media (min-width: 2000px) {
       top: 25%;
     }
     @include sm {

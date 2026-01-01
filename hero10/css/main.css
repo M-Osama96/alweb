@@ -291,6 +291,7 @@ iframe {
   position: relative;
   z-index: 2;
   padding: 53px 0 33px 0;
+  overflow: hidden;
 }
 @media (max-width: 991px) {
   .hero10-info .hero-info-cont {
@@ -373,7 +374,7 @@ iframe {
   border-start-end-radius: 162px;
   z-index: 0;
 }
-@media (min-width: 1500px) {
+@media (min-width: 2000px) {
   .hero10-info .info-bg {
     top: 25%;
   }
