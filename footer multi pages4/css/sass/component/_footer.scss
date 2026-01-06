@@ -1,0 +1,305 @@
+.footer-multi-pages4 {
+  padding: 112px 0 46px;
+  color: #fff;
+  position: relative;
+  @include md {
+    padding: 70px 0;
+  }
+  @include xs {
+    padding: 42px 0 24px;
+  }
+  .container {
+    max-width: 1260px;
+  }
+
+  .bg-img {
+    position: absolute;
+    inset-inline-end: 0;
+    width: 42%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    @include sm {
+      width: 50%;
+    }
+    @include xs {
+      bottom: 0;
+      top: unset;
+      width: 100%;
+      height: 42%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(
+        $color: darken($setting_primary_color, 20%),
+        $alpha: 0.2
+      );
+    }
+  }
+}
+.footer-cont {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  padding-bottom: 84px;
+  @include xs {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 0;
+    border: none;
+    gap: 67px;
+  }
+}
+.footer-info {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 358px;
+  @include sm {
+    display: none;
+  }
+  @include xs {
+  }
+  .footer-logo {
+    max-width: 299px;
+    aspect-ratio: 299/83;
+    @include sm {
+      max-width: 200px;
+    }
+    @include xs {
+      max-width: 121px;
+    }
+  }
+  .footer-desc {
+    max-width: 358px;
+    font-size: 32px;
+    font-weight: $weight_bold;
+    color: $setting_text_color;
+    @include sm {
+      font-size: 28px;
+      max-width: 230px;
+    }
+    @include xs {
+      font-size: 16px;
+      max-width: 130px;
+    }
+  }
+}
+.footer-nav {
+  @include xs {
+  }
+  .nav-title {
+    font-size: 24px;
+    font-weight: $weight_medium;
+    color: $setting_text_color;
+    margin-bottom: 32px;
+    @include xs {
+      display: none;
+    }
+  }
+  .nav-list {
+    display: flex;
+    row-gap: 16px;
+    column-gap: 20px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 179px;
+    flex-wrap: wrap;
+    @include sm {
+    }
+    @include xs {
+      max-height: unset;
+      justify-content: start;
+      gap: 22px;
+    }
+    .nav-li {
+      font-size: 16px;
+      font-weight: $weight_medium;
+      color: $setting_text_color;
+      @include md {
+        font-size: 16px;
+      }
+      @include xs {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.contact-menue {
+  display: flex;
+  gap: 32px;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  @include xs {
+    width: 100%;
+  }
+
+  .contact-menu-cont {
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+    @include xs {
+      width: 100%;
+    }
+
+    .contact-btn {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: start;
+      background: linear-gradient(
+        137.93deg,
+        darken($setting_primary_color, 30%) 22.71%,
+        rgba($setting_primary_color, 0.7) 68.29%
+      );
+      padding: 16px 24px;
+      border: 1px solid #ffffff;
+      border-radius: 64px;
+      width: 100%;
+
+      @include xs {
+        white-space: wrap;
+        padding: 10px 24px;
+      }
+      .las {
+        font-size: 20px;
+        @include xs {
+          font-size: 18px;
+        }
+      }
+      .contact-type {
+        font-size: 18px;
+        font-weight: $weight_bold;
+        color: #fff;
+        @include sm {
+          font-size: 16px;
+        }
+        @include xs {
+          font-size: 14px;
+          font-weight: $weight_light;
+        }
+      }
+    }
+  }
+}
+.copyrightplussocials {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  margin-top: 32px;
+  background-color: #fff;
+  border: 1px solid lighten($color: $setting_primary_color, $amount: 45%);
+  border-radius: 64px;
+  padding: 21px 24px;
+  @include xs {
+    flex-direction: column-reverse;
+    align-items: start;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin-top: 16px;
+  }
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  @include xs {
+    padding-bottom: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid lighten($color: $setting_primary_color, $amount: 45%);
+    .lab {
+      color: $setting_primary_color;
+      font-size: 18px;
+      transition: all 0.4s ease-in-out;
+    }
+    &:hover {
+      background-color: $setting_primary_color;
+      border: 2px solid $setting_primary_color;
+      .lab {
+        color: #fff;
+      }
+    }
+  }
+  // a:has(.la-twitter) {
+  //   border: 1.76px solid #1a1a1a;
+  //   .lab {
+  //     color: #1a1a1a;
+  //     font-size: 20px;
+  //   }
+  // }
+  // a:has(.la-facebook-f) {
+  //   border: 2.64px solid #327eea;
+  //   .lab {
+  //     color: #327eea;
+  //     font-size: 20px;
+  //   }
+  // }
+  // a:has(.la-linkedin-in) {
+  //   border: 2.64px solid #4459be;
+  //   .lab {
+  //     color: #4459be;
+  //     font-size: 20px;
+  //   }
+  // }
+  // a:has(.la-instagram) {
+  //   border: 2.64px solid #e5505d;
+  //   .lab {
+  //     background: -webkit-linear-gradient(
+  //       #9538a4 0%,
+  //       #e5505d 53.3%,
+  //       #f7852b 100%
+  //     );
+  //     -webkit-background-clip: text;
+  //     -webkit-text-fill-color: transparent;
+  //     font-size: 20px;
+  //   }
+  // }
+}
+.cobyright {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: $weight_light;
+  color: lighten($color: $setting_text_color, $amount: 10%);
+  position: relative;
+  z-index: 2;
+  line-height: 2.2;
+  @include xs {
+    background-color: #fff;
+    border-radius: 136px;
+    padding: 8px 24px;
+    width: 100%;
+  }
+  .company {
+    color: $setting_primary_color;
+    margin-inline-start: 4px;
+  }
+}

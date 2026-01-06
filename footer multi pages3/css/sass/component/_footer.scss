@@ -1,0 +1,316 @@
+.footer-multi-pages {
+  padding: 112px 0 46px;
+  color: #fff;
+  position: relative;
+  @include md {
+    padding: 70px 0;
+  }
+  @include xs {
+    padding: 42px 0 24px;
+  }
+
+  .bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .bg-gradiant {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    @include xs {
+      display: none;
+    }
+    radialGradient {
+      stop:first-child {
+        stop-color: darken($color: $setting_primary_color, $amount: 9%);
+      }
+    }
+
+    radialGradient {
+      stop:last-child {
+        stop-color: darken($color: $setting_primary_color, $amount: 30%);
+      }
+    }
+  }
+  .bg-gradiant-xs {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    @include xs {
+      display: block;
+    }
+    radialGradient {
+      stop:first-child {
+        stop-color: darken($color: $setting_primary_color, $amount: 9%);
+      }
+    }
+
+    radialGradient {
+      stop:last-child {
+        stop-color: darken($color: $setting_primary_color, $amount: 30%);
+      }
+    }
+  }
+}
+.footer-cont {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  padding-bottom: 84px;
+  border-bottom: 1px solid #ffffff33;
+  @include xs {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 24px;
+    border: none;
+  }
+}
+.footer-info {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  width: 396px;
+  @include sm {
+    display: none;
+  }
+  @include xs {
+  }
+  .footer-logo {
+    max-width: 299px;
+    aspect-ratio: 299/83;
+    @include sm {
+      max-width: 200px;
+    }
+    @include xs {
+      max-width: 121px;
+    }
+  }
+  .footer-desc {
+    max-width: 324px;
+    font-size: 40px;
+    font-weight: $weight_bold;
+    color: #fff;
+    @include sm {
+      font-size: 28px;
+      max-width: 230px;
+    }
+    @include xs {
+      font-size: 16px;
+      max-width: 130px;
+    }
+  }
+}
+.footer-nav {
+  @include xs {
+  }
+  .nav-title {
+    font-size: 24px;
+    font-weight: $weight_medium;
+    color: #fff;
+    margin-bottom: 32px;
+    @include xs {
+      display: none;
+    }
+  }
+  .nav-list {
+    display: flex;
+    row-gap: 16px;
+    column-gap: 20px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    max-height: 179px;
+    flex-wrap: wrap;
+    @include sm {
+    }
+    @include xs {
+      max-height: unset;
+      justify-content: start;
+      gap: 22px;
+    }
+    .nav-li {
+      font-size: 16px;
+      font-weight: $weight_medium;
+      color: #fff;
+      @include md {
+        font-size: 16px;
+      }
+      @include xs {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.contact-menue {
+  display: flex;
+  gap: 32px;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  @include xs {
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: 24px;
+    font-weight: $weight_medium;
+    color: #fff;
+    @include xs {
+      display: none;
+    }
+  }
+
+  .contact-menu-cont {
+    display: flex;
+    gap: 16px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px 18px;
+    border-radius: 24px;
+    border: 3px solid #ffffff;
+    background: linear-gradient(
+      137.93deg,
+      darken($setting_primary_color, 30%) 22.71%,
+      rgba($setting_primary_color, 0.5) 68.29%
+    );
+    @include xs {
+      width: 100%;
+    }
+
+    .contact-btn {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: start;
+      white-space: nowrap;
+      @include xs {
+        white-space: wrap;
+      }
+      .las {
+        font-size: 20px;
+        @include xs {
+          font-size: 18px;
+        }
+      }
+      .contact-type {
+        font-size: 18px;
+        font-weight: $weight_bold;
+        color: #fff;
+        @include xs {
+          font-size: 16px;
+          font-weight: $weight_light;
+        }
+      }
+    }
+  }
+}
+.copyrightplussocials {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  margin-top: 32px;
+  @include xs {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  @include xs {
+    padding-bottom: 13px;
+    border-bottom: 1px solid #ffffff33;
+    width: 100%;
+    justify-content: start;
+  }
+  a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: all 0.4s ease-in-out;
+    border: 2px solid #535353;
+    .lab {
+      color: #535353;
+      font-size: 18px;
+      transition: all 0.4s ease-in-out;
+    }
+    &:hover {
+      background-color: $setting_primary_color;
+      border: 2px solid $setting_primary_color;
+      .lab {
+        color: #fff;
+      }
+    }
+  }
+  // a:has(.la-twitter) {
+  //   border: 1.76px solid #1a1a1a;
+  //   .lab {
+  //     color: #1a1a1a;
+  //     font-size: 20px;
+  //   }
+  // }
+  // a:has(.la-facebook-f) {
+  //   border: 2.64px solid #327eea;
+  //   .lab {
+  //     color: #327eea;
+  //     font-size: 20px;
+  //   }
+  // }
+  // a:has(.la-linkedin-in) {
+  //   border: 2.64px solid #4459be;
+  //   .lab {
+  //     color: #4459be;
+  //     font-size: 20px;
+  //   }
+  // }
+  // a:has(.la-instagram) {
+  //   border: 2.64px solid #e5505d;
+  //   .lab {
+  //     background: -webkit-linear-gradient(
+  //       #9538a4 0%,
+  //       #e5505d 53.3%,
+  //       #f7852b 100%
+  //     );
+  //     -webkit-background-clip: text;
+  //     -webkit-text-fill-color: transparent;
+  //     font-size: 20px;
+  //   }
+  // }
+}
+.cobyright {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: $weight_light;
+  color: lighten($color: $setting_primary_color, $amount: 10%);
+  position: relative;
+  z-index: 2;
+  @include xs {
+    margin-top: 13px;
+  }
+  .company {
+    color: #fff;
+    margin-inline-start: 4px;
+  }
+}
