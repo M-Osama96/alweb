@@ -25,6 +25,9 @@
     @include xs {
       display: none;
     }
+    @include ltr {
+      transform: scale(-1);
+    }
     radialGradient {
       stop:first-child {
         stop-color: darken($color: $setting_primary_color, $amount: 9%);
@@ -46,6 +49,9 @@
     display: none;
     @include xs {
       display: block;
+    }
+    @include ltr {
+      transform: scaleX(-1);
     }
     radialGradient {
       stop:first-child {
@@ -187,6 +193,13 @@
       darken($setting_primary_color, 30%) 22.71%,
       rgba($setting_primary_color, 0.5) 68.29%
     );
+    @include ltr {
+      background: linear-gradient(
+        257.93deg,
+        darken($setting_primary_color, 30%) 22.71%,
+        rgba($setting_primary_color, 0.5) 68.29%
+      );
+    }
     @include xs {
       width: 100%;
     }

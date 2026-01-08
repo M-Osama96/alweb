@@ -243,7 +243,7 @@ iframe {
 .footer-multi-pages4 .bg-img {
   position: absolute;
   inset-inline-end: 0;
-  width: 42%;
+  width: 40%;
   height: 100%;
   z-index: 0;
   top: 0;
@@ -419,6 +419,9 @@ iframe {
     white-space: wrap;
     padding: 10px 24px;
   }
+}
+html[dir=ltr] .contact-menue .contact-menu-cont .contact-btn {
+  background: linear-gradient(257.93deg, rgb(6.4285714286, 35.3571428571, 78.5714285714) 22.71%, rgba(18, 99, 220, 0.7) 68.29%);
 }
 .contact-menue .contact-menu-cont .contact-btn .las {
   font-size: 20px;

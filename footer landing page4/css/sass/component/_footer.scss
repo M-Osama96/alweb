@@ -1,68 +1,52 @@
-.footer-landing-page3 {
-  padding: 123px 0 46px;
+.footer-landing-page4 {
+  padding: 112px 0 46px;
   color: #fff;
   position: relative;
   @include md {
-    padding: 70px 0 40px;
+    padding: 70px 0;
   }
   @include xs {
-    padding: 125px 0 40px;
+    padding: 76px 0 20px;
+  }
+  .container {
+    max-width: 1260px;
   }
 
   .bg-img {
     position: absolute;
-    inset: 0;
-    width: 100%;
+    inset-inline-end: 0;
+    width: 50%;
     height: 100%;
     z-index: 0;
-  }
-  .bg-gradiant {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    top: 0;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    overflow: hidden;
+    @include sm {
+      width: 50%;
+    }
     @include xs {
-      display: none;
+      bottom: 64px;
+      top: unset;
+      width: 100%;
+      height: 384px;
+      clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
     }
     @include ltr {
-      transform: scale(-1);
-    }
-    radialGradient {
-      stop:first-child {
-        stop-color: darken($color: $setting_primary_color, $amount: 9%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+      @include xs {
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
       }
     }
-
-    radialGradient {
-      stop:last-child {
-        stop-color: darken($color: $setting_primary_color, $amount: 30%);
-      }
-    }
-  }
-  .bg-gradiant-xs {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: none;
-    @include xs {
-      display: block;
-    }
-    @include ltr {
-      transform: scaleX(-1);
-    }
-    radialGradient {
-      stop:first-child {
-        stop-color: darken($color: $setting_primary_color, $amount: 9%);
-      }
-    }
-
-    radialGradient {
-      stop:last-child {
-        stop-color: darken($color: $setting_primary_color, $amount: 30%);
-      }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(
+        $color: darken($setting_primary_color, 20%),
+        $alpha: 0.2
+      );
     }
   }
 }
@@ -73,14 +57,16 @@
   align-items: center;
   gap: 20px;
   justify-content: space-between;
-  padding-bottom: 104px;
-  border-bottom: 1px solid #ffffff33;
+  padding-bottom: 84px;
+  @include sm {
+    padding-bottom: 30px;
+  }
   @include xs {
     flex-direction: column;
     align-items: start;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     border: none;
-    gap: 64px;
+    gap: 109px;
   }
 }
 .footer-info {
@@ -88,34 +74,33 @@
   align-items: start;
   justify-content: center;
   flex-direction: column;
-  width: 396px;
-  gap: 16px;
+  max-width: 455px;
   @include sm {
   }
   @include xs {
-    gap: 10px;
   }
   .footer-logo {
     max-width: 299px;
     aspect-ratio: 299/83;
     @include sm {
-      // max-width: 200px;
+      max-width: 200px;
     }
     @include xs {
       max-width: 191px;
+      margin-bottom: 10px;
     }
   }
   .footer-desc {
-    max-width: 324px;
     font-size: 40px;
     font-weight: $weight_bold;
-    color: #fff;
+    color: $setting_text_color;
     @include sm {
       font-size: 28px;
     }
     @include xs {
-      font-size: 26px;
-      max-width: 210px;
+      font-size: 25px;
+      max-width: 207px;
+      margin-bottom: 24px;
     }
   }
 }
@@ -136,24 +121,7 @@
     align-items: start;
     justify-content: center;
     flex-direction: column;
-    padding: 40px 48px;
-    border-radius: 24px;
-    border: 3px solid #ffffff;
-    background: linear-gradient(
-      137.93deg,
-      darken($setting_primary_color, 30%) 22.71%,
-      rgba($setting_primary_color, 0.5) 68.29%
-    );
-    @include ltr {
-      background: linear-gradient(
-        257.93deg,
-        darken($setting_primary_color, 30%) 22.71%,
-        rgba($setting_primary_color, 0.5) 68.29%
-      );
-    }
-    @include sm {
-      padding: 20px 25px;
-    }
+
     @include xs {
       width: 100%;
     }
@@ -163,9 +131,26 @@
       gap: 10px;
       align-items: center;
       justify-content: start;
-      white-space: nowrap;
+      background: linear-gradient(
+        137.93deg,
+        darken($setting_primary_color, 30%) 22.71%,
+        rgba($setting_primary_color, 0.7) 68.29%
+      );
+      padding: 16px 24px;
+      border: 1px solid #ffffff;
+      border-radius: 64px;
+      width: 100%;
+
       @include xs {
         white-space: wrap;
+        padding: 17px 24px;
+      }
+      @include ltr {
+        background: linear-gradient(
+          257.93deg,
+          darken($setting_primary_color, 30%) 22.71%,
+          rgba($setting_primary_color, 0.7) 68.29%
+        );
       }
       .las {
         font-size: 20px;
@@ -177,8 +162,11 @@
         font-size: 18px;
         font-weight: $weight_bold;
         color: #fff;
-        @include xs {
+        @include sm {
           font-size: 16px;
+        }
+        @include xs {
+          font-size: 14px;
           font-weight: $weight_light;
         }
       }
@@ -191,9 +179,17 @@
   position: relative;
   z-index: 2;
   margin-top: 32px;
+  background-color: #fff;
+  border: 1px solid lighten($color: $setting_primary_color, $amount: 45%);
+  border-radius: 64px;
+  padding: 21px 24px;
   @include xs {
     flex-direction: column-reverse;
     align-items: start;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin-top: 16px;
   }
 }
 .socials {
@@ -202,10 +198,16 @@
   justify-content: center;
   gap: 7px;
   @include xs {
-    padding-bottom: 63px;
-    border-bottom: 1px solid #ffffff33;
+    padding-bottom: 16px;
     width: 100%;
     justify-content: start;
+    display: none;
+  }
+  &.xs {
+    display: none;
+    @include xs {
+      display: flex;
+    }
   }
   a {
     width: 35px;
@@ -216,9 +218,9 @@
     justify-content: center;
     background-color: #fff;
     transition: all 0.4s ease-in-out;
-    border: 2px solid #535353;
+    border: 1px solid lighten($color: $setting_primary_color, $amount: 45%);
     .lab {
-      color: #535353;
+      color: $setting_primary_color;
       font-size: 18px;
       transition: all 0.4s ease-in-out;
     }
@@ -270,14 +272,17 @@
   justify-content: center;
   font-size: 16px;
   font-weight: $weight_light;
-  color: lighten($color: $setting_primary_color, $amount: 10%);
+  color: lighten($color: $setting_text_color, $amount: 10%);
   position: relative;
   z-index: 2;
+  line-height: 2.2;
   @include xs {
-    margin-top: 13px;
+    border-radius: unset;
+    padding-top: 20px;
+    width: 100%;
   }
   .company {
-    color: #fff;
+    color: $setting_primary_color;
     margin-inline-start: 4px;
   }
 }
