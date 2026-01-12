@@ -1,0 +1,194 @@
+.why-us-oval-3 {
+  padding: 45px 0;
+  .why-us-cont {
+    display: grid;
+    grid-template-columns: 578px 1fr;
+    gap: 77px;
+    align-items: center;
+    @include md {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    @include sm {
+      gap: 20px;
+    }
+    @include xs {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+.why-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  @include sm {
+    gap: 10px;
+  }
+  .why-title {
+    font-size: 48px;
+    font-weight: $weight_bold;
+    color: $setting_text_color;
+    @include sm {
+      font-size: 34px;
+    }
+  }
+  .why-desc {
+    font-size: 24px;
+    font-weight: $weight_bold;
+    color: lighten($color: $setting_text_color, $amount: 10%);
+    @include md {
+      font-size: 20px;
+    }
+    @include sm {
+      font-size: 18px;
+    }
+  }
+  .why-p {
+    font-size: 16px;
+    font-weight: $weight_light;
+    color: lighten($color: $setting_text_color, $amount: 10%);
+    @include sm {
+      font-size: 14px;
+    }
+  }
+  .discover {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+
+    .discover-line {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      gap: 4px;
+      .check-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #22c55e;
+        border-radius: 50%;
+        margin: 0;
+        flex-shrink: 0;
+        transform: translateY(2px);
+        @include md {
+          width: 18px;
+          height: 18px;
+        }
+        @include xxs {
+          width: 15px;
+          height: 15px;
+        }
+        i {
+          font-size: 12px;
+          font-weight: $weight-extrabold;
+          color: #22c55e;
+          @include md {
+            font-size: 10px;
+          }
+        }
+      }
+      .discover-p {
+        font-size: 16px;
+        font-weight: $weight_light;
+        color: lighten($color: $setting_text_color, $amount: 10%);
+        span {
+          @include md {
+            font-size: 14px;
+          }
+          @include sm {
+            text-align: center;
+            font-size: 11px;
+          }
+          @include xxs {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+  .why-btn {
+    background-color: $setting_primary_color;
+    padding: 0 8px;
+    height: 48px;
+    width: 187px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 80px;
+    font-size: 16px;
+    font-weight: $weight_bold;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      background-color: $setting_secondary_color;
+    }
+    @include xxs {
+      width: 100%;
+    }
+  }
+}
+.why-imgs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  @include xs {
+    gap: 20px;
+  }
+  .why-img {
+    // aspect-ratio: 233/623;
+    height: 100%;
+    border-radius: 124px;
+    overflow: hidden;
+  }
+  .why-img-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    @include md {
+      gap: 20px;
+    }
+    .why-img2 {
+      aspect-ratio: 226/440;
+      border-radius: 124px;
+      overflow: hidden;
+    }
+    .play-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 142px;
+      height: 142px;
+      border-radius: 50%;
+      border: 3.5px solid $setting_primary_color;
+      color: $setting_primary_color;
+      transition: all 0.4s ease-in-out;
+      @include sm {
+        width: 120px;
+        height: 120px;
+      }
+      @include xxs {
+        width: 100px;
+        height: 100px;
+      }
+      &:hover {
+        color: $setting_secondary_color;
+        border-color: $setting_secondary_color;
+      }
+      .play-svg {
+        display: flex;
+        transform: translate(4px, 4px);
+        @include xs {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

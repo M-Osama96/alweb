@@ -1,0 +1,128 @@
+.why-us-oval-2 {
+  padding: 45px 0;
+  .why-us-cont {
+    display: grid;
+    grid-template-columns: 578px 1fr;
+    gap: 77px;
+    align-items: center;
+    @include md {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @include xs {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+.why-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  @include sm {
+    gap: 10px;
+  }
+  .why-title {
+    font-size: 48px;
+    font-weight: $weight_bold;
+    color: $setting_text_color;
+    @include sm {
+      font-size: 34px;
+    }
+  }
+  .why-desc {
+    font-size: 24px;
+    font-weight: $weight_bold;
+    color: lighten($color: $setting_text_color, $amount: 10%);
+    @include md {
+      font-size: 20px;
+    }
+    @include sm {
+      font-size: 18px;
+    }
+  }
+  .why-p {
+    font-size: 16px;
+    font-weight: $weight_light;
+    color: lighten($color: $setting_text_color, $amount: 10%);
+    @include sm {
+      font-size: 14px;
+    }
+  }
+  .why-btn {
+    background-color: $setting_primary_color;
+    padding: 0 8px;
+    height: 48px;
+    width: 187px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 80px;
+    font-size: 16px;
+    font-weight: $weight_bold;
+    transition: all 0.4s ease-in-out;
+    margin-top: 12px;
+    &:hover {
+      background-color: $setting_secondary_color;
+    }
+    @include xxs {
+      width: 100%;
+    }
+  }
+}
+.why-img {
+  aspect-ratio: 463/513;
+  border-start-start-radius: 232px;
+  border-start-end-radius: 232px;
+  border-end-start-radius: 32px;
+  border-end-end-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .expirence {
+    position: absolute;
+    bottom: 8px;
+    inset-inline-start: 8px;
+    border: 1px solid lighten($color: $setting_primary_color, $amount: 20%);
+    background-color: lighten($color: $setting_primary_color, $amount: 50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 21px;
+    border-radius: 24px;
+    @include md {
+      padding: 15px;
+    }
+    @include xs {
+      border-radius: 18px;
+    }
+    .numper {
+      color: darken($color: $setting_primary_color, $amount: 30%);
+      font-size: 48px;
+      font-weight: $weight_bold;
+      text-shadow: 0px 6px 8px rgba(lighten($setting_primary_color, 38%), 0.35);
+      line-height: 1;
+      @include md {
+        font-size: 40px;
+      }
+      @include xs {
+        font-size: 30px;
+      }
+    }
+    .exirence-text {
+      color: darken($color: $setting_primary_color, $amount: 30%);
+      font-size: 20px;
+      font-weight: $weight_bold;
+      @include md {
+        font-size: 18px;
+      }
+      @include xs {
+        font-size: 16px;
+      }
+    }
+  }
+}
