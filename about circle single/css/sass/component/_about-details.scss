@@ -1,0 +1,83 @@
+.about-details {
+  margin-top: 30px;
+  padding: 100px 0;
+  background-color: lighten($color: $setting_primary_color, $amount: 50%);
+  @include sm {
+    padding: 50px 0;
+  }
+}
+.about-details-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  @include sm {
+    column-gap: 10px;
+    row-gap: 0;
+  }
+  @include xs {
+    gap: 10px;
+  }
+  .about-single-box {
+    padding: 0 26px;
+    border: 1px solid #dbe8fa;
+    border-radius: 50%;
+    background-color: #fff;
+    aspect-ratio: 1;
+    width: calc(33% - 11px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include sm {
+      width: calc(50% - 11px);
+    }
+    @include xxs {
+      width: calc(100% - 20px);
+    }
+    .about-single-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      @include xs {
+        margin-bottom: 10px;
+        gap: 8px;
+      }
+      i {
+        color: lighten($color: $setting_primary_color, $amount: 10%);
+        font-size: 32px;
+        @include xs {
+          font-size: 28px;
+        }
+      }
+      .box-title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: $weight_bold;
+        color: $setting_text_color;
+        @include xs {
+          font-size: 18px;
+        }
+      }
+    }
+    .box-p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: $weight_light;
+      text-align: center;
+      padding: 0 13px;
+      color: lighten($color: $setting_text_color, $amount: 10%);
+      @include md {
+        font-size: 14px;
+      }
+      @include xs {
+        font-size: 12px;
+      }
+    }
+  }
+}

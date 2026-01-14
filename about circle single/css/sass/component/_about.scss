@@ -1,0 +1,186 @@
+.about-cicle-single {
+  padding: 70px 0;
+  @include sm {
+    padding: 40px 0;
+  }
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 491px 1fr;
+  gap: 130px;
+  align-items: center;
+  @include md {
+    gap: 50px;
+    grid-template-columns: 7fr 5fr;
+  }
+  @include sm {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .title {
+      font-weight: $weight_bold;
+      font-size: 32px;
+      color: $setting_text_color;
+      margin-bottom: 20px;
+      @include sm {
+        font-size: 32px;
+        margin-bottom: 12px;
+      }
+    }
+    .desc {
+      font-weight: $weight_bold;
+      font-size: 20px;
+      color: lighten($color: $setting_text_color, $amount: 10%);
+      margin-bottom: 20px;
+      @include md {
+        font-size: 20px;
+      }
+      @include sm {
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+    }
+    .about-p {
+      font-weight: $weight_light;
+      font-size: 16px;
+      color: lighten($color: $setting_text_color, $amount: 10%);
+      margin-bottom: 20px;
+      @include sm {
+        font-size: 13px;
+        margin-bottom: 12px;
+      }
+    }
+    .discover {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      @include sm {
+        gap: 8px;
+      }
+
+      .discover-line {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        gap: 4px;
+        .check-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #22c55e;
+          border-radius: 50%;
+          margin: 0;
+          flex-shrink: 0;
+          transform: translateY(2px);
+          @include md {
+            width: 18px;
+            height: 18px;
+          }
+          @include sm {
+            width: 15px;
+            height: 15px;
+          }
+          i {
+            font-size: 12px;
+            font-weight: $weight-extrabold;
+            color: #22c55e;
+            @include md {
+              font-size: 10px;
+            }
+          }
+        }
+        .discover-p {
+          font-size: 16px;
+          font-weight: $weight_light;
+          color: lighten($color: $setting_text_color, $amount: 10%);
+          span {
+            @include md {
+              font-size: 14px;
+            }
+            @include sm {
+              text-align: center;
+              font-size: 11px;
+            }
+            @include xxs {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .about-img {
+    border-radius: 50%;
+    aspect-ratio: 1;
+    position: relative;
+    .img-cover {
+      display: flex;
+      border-radius: 50%;
+    }
+
+    .expirence {
+      position: absolute;
+      bottom: 35px;
+      inset-inline-start: 5px;
+      border-radius: 50%;
+      overflow: hidden;
+      aspect-ratio: 1;
+      width: 128px;
+      border: 1px solid lighten($color: $setting_primary_color, $amount: 40%);
+      background-color: lighten($color: $setting_primary_color, $amount: 50%);
+      box-shadow: 0px 8px 12px 0px #0000001f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include md {
+        inset-inline-start: -15px;
+        bottom: 10px;
+      }
+      @include sm {
+        width: 110px;
+      }
+      @include xs {
+      }
+      .numper {
+        color: darken($color: $setting_primary_color, $amount: 30%);
+        font-size: 48px;
+        font-weight: $weight_bold;
+        text-shadow: 0px 6px 8px
+          rgba(lighten($setting_primary_color, 38%), 0.35);
+        line-height: 1;
+        @include md {
+          font-size: 40px;
+        }
+
+        @include sm {
+          font-size: 30px;
+        }
+      }
+      .exirence-text {
+        color: darken($color: $setting_primary_color, $amount: 30%);
+        font-size: 14px;
+        font-weight: $weight_bold;
+        @include md {
+          font-size: 18px;
+        }
+        @include sm {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
