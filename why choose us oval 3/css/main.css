@@ -325,7 +325,7 @@ iframe {
     height: 18px;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 991px) {
   .why-info .discover .discover-line .check-icon {
     width: 15px;
     height: 15px;

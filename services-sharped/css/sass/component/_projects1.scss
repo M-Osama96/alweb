@@ -1,0 +1,195 @@
+.services-sharped {
+  margin: 54px 0;
+  overflow: hidden;
+  @include sm {
+    margin: 40px 0;
+  }
+}
+.services-sharped-cont {
+  position: relative;
+  @include sm {
+    padding: 20px 0;
+  }
+}
+.service-title {
+  font-size: 48px;
+  font-weight: $weight_bold;
+  color: $setting_text_color;
+  text-align: center;
+  margin-bottom: 45px;
+  @include sm {
+    font-size: 38px;
+    margin-bottom: 25px;
+  }
+  @include xs {
+    font-size: 34px;
+  }
+}
+.services-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 23px;
+  gap: 8px;
+  border: 2px solid $setting_primary_color;
+  width: fit-content;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  margin: 45px auto 0;
+  @include md {
+    margin-top: 30px;
+  }
+  @include xs {
+    display: none;
+  }
+  &.xs {
+    display: none;
+    @include xs {
+      display: flex;
+      margin: auto;
+    }
+  }
+  .btn-text {
+    font-size: 16px;
+    font-weight: $weight_bold;
+    color: $setting_primary_color;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $setting_primary_color;
+    border-color: lighten($color: $setting_primary_color, $amount: 20%);
+    .btn-text {
+      color: #fff;
+    }
+  }
+}
+.services-slide {
+  overflow: hidden;
+  height: 100%;
+  .service-img {
+    aspect-ratio: 367/248;
+    position: relative;
+    .service-name {
+      position: absolute;
+      inset-inline-start: 15px;
+      bottom: 27px;
+      inset-inline-end: 30px;
+      background: rgba($color: $setting_primary_color, $alpha: 0.7);
+      font-size: 20px;
+      font-weight: $weight_bold;
+      color: #fff;
+      padding: 12px;
+      transition: all 0.4s ease-in-out;
+    }
+    .img-cover {
+      display: flex;
+    }
+  }
+  .service-text {
+    background-color: $setting_primary_color;
+    padding: 28px;
+    transition: all 0.4s ease-in-out;
+    .service-desc {
+      color: #fff;
+      font-size: 16px;
+      font-weight: $weight_light;
+      margin-bottom: 20px;
+      height: 89px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      @include xs {
+        font-size: 14px;
+        height: 77px;
+      }
+    }
+    .service-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      background-color: $setting_primary_color;
+      gap: 4px;
+      .btn-text {
+        font-size: 16px;
+        font-weight: $weight_bold;
+        color: #fff;
+        border-bottom: 1px solid #fff;
+      }
+      .las {
+        color: #fff;
+        font-size: 20px;
+        font-weight: $weight_bold;
+        transform: translateY(1px);
+        transition: all 0.5s ease-in-out;
+        &::before {
+          @include ltr {
+            content: "\f061";
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    .service-text {
+      transform: translateY(5px);
+    }
+    .service-name {
+      background-color: $setting_primary_color;
+    }
+  }
+}
+.services-sharped-cont {
+  .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+    display: none;
+    @include md {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $setting_primary_color;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 64px;
+    height: 64px;
+    background-color: $setting_primary_color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    border: 2.67px solid $setting_primary_color;
+    &::after {
+      color: #fff;
+      font-size: 26px;
+    }
+    @include md {
+      display: none;
+    }
+  }
+  .swiper-button-prev {
+    left: -80px;
+    &::after {
+      transform: translateX(-2px);
+    }
+  }
+
+  .swiper-button-next {
+    right: -80px;
+    &::after {
+      transform: translateX(2px);
+    }
+  }
+  .swiper-button-disabled {
+    opacity: 1 !important;
+    background-color: #fff;
+    &::after {
+      color: $setting_primary_color;
+    }
+  }
+}
