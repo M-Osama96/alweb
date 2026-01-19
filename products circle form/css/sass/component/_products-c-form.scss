@@ -1,0 +1,210 @@
+.products-circle-form {
+  padding: 32px 0 120px;
+  @include sm {
+    padding: 20px 0 60px;
+  }
+  .products-form-cont {
+    padding: 34px 135px 0;
+    @include md {
+      padding: 34px 80px 0;
+    }
+    @include sm {
+      padding: 20px 0px 0;
+    }
+    .inner-cont {
+      border-radius: 50%;
+      aspect-ratio: 869/906;
+      overflow: hidden;
+      border: 1.67px solid lighten($color: $setting_primary_color, $amount: 45%);
+      @include xs {
+        aspect-ratio: 0.4;
+        border-radius: 200px;
+      }
+      .product-img {
+        height: 50%;
+        @include xs {
+          height: 40%;
+        }
+      }
+      .form {
+        padding: 30px 128px 87px;
+        background-color: lighten($color: $setting_primary_color, $amount: 50%);
+        @include sm {
+          padding: 20px 100px 80px;
+        }
+        @include xs {
+          padding: 20px 15px 80px;
+        }
+        h3 {
+          font-size: 32px;
+          font-weight: $weight-bold;
+          margin-bottom: 24px;
+          text-align: center;
+          color: darken($color: $setting_primary_color, $amount: 30%);
+          @include sm {
+            margin-bottom: 0px;
+            font-size: 28px;
+          }
+          @include xxs {
+            font-size: 20px;
+            margin-bottom: 0;
+          }
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          @include xxs {
+          }
+          .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 16px;
+            @include xs {
+              grid-template-columns: 1fr;
+              row-gap: 12px;
+              column-gap: unset;
+            }
+          }
+
+          .form-group {
+            position: relative;
+          }
+
+          .form-group input,
+          select,
+          textarea {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            font-size: 18px;
+
+            border: 1px solid
+              lighten($color: $setting_primary_color, $amount: 40%);
+            border-radius: 144px;
+            transition: all 0.5s ease;
+            color: $setting_text_color;
+            @include xxs {
+              font-size: 16px;
+              height: 45px;
+            }
+          }
+          textarea {
+            height: unset;
+          }
+
+          .form-group label {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            padding: 0 8px;
+            font-size: 18px;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            @include xs {
+              font-size: 16px;
+            }
+          }
+          .form-group input:focus,
+          .form-group input:not(:placeholder-shown) {
+            border-color: $setting_primary_color;
+            box-shadow: 0px 4px 4px 0px
+              rgba($color: $setting_primary_color, $alpha: 0.1);
+          }
+
+          .form-group input:focus + label,
+          .form-group input:not(:placeholder-shown) + label {
+            top: 9px;
+            font-size: 12px;
+            color: #06234d;
+          }
+          .select {
+            position: relative;
+            select:has([hidden]:checked) {
+              color: #000000;
+              option {
+                color: #000000;
+              }
+            }
+            select:focus,
+            select:not(:has(option:checked[disabled])) {
+              border-color: $setting_primary_color;
+              box-shadow: 0px 4px 4px 0px
+                rgba($color: $setting_primary_color, $alpha: 0.1);
+            }
+            &::before {
+              content: "\f107";
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              inset-inline-end: 16px;
+              font-family: "Line Awesome Free";
+              font-size: 20px;
+              color: $setting_primary_color;
+              font-weight: 900;
+            }
+          }
+          textarea {
+            resize: none;
+            min-height: 64px;
+            padding-top: 10px;
+            &::placeholder {
+              color: #030303;
+            }
+          }
+          textarea:focus,
+          textarea:not(:placeholder-shown) {
+            border-color: $setting_primary_color;
+            box-shadow: 0px 4px 4px 0px
+              rgba($color: $setting_primary_color, $alpha: 0.1);
+          }
+          button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 2px solid $setting_primary_color;
+            padding: 10px 0;
+            border-radius: 144px;
+            margin: auto;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 210px;
+            background-color: $setting_primary_color;
+
+            &:hover {
+              background-color: #ffffff;
+            }
+            &:hover {
+              .send {
+                color: $setting_primary_color;
+              }
+            }
+            &:hover {
+              .las {
+                color: $setting_primary_color;
+              }
+            }
+            .send {
+              font-size: 16px;
+              font-weight: $weight_bold;
+              color: #ffffff;
+              transition: all 0.4s ease-in-out;
+            }
+            .las {
+              font-size: 24px;
+              color: #ffffff;
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+}
