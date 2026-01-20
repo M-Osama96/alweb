@@ -29,11 +29,13 @@
       .form {
         padding: 30px 128px 87px;
         background-color: lighten($color: $setting_primary_color, $amount: 50%);
+        height: 50%;
         @include sm {
           padding: 20px 100px 80px;
         }
         @include xs {
           padding: 20px 15px 80px;
+          height: 60%;
         }
         h3 {
           font-size: 32px;

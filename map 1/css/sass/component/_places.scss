@@ -1,0 +1,96 @@
+.map-1 {
+  padding: 102px 0;
+  @include sm {
+    padding: 50px 0;
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 32px;
+    @include md {
+      grid-template-columns: 188px 1fr;
+      gap: 18px;
+      padding: 0 60px;
+    }
+    @include sm {
+      padding: 0;
+    }
+    @include xs {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+    .map-1-tabs {
+      padding: 48px 40px;
+      box-shadow: 0px 12px 28px 0px #0000000a;
+      border: 1px solid #f3f3f3;
+      height: fit-content;
+      @include md {
+        padding: 22px 13px;
+      }
+      @include xs {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+      }
+      h3 {
+        font-size: 24px;
+        font-weight: $weight-bold;
+        margin-bottom: 32px;
+        text-align: center;
+        color: $setting_text_color;
+        @include md {
+          font-size: 20px;
+        }
+
+        @include xs {
+          font-size: 32px;
+          margin-bottom: 24px;
+        }
+      }
+      [role="tablist"] {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: 0 8px;
+
+        @include xs {
+          flex-direction: row;
+          margin: 0;
+        }
+        button {
+          height: 48px;
+          width: 100%;
+          background-color: #ffffff;
+          border: 2px solid $setting_primary_color;
+          color: $setting_primary_color;
+          transition: all 0.4s ease-in-out;
+          font-size: 16px;
+          font-weight: $weight-bold;
+
+          &[aria-selected="true"] {
+            color: #ffffff;
+            background-color: $setting_primary_color;
+          }
+        }
+      }
+    }
+    .map-tappanel {
+      aspect-ratio: 836/564;
+      @include md {
+        aspect-ratio: 658/500;
+      }
+      @include sm {
+        aspect-ratio: 430/430;
+      }
+      @include xs {
+        aspect-ratio: 338/430;
+      }
+
+      [role="tabpanel"] {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
