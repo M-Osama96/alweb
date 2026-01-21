@@ -19,9 +19,11 @@ body {
   max-height: 150px;
   flex-wrap: wrap;
   width: fit-content;
+  order: 1;
 }
 .box:has(> .done):not(:has(> :not(.done))) {
   background-color: #e5e5e5;
+  order: 2;
 }
 a {
   width: fit-content;
