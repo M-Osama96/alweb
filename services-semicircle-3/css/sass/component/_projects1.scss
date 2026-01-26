@@ -1,0 +1,186 @@
+.services-semicircle3 {
+  padding: 141px 0 120px;
+  position: relative;
+  @include sm {
+    padding: 40px 0;
+  }
+  .services-svg {
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    .first-g {
+      fill: $setting_secondary_color;
+    }
+    .second-g {
+      fill: $setting_primary_color;
+    }
+  }
+  .services-semicircle3-cont {
+    display: grid;
+    grid-template-columns: 274px 1fr;
+    gap: 110px;
+    align-items: center;
+    @include md {
+      gap: 30px;
+      grid-template-columns: 244px 1fr;
+    }
+    @include sm {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .services-text {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      justify-content: center;
+      @include sm {
+        align-items: center;
+      }
+      @include xs {
+        gap: 20px;
+      }
+      .title {
+        font-size: 48px;
+        font-weight: $weight_bold;
+        color: $setting_text_color;
+        @include md {
+          font-size: 40px;
+        }
+        @include xs {
+          font-size: 32px;
+        }
+      }
+      .desc {
+        font-size: 20px;
+        font-weight: $weight_bold;
+        color: lighten($color: $setting_text_color, $amount: 10%);
+        @include md {
+          font-size: 18px;
+        }
+        @include sm {
+          text-align: center;
+        }
+        @include xs {
+          font-size: 16px;
+        }
+      }
+    }
+    .services-btn {
+      height: 48px;
+      border-radius: 16px;
+      border: 2px solid $setting_primary_color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-size: 16px;
+      font-weight: $weight_bold;
+      color: $setting_primary_color;
+      transition: all 0.4s ease-in-out;
+      &.lg {
+        @include sm {
+          display: none;
+        }
+      }
+      &.sm {
+        display: none;
+        @include sm {
+          display: flex;
+          width: 300px;
+          margin: 20px auto 0;
+          border-radius: 12px;
+        }
+      }
+      &:hover {
+        background-color: $setting_primary_color;
+        color: #fff;
+      }
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      @include xs {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service {
+        border: 1px solid lighten($color: $setting_primary_color, $amount: 45%);
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 24px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 66px;
+        transition: all 0.4s ease-in-out;
+        @include xs {
+          border-radius: 12px;
+          padding: 20px 10px;
+          gap: 40px;
+        }
+        .title {
+          font-size: 20px;
+          font-weight: $weight_bold;
+          color: $setting_text_color;
+          transition: all 0.4s ease-in-out;
+          @include md {
+            font-size: 18px;
+          }
+          @include xs {
+            font-size: 14px;
+          }
+        }
+        .service-bottom {
+          display: flex;
+          justify-content: space-between;
+          .number {
+            font-size: 48px;
+            font-weight: $weight_bold;
+            color: lighten($color: $setting_primary_color, $amount: 45%);
+            line-height: 1;
+            transition: all 0.4s ease-in-out;
+            @include xs {
+              font-size: 40px;
+            }
+          }
+          .more-btn {
+            width: 51px;
+            height: 51px;
+            border-radius: 50%;
+            border: 1px solid $setting_primary_color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: $weight_bold;
+            color: $setting_primary_color;
+            transition: all 0.4s ease-in-out;
+            @include xs {
+              width: 45px;
+              height: 45px;
+              font-size: 12px;
+            }
+          }
+        }
+        &:hover {
+          border-color: $setting_primary_color;
+          .title {
+            transform: translateY(-8px);
+          }
+          .number {
+            transform: translateX(10px);
+          }
+          .more-btn {
+            transform: rotate(20deg);
+            background-color: $setting_primary_color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
