@@ -1,0 +1,235 @@
+.services {
+  padding: 82px 0;
+  background: #fff;
+  @include sm {
+    padding: 40px 0;
+  }
+
+  .services-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    @include xs {
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+  }
+  .services-title {
+    font-size: 48px;
+    font-weight: $weight_bold;
+    color: $setting_text_color;
+    margin: 0;
+    @include xs {
+      font-size: 34px;
+    }
+  }
+
+  .all-services {
+    border: 2px solid $setting_primary_color;
+    color: $setting_primary_color;
+    padding: 0 24px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: $weight_bold;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    &.lg {
+      @include xs {
+        display: none;
+      }
+    }
+    &.xs {
+      display: none;
+      @include xs {
+        display: flex;
+        margin-top: 35px;
+      }
+    }
+    &::after {
+      content: "\f060";
+      font-family: "Line Awesome Free";
+      font-weight: 900;
+      transition: all 0.4s ease-in-out;
+      margin-inline-start: 6px;
+      transform: rotate(45deg);
+      font-size: 20px;
+    }
+
+    &:hover {
+      background: $setting_primary_color;
+      color: #fff;
+      &::after {
+        transform: rotate(0);
+      }
+    }
+  }
+
+  .services-list {
+    border: 1px solid lighten($color: $setting_primary_color, $amount: 45%);
+    > *:not(:last-child) {
+      border-bottom: 1px solid
+        lighten($color: $setting_primary_color, $amount: 45%);
+    }
+    .service-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 19px 32px;
+      transition: all 0.4s ease-in-out;
+      background-color: #fff;
+      position: relative;
+      @include xs {
+        flex-direction: column;
+        padding: 49px 8px 64px;
+      }
+
+      &:hover {
+        background-color: $setting_primary_color;
+        padding: 40px 8px;
+        @include xs {
+          padding: 49px 8px 120px;
+        }
+        .num {
+          color: #fff;
+          transform: translateX(-27px);
+          font-size: 101px;
+          @include md {
+            font-size: 70px;
+            transform: translateX(-10px);
+          }
+          @include sm {
+            font-size: 60px;
+          }
+          @include xs {
+            transform: translateX(0px);
+            font-size: 40px;
+          }
+        }
+
+        .title {
+          color: #fff;
+        }
+        .desc {
+          opacity: 1;
+          max-height: 64px;
+        }
+        .icon {
+          background-color: #fff;
+          border-radius: 24px;
+          width: 126px;
+          height: 126px;
+          transform: translateX(31px) rotate(45deg);
+          @include sm {
+            width: 100px;
+            height: 100px;
+            border-radius: 16px;
+          }
+          @include xs {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            transform: translate(15px, -10px) rotate(45deg);
+          }
+          .las {
+            transform: rotate(-45deg);
+            font-size: 40px;
+            @include xs {
+              font-size: 34px;
+            }
+          }
+        }
+      }
+    }
+
+    .num {
+      font-size: 48px;
+      font-weight: $weight_bold;
+      color: lighten($color: $setting_primary_color, $amount: 45%);
+      line-height: 64px;
+      transition: all 0.4s ease-in-out;
+      max-width: 55.09px;
+      @include sm {
+        font-size: 40px;
+        max-width: 45.9px;
+      }
+      @include xs {
+        position: absolute;
+        top: 6px;
+        inset-inline-start: 6px;
+        z-index: 0;
+      }
+    }
+    .text {
+      flex: 1;
+      max-width: 634px;
+      transition: all 0.4s ease-in-out;
+      @include md {
+        max-width: 600px;
+      }
+      @include sm {
+        max-width: 420px;
+      }
+      @include xs {
+        position: relative;
+        z-index: 2;
+      }
+      .title {
+        margin: 0;
+        font-size: 32px;
+        font-weight: $weight_bold;
+        color: $setting_text_color;
+        transition: all 0.4s ease-in-out;
+        @include sm {
+          font-size: 28px;
+        }
+        @include xs {
+          font-size: 20px;
+        }
+      }
+      .desc {
+        font-size: 18px;
+        font-weight: $weight_regular;
+        color: #fff;
+        transition: all 0.4s ease-in-out;
+        opacity: 0;
+        max-height: 0;
+        @include sm {
+          font-size: 16px;
+        }
+        @include xs {
+          display: none;
+        }
+      }
+    }
+    .icon {
+      width: 60px;
+      height: 60px;
+      border: 1px solid $setting_primary_color;
+      color: $setting_primary_color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease-in-out;
+      @include sm {
+        width: 50px;
+        height: 50px;
+      }
+      @include xs {
+        position: absolute;
+        bottom: 10px;
+        inset-inline-end: 10px;
+        z-index: 3;
+      }
+    }
+    .las {
+      font-size: 28px;
+      font-weight: $weight_bold;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+}
