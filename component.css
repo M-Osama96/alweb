@@ -32,4 +32,13 @@ a {
   text-decoration: line-through;
   color: #000 !important;
   opacity: 0.5;
+  order: 1;
+}
+
+.single {
+  order: 2;
+}
+
+mark {
+  font-weight: bold;
 }
