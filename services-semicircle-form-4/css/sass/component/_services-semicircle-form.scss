@@ -1,0 +1,236 @@
+.services-semicircle-form {
+  padding: 45px 0 108px;
+
+  @include sm {
+    padding: 40px 0;
+  }
+  .services-semicircle-cont {
+    position: relative;
+    overflow: hidden;
+    padding: 191px 64px 64px;
+
+    @include sm {
+      aspect-ratio: unset;
+      padding: 130px 30px 30px;
+    }
+    @include xs {
+      padding: 40px 20px 20px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 220px;
+      z-index: 0;
+      background-color: darken($color: $setting_primary_color, $amount: 10%);
+      @include sm {
+        top: 160px;
+      }
+      @include xs {
+        top: 0;
+        height: 65%;
+      }
+    }
+    .services-form-cont {
+      display: grid;
+      grid-template-columns: 430px 1fr;
+      gap: 68px;
+      position: relative;
+      z-index: 1;
+      @include md {
+        gap: 30px;
+        grid-template-columns: 1fr 1fr;
+      }
+      @include sm {
+      }
+      @include xs {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 0;
+      }
+    }
+    .title {
+      color: #fff;
+      font-size: 48px;
+      font-weight: $weight_bold;
+      margin-top: 94px;
+      @include md {
+        font-size: 40px;
+      }
+      @include sm {
+        font-size: 32px;
+      }
+      @include xs {
+        font-size: 26px;
+        margin: 0;
+        text-align: center;
+      }
+    }
+    .form-cont {
+      position: relative;
+      z-index: 1;
+      margin-top: -161px;
+      box-shadow: 0px 4px 32px 0px #0000001f;
+      height: fit-content;
+      @include sm {
+        margin-top: -110px;
+      }
+      @include xs {
+        margin: 0;
+        box-shadow: 0px 4px 20px 0px #0000001f;
+      }
+
+      .form-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        max-width: 100%;
+        border: 1px solid lighten($color: $setting_primary_color, $amount: 50%);
+        padding: 63px;
+        background-color: #fff;
+        @include md {
+          padding: 40px;
+        }
+        @include sm {
+          padding: 20px;
+          gap: 16px;
+        }
+        @include xs {
+          gap: 20px;
+        }
+        .form-group {
+          position: relative;
+        }
+
+        .form-control,
+        .textarea {
+          width: 100%;
+          height: 48px;
+          font-size: 16px;
+          font-weight: $weight_light;
+          color: darken($color: $setting_primary_color, $amount: 10%);
+          transition: all 0.4s ease-in-out;
+          background-color: lighten(
+            $color: $setting_primary_color,
+            $amount: 50%
+          );
+          border: 1px solid
+            lighten($color: $setting_primary_color, $amount: 45%);
+          position: relative;
+          padding-inline-start: 8px;
+          padding-top: 20px;
+          @include xxs {
+            font-size: 16px;
+          }
+        }
+
+        .form-label {
+          position: absolute;
+          top: 50%;
+          inset-inline-start: 8px;
+          transform: translateY(-50%);
+          color: lighten($color: $setting_primary_color, $amount: 30%);
+          font-size: 16px;
+          font-weight: $weight-light;
+          pointer-events: none;
+          transition: all 0.4s ease-in-out;
+        }
+
+        .form-control:focus + .form-label,
+        .form-control:not(:placeholder-shown) + .form-label {
+          top: 12px;
+          font-size: 12px;
+        }
+        .form-control:focus,
+        .form-control:not(:placeholder-shown) {
+          border: 1px solid $setting_primary_color;
+          box-shadow: 0px 4px 4px 0px
+            rgba($color: $setting_primary_color, $alpha: 0.1);
+        }
+        .select-wrapper {
+          position: relative;
+          &::before {
+            content: "\f107";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            inset-inline-end: 16px;
+            font-family: "Line Awesome Free";
+            font-size: 20px;
+            color: $setting_primary_color;
+            font-weight: 900;
+          }
+          .select {
+            padding-inline-start: 8px;
+            padding-top: 0;
+            color: lighten($color: $setting_primary_color, $amount: 30%);
+            border: 1px solid
+              lighten($color: $setting_primary_color, $amount: 45%);
+            width: 100%;
+            height: 48px;
+            font-size: 16px;
+            font-weight: $weight_light;
+            transition: all 0.4s ease-in-out;
+            background-color: lighten(
+              $color: $setting_primary_color,
+              $amount: 50%
+            );
+            border: 1px solid
+              lighten($color: $setting_primary_color, $amount: 45%);
+            padding-inline-start: 8px;
+
+            .option {
+              color: $setting_primary_color;
+            }
+          }
+        }
+        .select:focus,
+        .select:not(:has(option:checked[disabled])) {
+          border-color: $setting_primary_color;
+          box-shadow: 0px 4px 4px 0px
+            rgba($color: $setting_primary_color, $alpha: 0.1);
+        }
+        .select:valid {
+          color: $setting_primary_color;
+        }
+
+        .textarea {
+          resize: none;
+          min-height: 73px;
+          color: darken($color: $setting_primary_color, $amount: 10%);
+          &::placeholder {
+            color: lighten($color: $setting_primary_color, $amount: 30%);
+          }
+          padding-top: 5px;
+        }
+
+        .form-btn {
+          font-size: 16px;
+          font-weight: $weight_bold;
+          color: #fff;
+          height: 48px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid $setting_primary_color;
+          position: relative;
+          transition: all 0.4s ease-in-out;
+          background-color: $setting_primary_color;
+          transition: all 0.4s ease-in-out;
+          @include sm {
+            height: 42px;
+            padding-inline-start: 21px;
+          }
+          &:hover {
+            background-color: #fff;
+            color: $setting_primary_color;
+          }
+        }
+      }
+    }
+  }
+}
