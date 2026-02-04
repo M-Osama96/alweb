@@ -1,0 +1,354 @@
+.packages1 {
+  padding: 54px 0;
+  overflow: hidden;
+  @include sm {
+    padding: 40px 0;
+  }
+}
+.packages1-cont {
+  position: relative;
+  @include sm {
+  }
+  .package-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    @include xs {
+      justify-content: center;
+      margin-bottom: 0px;
+    }
+    .package-title {
+      font-size: 48px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      text-align: center;
+      @include sm {
+        font-size: 38px;
+      }
+      @include xs {
+      }
+    }
+  }
+}
+.packages-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 23px;
+  gap: 8px;
+  border: 2px solid $setting_primary_color;
+  width: fit-content;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  border-radius: 15px;
+  @include xs {
+    display: none;
+  }
+  &.xs {
+    display: none;
+    @include xs {
+      display: flex;
+      margin: 30px auto 0;
+    }
+  }
+  .btn-text {
+    font-size: 16px;
+    font-weight: $weight_bold;
+    color: $setting_primary_color;
+    transition: all 0.5s ease-in-out;
+  }
+  .las {
+    color: $setting_primary_color;
+    font-size: 20px;
+    transform: rotate(45deg);
+    font-weight: $weight_bold;
+    transition: all 0.5s ease-in-out;
+    @include ltr {
+      transform: rotate(-45deg);
+    }
+    &::before {
+      @include ltr {
+        content: "\f061";
+      }
+    }
+  }
+  &:hover {
+    background-color: $setting_primary_color;
+    border-color: lighten($color: $setting_primary_color, $amount: 20%);
+    .btn-text {
+      color: #fff;
+    }
+    .las {
+      color: #fff;
+      transform: rotate(0);
+      @include ltr {
+        transform: rotate(0);
+      }
+    }
+  }
+}
+.packages1-flex {
+  display: flex;
+  gap: 20px;
+  padding-top: 43px;
+  @include sm {
+    gap: 10px;
+  }
+  @include xs {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 25px;
+  }
+}
+
+.Package {
+  padding: 23px 29px;
+  border: 1px solid #f3f3f3;
+  border-radius: 24px;
+  width: calc(33% - 9px);
+  box-shadow: 0px 8px 12px 0px #8585850a;
+  position: relative;
+  @include sm {
+    padding: 15px 10px;
+    width: calc(33% - 4px);
+  }
+  @include xs {
+    width: unset;
+  }
+  &.offer {
+    @include xs {
+      margin-top: 35px;
+    }
+  }
+
+  &:nth-of-type(3n + 1) {
+    background: linear-gradient(
+      180deg,
+      lighten($setting_primary_color, 45%) 0%,
+      #fff 55.91%,
+      #fff 100%
+    );
+    &.offer {
+      border-color: $setting_primary_color;
+      box-shadow: 0 -47px $setting_primary_color;
+      @include sm {
+        box-shadow: 0 -40px $setting_primary_color;
+      }
+      .offer-cont {
+        display: flex;
+        .num {
+          color: $setting_primary_color;
+        }
+      }
+    }
+    .package-price {
+      border-bottom: 1px solid
+        lighten($color: $setting_primary_color, $amount: 43%);
+      .current-price {
+        color: darken($color: $setting_primary_color, $amount: 35%);
+      }
+    }
+    .sub-btn {
+      background-color: lighten($color: $setting_primary_color, $amount: 42%);
+      color: $setting_primary_color;
+      border: 1px solid $setting_primary_color;
+      &:hover {
+        background-color: $setting_primary_color;
+      }
+    }
+  }
+  &:nth-of-type(3n + 2) {
+    background: linear-gradient(
+      180deg,
+      lighten($setting_secondary_color, 43%) 0%,
+      #fff 55.91%,
+      #fff 100%
+    );
+    &.offer {
+      border-color: $setting_secondary_color;
+      box-shadow: 0 -47px $setting_secondary_color;
+      @include sm {
+        box-shadow: 0 -40px $setting_secondary_color;
+      }
+      .offer-cont {
+        display: flex;
+        .num {
+          color: $setting_secondary_color;
+        }
+      }
+    }
+    .package-price {
+      border-bottom: 1px solid
+        lighten($color: $setting_secondary_color, $amount: 40%);
+      .current-price {
+        color: darken($color: $setting_secondary_color, $amount: 35%);
+      }
+    }
+    .sub-btn {
+      background-color: lighten($color: $setting_secondary_color, $amount: 42%);
+      color: $setting_secondary_color;
+      border: 1px solid $setting_secondary_color;
+      &:hover {
+        background-color: $setting_secondary_color;
+      }
+    }
+  }
+  &:nth-of-type(3n + 3) {
+    $setting_mix_color: mix(
+      $setting_primary_color,
+      $setting_secondary_color,
+      50%
+    );
+    background: linear-gradient(
+      180deg,
+      lighten($setting_mix_color, 43%) 0%,
+      #fff 55.91%,
+      #fff 100%
+    );
+    &.offer {
+      border-color: $setting_mix_color;
+      box-shadow: 0 -47px $setting_mix_color;
+      @include sm {
+        box-shadow: 0 -40px $setting_mix_color;
+      }
+      .offer-cont {
+        display: flex;
+        .num {
+          color: $setting_mix_color;
+        }
+      }
+    }
+    .package-price {
+      border-bottom: 1px solid lighten($color: $setting_mix_color, $amount: 40%);
+      .current-price {
+        color: darken($color: $setting_mix_color, $amount: 35%);
+      }
+    }
+    .sub-btn {
+      background-color: lighten($color: $setting_mix_color, $amount: 42%);
+      color: $setting_mix_color;
+      border: 1px solid $setting_mix_color;
+      &:hover {
+        background-color: $setting_mix_color;
+      }
+    }
+  }
+
+  .offer-cont {
+    position: absolute;
+    top: -35px;
+    width: 100%;
+    inset-inline-end: 0;
+    display: none;
+    gap: 14px;
+    justify-content: center;
+    @include sm {
+      top: -30px;
+    }
+
+    .text {
+      color: #fff;
+      font-weight: $weight_bold;
+      font-size: 16px;
+      @include sm {
+        font-size: 14px;
+      }
+    }
+    .num {
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 0 5px;
+      height: 23px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: $weight_bold;
+      @include sm {
+        font-size: 14px;
+      }
+    }
+  }
+  .package-name {
+    font-size: 24px;
+    font-weight: $weight_bold;
+    margin-bottom: 9px;
+    color: $setting_text_color;
+  }
+  .package-for {
+    color: lighten($color: $setting_text_color, $amount: 10%);
+    font-size: 16px;
+    font-weight: $weight_regular;
+    margin-bottom: 12px;
+    @include sm {
+      font-size: 14px;
+    }
+  }
+  .package-price {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+
+    .current-price {
+      font-size: 24px;
+      font-weight: $weight_bold;
+    }
+    img {
+      max-width: 19px;
+      max-height: 21px;
+      background-color: lighten($color: $setting_text_color, $amount: 70%);
+    }
+    .old-price {
+      font-size: 16px;
+      color: #454545;
+      letter-spacing: 0;
+      opacity: 0.4;
+    }
+    .del {
+      opacity: 0.4;
+    }
+  }
+  .package-adv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    .adv-line {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      i {
+        color: #22c55d;
+        font-size: 16px;
+      }
+      .adv-p {
+        margin: 0;
+        font-size: 16px;
+        color: #3e3e3e;
+        @include sm {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .sub-btn {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: $weight_semibold;
+    transition: all 0.5s ease;
+    margin-bottom: 32px;
+    font-size: 16px;
+    @include sm {
+      height: 44px;
+    }
+    &:hover {
+      color: #fff;
+    }
+  }
+}
