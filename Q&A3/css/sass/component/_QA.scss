@@ -1,0 +1,190 @@
+.QA {
+  padding: 80px 0;
+  position: relative;
+  background: #fefefe;
+
+  @include sm {
+    padding: 40px 0;
+  }
+
+  .QA-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-size: 48px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      margin-bottom: 16px;
+      @include sm {
+        font-size: 40px;
+      }
+      @include xs {
+        font-size: 32px;
+      }
+    }
+    .desc {
+      font-size: 18px;
+      font-weight: $weight_bold;
+      color: lighten($color: $setting_text_color, $amount: 20%);
+      text-align: center;
+      max-width: 619px;
+      margin-bottom: 48px;
+      @include sm {
+        max-width: 500px;
+        margin-bottom: 25px;
+        font-size: 16px;
+      }
+      @include xs {
+        font-size: 14px;
+      }
+    }
+    .QA-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      @include sm {
+        gap: 16px;
+      }
+      @include xs {
+        grid-template-columns: 1fr;
+      }
+      .QA-item {
+        position: relative;
+        padding: 20px 30px;
+        border-radius: 16px;
+        box-shadow: 0px 10px 40px 0px #00000014;
+        z-index: 0;
+        background-color: #ffffff;
+        @include sm {
+          padding: 14px 20px;
+          border-radius: 10px;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+          }
+          &::before {
+            opacity: 1;
+          }
+          .Q-header {
+            transform: translateY(0);
+            .Q-icon {
+              border: 1px solid
+                lighten($color: $setting_secondary_color, $amount: 30%);
+              box-shadow: 0px 4px 20px 0px #00000014;
+              background-color: #ffffff;
+              transform: rotate(-180deg);
+              .las {
+                color: $setting_secondary_color;
+              }
+            }
+          }
+          .A {
+            transform: rotate(0);
+            opacity: 1;
+          }
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          opacity: 0;
+          transition: all 0.7s ease-in-out;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          border-radius: inherit;
+          background: linear-gradient(
+            90deg,
+            lighten($setting_secondary_color, 35%) 0%,
+            lighten(
+                mix($setting_primary_color, $setting_secondary_color, 50%),
+                35%
+              )
+              50%,
+            lighten($setting_primary_color, 40%) 100%
+          );
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          opacity: 0;
+          transition: all 0.6s ease-in-out;
+          top: 1px;
+          left: 1px;
+          width: calc(100% - 2px);
+          height: calc(100% - 2px);
+          z-index: -1;
+          border-radius: inherit;
+          background: linear-gradient(
+            90deg,
+            lighten($setting_secondary_color, 42%) 0%,
+            #ffffff 50%,
+            lighten($setting_primary_color, 48%) 100%
+          );
+        }
+        .Q-header {
+          display: flex;
+          align-items: center;
+          gap: 40px;
+          transform: translateY(34px);
+          transition: all 0.6s ease-in-out;
+          @include sm {
+            gap: 20px;
+            transform: translateY(28px);
+          }
+          .Q {
+            font-size: 20px;
+            font-weight: $weight_bold;
+            color: darken($color: $setting_primary_color, $amount: 30%);
+            @include sm {
+              font-size: 16px;
+            }
+          }
+          .Q-icon {
+            transition: all 0.7s ease-in-out;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background-color: $setting_primary_color;
+            border: 1px solid
+              lighten($color: $setting_primary_color, $amount: 20%);
+            @include sm {
+              width: 36px;
+              height: 36px;
+            }
+
+            .las {
+              color: #fff;
+              font-size: 18px;
+              @include sm {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        .A {
+          font-size: 16px;
+          font-weight: $weight_light;
+          color: darken($color: $setting_primary_color, $amount: 30%);
+          margin-top: 16px;
+          opacity: 0;
+          transform: rotate(-5deg);
+          transition: all 0.6s ease-in-out;
+          @include sm {
+            font-size: 13px;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}
