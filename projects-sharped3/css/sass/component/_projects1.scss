@@ -1,0 +1,219 @@
+.projects-sharped {
+  padding: 54px 0;
+  overflow: hidden;
+  @include sm {
+    padding: 30px 0;
+  }
+}
+.projects-sharped-cont {
+  position: relative;
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    @include xs {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .project-title {
+      font-size: 48px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      text-align: center;
+      @include sm {
+        font-size: 38px;
+      }
+      @include xs {
+        font-size: 34px;
+      }
+    }
+  }
+}
+.projects-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 23px;
+  gap: 8px;
+  border: 2px solid $setting_primary_color;
+  width: fit-content;
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  @include xs {
+    display: none;
+  }
+  &.xs {
+    display: none;
+    @include xs {
+      display: flex;
+      margin: 24px auto 0;
+    }
+  }
+  .btn-text {
+    font-size: 16px;
+    font-weight: $weight_bold;
+    color: $setting_primary_color;
+    transition: all 0.5s ease-in-out;
+  }
+  .las {
+    color: $setting_primary_color;
+    font-size: 20px;
+    transform: rotate(45deg);
+    font-weight: $weight_bold;
+    transition: all 0.5s ease-in-out;
+    @include ltr {
+      transform: rotate(-45deg);
+    }
+    &::before {
+      @include ltr {
+        content: "\f061";
+      }
+    }
+  }
+  &:hover {
+    background-color: $setting_primary_color;
+    border-color: lighten($color: $setting_primary_color, $amount: 20%);
+    .btn-text {
+      color: #fff;
+    }
+    .las {
+      color: #fff;
+      transform: rotate(0);
+      @include ltr {
+        transform: rotate(0);
+      }
+    }
+  }
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+  .project {
+    position: relative;
+    border: 2px solid lighten($setting_primary_color, $amount: 50%);
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      transform: translateY(5px);
+      border-color: $setting_primary_color;
+      .project-bottom {
+        background-color: #fff;
+        .project-info {
+          .location {
+            .las {
+              color: $setting_text_color;
+            }
+            .adress {
+              color: $setting_text_color;
+            }
+          }
+          .desc {
+            color: darken($setting_primary_color, $amount: 30%);
+          }
+        }
+        .project-btn {
+          background-color: $setting_primary_color;
+          color: #fff;
+        }
+      }
+    }
+    .project-img {
+      aspect-ratio: 558/251;
+      width: 100%;
+      @include sm {
+        aspect-ratio: 558/400;
+      }
+    }
+    .project-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+      padding-inline-start: 30px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: fit-content;
+      background: #ffffff0f;
+      backdrop-filter: blur(10px);
+      transition: all 0.5s ease-in-out;
+      @include sm {
+        padding: 10px;
+        gap: 15px;
+      }
+      .project-info {
+        .location {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          margin-bottom: 8px;
+          @include md {
+            margin-bottom: 8px;
+          }
+
+          .las {
+            font-size: 17px;
+            color: #fff;
+            transition: all 0.5s ease-in-out;
+          }
+          .adress {
+            font-size: 16px;
+            color: #fff;
+            font-weight: $weight_medium;
+            transition: all 0.5s ease-in-out;
+            @include sm {
+              font-size: 14px;
+            }
+          }
+        }
+        .desc {
+          color: #fff;
+          font-size: 18px;
+          font-weight: $weight_bold;
+          transition: all 0.5s ease-in-out;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          height: 26px;
+          @include md {
+            font-size: 16px;
+            height: 22px;
+          }
+          @include sm {
+            font-size: 14px;
+            -webkit-line-clamp: 2;
+            height: 38px;
+          }
+        }
+      }
+      .project-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 57px;
+        padding: 0 21px;
+        background-color: #fff;
+        color: $setting_primary_color;
+        border: 1.35px solid $setting_primary_color;
+        font-size: 16px;
+        font-weight: $weight_bold;
+        transition: all 0.5s ease-in-out;
+        @include sm {
+          font-size: 14px;
+          padding: 0 15px;
+          height: 47px;
+        }
+      }
+    }
+  }
+}
