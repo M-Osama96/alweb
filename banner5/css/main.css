@@ -349,6 +349,24 @@ iframe {
   position: relative;
   z-index: 1;
 }
+.banner .banner-cont .banner-imgs:not(:has(.second-img)) .banner-img {
+  width: 100%;
+  aspect-ratio: 418/300;
+}
+.banner .banner-cont .banner-imgs:not(:has(.second-img)) .imgs-l-svg {
+  inset-inline-end: 10%;
+  transform: rotate(-11deg);
+}
+html[dir=ltr] .banner .banner-cont .banner-imgs:not(:has(.second-img)) .imgs-l-svg {
+  transform: rotate(43deg) scale(-1);
+}
+.banner .banner-cont .banner-imgs:not(:has(.second-img)) .imgs-r-svg {
+  inset-inline-start: 10%;
+  transform: rotate(-11deg);
+}
+html[dir=ltr] .banner .banner-cont .banner-imgs:not(:has(.second-img)) .imgs-r-svg {
+  transform: rotate(43deg) scale(-1);
+}
 .banner .banner-cont .banner-imgs .imgs-l-svg {
   position: absolute;
   bottom: 20px;
@@ -377,6 +395,7 @@ html[dir=ltr] .banner .banner-cont .banner-imgs .imgs-r-svg {
 }
 .banner .banner-cont .banner-imgs .banner-img {
   aspect-ratio: 418/533;
+  width: 60%;
   overflow: hidden;
   position: relative;
   z-index: 2;

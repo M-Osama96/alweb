@@ -105,9 +105,25 @@
       justify-content: center;
       position: relative;
       z-index: 1;
-      @include md {
-      }
-      @include sm {
+      &:not(:has(.second-img)) {
+        .banner-img {
+          width: 100%;
+          aspect-ratio: 418/300;
+        }
+        .imgs-l-svg {
+          inset-inline-end: 10%;
+          transform: rotate(-11deg);
+          @include ltr {
+            transform: rotate(43deg) scale(-1);
+          }
+        }
+        .imgs-r-svg {
+          inset-inline-start: 10%;
+          transform: rotate(-11deg);
+          @include ltr {
+            transform: rotate(43deg) scale(-1);
+          }
+        }
       }
       .imgs-l-svg {
         position: absolute;
@@ -138,6 +154,7 @@
 
       .banner-img {
         aspect-ratio: 418/533;
+        width: 60%;
         overflow: hidden;
         position: relative;
         z-index: 2;
