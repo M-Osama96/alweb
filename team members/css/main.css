@@ -224,12 +224,14 @@ iframe {
 
 .team-members {
   padding: 70px 0;
-  position: relative;
 }
 @media (max-width: 991px) {
   .team-members {
     padding: 40px 0;
   }
+}
+.team-members {
+  position: relative;
 }
 .team-members::after {
   content: "";

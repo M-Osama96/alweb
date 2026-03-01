@@ -315,8 +315,7 @@ iframe {
   justify-content: center;
   gap: 12px;
   box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.0392156863);
-  -webkit-backdrop-filter: blur(8px);
-          backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   background-color: #fff;
   border-radius: 144px;
   padding: 16px 32px 16px 20px;

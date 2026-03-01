@@ -449,13 +449,15 @@ iframe {
   resize: none;
   min-height: 73px;
   color: rgb(14.1428571429, 77.7857142857, 172.8571428571);
-  padding-top: 5px;
 }
 .services-semicircle-form .services-semicircle-cont .form-cont .form-grid .textarea::-moz-placeholder {
   color: rgb(145, 185.5, 246);
 }
 .services-semicircle-form .services-semicircle-cont .form-cont .form-grid .textarea::placeholder {
   color: rgb(145, 185.5, 246);
+}
+.services-semicircle-form .services-semicircle-cont .form-cont .form-grid .textarea {
+  padding-top: 5px;
 }
 .services-semicircle-form .services-semicircle-cont .form-cont .form-grid .form-btn {
   font-size: 16px;

@@ -222,153 +222,169 @@ iframe {
   height: 100%;
 }
 
-.banner1 {
-  padding: 150px 0;
+.banner {
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(239.2857142857, 245.0714285714, 253.7142857143);
+  padding: 113px 0;
 }
 @media (max-width: 991px) {
-  .banner1 {
-    padding: 40px 0;
+  .banner {
+    padding: 60px 0;
   }
 }
-
-.banner1-cont {
-  display: flex;
-  background: linear-gradient(180deg, #1263dc 39.71%, rgb(8.3571428571, 45.9642857143, 102.1428571429) 101.93%);
-  border-radius: 24px;
-  overflow: hidden;
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline-start: -26%;
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: #fff;
+  border-radius: 50%;
 }
 @media (max-width: 767px) {
-  .banner1-cont {
-    flex-direction: column;
-    border-radius: 16px;
-    background: linear-gradient(0deg, #1263dc 39.71%, rgb(8.3571428571, 45.9642857143, 102.1428571429) 101.93%);
+  .banner::before {
+    display: none;
   }
 }
-.banner1-cont {
-  color: rgb(6.4285714286, 35.3571428571, 78.5714285714);
+.banner .container {
+  max-width: 1300px;
 }
-
-.banner-info {
-  width: 46%;
+.banner .banner-cont {
+  position: relative;
+  display: grid;
+  grid-template-columns: 467px 1fr;
+  -moz-column-gap: 88px;
+       column-gap: 88px;
+}
+@media (max-width: 1199px) {
+  .banner .banner-cont {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .banner .banner-cont {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+}
+.banner .banner-cont .banner-info {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  padding: 20px 77px 20px 15px;
+  gap: 32px;
+  position: relative;
+  z-index: 3;
 }
 @media (max-width: 991px) {
-  .banner-info {
-    padding: 20px;
+  .banner .banner-cont .banner-info {
+    gap: 20px;
   }
 }
-@media (max-width: 767px) {
-  .banner-info {
-    width: 100%;
-  }
-}
-.banner-info .offers {
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1607843137);
-  border: 1px solid #fce1b3;
-  background: #fffaf3;
-  color: #f59e0b;
-  padding: 2px 14px;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 29px;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin-bottom: 12px;
-}
-@media (max-width: 991px) {
-  .banner-info .offers {
-    font-size: 14px;
-  }
-}
-.banner-info .banner-title {
-  color: #fff;
-  font-size: 32px;
+.banner .banner-cont .banner-info .title {
+  margin: 0;
+  font-size: 56px;
   font-weight: 700;
-  margin-bottom: 16px;
+  color: rgb(6.4285714286, 35.3571428571, 78.5714285714);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 304px;
 }
 @media (max-width: 1199px) {
-  .banner-info .banner-title {
-    font-size: 26px;
+  .banner .banner-cont .banner-info .title {
+    font-size: 40px;
+    max-height: 224px;
   }
 }
 @media (max-width: 991px) {
-  .banner-info .banner-title {
-    font-size: 22px;
-    margin-bottom: 10px;
+  .banner .banner-cont .banner-info .title {
+    font-size: 32px;
+    max-height: 137px;
+    -webkit-line-clamp: 3;
   }
 }
-@media (max-width: 767px) {
-  .banner-info .banner-title {
-    font-size: 20px;
-  }
-}
-.banner-info .banner-desc {
-  color: #f6f9ff;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 32px;
-}
-@media (max-width: 991px) {
-  .banner-info .banner-desc {
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-}
-.banner-info .banner-btn {
+.banner .banner-cont .banner-info .banner-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 49px;
-  border-radius: 16px;
-  background-color: #fff;
-  color: #1263dc;
-  padding: 0;
   width: 100%;
+  border-radius: 16px;
+  color: #fff;
   font-size: 16px;
-  font-weight: 500;
-  border: 2px solid #fff;
+  font-weight: 700;
+  background-color: #1263dc;
   transition: all 0.4s ease-in-out;
 }
-.banner-info .banner-btn:hover {
-  background-color: #1263dc;
-  color: #fff;
+@media (max-width: 1199px) {
+  .banner .banner-cont .banner-info .banner-btn {
+    max-width: calc(100% - 40px);
+  }
 }
 @media (max-width: 991px) {
-  .banner-info .banner-btn {
-    height: 40px;
-    border-radius: 10px;
+  .banner .banner-cont .banner-info .banner-btn {
+    height: 42px;
+    max-width: calc(100% - 20px);
+    border-radius: 12px;
   }
-}
-
-.banner-img {
-  width: 54%;
-  aspect-ratio: 608/544;
-  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
-  overflow: hidden;
-  background-color: #1263dc;
-  padding: 6px;
 }
 @media (max-width: 767px) {
-  .banner-img {
-    width: 100%;
-    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+  .banner .banner-cont .banner-info .banner-btn {
+    max-width: 100%;
   }
 }
-.banner-img .img-cover {
+.banner .banner-cont .banner-info .banner-btn:hover {
+  background-color: #fa8f21;
+}
+.banner .banner-cont .banner-imgs {
   display: flex;
-  clip-path: polygon(0 0, 100% 0%, 85% 100%, 0% 100%);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
-@media (max-width: 767px) {
-  .banner-img .img-cover {
-    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 0;
-  }
+.banner .banner-cont .banner-imgs .imgs-l-svg {
+  position: absolute;
+  bottom: 20px;
+  inset-inline-end: 0px;
+  width: 19%;
+  height: 38%;
+}
+html[dir=ltr] .banner .banner-cont .banner-imgs .imgs-l-svg {
+  transform: rotate(32deg) scale(-1);
+}
+.banner .banner-cont .banner-imgs .imgs-l-svg .svg-color {
+  color: #fa8f21;
+}
+.banner .banner-cont .banner-imgs .imgs-r-svg {
+  position: absolute;
+  top: 20px;
+  inset-inline-start: 0px;
+  width: 19%;
+  height: 38%;
+}
+html[dir=ltr] .banner .banner-cont .banner-imgs .imgs-r-svg {
+  transform: rotate(32deg) scale(-1);
+}
+.banner .banner-cont .banner-imgs .imgs-r-svg .svg-color {
+  color: #1263dc;
+}
+.banner .banner-cont .banner-imgs .banner-img {
+  aspect-ratio: 418/533;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  clip-path: polygon(0 0, 64% 0, 100% 100%, 36% 100%);
+}
+.banner .banner-cont .banner-imgs .banner-img:nth-of-type(2) {
+  margin-inline-start: -20%;
+}
+html[dir=ltr] .banner .banner-cont .banner-imgs .banner-img {
+  clip-path: polygon(36% 0%, 100% 0%, 64% 100%, 0% 100%);
 }/*# sourceMappingURL=main.css.map */

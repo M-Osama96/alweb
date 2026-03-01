@@ -298,8 +298,7 @@ iframe {
 .tabs .distinations .tablist-box {
   padding: 32px;
   background: rgba(14, 79, 176, 0.3);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   border-radius: 48px;
   border: 1px solid rgba(14, 79, 176, 0.3019607843);
   overflow: hidden;

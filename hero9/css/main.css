@@ -417,8 +417,7 @@ iframe {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.0784313725);
   border-radius: 16px;
   z-index: 2;
-  -webkit-backdrop-filter: blur(2px);
-          backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
 }
 @media (max-width: 767px) {
   .hero9-imgs .hero9-imgs-cont .expirence-sq {

@@ -258,8 +258,7 @@ iframe {
   padding: 44px 66px;
   max-width: 626px;
   background-color: rgba(18, 99, 220, 0.6);
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   border-radius: 16px;
 }
 @media (max-width: 1199px) {
@@ -280,8 +279,7 @@ iframe {
     right: 0;
     height: 100%;
     background-color: rgba(18, 99, 220, 0.2);
-    -webkit-backdrop-filter: unset;
-            backdrop-filter: unset;
+    backdrop-filter: unset;
   }
 }
 .contact-cont .contact-box .contact-text {
