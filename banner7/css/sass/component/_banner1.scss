@@ -1,0 +1,205 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;
+  background-color: lighten($setting_primary_color, $amount: 45%);
+  @include md {
+    min-height: 600px;
+  }
+  @include sm {
+    min-height: 450px;
+  }
+  @include xs {
+    padding-bottom: 40px;
+  }
+
+  .container {
+    max-width: 1340px;
+  }
+  .banner-cont {
+    position: relative;
+    display: grid;
+    grid-template-columns: 504px 1fr;
+    column-gap: 150px;
+    padding-top: 80px;
+    @include md {
+      grid-template-columns: 5fr 7fr;
+      column-gap: 40px;
+    }
+    @include sm {
+    }
+    @include xs {
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .discount {
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      max-width: 148px;
+      height: fit-content;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 26px 20px 20px;
+      border-end-end-radius: 88px;
+      border-end-start-radius: 88px;
+      z-index: 3;
+      @include sm {
+        padding: 16px 12px 12px;
+        gap: 8px;
+        max-width: 110px;
+      }
+      .d-text {
+        font-size: 20px;
+        font-weight: $weight_bold;
+        color: #f40126;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-height: 52px;
+        @include sm {
+          font-size: 16px;
+          max-height: 45px;
+        }
+      }
+      .d-per {
+        width: 112px;
+        height: 112px;
+        background-color: #f40126;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 40px;
+        font-weight: $weight_bold;
+        border: 4px solid #fcb0bc;
+        @include sm {
+          font-size: 30px;
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+
+    .banner-info {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      justify-content: center;
+      padding-top: 170px;
+      gap: 16px;
+      position: relative;
+      z-index: 3;
+      @include sm {
+        padding-top: 110px;
+      }
+      @include xs {
+        padding-top: 90px;
+      }
+      .title {
+        margin: 0;
+        font-size: 48px;
+        font-weight: $weight_bold;
+        color: darken($setting_primary_color, $amount: 30%);
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-height: 205px;
+        @include md {
+          font-size: 32px;
+          max-height: 140px;
+        }
+        @include sm {
+          font-size: 28px;
+          max-height: 120px;
+        }
+      }
+
+      .banner-btn {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 49px;
+        max-width: 345px;
+        border-radius: 160px;
+        font-size: 16px;
+        font-weight: $weight_bold;
+
+        transition: all 0.4s ease-in-out;
+        background-color: $setting_primary_color;
+        color: #fff;
+        @include sm {
+          height: 45px;
+          margin-top: 0;
+        }
+        @include xs {
+          max-width: 100%;
+        }
+        &:hover {
+          background-color: $setting_secondary_color;
+        }
+      }
+    }
+    .banner-imgs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      @include xs {
+        display: none;
+      }
+    }
+  }
+  .banner-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .first-img {
+    width: 60%;
+    max-width: 1100px;
+    // aspect-ratio: 862/740;
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 2;
+    border-end-start-radius: 100%;
+    border-inline-start: 32px solid $setting_secondary_color;
+    border-bottom: 32px solid $setting_secondary_color;
+    height: 105%;
+    @include md {
+      height: 105%;
+      // aspect-ratio: unset;
+    }
+    @include xs {
+      position: relative;
+      border-radius: 50%;
+      width: calc(100% - 40px);
+      margin: auto;
+      aspect-ratio: 1;
+      height: unset;
+      border: 32px solid $setting_secondary_color;
+    }
+    .img-cover {
+    }
+
+    .svg-color {
+      color: $setting_primary_color;
+    }
+  }
+}
