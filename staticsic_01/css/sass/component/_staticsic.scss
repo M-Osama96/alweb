@@ -1,0 +1,210 @@
+.staticsic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  padding: 100px 20px;
+  @include sm {
+    gap: 20px;
+    padding: 50px 20px;
+  }
+
+  .bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba($setting_primary_color, 0.8) 0%,
+        rgba($setting_secondary_color, 0.8) 100%
+      );
+    }
+  }
+  .title {
+    color: #fff;
+    font-size: 48px;
+    font-weight: $weight_bold;
+    margin: 0;
+    z-index: 2;
+    @include sm {
+      font-size: 38px;
+    }
+  }
+  .staticsic-grid {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1252px;
+    padding: 40px 16px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    @include md {
+      padding: 20px 16px;
+    }
+    @include sm {
+      padding: 20px 0;
+    }
+    @include xs {
+      grid-template-columns: 1fr 1fr;
+    }
+    .staticsic-item {
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      position: relative;
+      @include md {
+        padding: 20px 25px;
+      }
+      @include sm {
+        padding: 15px 20px;
+        gap: 20px;
+      }
+      @include xs {
+        width: 50%;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        inset-inline-end: 0px;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        inset-inline-end: 0px;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        display: none;
+        @include xs {
+          display: block;
+        }
+      }
+      &:nth-of-type(5n) {
+        &::after {
+          display: none;
+          @include xs {
+            display: block;
+          }
+        }
+        &::before {
+          display: none;
+        }
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+        &::before {
+          display: none;
+        }
+      }
+
+      &:nth-of-type(2n + 2) {
+        @include xs {
+          &::after {
+            display: none;
+          }
+        }
+      }
+
+      &:nth-of-type(odd):nth-last-of-type(2)::before {
+        display: none;
+      }
+      .num {
+        margin: 0;
+        font-size: 72px;
+        font-weight: $weight_bold;
+        color: #fff;
+        line-height: 1;
+        transition: all 0.5s ease-in-out;
+        -webkit-text-stroke: 2px #fff;
+        @include md {
+          font-size: 50px;
+        }
+        @include sm {
+          font-size: 40px;
+        }
+      }
+      .type-line {
+        display: flex;
+        gap: 3px;
+        transition: all 0.5s ease-in-out;
+
+        .las {
+          color: #fff;
+          font-size: 32px;
+          @include md {
+            font-size: 28px;
+          }
+          @include sm {
+            font-size: 24px;
+          }
+        }
+        .type-text {
+          color: #fff;
+          font-size: 21px;
+          font-weight: $weight_medium;
+          transform: translateY(4px);
+          @include md {
+            font-size: 18px;
+          }
+          @include sm {
+            font-size: 14px;
+          }
+        }
+      }
+      &:hover {
+        .num {
+          -webkit-text-stroke: 2px $setting_primary_color;
+          text-shadow: 0 8px 4px rgba(0, 0, 0, 0.4);
+          transform: translateY(10px);
+          @include sm {
+            transform: translateY(7px);
+          }
+        }
+        .type-line {
+          transform: translateY(-10px);
+          @include sm {
+            transform: translateY(-7px);
+          }
+        }
+      }
+    }
+  }
+}
