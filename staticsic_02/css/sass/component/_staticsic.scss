@@ -1,0 +1,211 @@
+.staticsic {
+  position: relative;
+
+  padding: 100px 0px;
+  background: radial-gradient(
+    76.02% 40.43% at 50% 59.57%,
+    darken($setting_primary_color, 40%) 0%,
+    darken($setting_primary_color, 41%) 100%
+  );
+
+  @include sm {
+    padding: 50px 20px;
+  }
+
+  .bg-img {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .staticsic-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    .title {
+      color: #fff;
+      font-size: 48px;
+      font-weight: $weight_bold;
+      margin: 0;
+      z-index: 2;
+      @include sm {
+        font-size: 38px;
+      }
+      @include xs {
+        font-size: 32px;
+      }
+    }
+    .desc {
+      color: #fff;
+      font-size: 18px;
+      font-weight: $weight_regular;
+      margin: 0;
+      z-index: 2;
+      text-align: center;
+      max-width: 648px;
+      @include sm {
+        font-size: 16px;
+      }
+      @include xs {
+        font-size: 14px;
+      }
+    }
+    .staticsic-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      width: 100%;
+      @include md {
+      }
+      @include sm {
+        margin-top: 10px;
+        gap: 10px;
+      }
+      @include xs {
+        grid-template-columns: 1fr 1fr;
+      }
+      .staticsic-item {
+        background: linear-gradient(
+          180deg,
+          $setting_primary_color 0%,
+          darken($setting_primary_color, 40%) 100%
+        );
+        background: linear-gradient(
+          180deg,
+          $setting_primary_color 0%,
+          darken($setting_primary_color, 40%) 100%
+        );
+        padding: 1px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+        .inner-item {
+          background: linear-gradient(
+            180deg,
+            rgba($setting_primary_color, 0.1) 0%,
+            darken($setting_primary_color, 40%) 100%
+          );
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          color: #fff;
+          height: 100%;
+          padding: 30px;
+          display: flex;
+          flex-direction: column;
+          transition: all 0.4s ease-in-out;
+          position: relative;
+          @include sm {
+            padding: 15px;
+          }
+          &::before {
+            content: "";
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(
+              180deg,
+              darken($setting_primary_color, 40%) 0%,
+              darken($setting_primary_color, 40%) 100%
+            );
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            z-index: 0;
+            opacity: 1;
+            transition: all 0.4s ease-in-out;
+          }
+          .las {
+            font-size: 33px;
+            color: $setting_primary_color;
+            margin-bottom: 12px;
+            width: fit-content;
+            transition: all 0.6s ease-in-out;
+            z-index: 1;
+            @include sm {
+              font-size: 30px;
+            }
+          }
+          .type-text {
+            font-size: 18px;
+            font-weight: $weight_light;
+            color: lighten($setting_primary_color, 45%);
+            margin-bottom: 24px;
+            transition: all 0.4s ease-in-out;
+            z-index: 1;
+            @include sm {
+              font-size: 16px;
+            }
+            @include xs {
+              font-size: 14px;
+            }
+          }
+          .num {
+            font-size: 32px;
+            font-weight: $weight_bold;
+            color: #fff;
+            margin-bottom: 0;
+            transition: all 0.6s ease-in-out;
+            height: 63px;
+            z-index: 1;
+            @include sm {
+              font-size: 26px;
+            }
+            @include xs {
+              font-size: 20px;
+            }
+          }
+        }
+        &:nth-of-type(2n) {
+          background: linear-gradient(
+            180deg,
+            $setting_secondary_color 0%,
+            darken($setting_primary_color, 40%) 100%
+          );
+
+          .las {
+            color: $setting_secondary_color;
+          }
+          &:hover {
+            .las {
+              color: lighten($setting_secondary_color, $amount: 30%);
+            }
+          }
+        }
+        &:hover {
+          .inner-item {
+            &::before {
+              opacity: 0;
+            }
+          }
+          .las {
+            transform: translateY(-5px) rotate(180deg);
+            color: lighten($setting_primary_color, $amount: 30%);
+          }
+          .type-text {
+            transform: translateY(-8px) scale(1.02);
+          }
+          .num {
+            font-size: 48px;
+            @include md {
+              font-size: 42px;
+            }
+            @include sm {
+              font-size: 32px;
+            }
+            @include xs {
+              font-size: 26px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
