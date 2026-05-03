@@ -1,0 +1,211 @@
+.staticsic {
+  position: relative;
+
+  padding: 100px 0px;
+  background: lighten($setting_primary_color, 50%);
+
+  @include sm {
+    padding: 50px 0px;
+  }
+
+  .bg-img {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .staticsic-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 97px 75px;
+    background: #fff;
+    border-radius: 24px;
+    @include md {
+      padding: 50px 30px;
+    }
+    @include sm {
+      padding: 30px 20px;
+      border-radius: 16px;
+    }
+    @include xs {
+      flex-direction: column;
+      padding: 20px 15px;
+      gap: 20px;
+    }
+    .info {
+      max-width: 39%;
+      @include xs {
+        max-width: 100%;
+      }
+      .title {
+        color: #000;
+        font-size: 48px;
+        font-weight: $weight_bold;
+        margin: 0;
+        z-index: 2;
+        @include sm {
+          font-size: 38px;
+        }
+        @include xs {
+          font-size: 32px;
+          text-align: center;
+        }
+      }
+      .desc {
+        color: $setting_text_color;
+        font-size: 18px;
+        font-weight: $weight_regular;
+        margin: 32px 0 0;
+        z-index: 2;
+        max-width: 648px;
+        @include sm {
+          font-size: 14px;
+          margin: 20px 0 0;
+        }
+        @include xs {
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+    }
+    .staticsic-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 50%;
+      @include md {
+        width: 56%;
+      }
+      @include sm {
+        width: 58%;
+        gap: 10px;
+      }
+      @include xs {
+        width: 100%;
+      }
+      .staticsic-item {
+        border-radius: 16px;
+        border: 1px solid lighten($setting_secondary_color, 40%);
+        padding: 32px 22px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(4px);
+        background: linear-gradient(
+          233.95deg,
+          rgba(lighten($setting_secondary_color, 10%), 0.2) 0%,
+          rgba(lighten($setting_secondary_color, 10%), 0.002) 43.8%
+        );
+        @include sm {
+          padding: 20px 15px;
+          border-radius: 10px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+
+          background: linear-gradient(
+            240.4deg,
+            rgba($setting_secondary_color, 0.2) 50.28%,
+            rgba($setting_secondary_color, 0.002) 97.72%
+          );
+
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          transform: translate(50%, -50%);
+          transition: all 0.6s ease-in-out;
+          opacity: 0;
+        }
+
+        .icon-plus-type {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 24px;
+          @include sm {
+            margin-top: 15px;
+          }
+          @include xs {
+            flex-direction: column-reverse;
+            gap: 15px;
+            align-items: flex-start;
+          }
+          .las {
+            font-size: 33px;
+            color: $setting_secondary_color;
+            width: fit-content;
+            transition: all 0.6s ease-in-out;
+            z-index: 1;
+            @include sm {
+              font-size: 30px;
+            }
+          }
+          .type-text {
+            font-size: 18px;
+            font-weight: $weight_light;
+            color: $setting_text_color;
+            transition: all 0.4s ease-in-out;
+            z-index: 1;
+            @include md {
+              font-size: 16px;
+            }
+            @include xs {
+              font-size: 14px;
+            }
+          }
+        }
+        .num {
+          font-size: 48px;
+          font-weight: $weight_bold;
+          color: #000;
+          margin-bottom: 0;
+          transition: all 0.6s ease-in-out;
+          height: 63px;
+          z-index: 1;
+          @include md {
+            font-size: 38px;
+          }
+          @include sm {
+            font-size: 26px;
+            height: fit-content;
+          }
+          @include xs {
+            font-size: 20px;
+          }
+        }
+        &:nth-of-type(2n) {
+          border: 1px solid lighten($setting_primary_color, 40%);
+          background: linear-gradient(
+            233.95deg,
+            rgba(lighten($setting_primary_color, 10%), 0.2) 0%,
+            rgba(lighten($setting_primary_color, 10%), 0.002) 43.8%
+          );
+          &::after {
+            background: linear-gradient(
+              240.4deg,
+              rgba($setting_primary_color, 0.2) 50.28%,
+              rgba($setting_primary_color, 0.002) 97.72%
+            );
+          }
+
+          .las {
+            color: $setting_primary_color;
+          }
+        }
+        &:hover {
+          &::after {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
