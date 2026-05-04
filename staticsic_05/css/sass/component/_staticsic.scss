@@ -1,0 +1,199 @@
+.staticsic {
+  position: relative;
+
+  padding: 100px 0px 150px 0px;
+
+  background: linear-gradient(
+    180deg,
+    lighten($setting_primary_color, 35%) 0%,
+    lighten($setting_secondary_color, 30%) 100%
+  );
+
+  @include sm {
+    padding: 50px 0px 100px 0px;
+  }
+  &.square {
+    &::before {
+      border-top-left-radius: 40px;
+      height: 15%;
+      @include xs {
+        height: 10%;
+      }
+    }
+    &::after {
+      border-bottom-right-radius: 40px;
+      height: 15%;
+      @include xs {
+        height: 10%;
+      }
+    }
+
+    .staticsic-cont {
+      .staticsic-grid {
+        .staticsic-item {
+          border-radius: 16px;
+        }
+      }
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15%;
+    height: 24%;
+    background: linear-gradient(
+      126.76deg,
+      rgba(255, 255, 255, 0.5) 26.92%,
+      rgba(255, 255, 255, 0.5) 102.28%
+    );
+    border-top-left-radius: 164px;
+    @include xs {
+      width: 25%;
+      height: 15%;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 24%;
+    background: linear-gradient(
+      126.76deg,
+      rgba(255, 255, 255, 0.5) 26.92%,
+      rgba(255, 255, 255, 0.5) 102.28%
+    );
+    border-bottom-right-radius: 164px;
+    @include xs {
+      width: 25%;
+      height: 15%;
+    }
+  }
+  .staticsic-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    .title {
+      color: darken($setting_text_color, 10%);
+      font-size: 48px;
+      font-weight: $weight_bold;
+      margin: 0;
+      z-index: 2;
+      @include sm {
+        font-size: 38px;
+      }
+      @include xs {
+        font-size: 32px;
+      }
+    }
+    .desc {
+      color: $setting_text_color;
+      font-size: 18px;
+      font-weight: $weight_regular;
+      margin: 0;
+      z-index: 2;
+      text-align: center;
+      max-width: 648px;
+      @include sm {
+        font-size: 16px;
+      }
+      @include xs {
+        font-size: 14px;
+      }
+    }
+    .staticsic-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      width: 100%;
+      @include md {
+      }
+      @include sm {
+        margin-top: 10px;
+        gap: 10px;
+      }
+      @include xs {
+        grid-template-columns: 1fr 1fr;
+      }
+      .staticsic-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+        background: #ffffff80;
+        transition: all 0.4s ease-in-out;
+
+        .las {
+          font-size: 33px;
+          color: $setting_secondary_color;
+          width: fit-content;
+          transition: all 0.4s ease-in-out;
+          z-index: 1;
+          @include sm {
+            font-size: 28px;
+          }
+        }
+        .type-text {
+          font-size: 18px;
+          font-weight: $weight_bold;
+          color: $setting_text_color;
+          margin-bottom: 24px;
+          transition: all 0.4s ease-in-out;
+          z-index: 1;
+          @include sm {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+        }
+        .num {
+          font-size: 48px;
+          font-weight: $weight_bold;
+          color: darken($setting_text_color, 10%);
+          margin-bottom: 0;
+          transition: all 0.5s ease-in-out;
+          line-height: 1.2;
+          z-index: 1;
+          @include md {
+            font-size: 40px;
+          }
+          @include sm {
+            font-size: 26px;
+          }
+        }
+        &:hover {
+          background: #ffffff;
+          .las {
+            transform: translateY(-15px);
+            @include sm {
+              transform: translateY(-10px);
+            }
+          }
+          .type-text {
+            transform: translateY(-15px);
+            @include sm {
+              transform: translateY(-10px);
+            }
+          }
+          .num {
+            transform: scale(1.3) translateY(-10px);
+            @include sm {
+              transform: scale(1.2) translateY(-6px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
