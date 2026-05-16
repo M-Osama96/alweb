@@ -1,0 +1,362 @@
+.jobs {
+  padding: 70px 0;
+  background: linear-gradient(
+    105.88deg,
+    lighten($setting_primary_color, $amount: 45%) 0%,
+    lighten($setting_secondary_color, $amount: 45%) 100%
+  );
+
+  @include sm {
+    padding: 40px 0;
+  }
+  .jobs-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+
+    .jobs-items {
+      .title {
+        font-size: 32px;
+        font-weight: $weight_bold;
+        color: $setting_text_color;
+        margin-bottom: 32px;
+        @include sm {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+        @include xs {
+          font-size: 24px;
+        }
+      }
+      .jobs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        @include xs {
+          grid-template-columns: 1fr;
+        }
+        .job {
+          border-radius: 16px;
+          background: #ffffffb2;
+          border: 2px solid #ffffff;
+          backdrop-filter: blur(6px);
+          padding: 20px 29px;
+          transition: all 0.4s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          @include sm {
+            padding: 15px 20px;
+            border-radius: 10px;
+          }
+          @include xs {
+            padding: 15px 10px 10px;
+          }
+          .job-title {
+            font-size: 20px;
+            color: $setting_text_color;
+            font-weight: $weight_bold;
+            margin: 0;
+            transition: all 0.4s ease-in-out;
+            transform: translateY(9px);
+            @include sm {
+              font-size: 18px;
+            }
+          }
+          .desc {
+            margin: 0;
+            font-size: 16px;
+            color: lighten($setting_text_color, $amount: 10%);
+            font-weight: $weight_regular;
+            transition: all 0.4s ease-in-out;
+            transform: translateY(21px);
+            @include sm {
+              font-size: 14px;
+            }
+          }
+          .advs-box {
+            display: flex;
+            gap: 4px;
+            flex-direction: column;
+            align-items: start;
+            transition: all 0.4s ease-in-out;
+            transform: translateY(33px);
+
+            .advs-line {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+
+              .check-icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                border: 1px solid #22c55d;
+                width: 13px;
+                height: 13px;
+                flex-shrink: 0;
+
+                i {
+                  color: #22c55d;
+                  font-size: 8px;
+                }
+              }
+              .advs-p {
+                margin: 0;
+                font-size: 16px;
+                font-weight: $weight-light;
+                color: lighten($setting_text_color, $amount: 10%);
+                @include sm {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+          .apply-btn {
+            margin: 0;
+            width: 100%;
+            border: 2px solid $setting_primary_color;
+            border-radius: 8px;
+            height: 49px;
+            font-size: 16px;
+            font-weight: $weight-bold;
+            color: $setting_primary_color;
+            transition: all 0.4s ease-in-out;
+            transform: translateY(33px);
+            opacity: 0;
+            visibility: hidden;
+            @include sm {
+              height: 40px;
+            }
+          }
+          &:hover {
+            background: #ffffff;
+            .job-title {
+              transform: translateY(0);
+            }
+            .desc {
+              transform: translateY(0);
+            }
+            .advs-box {
+              transform: translateY(0);
+            }
+            .apply-btn {
+              transform: translateY(0);
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+    .form-cont {
+      width: 100%;
+      height: fit-content;
+      @include sm {
+      }
+      @include xs {
+        position: relative;
+      }
+      .form-title {
+        font-size: 32px;
+        font-weight: $weight-bold;
+        margin-bottom: 30px;
+
+        color: $setting_text_color;
+        @include sm {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+        @include xs {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+      }
+      .form-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        @include xs {
+          grid-template-columns: 1fr;
+        }
+        .form-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          max-width: 100%;
+          @include sm {
+            gap: 10px;
+          }
+          .form-group {
+            position: relative;
+          }
+
+          .form-group .form-control,
+          .textarea {
+            width: 100%;
+            height: 48px;
+            padding: 13px 16px 8px;
+            font-size: 16px;
+            font-weight: $weight_light;
+            color: darken($setting_primary_color, $amount: 20%);
+            transition: all 0.4s ease-in-out;
+            border: 1px solid lighten($setting_primary_color, $amount: 45%);
+            border-radius: 8px;
+            @include sm {
+              border-radius: 6px;
+            }
+            @include xxs {
+              font-size: 16px;
+            }
+          }
+          .form-group {
+            .select {
+              width: 100%;
+              height: 48px;
+              padding: 0 16px;
+              display: flex;
+              align-items: center;
+              font-size: 16px;
+              font-weight: $weight_light;
+              color: darken($setting_primary_color, $amount: 20%);
+              transition: all 0.4s ease-in-out;
+              border: 1px solid rgba($color: $setting_text_color, $alpha: 0.1);
+              border-radius: 8px;
+              &:invalid {
+                color: $setting_text_color;
+              }
+
+              &:valid {
+                color: darken($setting_primary_color, $amount: 20%);
+                border-color: lighten($setting_primary_color, $amount: 30%);
+              }
+            }
+            .a-header-icon {
+              position: absolute;
+              inset-inline-end: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 32px;
+              height: 32px;
+              aspect-ratio: 1;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 4px;
+              background-color: lighten(
+                $color: $setting_primary_color,
+                $amount: 50%
+              );
+              border: 1px solid
+                lighten($color: $setting_primary_color, $amount: 40%);
+              @include sm {
+                width: 28px;
+                height: 28px;
+              }
+              i {
+                color: $setting_primary_color;
+                font-size: 16px;
+                font-weight: $weight_bold;
+                transition: all 0.5s ease;
+              }
+            }
+          }
+
+          .form-group .form-label {
+            position: absolute;
+            top: 50%;
+            inset-inline-start: 12px;
+            transform: translateY(-50%);
+            color: lighten($color: $setting_text_color, $amount: 10%);
+
+            padding: 0 8px;
+            font-size: 16px;
+            font-weight: $weight_light;
+            pointer-events: none;
+            transition: all 0.4s ease-in-out;
+          }
+
+          .form-group .form-control:focus + .form-label,
+          .form-group .form-control:not(:placeholder-shown) + .form-label {
+            top: 18px;
+            font-size: 14px;
+            background-color: transparent;
+            color: $setting_text_color;
+          }
+          .form-group .form-control:focus,
+          .form-group .form-control:not(:placeholder-shown) {
+            border-color: lighten($setting_primary_color, 30%);
+            height: 57px;
+            padding-top: 30px;
+            box-shadow: 0px 4px 12px 0px #00000005;
+          }
+        }
+        .form-group {
+          position: relative;
+          .form-label {
+            position: absolute;
+            top: 24px;
+            inset-inline-start: 28px;
+            color: lighten($color: $setting_text_color, $amount: 10%);
+
+            font-size: 16px;
+            font-weight: $weight_light;
+            pointer-events: none;
+            transition: all 0.4s ease-in-out;
+            @include xs {
+              top: 18px;
+              inset-inline-start: 16px;
+            }
+          }
+          textarea {
+            resize: none;
+            min-height: 100%;
+            width: 100%;
+            padding: 44px 28px 24px;
+            border-radius: 8px;
+            border: 1px solid lighten($setting_primary_color, $amount: 45%);
+            color: darken($setting_primary_color, $amount: 30%);
+            font-size: 14px;
+            font-weight: $weight_light;
+            transition: all 0.4s ease-in-out;
+            @include xs {
+              aspect-ratio: 1.5;
+              padding: 38px 16px 16px;
+            }
+            &::placeholder {
+              color: $setting_text_color;
+              font-size: 14px;
+              font-weight: $weight_light;
+            }
+
+            &:focus,
+            &:not(:placeholder-shown) {
+              border-color: lighten($setting_primary_color, 30%);
+              box-shadow: 0px 4px 12px 0px #00000005;
+            }
+          }
+        }
+      }
+      .form-btn {
+        background: linear-gradient(
+          270deg,
+          darken($setting_primary_color, 20%) 0%,
+          $setting_primary_color 100%
+        );
+        width: 100%;
+        height: 48px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: $weight-bold;
+        border: 1px solid $setting_primary_color;
+        border-radius: 8px;
+        transition: all 0.4s ease-in-out;
+        margin-top: 24px;
+        &:hover {
+        }
+      }
+    }
+  }
+}

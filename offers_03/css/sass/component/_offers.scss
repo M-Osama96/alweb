@@ -1,0 +1,250 @@
+.offers {
+  padding: 70px 0;
+  position: relative;
+  @include sm {
+    padding: 35px 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    inset-inline-end: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 572px;
+    height: calc(100% - 60px);
+    background-color: lighten($setting_primary_color, $amount: 50%);
+    z-index: -2;
+    @include ltr {
+      transform: translateX(50%);
+    }
+    @include sm {
+      top: 15px;
+      height: calc(100% - 30px);
+    }
+    @include xs {
+      // display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+  }
+  .offers-cont {
+    .title {
+      margin: 0 0 75px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      @include sm {
+        font-size: 34px;
+        margin: 0 0 20px;
+      }
+      @include xs {
+        font-size: 28px;
+        margin: 0 0 30px;
+      }
+    }
+    .offers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      @include sm {
+        gap: 10px;
+      }
+      @include xs {
+        gap: 20px;
+      }
+      .outer-item {
+        width: calc(25% - 15px);
+        @include sm {
+          width: calc(33% - 5px);
+          margin-top: 40px;
+        }
+        @include xs {
+          width: calc(50% - 10px);
+        }
+        @include xxs {
+          width: 100%;
+          max-width: 300px;
+          margin-top: 40px;
+        }
+        .offers-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          aspect-ratio: 340/500;
+          position: relative;
+          z-index: 1;
+
+          @include md {
+          }
+          @include xs {
+          }
+
+          .discount {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            inset-inline-start: 50%;
+            transform: translate(50%, -50%);
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f40126;
+            border-radius: 50%;
+            font-size: 20px;
+            font-weight: $weight_bold;
+            color: #fff;
+            z-index: 2;
+            transition: all 0.5s ease;
+            border: 2.38px solid #fcb0bc;
+            @include ltr {
+              transform: translate(-50%, -50%);
+            }
+            .img-cover {
+              position: absolute;
+              top: -10px;
+              inset-inline-end: -10px;
+              width: calc(100% + 20px);
+              height: calc(100% + 20px);
+              z-index: -1;
+              opacity: 0;
+              visibility: hidden;
+              transition:
+                opacity 0.5s ease,
+                visibility 0.5s ease,
+                transform 1.6s ease;
+            }
+          }
+          .info {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 17px;
+            transform: translateY(-52px);
+            transition: all 0.5s ease;
+            .item-title {
+              font-size: 19px;
+              font-weight: $weight_bold;
+              color: #fff;
+              margin: 0 0 12px;
+              text-align: center;
+
+              @include md {
+                font-size: 16px;
+              }
+            }
+
+            .discover-btn {
+              height: 40px;
+              width: fit-content;
+              padding: 0 19px;
+              background-color: $setting_primary_color;
+              align-items: center;
+              display: flex;
+              border: 1.32px solid #ffffff;
+              color: #fff;
+              font-size: 16px;
+              font-weight: $weight_bold;
+              transition: all 0.5s ease-in-out;
+            }
+          }
+
+          .Circle-Cut-img {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            --r: 45px; /* cut size */
+            mask: radial-gradient(
+              var(--r) at top,
+              #0000 calc(100% - 1px),
+              #000
+            );
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              z-index: 2;
+              --r: 45px; /* cut size */
+              mask: radial-gradient(
+                var(--r) at top,
+                #0000 calc(100% - 1px),
+                #000
+              );
+              background: linear-gradient(
+                180deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                $setting_primary_color 77.55%
+              );
+            }
+            .img-cover {
+              transition: all 0.5s ease;
+              z-index: 0;
+            }
+          }
+        }
+        .sale-cont {
+          z-index: 1;
+          width: 100%;
+          height: 77px;
+          .sale {
+            width: 100%;
+            height: fit-content;
+            background-color: darken($setting_primary_color, $amount: 20%);
+            display: flex;
+            height: 31px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 18px;
+            font-weight: $weight_bold;
+            transition: all 0.5s ease;
+          }
+        }
+        &:hover {
+          .sale-cont {
+            .sale {
+              background-color: darken($setting_primary_color, $amount: 30%);
+              height: 100%;
+            }
+          }
+          .offers-item {
+            .discount {
+              transform: translate(50%, -50%) rotate(-20deg);
+              .img-cover {
+                opacity: 1;
+                visibility: visible;
+                transform: rotate(-180deg);
+              }
+            }
+            .info {
+              transform: translateY(-24px);
+              .discover-btn {
+                background-color: #fff;
+                color: $setting_primary_color;
+              }
+            }
+            .Circle-Cut-img {
+              .img-cover {
+                transform: scale(1.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
