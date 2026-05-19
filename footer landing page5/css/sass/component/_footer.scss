@@ -1,0 +1,221 @@
+.footer-multi-pages {
+  padding-top: 75px;
+  position: relative;
+  overflow: hidden;
+  @include sm {
+    padding-top: 40px;
+  }
+
+  .bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: linear-gradient(
+        180deg,
+        #010c1b 0%,
+        rgba(1, 12, 27, 0.64) 43.1%,
+        #010c1b 100%
+      );
+    }
+  }
+}
+.footer-cont {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 61px;
+
+  @include sm {
+    padding-bottom: 30px;
+    gap: 20px;
+  }
+}
+
+.left-column {
+  border-radius: 12px;
+  background: rgba(darken($setting_primary_color, 25%), 0.64);
+  border: 1px solid $setting_primary_color;
+  padding: 22px 16px;
+  max-width: 549px;
+
+  .column-img {
+    width: 100%;
+    aspect-ratio: 616/109;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .contact-menue {
+    display: flex;
+    gap: 32px;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    @include xs {
+      width: 100%;
+    }
+
+    .contact-title {
+      font-size: 24px;
+      font-weight: $weight_medium;
+      color: #fff;
+      @include xs {
+        display: none;
+      }
+    }
+
+    .contact-menu-cont {
+      display: flex;
+      gap: 16px;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      @include xs {
+      }
+
+      .contact-btn {
+        display: flex;
+        gap: 10px;
+        align-items: start;
+        justify-content: start;
+        white-space: nowrap;
+        @include xs {
+          white-space: wrap;
+        }
+        .las {
+          font-size: 20px;
+          color: #fff;
+          @include xs {
+            font-size: 18px;
+          }
+        }
+        .contact-type {
+          font-size: 18px;
+          font-weight: $weight_bold;
+          color: #fff;
+          @include xs {
+            font-size: 14px;
+            font-weight: $weight_light;
+          }
+        }
+      }
+    }
+  }
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 92px;
+  background: rgba(darken($setting_primary_color, 25%), 0.64);
+  border: 1px solid $setting_primary_color;
+  height: 48px;
+  padding: 0 12px;
+  @include xs {
+    margin-top: 10px;
+  }
+
+  a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: all 0.4s ease-in-out;
+    border: 2px solid $setting_primary_color;
+    .lab {
+      color: $setting_primary_color;
+      font-size: 18px;
+      transition: all 0.4s ease-in-out;
+    }
+    &:hover {
+      background-color: $setting_primary_color;
+      border: 2px solid $setting_primary_color;
+      .lab {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.cobyright {
+  padding-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: 16px;
+  font-weight: $weight_light;
+  color: lighten($color: $setting_primary_color, $amount: 10%);
+  position: relative;
+  z-index: 3;
+  margin: auto;
+  height: 75px;
+  @include xs {
+    align-items: center;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    inset-inline-end: -40%;
+    width: 180%;
+    aspect-ratio: 2440/760;
+    z-index: -1;
+    border-radius: 50%;
+    background: linear-gradient(
+      90deg,
+      #010c1b 20%,
+      $setting_primary_color 50%,
+      #010c1b 80%
+    );
+    box-shadow: 0px -72px 120px -50px $setting_primary_color;
+    @include sm {
+      inset-inline-end: 0;
+      width: 100%;
+      background: linear-gradient(
+        90deg,
+        #010c1b 0%,
+        $setting_primary_color 50%,
+        #010c1b 100%
+      );
+    }
+    @include xs {
+      box-shadow: 0px -72px 120px 0px $setting_primary_color;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    inset-inline-end: -40%;
+    width: 180%;
+    aspect-ratio: 2440/760;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: darken($setting_primary_color, $amount: 40%);
+    @include sm {
+      inset-inline-end: 0;
+      width: 100%;
+    }
+  }
+  .company {
+    color: #fff;
+    margin-inline-start: 4px;
+  }
+}
