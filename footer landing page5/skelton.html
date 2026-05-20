@@ -1,0 +1,56 @@
+
+<style>
+*,*::before,*::after{box-sizing:border-box;border:none;margin:0;padding:0;}
+:root{--sk-dir:1;}
+.sk-wrap{width:100%;background:#ffffff;padding:48px 0 0;}
+.sk-container{max-width:1180px;margin-inline:auto;padding-inline:20px;}
+.sk-shimmer{position:relative;overflow:hidden;background:#e5e7eb;border-radius:6px;}
+.sk-shimmer::after{content:"";position:absolute;inset:0;transform:translateX(calc(-100% * var(--sk-dir)));background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);animation:skshimmer 1.5s infinite;}
+@keyframes skshimmer{100%{transform:translateX(calc(100% * var(--sk-dir)));}}
+.sk-card{width:52%;margin-inline:auto;border-radius:16px;background:#f3f4f6;border:1px solid #e5e7eb;overflow:hidden;margin-block-end:32px;padding-block-end:20px;}
+.sk-banner{width:100%;aspect-ratio:16/5;border-radius:12px 12px 0 0;margin-block-end:20px;}
+.sk-contacts{display:flex;flex-direction:column;gap:16px;padding-inline:24px;}
+.sk-row{display:flex;align-items:center;gap:14px;}
+.sk-icon{width:22px;height:22px;flex-shrink:0;}
+.sk-row:nth-child(1) .sk-txt{width:38%;}
+.sk-row:nth-child(2) .sk-txt{width:50%;}
+.sk-row:nth-child(3) .sk-txt{width:65%;}
+.sk-txt{height:14px;}
+.sk-socials{display:flex;justify-content:center;gap:12px;background:#f3f4f6;border:1px solid #e5e7eb;width:fit-content;margin-inline:auto;padding:10px 20px;border-radius:999px;margin-block-end:44px;}
+.sk-soc{width:36px;height:36px;border-radius:50%;flex-shrink:0;}
+.sk-bottom{display:flex;align-items:center;justify-content:center;gap:14px;padding-block:18px;border-top:1px solid #e5e7eb;}
+.sk-copy{height:13px;width:125px;}
+.sk-copy2{height:13px;width:105px;}
+@media(max-width:680px){.sk-card{width:85%;}}
+</style>
+<div class="sk-wrap">
+  <div class="sk-container">
+    <div class="sk-card">
+      <div class="sk-banner sk-shimmer"></div>
+      <div class="sk-contacts">
+        <div class="sk-row">
+          <div class="sk-icon sk-shimmer"></div>
+          <div class="sk-txt sk-shimmer"></div>
+        </div>
+        <div class="sk-row">
+          <div class="sk-icon sk-shimmer"></div>
+          <div class="sk-txt sk-shimmer"></div>
+        </div>
+        <div class="sk-row">
+          <div class="sk-icon sk-shimmer"></div>
+          <div class="sk-txt sk-shimmer"></div>
+        </div>
+      </div>
+    </div>
+    <div class="sk-socials">
+      <div class="sk-soc sk-shimmer"></div>
+      <div class="sk-soc sk-shimmer"></div>
+      <div class="sk-soc sk-shimmer"></div>
+      <div class="sk-soc sk-shimmer"></div>
+    </div>
+    <div class="sk-bottom">
+      <div class="sk-copy sk-shimmer"></div>
+      <div class="sk-copy2 sk-shimmer"></div>
+    </div>
+  </div>
+</div>

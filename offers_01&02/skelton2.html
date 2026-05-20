@@ -1,0 +1,164 @@
+
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+    </div>
+    <div class="sk-outer-card">
+      <div class="sk-card-grid">
+
+        <div class="sk-card">
+          <div class="sk-badge-wrap">
+            <div class="sk-badge-sq skeleton-shimmer"></div>
+          </div>
+          <div class="sk-card-img skeleton-shimmer">
+            <div class="sk-card-overlay">
+              <div class="sk-line sk-ol-title skeleton-shimmer"></div>
+              <div class="sk-line sk-ol-sub skeleton-shimmer"></div>
+              <div class="sk-ol-btn skeleton-shimmer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sk-card">
+          <div class="sk-badge-wrap">
+            <div class="sk-badge-sq skeleton-shimmer"></div>
+          </div>
+          <div class="sk-card-img skeleton-shimmer">
+            <div class="sk-card-overlay">
+              <div class="sk-line sk-ol-title skeleton-shimmer"></div>
+              <div class="sk-line sk-ol-sub skeleton-shimmer"></div>
+              <div class="sk-ol-btn skeleton-shimmer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sk-card">
+          <div class="sk-badge-wrap">
+            <div class="sk-badge-sq skeleton-shimmer"></div>
+          </div>
+          <div class="sk-card-img skeleton-shimmer">
+            <div class="sk-card-overlay">
+              <div class="sk-line sk-ol-title skeleton-shimmer"></div>
+              <div class="sk-line sk-ol-sub skeleton-shimmer"></div>
+              <div class="sk-ol-btn skeleton-shimmer"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sk-card">
+          <div class="sk-badge-wrap">
+            <div class="sk-badge-sq skeleton-shimmer"></div>
+          </div>
+          <div class="sk-card-img skeleton-shimmer">
+            <div class="sk-card-overlay">
+              <div class="sk-line sk-ol-title skeleton-shimmer"></div>
+              <div class="sk-line sk-ol-sub skeleton-shimmer"></div>
+              <div class="sk-ol-btn skeleton-shimmer"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:60px; width:100%; }
+.skeleton-wrapper.sk-full-bg { background:rgba(220,228,242,0.5); }
+
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1100px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#cdd6e8; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+
+.sk-section-head { display:flex; flex-direction:column; align-items:center; gap:12px; margin-block-end:36px; }
+.sk-section-title { height:2em; width:36%; border-radius:4px; }
+
+.sk-outer-card {
+  background:#fff;
+  border-radius:20px;
+  padding:28px;
+}
+
+.sk-card-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.sk-card {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+
+.sk-badge-wrap {
+  position:absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index:2;
+  transform: translate(-4px, -4px);
+}
+
+.sk-badge-sq {
+  width:64px; height:48px;
+  border-radius:10px;
+  background:#dde4ef;
+}
+
+.sk-card-img {
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:20px;
+  gap:10px;
+  background:#c5d0e2;
+  overflow:hidden;
+}
+
+.sk-card-overlay {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.sk-ol-title {
+  height:1.5em; width:55%; border-radius:4px;
+  background:rgba(255,255,255,0.25);
+}
+.sk-ol-sub {
+  height:13px; width:80%; border-radius:4px;
+  background:rgba(255,255,255,0.18);
+}
+.sk-ol-btn {
+  height:36px; width:140px; border-radius:999px;
+  background:rgba(255,255,255,0.3);
+  position:relative; overflow:hidden;
+  flex-shrink:0;
+}
+.sk-ol-btn::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+
+@media (max-width: 640px) { .sk-card-grid { grid-template-columns:1fr; } }
+</style>

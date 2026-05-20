@@ -1,0 +1,307 @@
+<footer class="skeleton-wrapper sk-full-bg sk-footer">
+  <div class="skeleton-container">
+    <div class="sk-footer-body">
+      <!-- Left col: logo + nav links grid + bottom bar -->
+      <div class="sk-left-col-outer">
+        <div class="sk-left-col">
+          <div class="sk-logo skeleton-shimmer"></div>
+
+          <div class="sk-nav-grid">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+        </div>
+        <div class="sk-left-bottom">
+          <div class="sk-bottom-links">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+          <div class="sk-social-row">
+            <div class="sk-social-icon skeleton-shimmer"></div>
+            <div class="sk-social-icon skeleton-shimmer"></div>
+            <div class="sk-social-icon skeleton-shimmer"></div>
+            <div class="sk-social-icon skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right col: image + contact lines -->
+      <div class="sk-right-col">
+        <div class="sk-contact-img skeleton-shimmer"></div>
+        <div class="sk-contact-rows">
+          <div class="sk-contact-row">
+            <div class="sk-contact-icon skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+          <div class="sk-contact-row">
+            <div class="sk-contact-icon skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+          <div class="sk-contact-row">
+            <div class="sk-contact-icon skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-footer-bottom">
+      <div class="sk-line sk-copyright skeleton-shimmer"></div>
+      <div class="sk-line sk-copyright skeleton-shimmer"></div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: #fff;
+  }
+  .skeleton-wrapper.sk-footer {
+    padding-block: 48px 0;
+  }
+
+  .skeleton-container {
+    padding-inline: 40px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: rgba(60, 60, 60, 0.08);
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(60, 60, 60, 0.18),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+
+  .sk-footer-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding-block-end: 32px;
+  }
+
+  /* ── LEFT COLUMN ── */
+  .sk-left-col {
+    background: rgba(60, 60, 60, 0.03);
+    border: 1px solid rgba(60, 60, 60, 0.08);
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sk-logo {
+    height: 32px;
+    width: 140px;
+    border-radius: 6px;
+  }
+
+  .sk-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 14px 28px;
+    justify-content: start;
+  }
+
+  .sk-nav-grid .sk-line {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-nav-grid .sk-line:nth-child(1) {
+    width: 68px;
+  }
+  .sk-nav-grid .sk-line:nth-child(2) {
+    width: 96px;
+  }
+  .sk-nav-grid .sk-line:nth-child(3) {
+    width: 60px;
+  }
+  .sk-nav-grid .sk-line:nth-child(4) {
+    width: 52px;
+  }
+  .sk-nav-grid .sk-line:nth-child(5) {
+    width: 52px;
+  }
+  .sk-nav-grid .sk-line:nth-child(6) {
+    width: 88px;
+  }
+  .sk-nav-grid .sk-line:nth-child(7) {
+    width: 52px;
+  }
+  .sk-nav-grid .sk-line:nth-child(8) {
+    width: 80px;
+  }
+  .sk-nav-grid .sk-line:nth-child(9) {
+    width: 60px;
+  }
+
+  .sk-left-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+  }
+
+  .sk-bottom-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: rgba(60, 60, 60, 0.03);
+    border: 1px solid rgba(60, 60, 60, 0.08);
+    border-radius: 16px;
+    padding: 18px;
+    height: 100%;
+  }
+  .sk-bottom-links .sk-line {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-bottom-links .sk-line:first-child {
+    width: 110px;
+  }
+  .sk-bottom-links .sk-line:last-child {
+    width: 130px;
+  }
+
+  .sk-social-row {
+    display: flex;
+    gap: 10px;
+    background: rgba(60, 60, 60, 0.03);
+    border: 1px solid rgba(60, 60, 60, 0.08);
+    border-radius: 16px;
+    padding: 8px;
+    height: 100%;
+  }
+  .sk-social-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── RIGHT COLUMN ── */
+  .sk-right-col {
+    background: rgba(60, 60, 60, 0.03);
+    border: 1px solid rgba(60, 60, 60, 0.08);
+    border-radius: 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sk-contact-img {
+    width: 100%;
+    aspect-ratio: 16/5;
+    border-radius: 0;
+    flex-shrink: 0;
+  }
+
+  .sk-contact-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px 28px;
+  }
+
+  .sk-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sk-contact-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .sk-contact-row .sk-line {
+    height: 14px;
+    border-radius: 4px;
+  }
+  .sk-contact-row:nth-child(1) .sk-line {
+    width: 45%;
+  }
+  .sk-contact-row:nth-child(2) .sk-line {
+    width: 60%;
+  }
+  .sk-contact-row:nth-child(3) .sk-line {
+    width: 75%;
+  }
+
+  /* ── BOTTOM BAR ── */
+  .sk-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding-block: 20px;
+    border-block-start: 1px solid rgba(60, 60, 60, 0.08);
+  }
+
+  .sk-copyright {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-footer-bottom .sk-copyright:first-child {
+    width: 160px;
+  }
+  .sk-footer-bottom .sk-copyright:last-child {
+    width: 120px;
+  }
+
+  @media (max-width: 768px) {
+    .sk-footer-body {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

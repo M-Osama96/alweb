@@ -1,0 +1,199 @@
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+    </div>
+    <div class="sk-card-grid">
+      <div class="sk-card">
+        <div class="sk-badge-top skeleton-shimmer"></div>
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-btn skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-footer skeleton-shimmer"></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-badge-top skeleton-shimmer"></div>
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-btn skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-footer skeleton-shimmer"></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-badge-top skeleton-shimmer"></div>
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-btn skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-footer skeleton-shimmer"></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-badge-top skeleton-shimmer"></div>
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-btn skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-footer skeleton-shimmer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 60px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 235, 245, 0.55);
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #d1d9e8;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+
+  .sk-section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-block-end: 44px;
+  }
+  .sk-section-title {
+    height: 2em;
+    width: 38%;
+    border-radius: 4px;
+  }
+
+  .sk-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .sk-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+    overflow: visible;
+    position: relative;
+    background: transparent;
+  }
+
+  .sk-badge-top {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    position: absolute;
+    inset-block-start: -28px;
+    inset-inline-start: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .sk-card-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 14px 14px 0 0;
+    margin-block-start: 28px;
+  }
+
+  .sk-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 16px 14px;
+    background: #c8d4e8;
+    border-radius: 0;
+  }
+
+  .sk-card-body .sk-line {
+    height: 14px;
+    border-radius: 4px;
+  }
+  .sk-card-body .sk-line:nth-child(1) {
+    width: 90%;
+  }
+  .sk-card-body .sk-line:nth-child(2) {
+    width: 75%;
+  }
+
+  .sk-card-body .sk-btn {
+    height: 36px;
+    border-radius: 4px;
+    margin-block-start: 4px;
+    background: #b8c6dc;
+    width: 70%;
+    align-self: center;
+  }
+
+  .sk-card-footer {
+    height: 40px;
+    width: 100%;
+    border-radius: 0 0 14px 14px;
+    background: #9faec8;
+  }
+
+  @media (max-width: 768px) {
+    .sk-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 480px) {
+    .sk-card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

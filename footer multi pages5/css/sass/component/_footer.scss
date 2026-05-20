@@ -231,6 +231,7 @@
   z-index: 3;
   margin: auto;
   height: 75px;
+  // overflow: hidden;
   @include xs {
     align-items: center;
   }

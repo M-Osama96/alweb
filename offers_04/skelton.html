@@ -1,0 +1,88 @@
+
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+    </div>
+    <div class="sk-card-grid">
+      <div class="sk-card">
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-line sk-card-title-1 skeleton-shimmer"></div>
+          <div class="sk-line sk-card-title-2 skeleton-shimmer"></div>
+          <div class="sk-card-bottom">
+            <div class="sk-card-stat">
+              <div class="sk-line sk-stat-label skeleton-shimmer"></div>
+              <div class="sk-price skeleton-shimmer"></div>
+            </div>
+            <div class="sk-card-thumb skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-line sk-card-title-1 skeleton-shimmer"></div>
+          <div class="sk-line sk-card-title-2 skeleton-shimmer"></div>
+          <div class="sk-card-bottom">
+            <div class="sk-card-stat">
+              <div class="sk-line sk-stat-label skeleton-shimmer"></div>
+              <div class="sk-price skeleton-shimmer"></div>
+            </div>
+            <div class="sk-card-thumb skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:80px; width:100%; }
+.skeleton-wrapper.sk-full-bg { background:rgba(229,231,235,0.35); }
+
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1100px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#e5e7eb; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+
+.sk-section-head { display:flex; flex-direction:column; align-items:center; gap:14px; margin-block-end:44px; }
+.sk-section-title { height:2em; width:30%; border-radius:4px; }
+.sk-section-sub { height:14px; width:55%; border-radius:4px; }
+
+.sk-card-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; }
+
+.sk-card { background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
+.sk-card-body { display:flex; flex-direction:column; gap:16px; padding:24px; }
+
+.sk-badge { height:28px; width:72px; border-radius:10px; }
+
+.sk-card-title-1 { height:1.5em; width:90%; border-radius:4px; }
+.sk-card-title-2 { height:1.5em; width:70%; border-radius:4px; }
+
+.sk-card-bottom { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-block-start:8px; }
+
+.sk-card-stat { display:flex; flex-direction:column; gap:10px; }
+.sk-stat-label { height:14px; width:70px; border-radius:4px; }
+.sk-price { height:2.4em; width:110px; border-radius:4px; }
+
+.sk-card-thumb { flex-shrink:0; width:180px; aspect-ratio:4/3; border-radius:12px; }
+
+@media (max-width: 640px) {
+  .sk-card-grid { grid-template-columns:1fr; }
+  .sk-card-thumb { width:120px; }
+}
+</style>
