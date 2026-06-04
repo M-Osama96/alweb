@@ -1,0 +1,73 @@
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:100px; width:100%; }
+.skeleton-wrapper.sk-full-bg { background:rgba(229,231,235,0.45); }
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1180px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#e5e7eb; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  animation:sk-anim 1.5s infinite;
+}
+@keyframes sk-anim { 100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); } }
+
+.sk-info-split { display:grid; grid-template-columns:2fr 3fr; gap:60px; align-items:center; }
+
+.sk-info-text { display:flex; flex-direction:column; gap:16px; }
+.sk-heading { height:2em; width:60%; border-radius:4px; margin-block-end:8px; }
+.sk-info-text .sk-line { height:14px; border-radius:4px; }
+.sk-info-text .sk-line:nth-child(2) { width:90%; }
+.sk-info-text .sk-line:nth-child(3) { width:85%; }
+.sk-info-text .sk-line:nth-child(4) { width:55%; }
+.sk-info-text .sk-btn { height:44px; width:180px; border-radius:999px; margin-block-start:12px; }
+
+.sk-image-grid { display:flex; flex-direction:column; gap:12px; align-items:center; }
+.sk-img-row { display:flex; gap:12px; justify-content:center; }
+.sk-thumb { width:100px; aspect-ratio:4/3; border-radius:12px; flex-shrink:0; }
+
+@media (max-width: 768px) {
+  .sk-info-split { grid-template-columns:1fr; }
+  .sk-thumb { width:80px; }
+}
+@media (max-width: 480px) {
+  .sk-thumb { width:64px; }
+}
+</style>
+
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-info-split">
+      <div class="sk-info-text">
+        <div class="sk-line sk-heading skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-btn skeleton-shimmer"></div>
+      </div>
+      <div class="sk-image-grid">
+        <div class="sk-img-row">
+          <div class="sk-thumb skeleton-shimmer"></div>
+          <div class="sk-thumb skeleton-shimmer"></div>
+          <div class="sk-thumb skeleton-shimmer"></div>
+        </div>
+        <div class="sk-img-row">
+          <div class="sk-thumb skeleton-shimmer"></div>
+          <div class="sk-thumb skeleton-shimmer"></div>
+          <div class="sk-thumb skeleton-shimmer"></div>
+          <div class="sk-thumb skeleton-shimmer"></div>
+        </div>
+        <div class="sk-img-row">
+          <div class="sk-thumb skeleton-shimmer"></div>
+          <div class="sk-thumb skeleton-shimmer"></div>
+          <div class="sk-thumb skeleton-shimmer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

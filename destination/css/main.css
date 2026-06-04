@@ -247,7 +247,7 @@ iframe {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(270deg, rgba(6, 35, 77, 0.6) 0%, rgba(14, 81, 179, 0) 100%);
+  background: linear-gradient(270deg, rgba(6.4285714286, 35.3571428571, 78.5714285714, 0.6) 0%, rgba(18, 99, 220, 0) 100%);
   z-index: 0;
 }
 .home .backgrounds img {
@@ -278,29 +278,29 @@ iframe {
     margin: 0 auto;
   }
 }
-.tabs .distinations h2 {
+.tabs .distinations .dest-title {
   color: #ffffff;
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 32px;
 }
 @media (max-width: 991px) {
-  .tabs .distinations h2 {
+  .tabs .distinations .dest-title {
     text-align: center;
   }
 }
 @media (max-width: 767px) {
-  .tabs .distinations h2 {
+  .tabs .distinations .dest-title {
     font-size: 28px;
     margin-bottom: 16px;
   }
 }
 .tabs .distinations .tablist-box {
   padding: 32px;
-  background: rgba(14, 79, 176, 0.3);
+  background: rgba(14.1428571429, 77.7857142857, 172.8571428571, 0.3);
   backdrop-filter: blur(4px);
   border-radius: 48px;
-  border: 1px solid rgba(14, 79, 176, 0.3019607843);
+  border: 1px solid rgba(14.1428571429, 77.7857142857, 172.8571428571, 0.3);
   overflow: hidden;
 }
 @media (max-width: 767px) {
@@ -320,31 +320,26 @@ iframe {
     grid-gap: 10px;
   }
 }
-.tabs .distinations .tablist-box [role=tablist] button {
+.tabs .distinations .tablist-box [role=tablist] .tab {
   padding: 10px 30px;
-  border: 1px solid #ffffff;
   border-radius: 8px;
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;
   position: relative;
 }
-.tabs .distinations .tablist-box [role=tablist] button::before {
+.tabs .distinations .tablist-box [role=tablist] .tab::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  border: 4px solid transparent;
+  border: 1px solid #ffffff;
+  transition: all 0.3s ease;
+  border-radius: inherit;
 }
-.tabs .distinations .tablist-box [role=tablist] button[aria-selected=true] {
-  background-color: #ffffff;
-  color: #1263dc;
-  position: relative;
-  border: none;
-}
-.tabs .distinations .tablist-box [role=tablist] button[aria-selected=true]::after {
+.tabs .distinations .tablist-box [role=tablist] .tab::after {
   content: "";
   position: absolute;
   top: 0;
@@ -353,7 +348,23 @@ iframe {
   width: 100%;
   border: 4px solid #1263dc;
   z-index: 3;
-  border-radius: 8px;
+  border-radius: 7px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.tabs .distinations .tablist-box [role=tablist] .tab[aria-selected=true] {
+  background-color: #ffffff;
+  color: #1263dc;
+  position: relative;
+}
+.tabs .distinations .tablist-box [role=tablist] .tab[aria-selected=true]::after {
+  visibility: visible;
+  opacity: 1;
+}
+.tabs .distinations .tablist-box [role=tablist] .tab[aria-selected=true]::before {
+  opacity: 0;
+  visibility: hidden;
 }
 .tabs .distinations .tablist-box .destinations-btn {
   width: 100%;
@@ -363,7 +374,7 @@ iframe {
   color: #ffffff;
   font-size: 20px;
   font-weight: 700;
-  background: rgba(6, 35, 77, 0.5019607843);
+  background: rgba(6.4285714286, 35.3571428571, 78.5714285714, 0.5);
   padding: 10px 0;
 }
 @media (max-width: 767px) {
@@ -387,7 +398,7 @@ iframe {
   align-items: center;
   gap: 16px;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   background: radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0.6) 100%);
   margin-inline-start: auto;
   cursor: pointer;
@@ -422,7 +433,7 @@ iframe {
     margin-bottom: 10px;
   }
 }
-.tabs .destinations-info .line i {
+.tabs .destinations-info .line .las {
   border: 2px solid #1263dc;
   border-radius: 50%;
   font-size: 20px;
@@ -434,36 +445,36 @@ iframe {
   color: rgb(14.1428571429, 77.7857142857, 172.8571428571);
 }
 @media (max-width: 767px) {
-  .tabs .destinations-info .line i {
+  .tabs .destinations-info .line .las {
     width: 25px;
     height: 25px;
     font-size: 16px;
   }
 }
-.tabs .destinations-info .line p {
+.tabs .destinations-info .line .line-p {
   margin: 0;
   font-size: 24px;
   font-weight: 700;
-  color: #06234d;
+  color: rgb(6.4285714286, 35.3571428571, 78.5714285714);
 }
 @media (max-width: 767px) {
-  .tabs .destinations-info .line p {
+  .tabs .destinations-info .line .line-p {
     font-size: 20px;
   }
 }
-.tabs .destinations-info h4 {
+.tabs .destinations-info .price {
   font-size: 43px;
   font-weight: 700;
   color: #1263dc;
   margin-bottom: 16px;
 }
 @media (max-width: 767px) {
-  .tabs .destinations-info h4 {
+  .tabs .destinations-info .price {
     font-size: 28px;
     margin-bottom: 10px;
   }
 }
-.tabs .destinations-info button {
+.tabs .destinations-info .details-btn {
   width: 100%;
   color: #ffffff;
   background-color: #1263dc;
@@ -473,10 +484,11 @@ iframe {
   height: 48px;
 }
 @media (max-width: 767px) {
-  .tabs .destinations-info button {
+  .tabs .destinations-info .details-btn {
     height: 40px;
+    border-radius: 10px;
   }
 }
-.tabs .destinations-info button:hover {
+.tabs .destinations-info .details-btn:hover {
   background-color: rgb(14.1428571429, 77.7857142857, 172.8571428571);
 }/*# sourceMappingURL=main.css.map */

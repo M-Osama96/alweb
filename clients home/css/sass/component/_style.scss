@@ -1,22 +1,53 @@
 .clients {
-  margin: 135px 0;
+  padding: 70px 0;
+  background-color: lighten($setting_primary_color, 50%);
   @include sm {
-    margin: 50px 0;
+    padding: 30px 0;
+    background-color: #fff;
   }
 }
 .clients-cont {
-  padding: 139px 0 109px;
+  padding: 120px 0;
   display: flex;
   align-items: center;
   gap: 30px;
+  position: relative;
+  @include sm {
+    padding: 60px 0;
+  }
   @include xs {
     padding: 30px 0;
   }
   @include xs {
     flex-direction: column;
   }
+  .bg-img {
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0.1;
+    @include xs {
+      justify-content: center;
+      align-items: end;
+      bottom: -20px;
+    }
+    .img-contain {
+      width: 50%;
+      height: 100%;
+      @include xs {
+        width: 100%;
+        height: 65%;
+      }
+    }
+  }
   .clients-text {
     width: calc(100% - 417px);
+    position: relative;
+    z-index: 5;
 
     @include xs {
       width: 100%;
@@ -28,9 +59,11 @@
       font-size: 48px;
       font-weight: $weight-bold;
       margin-bottom: 24px;
+      color: $setting_text_color;
       @include sm {
         font-size: 40px;
         order: 1;
+        margin: 0 0 12px;
       }
       @include xs {
         order: 1;
@@ -40,18 +73,18 @@
     .clients-p {
       font-size: 18px;
       font-weight: $weight-bold;
+      color: $setting_text_color;
       margin-bottom: 32px;
       max-width: 381px;
       @include sm {
         font-size: 16px;
+        margin: 0 0 12px;
       }
       @include xs {
         max-width: 100%;
         width: 100%;
         font-size: 14px;
-        margin-bottom: 24px;
         order: 3;
-        margin-bottom: 0;
       }
     }
     .clients-btn {
@@ -63,44 +96,48 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 182px;
+      padding: 0 20px;
+      width: fit-content;
       height: 48px;
       transition: all 0.5s ease;
+      @include sm {
+        height: 40px;
+        border-radius: 12px;
+        font-size: 16px;
+      }
       @include xs {
         order: 2;
-        height: 40px;
-        padding: 10px;
         font-size: 14px;
         .btn-span {
           display: none;
         }
       }
+
       &:hover {
         background-color: $setting_primary_color;
         color: #fff;
-      }
-      &:hover {
-        .hover-svg {
-          transform: rotate(-45deg);
-          transition: all 0.3s ease;
-          margin-right: 6px;
-        }
-        .btn-svg {
-          transform: rotate(-45deg);
+        .las {
+          transform: rotate(0deg);
           transition: all 0.5s ease;
-          margin-right: 10px;
-          path {
-            stroke: #ffffff;
+          color: #fff;
+          @include ltr {
+            transform: rotate(0deg) scaleX(-1);
           }
         }
       }
-      .btn-svg {
+      .btn-span {
+        margin-inline-start: 6px;
+      }
+      .las {
         margin-right: 6px;
         transition: all 0.5s ease;
-        stroke: $setting_primary_color;
-        @include xs {
-          width: 12px;
-          height: 12px;
+        color: $setting_primary_color;
+        transform: rotate(45deg);
+        margin-inline-start: 6px;
+        font-size: 18px;
+        font-weight: $weight-bold;
+        @include ltr {
+          transform: rotate(-45deg) scaleX(-1);
         }
       }
     }
@@ -113,6 +150,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 9px;
+    position: relative;
     @include sm {
       width: 446px;
     }
@@ -121,17 +159,22 @@
     }
     .clients-img {
       width: calc(25% - 7px);
-      height: 73px;
-      box-shadow: 0px 20px 32px 0px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 133/70;
+      background-color: #fff;
+      box-shadow: 0px 22.31px 27.73px 0px #98989829;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 5px;
+      border-radius: 12px;
       order: 2;
       border: 2px solid transparent;
       transition: all 0.3s ease;
+      @include sm {
+        border-radius: 10px;
+      }
       @include xs {
-        height: 44px;
+        aspect-ratio: 81/45;
+        border-radius: 8px;
       }
       &:hover {
         border: 2px solid $setting_primary_color;

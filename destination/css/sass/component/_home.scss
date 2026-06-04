@@ -22,12 +22,12 @@
       left: 0;
       width: 100%;
       height: 100%;
+
       background: linear-gradient(
         270deg,
-        rgba(6, 35, 77, 0.6) 0%,
-        rgba(14, 81, 179, 0) 100%
+        rgba(darken($setting_primary_color, 30%), 0.6) 0%,
+        rgba($setting_primary_color, 0) 100%
       );
-
       z-index: 0;
     }
     img {
@@ -54,7 +54,7 @@
       // width: 100%;
       margin: 0 auto;
     }
-    h2 {
+    .dest-title {
       color: #ffffff;
       font-size: 48px;
       font-weight: $weight-bold;
@@ -69,10 +69,10 @@
     }
     .tablist-box {
       padding: 32px;
-      background: rgba(14, 79, 176, 0.3);
+      background: rgba(darken($setting_primary_color, 10%), 0.3);
       backdrop-filter: blur(4px);
       border-radius: 48px;
-      border: 1px solid #0e4fb04d;
+      border: 1px solid rgba(darken($setting_primary_color, 10%), 0.3);
       overflow: hidden;
       @include xs {
         padding: 20px;
@@ -86,9 +86,8 @@
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 10px;
         }
-        button {
+        .tab {
           padding: 10px 30px;
-          border: 1px solid #ffffff;
           border-radius: 8px;
           color: #ffffff;
           font-size: 20px;
@@ -102,24 +101,35 @@
             left: 0;
             height: 100%;
             width: 100%;
-            border: 4px solid transparent;
+            border: 1px solid #ffffff;
+            transition: all 0.3s ease;
+            border-radius: inherit;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border: 4px solid $setting_primary_color;
+            z-index: 3;
+            border-radius: 7px;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
           }
           &[aria-selected="true"] {
             background-color: #ffffff;
             color: $setting_primary_color;
             position: relative;
-            border: none;
-
             &::after {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              height: 100%;
-              width: 100%;
-              border: 4px solid $setting_primary_color;
-              z-index: 3;
-              border-radius: 8px;
+              visibility: visible;
+              opacity: 1;
+            }
+            &::before {
+              opacity: 0;
+              visibility: hidden;
             }
           }
         }
@@ -132,7 +142,7 @@
         color: #ffffff;
         font-size: 20px;
         font-weight: $weight-bold;
-        background: #06234d80;
+        background: rgba(darken($setting_primary_color, 30%), 0.5);
         padding: 10px 0;
         @include xs {
           margin-top: 20px;
@@ -157,7 +167,7 @@
     gap: 16px;
     flex-shrink: 0;
     // margin-left: -75px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     background: radial-gradient(
       50% 50% at 50% 50%,
       #ffffff 0%,
@@ -191,7 +201,7 @@
       @include xs {
         margin-bottom: 10px;
       }
-      i {
+      .las {
         border: 2px solid $setting_primary_color;
         border-radius: 50%;
         font-size: 20px;
@@ -207,17 +217,17 @@
           font-size: 16px;
         }
       }
-      p {
+      .line-p {
         margin: 0;
         font-size: 24px;
         font-weight: $weight-bold;
-        color: #06234d;
+        color: darken($setting_primary_color, 30%);
         @include xs {
           font-size: 20px;
         }
       }
     }
-    h4 {
+    .price {
       font-size: 43px;
       font-weight: $weight-bold;
       color: $setting_primary_color;
@@ -227,7 +237,7 @@
         margin-bottom: 10px;
       }
     }
-    button {
+    .details-btn {
       width: 100%;
       color: #ffffff;
       background-color: $setting_primary_color;
@@ -235,8 +245,11 @@
       font-weight: $weight-bold;
       border-radius: 16px;
       height: 48px;
+      // max-width: 200px;
       @include xs {
         height: 40px;
+        border-radius: 10px;
+        // max-width: 150px;
       }
       &:hover {
         background-color: darken($color: $setting_primary_color, $amount: 10%);

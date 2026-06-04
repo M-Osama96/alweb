@@ -1,0 +1,124 @@
+<section class="skeleton-wrapper sk-hero">
+  <div class="sk-hero-bg skeleton-shimmer">
+    <div class="sk-hero-content">
+      <div class="sk-split">
+        <div class="sk-left-panel">
+          <div class="sk-line sk-hero-title skeleton-shimmer"></div>
+          <div class="sk-search-card">
+            <div class="sk-btn-grid">
+              <div class="sk-tab skeleton-shimmer"></div>
+              <div class="sk-tab skeleton-shimmer"></div>
+              <div class="sk-tab skeleton-shimmer"></div>
+              <div class="sk-tab skeleton-shimmer"></div>
+              <div class="sk-tab skeleton-shimmer"></div>
+              <div class="sk-tab skeleton-shimmer"></div>
+            </div>
+            <div class="sk-search-btn skeleton-shimmer"></div>
+          </div>
+        </div>
+        <div class="sk-right-panel">
+          <div class="sk-circle skeleton-shimmer">
+            <div class="sk-circle-row">
+              <div class="sk-icon-dot skeleton-shimmer"></div>
+              <div class="sk-line sk-row-text skeleton-shimmer"></div>
+            </div>
+            <div class="sk-circle-row">
+              <div class="sk-icon-dot skeleton-shimmer"></div>
+              <div class="sk-line sk-row-text skeleton-shimmer"></div>
+            </div>
+            <div class="sk-circle-row">
+              <div class="sk-icon-dot skeleton-shimmer"></div>
+              <div class="sk-line sk-row-text skeleton-shimmer"></div>
+            </div>
+            <div class="sk-price-line skeleton-shimmer"></div>
+            <div class="sk-cta-btn skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+
+.skeleton-wrapper.sk-hero { padding-block:0; width:100%; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#e8e8e8; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.75),transparent);
+  animation:sk-anim 1.5s infinite;
+}
+@keyframes sk-anim { 100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); } }
+
+.sk-hero-bg {
+  width:100%; min-height:520px;
+  background:#f0f0f0;
+  display:flex; align-items:center; justify-content:center;
+  padding-block:80px; padding-inline:60px;
+}
+
+.sk-hero-content { width:100%; max-width:1100px; }
+
+.sk-split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.sk-left-panel { display:flex; flex-direction:column; gap:28px; }
+
+.sk-hero-title { height:2.2em; width:80%; border-radius:4px; background:#d6d6d6; }
+
+.sk-search-card {
+  background:#e0e0e0;
+  border-radius:16px;
+  padding:20px;
+  display:flex; flex-direction:column; gap:16px;
+}
+
+.sk-btn-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.sk-tab { height:40px; border-radius:8px; background:#d0d0d0; }
+
+.sk-search-btn { height:48px; border-radius:8px; background:#c8c8c8; }
+
+.sk-right-panel { display:flex; justify-content:center; }
+
+.sk-circle {
+  width:320px; height:320px;
+  border-radius:50%;
+  background:#e4e4e4;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:18px; padding:40px;
+}
+
+.sk-circle-row { display:flex; align-items:center; gap:12px; width:100%; }
+
+.sk-icon-dot { width:32px; height:32px; border-radius:50%; background:#d0d0d0; flex-shrink:0; }
+
+.sk-row-text { height:14px; width:65%; border-radius:4px; background:#c8c8c8; }
+
+.sk-price-line { height:2em; width:70%; border-radius:4px; background:#c0c0c0; margin-block:4px; }
+
+.sk-cta-btn { height:44px; width:85%; border-radius:999px; background:#cccccc; }
+
+@media (max-width:768px) {
+  .sk-split { grid-template-columns:1fr; gap:40px; }
+  .sk-circle { width:260px; height:260px; }
+  .sk-hero-bg { padding-inline:24px; }
+}
+@media (max-width:480px) {
+  .sk-btn-grid { grid-template-columns:repeat(2,1fr); }
+  .sk-circle { width:220px; height:220px; padding:28px; }
+}
+</style>
