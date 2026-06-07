@@ -1,0 +1,105 @@
+
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+    </div>
+    <div class="sk-circle-grid">
+      <div class="sk-circle-card">
+        <div class="sk-circle-img skeleton-shimmer">
+          <div class="sk-circle-badge skeleton-shimmer"></div>
+          <div class="sk-circle-body">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sk-circle-card">
+        <div class="sk-circle-img skeleton-shimmer">
+          <div class="sk-circle-badge skeleton-shimmer"></div>
+          <div class="sk-circle-body">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sk-circle-card">
+        <div class="sk-circle-img skeleton-shimmer">
+          <div class="sk-circle-badge skeleton-shimmer"></div>
+          <div class="sk-circle-body">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:100px; width:100%; }
+.skeleton-wrapper.sk-full-bg { background:rgba(229,231,235,0.45); }
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1180px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#e5e7eb; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+
+.sk-section-head { display:flex; flex-direction:column; align-items:center; gap:12px; margin-block-end:48px; }
+.sk-section-title { height:2em; width:30%; border-radius:4px; }
+.sk-section-sub { height:14px; width:45%; border-radius:4px; }
+
+.sk-circle-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; align-items:start; }
+
+.sk-circle-card { display:flex; flex-direction:column; align-items:center; }
+
+.sk-circle-img {
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:50%;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.sk-circle-badge {
+  position:absolute;
+  inset-block-start:18%;
+  inset-inline-end:12%;
+  width:18%;
+  aspect-ratio:1/1;
+  border-radius:50%;
+  background:#d1d5db;
+  overflow:hidden;
+  z-index:1;
+}
+
+.sk-circle-body {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  width:65%;
+  position:relative;
+  z-index:0;
+}
+
+.sk-circle-body .sk-line { height:14px; border-radius:4px; }
+.sk-circle-body .sk-line:nth-child(1) { width:100%; }
+.sk-circle-body .sk-line:nth-child(2) { width:75%; }
+
+@media (max-width: 768px) { .sk-circle-grid { grid-template-columns:1fr; } }
+</style>
