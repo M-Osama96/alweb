@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Map Skeleton</title>
+  <style>
+    *, :before, :after { box-sizing:border-box; border:none; margin:0; padding:0; }
+    :root { --sk-shimmer-dir:1; }
+    [dir="rtl"] { --sk-shimmer-dir:-1; }
+
+    body { background:#f9fafb; }
+
+    .skeleton-wrapper { height:fit-content; padding-block:100px; width:100%; }
+    .skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1180px; }
+
+    .skeleton-shimmer { position:relative; overflow:hidden; background:#e5e7eb; }
+    .skeleton-shimmer::after {
+      content:""; position:absolute; inset:0;
+      transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+      animation:skeleton-shimmer-animation 1.5s infinite;
+    }
+    @keyframes skeleton-shimmer-animation {
+      100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+    }
+
+    .sk-map-split { display:grid; grid-template-columns:2fr 3fr; gap:0; align-items:stretch; min-height:520px; }
+    .sk-map-panel { display:flex; flex-direction:column; gap:20px; padding:32px 28px; background:#fff; border:1px solid #e5e7eb; }
+    .sk-map-title { height:2em; width:70%; border-radius:4px; }
+    .sk-map-btn { height:44px; width:100%; border-radius:4px; }
+    .sk-map-btn-outline { height:44px; width:100%; border-radius:4px; background:#f3f4f6; }
+    .sk-map-area { width:100%; height:100%; min-height:520px; }
+
+    @media (max-width:768px) {
+      .sk-map-split { grid-template-columns:1fr; }
+      .sk-map-area { min-height:280px; aspect-ratio:4/3; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="skeleton-wrapper">
+    <div class="skeleton-container" style="padding-inline:0; max-width:100%;">
+      <div class="sk-map-split">
+        <div class="sk-map-panel">
+          <div class="sk-map-title skeleton-shimmer"></div>
+          <div class="sk-map-btn skeleton-shimmer"></div>
+          <div class="sk-map-btn-outline skeleton-shimmer"></div>
+          <div class="sk-map-btn-outline skeleton-shimmer"></div>
+        </div>
+        <div class="sk-map-area skeleton-shimmer"></div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

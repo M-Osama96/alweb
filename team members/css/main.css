@@ -253,19 +253,22 @@ iframe {
   flex-direction: column;
   text-align: center;
 }
-.team-members-cont h3 {
+.team-members-cont .title {
   font-size: 48px;
   font-weight: 700;
+  color: #080808;
   margin: unset;
 }
 @media (max-width: 575px) {
-  .team-members-cont h3 {
+  .team-members-cont .title {
     font-size: 38px;
   }
 }
 .team-members-cont .team-p {
   max-width: 646px;
   font-size: 20px;
+  color: rgb(33.5, 33.5, 33.5);
+  font-weight: 400;
 }
 @media (max-width: 575px) {
   .team-members-cont .team-p {
@@ -366,10 +369,10 @@ iframe {
   opacity: 1;
   transform: rotate(30deg);
 }
-.tap-panal .profile:hover h5 {
+.tap-panal .profile:hover .name {
   transform: translatey(4px);
 }
-.tap-panal .profile:hover p {
+.tap-panal .profile:hover .jop {
   color: #1263dc;
 }
 .tap-panal .profile-img {
@@ -401,16 +404,18 @@ iframe {
   gap: 8px;
   margin-top: 16px;
 }
-.tap-panal .profile-name h5 {
+.tap-panal .profile-name .name {
   font-size: 16px;
   margin: 0;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
+  color: #080808;
 }
-.tap-panal .profile-name p {
+.tap-panal .profile-name .jop {
   font-size: 16px;
   font-weight: 300;
   margin: 0;
+  color: rgb(33.5, 33.5, 33.5);
 }
 
 .more-members {
@@ -419,15 +424,11 @@ iframe {
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-}
-.more-members:hover {
-  background-color: #1263dc;
-}
-.more-members:hover a {
-  color: #ffffff;
-}
-.more-members a {
   font-size: 16px;
   font-weight: 700;
   color: #1263dc;
+}
+.more-members:hover {
+  background-color: #1263dc;
+  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */

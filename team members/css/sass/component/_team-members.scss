@@ -11,7 +11,7 @@
     height: 44%;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
-    background-color: lighten($color: $setting_primary_color, $amount: 50%);
+    background-color: lighten($setting_primary_color, $amount: 50%);
     bottom: 0;
     left: 0;
     z-index: -1;
@@ -23,9 +23,10 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  h3 {
+  .title {
     font-size: 48px;
     font-weight: $weight_bold;
+    color: $setting_text_color;
     margin: unset;
     @include xxs {
       font-size: 38px;
@@ -34,6 +35,8 @@
   .team-p {
     max-width: 646px;
     font-size: 20px;
+    color: lighten($setting_text_color, $amount: 10%);
+    font-weight: $weight_regular;
     @include xxs {
       font-size: 16px;
     }
@@ -121,10 +124,10 @@
       opacity: 1;
       transform: rotate(30deg);
     }
-    &:hover h5 {
+    &:hover .name {
       transform: translatey(4px);
     }
-    &:hover p {
+    &:hover .jop {
       color: $setting_primary_color;
     }
   }
@@ -142,7 +145,7 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      border: 4px Dashed lighten($color: $setting_primary_color, $amount: 35%);
+      border: 4px Dashed lighten($setting_primary_color, $amount: 35%);
       visibility: hidden;
       opacity: 0;
       transition: all 0.5s;
@@ -157,16 +160,18 @@
     gap: 8px;
     margin-top: 16px;
 
-    h5 {
+    .name {
       font-size: 16px;
       margin: 0;
       font-weight: $weight_medium;
       transition: all 0.3s ease-in-out;
+      color: $setting_text_color;
     }
-    p {
+    .jop {
       font-size: 16px;
       font-weight: $weight_light;
       margin: 0;
+      color: lighten($setting_text_color, $amount: 10%);
     }
   }
 }
@@ -176,16 +181,12 @@
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: $weight_bold;
+  color: $setting_primary_color;
 
   &:hover {
     background-color: $setting_primary_color;
-  }
-  &:hover a {
     color: #ffffff;
-  }
-  a {
-    font-size: 16px;
-    font-weight: $weight_bold;
-    color: $setting_primary_color;
   }
 }

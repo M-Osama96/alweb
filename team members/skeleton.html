@@ -1,0 +1,260 @@
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 80px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.35);
+  }
+  .skeleton-container {
+    padding-inline: 40px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+    animation: sk-anim 1.5s infinite;
+  }
+  @keyframes sk-anim {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+
+  /* Section heading */
+  .sk-section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-block-end: 32px;
+  }
+  .sk-section-title {
+    height: 2.1em;
+    width: 36%;
+    border-radius: 6px;
+  }
+  .sk-desc-line {
+    height: 14px;
+    border-radius: 4px;
+  }
+  .sk-desc-line:nth-child(2) {
+    width: 58%;
+  }
+  .sk-desc-line:nth-child(3) {
+    width: 48%;
+  }
+
+  /* Filter buttons */
+  .sk-filter-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-block-end: 56px;
+    flex-wrap: wrap;
+  }
+  .sk-filter-btn {
+    height: 42px;
+    border-radius: 999px;
+  }
+  .sk-filter-btn:nth-child(1) {
+    width: 128px;
+  }
+  .sk-filter-btn:nth-child(2) {
+    width: 112px;
+  }
+  .sk-filter-btn:nth-child(3) {
+    width: 152px;
+  }
+
+  /* Card grid */
+  .sk-card-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+  }
+
+  .sk-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    padding-block-end: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Circle avatar overflowing card top — matches the screenshot */
+  .sk-avatar-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-block-start: 20px;
+    padding-block-end: 16px;
+  }
+  .sk-avatar-circle {
+    width: 76%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  .sk-card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding-inline: 16px;
+  }
+  .sk-name-line {
+    height: 14px;
+    width: 84%;
+    border-radius: 4px;
+  }
+  .sk-role-line {
+    height: 12px;
+    width: 60%;
+    border-radius: 4px;
+  }
+
+  /* CTA bottom */
+  .sk-cta-row {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 56px;
+  }
+  .sk-cta-btn {
+    height: 48px;
+    width: 240px;
+    border-radius: 999px;
+  }
+
+  @media (max-width: 960px) {
+    .sk-card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 600px) {
+    .sk-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 400px) {
+    .sk-card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-section-title skeleton-shimmer"></div>
+      <div class="sk-desc-line skeleton-shimmer"></div>
+      <div class="sk-desc-line skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-filter-row">
+      <div class="sk-filter-btn skeleton-shimmer"></div>
+      <div class="sk-filter-btn skeleton-shimmer"></div>
+      <div class="sk-filter-btn skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-card-grid">
+      <div class="sk-card">
+        <div class="sk-avatar-wrap">
+          <div class="sk-avatar-circle skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-body">
+          <div class="sk-name-line skeleton-shimmer"></div>
+          <div class="sk-role-line skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-avatar-wrap">
+          <div class="sk-avatar-circle skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-body">
+          <div class="sk-name-line skeleton-shimmer"></div>
+          <div class="sk-role-line skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-avatar-wrap">
+          <div class="sk-avatar-circle skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-body">
+          <div class="sk-name-line skeleton-shimmer"></div>
+          <div class="sk-role-line skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-avatar-wrap">
+          <div class="sk-avatar-circle skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-body">
+          <div class="sk-name-line skeleton-shimmer"></div>
+          <div class="sk-role-line skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-avatar-wrap">
+          <div class="sk-avatar-circle skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-body">
+          <div class="sk-name-line skeleton-shimmer"></div>
+          <div class="sk-role-line skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-avatar-wrap">
+          <div class="sk-avatar-circle skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-body">
+          <div class="sk-name-line skeleton-shimmer"></div>
+          <div class="sk-role-line skeleton-shimmer"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-cta-row">
+      <div class="sk-cta-btn skeleton-shimmer"></div>
+    </div>
+  </div>
+</section>
