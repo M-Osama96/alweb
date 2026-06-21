@@ -1,0 +1,224 @@
+.hero11 {
+  position: relative;
+  background-color: #000;
+  padding: 70px 0;
+  @include sm {
+    padding: 35px 0;
+  }
+  // &::after {
+  //   position: absolute;
+  //   content: "";
+  //   inset-inline-start: 0;
+  //   top: 0;
+  //   height: 100%;
+  //   width: 100vw;
+  //   width: 60%;
+  //   max-width: 1000px;
+  //   background-color: $setting_primary_color;
+  //   clip-path: polygon(200px 0%, 100% 0, 100% 100%, 0% 100%);
+
+  //   z-index: 0;
+  //   @include md {
+  //     clip-path: polygon(185px 0%, 100% 0, 100% 100%, 0% 100%);
+  //   }
+  //   @include sm {
+  //     width: 100%;
+  //     height: 38%;
+  //     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 78%);
+  //   }
+  // }
+}
+
+.hero11-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+
+  position: relative;
+  @include md {
+    gap: 20px;
+  }
+
+  @include sm {
+    grid-template-columns: 1fr;
+  }
+  @include xs {
+  }
+}
+.hero11-info {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    inset-inline-end: -150px;
+    top: -70px;
+    height: calc(100% + 140px);
+    width: 100vw;
+    // width: 60%;
+    // max-width: 1000px;
+    background-color: $setting_primary_color;
+    clip-path: polygon(200px 0%, 100% 0, 100% 100%, 0% 100%);
+
+    z-index: 0;
+    @include ltr {
+      // clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
+      transform: rotateY(180deg);
+    }
+    @include md {
+      clip-path: polygon(185px 0%, 100% 0, 100% 100%, 0% 100%);
+    }
+    @include sm {
+      top: -35px;
+      height: calc(100% + 80px);
+      inset-inline-end: -20px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 78%);
+    }
+  }
+
+  .hero-info-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 24px;
+    height: 100%;
+    max-width: 555px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    @include sm {
+      max-width: unset;
+    }
+  }
+  .hero11-title {
+    font-size: 64px;
+    font-weight: $weight_bold;
+    color: #fff;
+    text-align: start;
+    margin-bottom: 0;
+    @include md {
+      font-size: 42px;
+    }
+    @include sm {
+      font-size: 48px;
+    }
+    @include xs {
+      font-size: 23px;
+    }
+  }
+  .hero11-desc {
+    font-size: 16px;
+    font-weight: $weight_medium;
+    color: #fff;
+    padding-inline-end: 10px;
+    // overflow: hidden;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 3;
+    // -webkit-box-orient: vertical;
+    // height: 65px;
+    @include xs {
+      font-size: 14px;
+      font-weight: $weight_light;
+    }
+  }
+  .hero11-btn {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 24px;
+    gap: 8px;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 1);
+    transition: all 0.4s ease-in-out;
+    @include sm {
+      height: 40px;
+    }
+    &:hover {
+      background-color: #fff;
+      .btn-text {
+        color: $setting_primary_color;
+      }
+      .las {
+        color: $setting_primary_color;
+        transform: rotate(0deg);
+        @include ltr {
+          transform: scaleX(-1) rotate(0deg);
+        }
+      }
+    }
+    .btn-text {
+      font-size: 13px;
+      font-weight: $weight_medium;
+      color: #fff;
+      transition: all 0.4s ease-in-out;
+    }
+    .las {
+      font-size: 22px;
+      font-weight: $weight_bold;
+      color: #fff;
+      transform: rotate(45deg);
+      transition: all 0.3s ease-in-out;
+      @include ltr {
+        transform: scaleX(-1) rotate(45deg);
+      }
+    }
+  }
+}
+.hero11-img-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: end;
+  @include sm {
+    align-items: center;
+  }
+  .hero-img {
+    width: 100%;
+    aspect-ratio: 542/385;
+    clip-path: polygon(0 0, 100% 0, 78% 100%, 0% 100%);
+    @include ltr {
+      transform: rotateY(180deg);
+    }
+    @include sm {
+      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+    }
+    @include xs {
+      clip-path: polygon(0 0, 100% 55px, 100% 100%, 0 100%);
+    }
+    .img-cover {
+      @include ltr {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+  .statistics {
+    display: flex;
+    color: #fff;
+    width: 70%;
+    justify-content: space-between;
+    @include sm {
+      width: 100%;
+      max-width: 500px;
+      padding: 0 20px;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      .num {
+        font-size: 46px;
+        font-weight: $weight_bold;
+        color: #fff;
+        margin-bottom: 0;
+        @include sm {
+          font-size: 38px;
+        }
+      }
+      .type {
+        font-size: 14px;
+        font-weight: $weight_regular;
+        color: #fff;
+      }
+    }
+  }
+}

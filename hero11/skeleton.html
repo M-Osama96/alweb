@@ -1,0 +1,206 @@
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+    --sk-dir: 1;
+  }
+
+  .sk-wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    min-height: 560px;
+    background: #000; /* black gap between the two shapes, like the original */
+  }
+
+  /* LEFT shape: light gray, full height, right edge slanted from top to bottom */
+  .sk-left-bg {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: 62%;
+    background: #9ca3af;
+    clip-path: polygon(0 0, 92% 0, 68% 100%, 0 100%);
+    clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
+
+    padding: 60px 8% 60px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    z-index: 2;
+  }
+
+  /* RIGHT shape: dark gray, starts after the black diagonal gap */
+  .sk-right-bg {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    width: 54%;
+    padding: 50px 60px 40px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    z-index: 1;
+  }
+
+  .sk-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+  }
+  .sk-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+    animation: skshimmer 1.5s infinite;
+  }
+  @keyframes skshimmer {
+    100% {
+      transform: translateX(calc(100% * var(--sk-dir)));
+    }
+  }
+
+  /* Left content */
+  .sk-title-1 {
+    height: 2.6em;
+    width: 80%;
+    border-radius: 6px;
+  }
+  .sk-title-2 {
+    height: 2.6em;
+    width: 55%;
+    border-radius: 6px;
+  }
+  .sk-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block-start: 8px;
+    width: 85%;
+  }
+  .sk-body .sk-line {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-body .sk-line:nth-child(1) {
+    width: 100%;
+  }
+  .sk-body .sk-line:nth-child(2) {
+    width: 95%;
+  }
+  .sk-body .sk-line:nth-child(3) {
+    width: 60%;
+  }
+  .sk-btn {
+    height: 48px;
+    width: 170px;
+    border-radius: 6px;
+    margin-block-start: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  .sk-btn.sk-shimmer {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Right content */
+  .sk-hero-img {
+    width: 88%;
+    aspect-ratio: 16/9;
+    margin-inline-start: auto;
+    margin-block-start: 10px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%);
+  }
+
+  .sk-stat-row {
+    display: flex;
+    gap: 48px;
+    margin-block-start: 24px;
+    justify-content: end;
+  }
+  .sk-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .sk-stat-num {
+    height: 2.4em;
+    width: 60px;
+    border-radius: 6px;
+  }
+  .sk-stat-label {
+    height: 13px;
+    width: 80px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .sk-wrap {
+      min-height: auto;
+    }
+    .sk-left-bg,
+    .sk-right-bg {
+      position: static;
+      width: 100%;
+      clip-path: none;
+    }
+    .sk-left-bg {
+      padding: 50px 40px;
+    }
+    .sk-right-bg {
+      padding: 40px;
+    }
+    .sk-stat-row {
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+  }
+</style>
+
+<div class="sk-wrap">
+  <div class="sk-left-bg">
+    <div class="sk-title-1 sk-shimmer"></div>
+    <div class="sk-title-2 sk-shimmer"></div>
+    <div class="sk-body">
+      <div class="sk-line sk-shimmer"></div>
+      <div class="sk-line sk-shimmer"></div>
+      <div class="sk-line sk-shimmer"></div>
+    </div>
+    <div class="sk-btn sk-shimmer"></div>
+  </div>
+
+  <div class="sk-right-bg">
+    <div class="sk-hero-img sk-shimmer"></div>
+    <div class="sk-stat-row">
+      <div class="sk-stat">
+        <div class="sk-stat-num sk-shimmer"></div>
+        <div class="sk-stat-label sk-shimmer"></div>
+      </div>
+      <div class="sk-stat">
+        <div class="sk-stat-num sk-shimmer"></div>
+        <div class="sk-stat-label sk-shimmer"></div>
+      </div>
+      <div class="sk-stat">
+        <div class="sk-stat-num sk-shimmer"></div>
+        <div class="sk-stat-label sk-shimmer"></div>
+      </div>
+    </div>
+  </div>
+</div>
