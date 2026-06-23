@@ -1,0 +1,239 @@
+<section class="skeleton-wrapper">
+  <div class="skeleton-container">
+    <div class="sk-hero">
+      <div class="sk-content">
+        <div class="sk-title">
+          <div class="sk-line sk-h1 skeleton-shimmer"></div>
+          <div class="sk-line sk-h1 sk-h1-short skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-description">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-short skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-button skeleton-shimmer"></div>
+
+        <div class="sk-stats">
+          <div class="sk-stat">
+            <div class="sk-stat-title skeleton-shimmer"></div>
+            <div class="sk-stat-text skeleton-shimmer"></div>
+          </div>
+
+          <div class="sk-stat">
+            <div class="sk-stat-title skeleton-shimmer"></div>
+            <div class="sk-stat-text skeleton-shimmer"></div>
+          </div>
+
+          <div class="sk-stat">
+            <div class="sk-stat-title skeleton-shimmer"></div>
+            <div class="sk-stat-text skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk-visual">
+        <div class="sk-diagonal"></div>
+
+        <div class="sk-right-strip"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .skeleton-wrapper {
+    width: 100%;
+    background: #f3f4f6;
+    overflow: hidden;
+  }
+
+  .skeleton-container {
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  .sk-hero {
+    min-height: 828px;
+    display: grid;
+    grid-template-columns: 42% 58%;
+  }
+
+  .sk-content {
+    padding: 160px 0 90px 110px;
+  }
+
+  .sk-title {
+    margin-bottom: 42px;
+  }
+
+  .sk-h1 {
+    height: 58px;
+    width: 520px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+  }
+
+  .sk-h1-short {
+    width: 420px;
+  }
+
+  .sk-description {
+    margin-bottom: 40px;
+  }
+
+  .sk-description .sk-line {
+    width: 470px;
+    height: 16px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+
+  .sk-description .sk-short {
+    width: 310px;
+  }
+
+  .sk-button {
+    width: 525px;
+    height: 58px;
+    border-radius: 2px;
+    margin-bottom: 30px;
+  }
+
+  .sk-stats {
+    width: 525px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #d8dee7;
+  }
+
+  .sk-stat {
+    padding: 32px 24px;
+  }
+
+  .sk-stat:not(:last-child) {
+    border-right: 1px solid #d8dee7;
+  }
+
+  .sk-stat-title {
+    width: 70px;
+    height: 38px;
+    border-radius: 4px;
+    margin-bottom: 42px;
+  }
+
+  .sk-stat-text {
+    width: 100px;
+    height: 16px;
+    border-radius: 4px;
+  }
+
+  .sk-visual {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sk-diagonal {
+    position: absolute;
+    inset: 0;
+    background: #e5e7eb;
+    clip-path: polygon(40% 0, 100% 0, 64% 100%, 0 100%);
+  }
+
+  .sk-wave {
+    position: absolute;
+    background: #dfe3e8;
+  }
+
+  .sk-wave-1 {
+    width: 120%;
+    height: 58%;
+    left: 12%;
+    top: 18%;
+    border-radius: 45% 55% 55% 45%/55% 50% 50% 45%;
+  }
+
+  .sk-wave-2 {
+    width: 135%;
+    height: 50%;
+    left: -15%;
+    bottom: 8%;
+    border-radius: 55% 45% 50% 50%/55% 45% 55% 45%;
+  }
+
+  .sk-wave-3 {
+    width: 115%;
+    height: 48%;
+    left: 18%;
+    top: 20%;
+    border-radius: 50%;
+  }
+
+  .sk-right-strip {
+    position: absolute;
+    top: 0;
+    right: -2%;
+    width: 36%;
+    height: 100%;
+    background: #e1e7f0;
+    clip-path: polygon(100% 0%, 2% 100%, 100% 100%);
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.65),
+      transparent
+    );
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  @media (max-width: 991px) {
+    .sk-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .sk-content {
+      padding: 50px 20px;
+    }
+
+    .sk-h1,
+    .sk-description .sk-line,
+    .sk-button,
+    .sk-stats {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .sk-visual {
+      height: 420px;
+    }
+  }
+</style>

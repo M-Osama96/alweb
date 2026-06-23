@@ -1,0 +1,190 @@
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-info-split">
+      <div class="sk-info-text">
+        <div class="sk-heading-row">
+          <div class="sk-line sk-heading skeleton-shimmer"></div>
+          <div class="sk-line sk-heading skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-body">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer sk-short"></div>
+        </div>
+
+        <div class="sk-divider-row">
+          <div class="sk-divider skeleton-shimmer"></div>
+          <div class="sk-diamond skeleton-shimmer"></div>
+          <div class="sk-divider skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-stats">
+          <div class="sk-stat">
+            <div class="sk-stat-title skeleton-shimmer"></div>
+            <div class="sk-stat-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-stat">
+            <div class="sk-stat-title skeleton-shimmer"></div>
+            <div class="sk-stat-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-stat">
+            <div class="sk-stat-title skeleton-shimmer"></div>
+            <div class="sk-stat-text skeleton-shimmer"></div>
+          </div>
+        </div>
+
+        <div class="sk-btn skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-info-img skeleton-shimmer"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1280px;
+  }
+  .sk-info-split {
+    display: grid;
+    grid-template-columns: 7fr 8fr;
+    gap: 54px;
+    align-items: center;
+  }
+  .sk-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+  }
+  .sk-heading-row {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .sk-heading {
+    height: 56px;
+    border-radius: 6px;
+  }
+  .sk-heading:first-child {
+    width: 95%;
+  }
+  .sk-heading:last-child {
+    width: 72%;
+  }
+  .sk-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .sk-body .sk-line {
+    height: 16px;
+    border-radius: 4px;
+    width: 92%;
+  }
+  .sk-body .sk-short {
+    width: 62%;
+  }
+  .sk-divider-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sk-divider {
+    flex: 1;
+    height: 2px;
+    border-radius: 2px;
+  }
+  .sk-diamond {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .sk-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid #d1d5db;
+  }
+  .sk-stat {
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+  }
+  .sk-stat:not(:last-child) {
+    border-inline-end: 1px solid #d1d5db;
+  }
+  .sk-stat-title {
+    width: 70%;
+    height: 28px;
+    border-radius: 4px;
+  }
+  .sk-stat-text {
+    width: 80%;
+    height: 14px;
+    border-radius: 4px;
+  }
+  .sk-btn {
+    height: 60px;
+    width: 100%;
+    border-radius: 2px;
+  }
+  .sk-info-img {
+    width: 100%;
+    aspect-ratio: 1.16/1;
+    border-radius: 2px;
+  }
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>
