@@ -1,0 +1,309 @@
+.hero15 {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+.hero-slide {
+  position: relative;
+  padding: 100px 0;
+  .hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        270deg,
+        darken($setting_primary_color, 18%) 0%,
+        rgba(darken($setting_primary_color, 8%), 0.6) 52.94%,
+        rgba($setting_primary_color, 0) 100%
+      );
+      @include ltr {
+        background: linear-gradient(
+          90deg,
+          darken($setting_primary_color, 18%) 0%,
+          rgba(darken($setting_primary_color, 8%), 0.6) 52.94%,
+          rgba($setting_primary_color, 0) 100%
+        );
+        @include xs {
+          background: linear-gradient(
+            180deg,
+            darken($setting_primary_color, 18%) 0%,
+            rgba(darken($setting_primary_color, 8%), 0.6) 52.94%,
+            rgba($setting_primary_color, 0) 100%
+          );
+        }
+      }
+      @include xs {
+        background: linear-gradient(
+          180deg,
+          darken($setting_primary_color, 18%) 0%,
+          rgba(darken($setting_primary_color, 8%), 0.6) 52.94%,
+          rgba($setting_primary_color, 0) 100%
+        );
+      }
+    }
+  }
+  .hero-cont {
+    display: grid;
+    grid-template-columns: 444px 1fr;
+    gap: 200px;
+    position: relative;
+    @include md {
+      gap: 50px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include sm {
+      gap: 30px;
+    }
+    @include xs {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+
+      @include sm {
+      }
+      .hero-title {
+        font-size: 48px;
+        font-weight: $weight_bold;
+        color: #fff;
+        text-align: start;
+        margin-bottom: 16px;
+        @include md {
+          font-size: 42px;
+        }
+        @include sm {
+          font-size: 32px;
+        }
+        @include xs {
+          font-size: 23px;
+        }
+      }
+      .hero-desc {
+        font-size: 16px;
+        font-weight: $weight_medium;
+        color: #fff;
+        max-width: 390px;
+        margin-bottom: 24px;
+        // overflow: hidden;
+        // display: -webkit-box;
+        // -webkit-line-clamp: 3;
+        // -webkit-box-orient: vertical;
+        // height: 65px;
+        @include sm {
+          font-size: 14px;
+          font-weight: $weight_light;
+          margin-bottom: 16px;
+        }
+        @include xs {
+          max-width: 100%;
+        }
+      }
+
+      .contact-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        max-width: 175px;
+        width: 100%;
+        color: $setting_primary_color;
+        font-size: 16px;
+        font-weight: $weight_medium;
+        background-color: #fff;
+        transition: all 0.4s ease-in-out;
+        @include xs {
+          max-width: 100%;
+        }
+
+        &:hover {
+          background-color: $setting_primary_color;
+          color: #fff;
+        }
+      }
+    }
+    .hero-img-cont {
+      .hero-img {
+        aspect-ratio: 484/291;
+        border: 4.92px solid rgba(255, 255, 255, 1);
+        @include sm {
+          aspect-ratio: 339/228;
+        }
+        .img-cover {
+          display: flex;
+        }
+      }
+      .img-bottom {
+        margin-top: 24px;
+        height: 64px;
+        width: 100%;
+        @include sm {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.footer-container {
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  justify-content: end;
+  display: grid;
+  grid-template-columns: 444px 1fr;
+  gap: 200px;
+  position: relative;
+  transform: translateY(-164px);
+  z-index: 10;
+  height: 0;
+  @include md {
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include sm {
+    display: flex;
+    transform: translateY(-100px);
+    width: fit-content;
+  }
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+  .swiper-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: fit-content;
+    width: 100%;
+    height: 64px;
+
+    @include sm {
+      margin: 20px auto 0;
+    }
+    .swiper-pagination {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      bottom: 0;
+      @include sm {
+        gap: 14px;
+      }
+      .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.3);
+
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        width: 52px;
+        height: 52px;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        color: #fff;
+        backdrop-filter: blur(8px);
+
+        margin: 0;
+        font-size: 16px;
+        font-weight: $weight_bold;
+        @include sm {
+          width: 40px;
+          height: 40px;
+        }
+        &.swiper-pagination-bullet-active {
+          color: $setting_primary_color;
+          background-color: #fff;
+          font-size: 24px;
+          border-color: $setting_primary_color;
+        }
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      position: relative;
+      width: auto;
+      left: unset;
+      top: unset;
+      right: unset;
+      bottom: unset;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $setting_primary_color;
+      border: 1px solid rgba(255, 255, 255, 1);
+      transform: translateY(12px);
+      @include sm {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .swiper-button-next {
+      &::after {
+        font-size: 24px;
+        content: "\f060";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      @include ltr {
+        transform: translateY(12px) scale(-1);
+      }
+    }
+    .swiper-button-prev {
+      &::after {
+        font-size: 24px;
+        content: "\f061";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      @include ltr {
+        transform: translateY(12px) scale(-1);
+      }
+    }
+  }
+  .alighn-div {
+    height: 0;
+    @include xs {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+
+<style>
+*,*::before,*::after{box-sizing:border-box;border:none;margin:0;padding:0;}
+:root{--sk-dir:1;}
+
+.sk-wrap{
+  width:100%;
+  min-height:520px;
+  background:#e8edf5;
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  align-items:center;
+  gap:40px;
+  padding:60px 48px 60px 60px;
+}
+
+.sk-shimmer{position:relative;overflow:hidden;background:#c9d0db;border-radius:6px;}
+.sk-shimmer::after{content:"";position:absolute;inset:0;transform:translateX(calc(-100% * var(--sk-dir)));background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);animation:skshimmer 1.5s infinite;}
+@keyframes skshimmer{100%{transform:translateX(calc(100% * var(--sk-dir)));}}
+
+/* ── LEFT ── */
+.sk-left{display:flex;flex-direction:column;gap:22px;}
+.sk-title-1{height:3em;width:88%;border-radius:6px;}
+.sk-title-2{height:3em;width:65%;border-radius:6px;}
+.sk-body{display:flex;flex-direction:column;gap:10px;}
+.sk-body .sk-line{height:13px;border-radius:4px;}
+.sk-body .sk-line:nth-child(1){width:100%;}
+.sk-body .sk-line:nth-child(2){width:93%;}
+.sk-body .sk-line:nth-child(3){width:98%;}
+.sk-body .sk-line:nth-child(4){width:65%;}
+.sk-btns{display:flex;gap:16px;}
+.sk-btn-solid{height:50px;width:170px;border-radius:10px;}
+.sk-btn-outline{height:50px;width:150px;border-radius:10px;background:transparent;border:2px solid #c9d0db;}
+.sk-btn-outline.sk-shimmer{background:rgba(201,208,219,0.15);}
+
+/* ── MIDDLE image ── */
+.sk-img{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:4px;
+}
+
+/* ── RIGHT dots ── */
+.sk-dots{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.sk-dot{width:38px;height:38px;border-radius:50%;}
+.sk-dot-active{background:#9ca3af;}
+.sk-dot-idle{background:transparent;border:2px solid #c9d0db;}
+.sk-dot-idle.sk-shimmer{background:transparent;}
+
+@media(max-width:900px){
+  .sk-wrap{grid-template-columns:1fr;padding:40px 24px;}
+  .sk-dots{flex-direction:row;justify-content:center;}
+}
+</style>
+
+<div class="sk-wrap">
+  <!-- LEFT -->
+  <div class="sk-left">
+    <div class="sk-title-1 sk-shimmer"></div>
+    <div class="sk-title-2 sk-shimmer"></div>
+    <div class="sk-body">
+      <div class="sk-line sk-shimmer"></div>
+      <div class="sk-line sk-shimmer"></div>
+      <div class="sk-line sk-shimmer"></div>
+      <div class="sk-line sk-shimmer"></div>
+    </div>
+    <div class="sk-btns">
+      <div class="sk-btn-solid sk-shimmer"></div>
+      <div class="sk-btn-outline sk-shimmer"></div>
+    </div>
+  </div>
+
+  <!-- IMAGE -->
+  <div class="sk-img sk-shimmer"></div>
+
+  <!-- DOTS -->
+  <div class="sk-dots">
+    <div class="sk-dot sk-dot-active sk-shimmer"></div>
+    <div class="sk-dot sk-dot-idle sk-shimmer"></div>
+    <div class="sk-dot sk-dot-idle sk-shimmer"></div>
+  </div>
+</div>

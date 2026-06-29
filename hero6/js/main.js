@@ -28,11 +28,11 @@ var hero6swiper = new Swiper(".hero6-Swiper", {
   loop: true,
   speed: 300,
 
-  autoplay: {
-    delay: 4000, // وقت الانتقال (غيره براحتك)
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true, // اختياري
-  },
+  // autoplay: {
+  //   delay: 4000, // وقت الانتقال (غيره براحتك)
+  //   disableOnInteraction: false,
+  //   pauseOnMouseEnter: true, // اختياري
+  // },
 
   pagination: {
     el: ".hero6-cont .swiper-pagination",
