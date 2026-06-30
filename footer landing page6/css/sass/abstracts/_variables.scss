@@ -1,0 +1,9 @@
+$setting_primary_color: #1263dc;
+$setting_secondary_color: #f59e0b;
+$setting_text_color: #030303;
+
+@include xs {
+  :root {
+    --border-radius: var(--mobile-radius);
+  }
+}

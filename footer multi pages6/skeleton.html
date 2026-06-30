@@ -1,0 +1,343 @@
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+    --sk-dir: 1;
+  }
+
+  .sk-wrap {
+    width: 100%;
+    position: relative;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+    overflow: hidden;
+  }
+
+  .sk-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+    border-radius: 4px;
+  }
+  .sk-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+    animation: skshimmer 1.5s infinite;
+  }
+  @keyframes skshimmer {
+    100% {
+      transform: translateX(calc(100% * var(--sk-dir)));
+    }
+  }
+
+  /* ── LEFT (white) ── */
+  .sk-left {
+    padding: 48px 0 32px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+  }
+  .sk-logo-img {
+    width: 160px;
+    aspect-ratio: 1.4/1;
+    border-radius: 6px;
+  }
+
+  .sk-title {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 75%;
+  }
+  .sk-title .sk-line {
+    height: 1.9em;
+    border-radius: 4px;
+  }
+  .sk-title .sk-line:nth-child(1) {
+    width: 100%;
+  }
+  .sk-title .sk-line:nth-child(2) {
+    width: 35%;
+  }
+
+  .sk-subhead {
+    height: 18px;
+    width: 110px;
+    border-radius: 4px;
+    margin-block-start: 4px;
+  }
+
+  .sk-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 24px;
+    width: 90%;
+  }
+  .sk-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .sk-col .sk-line {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-col:nth-child(1) .sk-line:nth-child(1) {
+    width: 60%;
+  }
+  .sk-col:nth-child(1) .sk-line:nth-child(2) {
+    width: 90%;
+  }
+  .sk-col:nth-child(2) .sk-line:nth-child(1) {
+    width: 55%;
+  }
+  .sk-col:nth-child(2) .sk-line:nth-child(2) {
+    width: 35%;
+  }
+  .sk-col:nth-child(3) .sk-line:nth-child(1) {
+    width: 50%;
+  }
+  .sk-col:nth-child(3) .sk-line:nth-child(2) {
+    width: 90%;
+  }
+  .sk-col:nth-child(4) .sk-line:nth-child(1) {
+    width: 55%;
+  }
+  .sk-col:nth-child(4) .sk-line:nth-child(2) {
+    width: 55%;
+  }
+
+  .sk-divider {
+    height: 1px;
+    width: 90%;
+    background: #e5e7eb;
+    margin-block-start: 8px;
+  }
+
+  .sk-copy-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-block-end: 8px;
+  }
+  .sk-copy-line {
+    height: 13px;
+    width: 140px;
+    border-radius: 4px;
+  }
+  .sk-copy-link {
+    height: 13px;
+    width: 110px;
+    border-radius: 4px;
+    background: #e5e7eb;
+  }
+  .sk-copy-link.sk-shimmer {
+    background: #e5e7eb;
+  }
+
+  /* ── RIGHT (blue with clip-path diagonal) ── */
+  .sk-right {
+    position: relative;
+    background: #94959a;
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    margin-inline-start: -11%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 60px;
+    z-index: 1;
+  }
+
+  /* white contact card, parallelogram shaped */
+  .sk-contact-card {
+    background: #fff;
+    width: 78%;
+    padding: 28px 36px;
+    clip-path: polygon(6% 0, 100% 0, 94% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .sk-contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .sk-contact-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-block-start: 2px;
+  }
+  .sk-contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+  }
+  .sk-contact-text .sk-line {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-contact-row:nth-child(1) .sk-contact-text .sk-line:nth-child(1) {
+    width: 90%;
+  }
+  .sk-contact-row:nth-child(1) .sk-contact-text .sk-line:nth-child(2) {
+    width: 60%;
+  }
+  .sk-contact-row:nth-child(2) .sk-contact-text .sk-line {
+    width: 65%;
+  }
+  .sk-contact-row:nth-child(3) .sk-contact-text .sk-line {
+    width: 65%;
+  }
+  .sk-contact-row:nth-child(4) .sk-contact-text .sk-line {
+    width: 45%;
+  }
+
+  /* social icons bottom right of blue area */
+  .sk-social-row {
+    position: absolute;
+    inset-block-end: 24px;
+    inset-inline-end: 40px;
+    display: flex;
+    gap: 10px;
+  }
+  .sk-soc {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .sk-soc.sk-shimmer {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .sk-soc.sk-shimmer::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.06),
+      transparent
+    );
+  }
+
+  @media (max-width: 900px) {
+    .sk-wrap {
+      grid-template-columns: 1fr;
+    }
+    .sk-left {
+      padding: 32px 24px;
+    }
+    .sk-cols {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+    .sk-right {
+      clip-path: none;
+      margin-inline-start: 0;
+      padding: 48px 24px;
+      min-height: 340px;
+    }
+    .sk-contact-card {
+      clip-path: none;
+      width: 100%;
+    }
+  }
+</style>
+
+<div class="sk-wrap">
+  <!-- LEFT -->
+  <div class="sk-left">
+    <div class="sk-logo-img sk-shimmer"></div>
+
+    <div class="sk-title">
+      <div class="sk-line sk-shimmer"></div>
+      <div class="sk-line sk-shimmer"></div>
+    </div>
+
+    <div class="sk-subhead sk-shimmer"></div>
+
+    <div class="sk-cols">
+      <div class="sk-col">
+        <div class="sk-line sk-shimmer"></div>
+        <div class="sk-line sk-shimmer"></div>
+      </div>
+      <div class="sk-col">
+        <div class="sk-line sk-shimmer"></div>
+        <div class="sk-line sk-shimmer"></div>
+      </div>
+      <div class="sk-col">
+        <div class="sk-line sk-shimmer"></div>
+        <div class="sk-line sk-shimmer"></div>
+      </div>
+      <div class="sk-col">
+        <div class="sk-line sk-shimmer"></div>
+        <div class="sk-line sk-shimmer"></div>
+      </div>
+    </div>
+
+    <div class="sk-divider"></div>
+
+    <div class="sk-copy-row">
+      <div class="sk-copy-line sk-shimmer"></div>
+      <div class="sk-copy-link sk-shimmer"></div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="sk-right">
+    <div class="sk-contact-card">
+      <div class="sk-contact-row">
+        <div class="sk-contact-icon sk-shimmer"></div>
+        <div class="sk-contact-text">
+          <div class="sk-line sk-shimmer"></div>
+          <div class="sk-line sk-shimmer"></div>
+        </div>
+      </div>
+      <div class="sk-contact-row">
+        <div class="sk-contact-icon sk-shimmer"></div>
+        <div class="sk-contact-text">
+          <div class="sk-line sk-shimmer"></div>
+        </div>
+      </div>
+      <div class="sk-contact-row">
+        <div class="sk-contact-icon sk-shimmer"></div>
+        <div class="sk-contact-text">
+          <div class="sk-line sk-shimmer"></div>
+        </div>
+      </div>
+      <div class="sk-contact-row">
+        <div class="sk-contact-icon sk-shimmer"></div>
+        <div class="sk-contact-text">
+          <div class="sk-line sk-shimmer"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-social-row">
+      <div class="sk-soc sk-shimmer"></div>
+      <div class="sk-soc sk-shimmer"></div>
+      <div class="sk-soc sk-shimmer"></div>
+      <div class="sk-soc sk-shimmer"></div>
+    </div>
+  </div>
+</div>
