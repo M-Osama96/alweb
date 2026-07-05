@@ -1,0 +1,166 @@
+
+<style>
+*,*::before,*::after{box-sizing:border-box;border:none;margin:0;padding:0;}
+:root{--sk-dir:1;}
+.sk-wrap{width:100%;}
+
+.sk-shimmer{position:relative;overflow:hidden;border-radius:4px;}
+.sk-shimmer::after{content:"";position:absolute;inset:0;transform:translateX(calc(-100% * var(--sk-dir)));animation:skshimmer 1.5s infinite;}
+@keyframes skshimmer{100%{transform:translateX(calc(100% * var(--sk-dir)));}}
+
+.sk-sh-mid{background:rgba(255,255,255,0.2);}
+.sk-sh-mid::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);}
+
+.sk-sh-dark{background:rgba(255,255,255,0.12);}
+.sk-sh-dark::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.08),transparent);}
+
+.sk-sh-light{background:#d1d5db;}
+.sk-sh-light::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.6),transparent);}
+
+/* ── ZONE 1: top bar (medium gray) ── */
+.sk-topbar{
+  background:#6b7280;
+  padding:14px 48px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.sk-topbar-left{display:flex;flex-direction:column;gap:10px;}
+.sk-contact-row{display:flex;align-items:center;gap:24px;}
+.sk-contact-item{display:flex;align-items:center;gap:8px;}
+.sk-icon{width:16px;height:16px;border-radius:3px;}
+.sk-line{border-radius:4px;}
+.sk-contact-item .sk-line{height:12px;width:110px;}
+.sk-address-row{display:flex;align-items:center;gap:8px;}
+.sk-address-row .sk-line{height:12px;width:320px;}
+.sk-topbar-right{display:flex;align-items:center;gap:20px;flex-shrink:0;}
+.sk-social-row{display:flex;gap:10px;}
+.sk-soc{width:32px;height:32px;border-radius:50%;}
+.sk-arrow-icon{width:32px;height:32px;border-radius:6px;}
+
+/* ── ZONE 2: dark body + right strip ── */
+.sk-body-wrap{display:grid;grid-template-columns:1fr auto;min-height:280px;}
+
+.sk-body-dark{
+  background:#374151;
+  padding:40px 48px 60px;
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+
+.sk-desc{display:flex;flex-direction:column;gap:10px;}
+.sk-desc .sk-line{height:14px;}
+.sk-desc .sk-line:nth-child(1){width:100%;}
+.sk-desc .sk-line:nth-child(2){width:95%;}
+.sk-desc .sk-line:nth-child(3){width:70%;}
+
+.sk-nav-col{display:flex;flex-direction:column;gap:14px;}
+.sk-nav-col .sk-line{height:13px;}
+.sk-nav-col:nth-child(2) .sk-line:nth-child(1){width:55%;}
+.sk-nav-col:nth-child(2) .sk-line:nth-child(2){width:55%;}
+.sk-nav-col:nth-child(2) .sk-line:nth-child(3){width:80%;}
+.sk-nav-col:nth-child(3) .sk-line:nth-child(1){width:45%;}
+.sk-nav-col:nth-child(3) .sk-line:nth-child(2){width:75%;}
+.sk-nav-col:nth-child(3) .sk-line:nth-child(3){width:55%;}
+.sk-nav-col:nth-child(4) .sk-line:nth-child(1){width:55%;}
+.sk-nav-col:nth-child(4) .sk-line:nth-child(2){width:40%;}
+
+.sk-right-strip{
+  background:#9ca3af;
+  width:140px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding-block-start:36px;
+}
+.sk-strip-label{height:1.8em;width:80px;border-radius:6px;}
+
+/* ── ZONE 3: copyright ── */
+.sk-copyright-bar{
+  background:#374151;
+  border-block-start:1px solid rgba(255,255,255,0.1);
+  padding:14px 48px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  align-items:center;
+}
+.sk-copy-line{height:12px;width:130px;}
+.sk-copy-link{height:12px;width:100px;background:rgba(255,255,255,0.2);}
+.sk-copy-link.sk-shimmer{background:rgba(255,255,255,0.2);}
+.sk-copy-link.sk-shimmer::after{background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);}
+
+@media(max-width:900px){
+  .sk-body-dark{grid-template-columns:1fr 1fr;gap:24px;}
+  .sk-right-strip{display:none;}
+  .sk-address-row .sk-line{width:160px;}
+}
+</style>
+
+<div class="sk-wrap">
+  <!-- ZONE 1 -->
+  <div class="sk-topbar">
+    <div class="sk-topbar-left">
+      <div class="sk-contact-row">
+        <div class="sk-contact-item">
+          <div class="sk-icon sk-shimmer sk-sh-mid"></div>
+          <div class="sk-line sk-shimmer sk-sh-mid"></div>
+        </div>
+        <div class="sk-contact-item">
+          <div class="sk-icon sk-shimmer sk-sh-mid"></div>
+          <div class="sk-line sk-shimmer sk-sh-mid"></div>
+        </div>
+      </div>
+      <div class="sk-address-row">
+        <div class="sk-icon sk-shimmer sk-sh-mid"></div>
+        <div class="sk-line sk-shimmer sk-sh-mid"></div>
+      </div>
+    </div>
+    <div class="sk-topbar-right">
+      <div class="sk-social-row">
+        <div class="sk-soc sk-shimmer sk-sh-mid"></div>
+        <div class="sk-soc sk-shimmer sk-sh-mid"></div>
+        <div class="sk-soc sk-shimmer sk-sh-mid"></div>
+        <div class="sk-soc sk-shimmer sk-sh-mid"></div>
+      </div>
+      <div class="sk-arrow-icon sk-shimmer sk-sh-mid"></div>
+    </div>
+  </div>
+
+  <!-- ZONE 2 -->
+  <div class="sk-body-wrap">
+    <div class="sk-body-dark">
+      <div class="sk-desc">
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+      </div>
+      <div class="sk-nav-col">
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+      </div>
+      <div class="sk-nav-col">
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+      </div>
+      <div class="sk-nav-col">
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+        <div class="sk-line sk-shimmer sk-sh-dark"></div>
+      </div>
+    </div>
+    <div class="sk-right-strip">
+      <div class="sk-strip-label sk-shimmer sk-sh-mid"></div>
+    </div>
+  </div>
+
+  <!-- ZONE 3 -->
+  <div class="sk-copyright-bar">
+    <div class="sk-copy-line sk-shimmer sk-sh-dark"></div>
+    <div class="sk-copy-link sk-shimmer"></div>
+  </div>
+</div>

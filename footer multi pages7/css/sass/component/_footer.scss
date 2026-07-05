@@ -1,0 +1,316 @@
+.footer-multi-pages {
+  position: relative;
+  overflow: hidden;
+
+  @include xs {
+  }
+
+  .container {
+    max-width: 1540px;
+    padding: 0;
+  }
+}
+.footer-cont-grid {
+  display: grid;
+  grid-template-columns: 1fr 205px;
+  position: relative;
+  overflow: hidden;
+  @include md {
+    grid-template-columns: 1fr 180px;
+  }
+  @include xs {
+    grid-template-columns: 1fr;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      darken($setting_primary_color, 10%) 0%,
+      darken($setting_primary_color, 40%) 100%
+    );
+
+    z-index: 1;
+    @include xs {
+      background: radial-gradient(
+        90% 50% at 50% 50%,
+        darken($setting_primary_color, 10%) 0%,
+        darken($setting_primary_color, 40%) 100%
+      );
+    }
+  }
+  .bg-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 122px);
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    padding-inline-start: 20px;
+    align-items: center;
+    gap: 70px;
+    opacity: 0.05;
+    @include xs {
+      align-items: start;
+      height: calc(100% - 200px);
+      opacity: 0.1;
+      gap: 20px;
+    }
+
+    .img-contain {
+    }
+  }
+}
+.footer-cont {
+  position: relative;
+  z-index: 2;
+  @include md {
+    gap: 20px;
+  }
+  @include sm {
+  }
+  @include xs {
+  }
+}
+.info-plus-nav {
+  display: flex;
+  justify-content: end;
+
+  gap: 88px;
+  padding: 47px 26px 173px;
+  @include md {
+    gap: 30px;
+    padding: 47px 26px 123px;
+  }
+  @include sm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include xs {
+    grid-template-columns: 1fr;
+    padding: 100px 25px 40px;
+  }
+  .footer-info {
+    position: relative;
+
+    .footer-desc {
+      font-size: 24px;
+      font-weight: $weight_bold;
+      color: #fff;
+      max-width: 326px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      max-height: 101px;
+      @include md {
+        font-size: 20px;
+        max-height: 85px;
+      }
+      @include sm {
+        font-size: 18px;
+        max-height: 85px;
+      }
+    }
+  }
+  .footer-nav {
+    position: relative;
+    @include xs {
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 16px;
+      column-gap: 88px;
+      max-width: 643px;
+      flex-wrap: wrap;
+      @include md {
+        column-gap: 20px;
+        max-width: 460px;
+      }
+      @include xs {
+      }
+      .nav-li {
+        width: calc(33% - 57px);
+        font-size: 16px;
+        font-weight: $weight_medium;
+        color: #fff;
+        @include md {
+          font-size: 14px;
+          width: calc(33% - 12px);
+        }
+        @include sm {
+          width: fit-content;
+        }
+      }
+    }
+  }
+}
+.contact-plus-socials {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  padding: 47px 20px;
+  gap: 135px;
+  @include md {
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $setting_primary_color;
+  }
+  .contact-menue {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+
+    @include xs {
+      width: 100%;
+    }
+
+    .contact-menu-cont {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: start;
+      position: relative;
+      flex-wrap: wrap;
+
+      @include md {
+        justify-content: center;
+      }
+      @include sm {
+      }
+      @include xs {
+        justify-content: start;
+      }
+
+      .contact-btn {
+        display: flex;
+        gap: 10px;
+        align-items: start;
+        justify-content: start;
+        @include xs {
+          white-space: wrap;
+        }
+        .las {
+          font-size: 20px;
+          color: #fff;
+          @include xs {
+            font-size: 18px;
+          }
+        }
+        .contact-type {
+          font-size: 16px;
+          font-weight: $weight_medium;
+          color: #fff;
+
+          @include sm {
+            font-size: 14px;
+            font-weight: $weight_light;
+          }
+        }
+      }
+    }
+  }
+  .socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    position: relative;
+    gap: 7px;
+    @include xs {
+      margin: auto;
+    }
+    a {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      transition: all 0.4s ease-in-out;
+      border: 2px solid $setting_primary_color;
+      .lab {
+        color: $setting_primary_color;
+        font-size: 16px;
+        transition: all 0.4s ease-in-out;
+      }
+      &:hover {
+        background-color: $setting_primary_color;
+        border: 2px solid #fff;
+        .lab {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+.footer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  aspect-ratio: 205/258;
+  background-color: $setting_primary_color;
+  flex-direction: column;
+  gap: 45px;
+  @include xs {
+    flex-direction: row-reverse;
+    aspect-ratio: auto;
+    gap: 20px;
+  }
+  .las {
+    font-size: 70px;
+    color: #fff;
+    font-weight: $weight_bold;
+    transform: rotate(45deg);
+    @include ltr {
+      transform: rotate(135deg);
+    }
+  }
+  .btn-text {
+    font-size: 32px;
+    font-weight: $weight_bold;
+    color: #fff;
+  }
+}
+
+.cobyright {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: $weight_light;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  transform: translateY(-46px);
+  @include xs {
+    transform: translateY(0px);
+    background-color: darken($setting_primary_color, $amount: 30%);
+    padding: 20px 0;
+  }
+  .company {
+    color: lighten($color: $setting_primary_color, $amount: 10%);
+    margin-inline-start: 4px;
+    @include xs {
+      // color: #fff;
+    }
+  }
+}
