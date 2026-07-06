@@ -47,9 +47,9 @@
     width: 100%;
     height: calc(100% - 122px);
     z-index: 2;
-    display: grid;
-    grid-template-columns: 9fr 3fr;
-    padding-inline-start: 20px;
+
+    padding: 0 20px;
+    display: flex;
     align-items: center;
     gap: 70px;
     opacity: 0.05;
@@ -61,6 +61,7 @@
     }
 
     .img-contain {
+      width: 100%;
     }
   }
 }

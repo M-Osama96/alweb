@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skeleton Loading - Dark Card Grid</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: radial-gradient(circle at top, #374151 0%, #1f2937 55%, #111111 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 60px 20px;
+    min-height: 100vh;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 150%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.6s infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { left: -150%; }
+    100% { left: 150%; }
+  }
+
+  /* Page title */
+  .page-title {
+    width: 220px;
+    height: 44px;
+    border-radius: 8px;
+    margin: 0 auto 24px auto;
+    background-color: #4b5563;
+  }
+
+  /* Subtitle lines */
+  .subtitle-line {
+    height: 14px;
+    border-radius: 6px;
+    background-color: #374151;
+    margin: 0 auto 10px auto;
+  }
+
+  .subtitle-line.w1 { width: 480px; max-width: 90%; }
+  .subtitle-line.w2 { width: 300px; max-width: 70%; margin-bottom: 40px; }
+
+  /* Card grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .card {
+    position: relative;
+    height: 520px;
+    border-radius: 14px;
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .title-line {
+    height: 20px;
+    border-radius: 6px;
+    background-color: #6b7280;
+    margin-bottom: 10px;
+  }
+
+  .title-line.w1 { width: 85%; }
+  .title-line.w2 { width: 55%; margin-bottom: 22px; }
+
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .icon-circle {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 50%;
+    background-color: #6b7280;
+  }
+
+  .meta-text {
+    height: 12px;
+    border-radius: 6px;
+    background-color: #6b7280;
+  }
+
+  .meta-text.w1 { width: 90px; }
+  .meta-text.w2 { width: 70px; }
+
+  /* Button */
+  .button-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .button-skeleton {
+    width: 200px;
+    height: 52px;
+    border-radius: 999px;
+    background-color: #1f2937;
+    border: 2px solid #4b5563;
+  }
+
+  @media (max-width: 900px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+    .card {
+      height: 420px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="page-title shimmer"></div>
+  <div class="subtitle-line w1 shimmer"></div>
+  <div class="subtitle-line w2 shimmer"></div>
+
+  <div class="card-grid">
+
+    <div class="card shimmer">
+      <div class="card-content">
+        <div class="title-line w1"></div>
+        <div class="title-line w2"></div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="icon-circle"></div>
+            <div class="meta-text w1"></div>
+          </div>
+          <div class="meta-item">
+            <div class="icon-circle"></div>
+            <div class="meta-text w2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shimmer">
+      <div class="card-content">
+        <div class="title-line w1"></div>
+        <div class="title-line w2"></div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="icon-circle"></div>
+            <div class="meta-text w1"></div>
+          </div>
+          <div class="meta-item">
+            <div class="icon-circle"></div>
+            <div class="meta-text w2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card shimmer">
+      <div class="card-content">
+        <div class="title-line w1"></div>
+        <div class="title-line w2"></div>
+        <div class="meta-row">
+          <div class="meta-item">
+            <div class="icon-circle"></div>
+            <div class="meta-text w1"></div>
+          </div>
+          <div class="meta-item">
+            <div class="icon-circle"></div>
+            <div class="meta-text w2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="button-wrap">
+    <div class="button-skeleton shimmer"></div>
+  </div>
+
+</body>
+</html>
