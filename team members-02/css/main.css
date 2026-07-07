@@ -354,7 +354,8 @@ iframe {
 }
 @media (max-width: 767px) {
   .members .members-cont .members-flex .member-item .member-img-cont {
-    clip-path: polygon(40px 0%, 100% 0%, calc(100% - 40px) 100%, 0% 100%);
+    clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+    padding-inline-end: 15px;
   }
 }
 .members .members-cont .members-flex .member-item .member-img-cont .member-img {
@@ -369,7 +370,8 @@ iframe {
 }
 @media (max-width: 767px) {
   .members .members-cont .members-flex .member-item .member-img-cont .member-img {
-    clip-path: polygon(40px 0%, 100% 0%, calc(100% - 40px) 100%, 0% 100%);
+    clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
+    padding: 0 6px;
   }
 }
 .members .members-cont .members-flex .member-item .member-img-cont .member-img .img-cover {
@@ -377,7 +379,7 @@ iframe {
 }
 @media (max-width: 767px) {
   .members .members-cont .members-flex .member-item .member-img-cont .member-img .img-cover {
-    clip-path: polygon(40px 0%, 100% 0%, calc(100% - 40px) 100%, 0% 100%);
+    clip-path: polygon(30px 0%, 100% 0%, calc(100% - 30px) 100%, 0% 100%);
   }
 }
 .members .members-cont .members-flex .member-item .info {
