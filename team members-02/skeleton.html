@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skeleton Loading - Team Grid</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #f3f4f6;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 60px 60px;
+      }
+
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+        background-color: #d1d5db;
+      }
+
+      .shimmer::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        height: 100%;
+        width: 150%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.55) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        animation: shimmer 1.6s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -150%;
+        }
+        100% {
+          left: 150%;
+        }
+      }
+
+      /* Header row */
+      .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1600px;
+        margin: 0 auto 50px auto;
+      }
+
+      .page-title {
+        width: 260px;
+        height: 46px;
+        border-radius: 8px;
+        background-color: #9ca3af;
+      }
+
+      .header-button {
+        width: 190px;
+        height: 48px;
+        border-radius: 8px;
+        background-color: #f3f4f6;
+        border: 2px solid #9ca3af;
+      }
+
+      /* Grid */
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px 30px;
+        max-width: 1600px;
+        margin: 0 auto;
+      }
+
+      .team-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .image-wrap {
+        position: relative;
+        width: 100%;
+        height: 210px;
+        margin-bottom: 20px;
+      }
+
+      .image-skeleton {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 84%;
+        height: 100%;
+        clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
+        background-color: #9ca3af;
+      }
+
+      .accent-skeleton {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 10%;
+        height: 100%;
+        clip-path: polygon(60% 0%, 100% 0%, 40% 100%, 0% 100%);
+        background-color: #6b7280;
+        transform: rotate(3deg) translateX(-22px);
+      }
+
+      .name-line {
+        width: 70%;
+        height: 18px;
+        border-radius: 6px;
+        background-color: #9ca3af;
+        margin-bottom: 10px;
+      }
+
+      .sub-line {
+        width: 45%;
+        height: 12px;
+        border-radius: 6px;
+        background-color: #d1d5db;
+      }
+
+      @media (max-width: 1100px) {
+        .team-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .header-row {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
+        }
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-row">
+      <div class="page-title shimmer"></div>
+      <div class="header-button shimmer"></div>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="team-item">
+        <div class="image-wrap">
+          <div class="image-skeleton shimmer"></div>
+          <div class="accent-skeleton shimmer"></div>
+        </div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+    </div>
+  </body>
+</html>

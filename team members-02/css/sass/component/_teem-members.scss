@@ -1,0 +1,196 @@
+.members {
+  padding: 70px 0;
+  position: relative;
+  background: lighten($setting_primary_color, 50%);
+
+  @include sm {
+    padding: 30px 0;
+  }
+
+  .members-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    z-index: 2;
+    position: relative;
+    @include sm {
+      gap: 25px;
+    }
+
+    .members-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      @include xs {
+        justify-content: center;
+      }
+    }
+    .members-title {
+      font-size: 48px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      margin: 0;
+      @include sm {
+        font-size: 34px;
+      }
+    }
+
+    .all-members {
+      border: 2px solid $setting_primary_color;
+      color: $setting_primary_color;
+      background-color: #fff;
+      padding: 0 56px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: $weight_bold;
+      transition: all 0.4s ease-in-out;
+      position: relative;
+      @include sm {
+        height: 42px;
+        padding: 0 25px;
+        font-size: 14px;
+      }
+      &.lg {
+        @include xs {
+          display: none;
+        }
+      }
+      &.xs {
+        display: none;
+        @include xs {
+          display: flex;
+        }
+      }
+
+      &:hover {
+        background: $setting_primary_color;
+        color: #fff;
+      }
+    }
+    .members-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 100%;
+      @include sm {
+      }
+      @include xxs {
+      }
+      .member-item {
+        width: calc(100% / 4 - 15px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        @include sm {
+          width: calc(100% / 3 - 15px);
+        }
+        @include xs {
+          width: calc(100% / 2 - 15px);
+        }
+        &:hover {
+          .member-img-cont {
+            &::after {
+              background: $setting_secondary_color;
+            }
+          }
+          .info {
+            .position {
+              color: $setting_primary_color;
+            }
+          }
+        }
+        .member-img-cont {
+          padding-inline-end: 20px;
+          clip-path: polygon(60px 0%, 100% 0%, calc(100% - 60px) 100%, 0% 100%);
+
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            inset-inline-end: 0;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            background: $setting_primary_color;
+            z-index: 1;
+            transition: all 0.4s ease-in-out;
+          }
+
+          @include xs {
+            clip-path: polygon(
+              40px 0%,
+              100% 0%,
+              calc(100% - 40px) 100%,
+              0% 100%
+            );
+          }
+          .member-img {
+            z-index: 2;
+            position: relative;
+            aspect-ratio: 248/171;
+            clip-path: polygon(
+              60px 0%,
+              100% 0%,
+              calc(100% - 60px) 100%,
+              0% 100%
+            );
+            width: 100%;
+            height: 100%;
+            padding: 0 10px;
+            background: #fff;
+            @include xs {
+              clip-path: polygon(
+                40px 0%,
+                100% 0%,
+                calc(100% - 40px) 100%,
+                0% 100%
+              );
+            }
+            .img-cover {
+              clip-path: polygon(
+                60px 0%,
+                100% 0%,
+                calc(100% - 60px) 100%,
+                0% 100%
+              );
+              @include xs {
+                clip-path: polygon(
+                  40px 0%,
+                  100% 0%,
+                  calc(100% - 40px) 100%,
+                  0% 100%
+                );
+              }
+            }
+          }
+        }
+        .info {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          .name {
+            font-size: 16px;
+            font-weight: $weight_medium;
+            color: $setting_text_color;
+            margin: 0;
+          }
+          .position {
+            font-size: 14px;
+            font-weight: $weight_medium;
+            color: lighten($setting_text_color, 20%);
+            margin: 0;
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
