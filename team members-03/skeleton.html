@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skeleton Loading - Octagon Carousel</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #e5e7eb;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 60px 20px;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #d1d5db;
+  }
+
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 150%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.6s infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { left: -150%; }
+    100% { left: 150%; }
+  }
+
+  /* Title + subtitle */
+  .page-title {
+    width: 260px;
+    height: 46px;
+    border-radius: 8px;
+    margin: 0 auto 26px auto;
+    background-color: #9ca3af;
+  }
+
+  .subtitle-line {
+    height: 14px;
+    border-radius: 6px;
+    background-color: #cbd5e1;
+    margin: 0 auto 10px auto;
+  }
+
+  .subtitle-line.w1 { width: 640px; max-width: 90%; }
+  .subtitle-line.w2 { width: 480px; max-width: 70%; margin-bottom: 50px; }
+
+  /* Carousel row */
+  .carousel-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .nav-arrow {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: 8px;
+    background-color: #f3f4f6;
+    border: 2px solid #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-arrow .arrow-icon {
+    width: 20px;
+    height: 12px;
+    border-radius: 3px;
+    background-color: #9ca3af;
+  }
+
+  .cards-track {
+    display: flex;
+    gap: 24px;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .card {
+    background: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .octagon-skeleton {
+    width: 165px;
+    height: 165px;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    background-color: #9ca3af;
+    margin-bottom: 24px;
+  }
+
+  .name-line {
+    width: 75%;
+    height: 18px;
+    border-radius: 6px;
+    background-color: #9ca3af;
+    margin-bottom: 10px;
+  }
+
+  .sub-line {
+    width: 50%;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #d1d5db;
+  }
+
+  /* Button */
+  .button-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .button-skeleton {
+    width: 190px;
+    height: 50px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: 2px solid #9ca3af;
+  }
+
+  @media (max-width: 1200px) {
+    .cards-track {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nav-arrow {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="page-title shimmer"></div>
+  <div class="subtitle-line w1 shimmer"></div>
+  <div class="subtitle-line w2 shimmer"></div>
+
+  <div class="carousel-row">
+
+    <div class="nav-arrow">
+      <div class="arrow-icon shimmer"></div>
+    </div>
+
+    <div class="cards-track">
+
+      <div class="card">
+        <div class="octagon-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="octagon-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="octagon-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="octagon-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="octagon-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+    </div>
+
+    <div class="nav-arrow">
+      <div class="arrow-icon shimmer"></div>
+    </div>
+
+  </div>
+
+  <div class="button-wrap">
+    <div class="button-skeleton shimmer"></div>
+  </div>
+
+</body>
+</html>
