@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skeleton Loading - Rounded Card Carousel</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f3f4f6;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 60px 20px;
+  }
+
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+    background-color: #d1d5db;
+  }
+
+  .shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    height: 100%;
+    width: 150%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.6s infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { left: -150%; }
+    100% { left: 150%; }
+  }
+
+  /* Header row */
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1700px;
+    margin: 0 auto 16px auto;
+  }
+
+  .header-text { display: flex; flex-direction: column; }
+
+  .page-title {
+    width: 260px;
+    height: 46px;
+    border-radius: 8px;
+    background-color: #9ca3af;
+    margin-bottom: 18px;
+  }
+
+  .subtitle-line {
+    width: 620px;
+    max-width: 60vw;
+    height: 14px;
+    border-radius: 6px;
+    background-color: #d1d5db;
+  }
+
+  .header-button {
+    width: 190px;
+    height: 48px;
+    min-width: 190px;
+    border-radius: 999px;
+    background-color: #ffffff;
+    border: 2px solid #9ca3af;
+  }
+
+  /* Carousel row */
+  .carousel-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1700px;
+    margin: 50px auto 0 auto;
+  }
+
+  .nav-arrow {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .nav-arrow.left {
+    background-color: #d1d5db;
+    margin-right: -26px;
+  }
+
+  .nav-arrow.right {
+    background-color: #6b7280;
+    margin-left: -26px;
+  }
+
+  .nav-arrow .arrow-icon {
+    width: 18px;
+    height: 12px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    opacity: 0.8;
+  }
+
+  .cards-track {
+    display: flex;
+    gap: 18px;
+    flex: 1;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    min-width: 250px;
+  }
+
+  .image-skeleton {
+    width: 100%;
+    height: 190px;
+    border-radius: 6px;
+    background-color: #9ca3af;
+    margin-bottom: 18px;
+  }
+
+  .name-line {
+    width: 75%;
+    height: 18px;
+    border-radius: 6px;
+    background-color: #9ca3af;
+    margin-bottom: 10px;
+  }
+
+  .sub-line {
+    width: 50%;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #d1d5db;
+  }
+
+  @media (max-width: 1300px) {
+    .cards-track {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .header-row {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="header-row">
+    <div class="header-text">
+      <div class="page-title shimmer"></div>
+      <div class="subtitle-line shimmer"></div>
+    </div>
+    <div class="header-button shimmer"></div>
+  </div>
+
+  <div class="carousel-row">
+
+    <div class="nav-arrow left">
+      <div class="arrow-icon"></div>
+    </div>
+
+    <div class="cards-track">
+
+      <div class="card">
+        <div class="image-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="image-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="image-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="image-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+      <div class="card">
+        <div class="image-skeleton shimmer"></div>
+        <div class="name-line shimmer"></div>
+        <div class="sub-line shimmer"></div>
+      </div>
+
+    </div>
+
+    <div class="nav-arrow right">
+      <div class="arrow-icon"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
