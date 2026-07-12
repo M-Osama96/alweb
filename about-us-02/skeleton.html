@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skeleton Loading - About Us</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #f3f4f6;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shimmer::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        height: 100%;
+        width: 150%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.18) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        animation: shimmer 1.6s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -150%;
+        }
+        100% {
+          left: 150%;
+        }
+      }
+
+      /* Section wrapper with diagonal split background */
+      .about-section {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1800 / 955;
+        overflow: hidden;
+      }
+
+      .bg-top {
+        position: absolute;
+        inset: 0;
+        background-color: #f3f4f6;
+      }
+
+      .bg-bottom {
+        position: absolute;
+        inset: 0;
+        background-color: #1f2937;
+        clip-path: polygon(31% 41%, 100% 18%, 100% 100%, 0% 100%, 0% 26%);
+      }
+
+      /* Content layer */
+      .content-row {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      .decor-col {
+        position: relative;
+        width: 51%;
+        height: 100%;
+      }
+
+      .ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+      }
+
+      .ring.ring-large {
+        left: 10.3%;
+        top: 26.2%;
+        width: 57%;
+        height: 57%;
+      }
+
+      .ring.ring-small {
+        left: 14.8%;
+        top: 30.6%;
+        height: 48.2%;
+        width: 48.2%;
+      }
+
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #9ca3af;
+      }
+
+      .orb.orb-blue {
+        left: 17%;
+        top: 27.1%;
+        width: 10.44%;
+        height: 10.49%;
+        background-color: #cbd5e1;
+      }
+
+      .orb.orb-large {
+        left: 51.6%;
+        top: 25.2%;
+        width: 23.6%;
+        height: 23.6%;
+        background-color: #9ca3af;
+      }
+
+      .orb.orb-cream {
+        left: 10.2%;
+        top: 60.3%;
+        width: 17.1%;
+        height: 17.1%;
+        background-color: #d1d5db;
+      }
+
+      .orb.orb-purple {
+        left: 53.8%;
+        top: 69.2%;
+        width: 10.44%;
+        height: 10.49%;
+        background-color: #6b7280;
+      }
+
+      .text-col {
+        width: 49%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 5% 0 0;
+        padding-top: 150px;
+      }
+
+      /* Tabs */
+      .tab-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 40px;
+        margin-bottom: 12px;
+      }
+
+      .tab-active {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .tab-bar {
+        height: 16px;
+        border-radius: 5px;
+        background-color: #d1d5db;
+      }
+
+      .tab-bar.active {
+        width: 70px;
+        background-color: #f3f4f6;
+      }
+
+      .tab-bar.inactive {
+        width: 85px;
+        background-color: #6b7280;
+        margin-bottom: 10px;
+      }
+
+      .tab-underline {
+        width: 70px;
+        height: 3px;
+        background-color: #f3f4f6;
+      }
+
+      .divider {
+        width: 100%;
+        height: 1px;
+        background-color: #4b5563;
+        margin-bottom: 28px;
+      }
+
+      /* Paragraph */
+      .paragraph {
+        margin-bottom: 30px;
+      }
+
+      .p-line {
+        height: 12px;
+        border-radius: 5px;
+        background-color: #6b7280;
+        margin-bottom: 12px;
+      }
+
+      .p-line.w1 {
+        width: 100%;
+      }
+      .p-line.w2 {
+        width: 96%;
+      }
+      .p-line.w3 {
+        width: 98%;
+      }
+      .p-line.w4 {
+        width: 92%;
+      }
+      .p-line.w5 {
+        width: 55%;
+        margin-bottom: 0;
+      }
+
+      /* Checklist */
+      .check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+
+      .check-circle {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        border-radius: 50%;
+        border: 2px solid #10b981;
+        margin-top: 2px;
+      }
+
+      .check-lines {
+        flex: 1;
+      }
+
+      .check-line {
+        height: 12px;
+        border-radius: 5px;
+        background-color: #6b7280;
+        margin-bottom: 8px;
+      }
+
+      .check-line.w1 {
+        width: 95%;
+      }
+      .check-line.w2 {
+        width: 30%;
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 900px) {
+        .about-section {
+          aspect-ratio: auto;
+          height: auto;
+          padding: 40px 20px;
+        }
+        .bg-bottom {
+          clip-path: none;
+        }
+        .content-row {
+          flex-direction: column;
+        }
+        .decor-col,
+        .text-col {
+          width: 100%;
+        }
+        .decor-col {
+          height: 300px;
+          margin-bottom: 30px;
+        }
+        .text-col {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="about-section">
+      <div class="bg-top"></div>
+      <div class="bg-bottom"></div>
+
+      <div class="content-row">
+        <div class="decor-col">
+          <div class="ring ring-large"></div>
+          <div class="ring ring-small"></div>
+          <div class="orb orb-blue shimmer"></div>
+          <div class="orb orb-large shimmer"></div>
+          <div class="orb orb-cream shimmer"></div>
+          <div class="orb orb-purple shimmer"></div>
+        </div>
+
+        <div class="text-col">
+          <div class="tab-row">
+            <div class="tab-active">
+              <div class="tab-bar active shimmer"></div>
+              <div class="tab-underline"></div>
+            </div>
+            <div class="tab-bar inactive shimmer"></div>
+            <div class="tab-bar inactive shimmer"></div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="paragraph">
+            <div class="p-line w1 shimmer"></div>
+            <div class="p-line w2 shimmer"></div>
+            <div class="p-line w3 shimmer"></div>
+            <div class="p-line w4 shimmer"></div>
+            <div class="p-line w5 shimmer"></div>
+          </div>
+
+          <div class="check-item">
+            <div class="check-circle"></div>
+            <div class="check-lines">
+              <div class="check-line w1 shimmer"></div>
+              <div class="check-line w2 shimmer"></div>
+            </div>
+          </div>
+
+          <div class="check-item">
+            <div class="check-circle"></div>
+            <div class="check-lines">
+              <div class="check-line w1 shimmer"></div>
+              <div class="check-line w2 shimmer"></div>
+            </div>
+          </div>
+
+          <div class="check-item">
+            <div class="check-circle"></div>
+            <div class="check-lines">
+              <div class="check-line w1 shimmer"></div>
+              <div class="check-line w2 shimmer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
