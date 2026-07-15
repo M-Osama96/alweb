@@ -1,0 +1,203 @@
+.about {
+  padding: 70px 0;
+  position: relative;
+  background-color: lighten($setting_primary_color, $amount: 50%);
+  @include sm {
+    padding: 35px 0;
+  }
+}
+.about-cont {
+  display: grid;
+  grid-template-columns: 463px 1fr;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+  position: relative;
+  @include sm {
+    display: flex;
+    flex-direction: column;
+  }
+  .img-plus-statistics {
+    .about-img {
+      border-radius: 28px;
+      overflow: hidden;
+      padding: 12px;
+      margin-bottom: 14px;
+      background-color: #fff;
+      aspect-ratio: 463/336;
+      @include sm {
+        aspect-ratio: 463/250;
+        border-radius: 18px;
+      }
+      @include xs {
+        padding: 0;
+        border-radius: 12px;
+      }
+      .img-cover {
+        display: flex;
+        border-radius: 24px;
+        @include sm {
+          border-radius: 16px;
+        }
+        @include xs {
+          border-radius: 12px;
+        }
+      }
+    }
+    .statistics {
+      box-shadow: 0px 12px 28px 0px #0000000a;
+      border-radius: 24px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background-color: #fff;
+      @include sm {
+        border-radius: 16px;
+      }
+      @include xs {
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .st-item {
+        border-radius: 16px;
+        background-color: lighten($setting_primary_color, $amount: 50%);
+        padding: 9px 16px;
+        gap: 4px;
+        display: flex;
+        flex-direction: column;
+        @include sm {
+          border-radius: 12px;
+        }
+        @include xs {
+          border-radius: 8px;
+        }
+        .numb {
+          font-size: 20px;
+          font-weight: $weight_bold;
+          color: $setting_text_color;
+        }
+        .st-text {
+          font-size: 16px;
+          font-weight: $weight_regular;
+          color: lighten($setting_text_color, 20%);
+        }
+      }
+    }
+  }
+  .about-info {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 45px 40px;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    @include md {
+      padding: 20px 15px;
+    }
+    @include sm {
+      gap: 16px;
+    }
+    @include xs {
+      background-color: transparent;
+      padding: 0;
+    }
+    .title {
+      font-size: 32px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      margin: 0;
+      @include xs {
+        font-size: 26px;
+      }
+    }
+    .about-desc {
+      margin: 0;
+      font-size: 20px;
+      font-weight: $weight_bold;
+      color: lighten($setting_text_color, 20%);
+      @include xs {
+        font-size: 16px;
+      }
+    }
+    .about-text {
+      margin: 0;
+      font-size: 16px;
+      font-weight: $weight_light;
+      color: lighten($setting_text_color, 20%);
+      @include xs {
+        font-size: 14px;
+      }
+    }
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: -4px;
+      .features-line {
+        display: flex;
+        gap: 8px;
+        .las {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: 1px solid #22c55e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          &::before {
+            color: #22c55e;
+            font-size: 14px;
+          }
+        }
+        .features-text {
+          margin: 0;
+          font-size: 16px;
+          font-weight: $weight_light;
+          color: lighten($setting_text_color, 20%);
+          @include md {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .about-btn {
+      display: flex;
+      align-items: center;
+
+      height: 56px;
+      gap: 20px;
+      background-color: $setting_primary_color;
+      border-radius: 80px;
+      padding: 0 8px;
+      max-width: 241px;
+
+      .btn-text {
+        font-size: 16px;
+        font-weight: $weight_bold;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+      }
+      .las {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        &::before {
+          color: $setting_primary_color;
+        }
+        @include ltr {
+          &::before {
+            content: "\f105";
+          }
+        }
+      }
+    }
+  }
+}
