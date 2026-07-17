@@ -390,8 +390,8 @@ html[dir="ltr"] .about-cont .about-info .about-btn .las::before {
   z-index: 2;
   aspect-ratio: 403/378;
   overflow: hidden;
-  -webkit-mask: url("../images/Ellipse\ 8.svg") center/contain no-repeat;
-  mask: url("../images/Ellipse\ 8.svg") center/contain no-repeat;
+  -webkit-mask: url("../images/Ellipse.svg") center/contain no-repeat;
+  mask: url("../images/Ellipse.svg") center/contain no-repeat;
 }
 html[dir="ltr"] .about-cont .about-img-cont .about-img {
   transform: scaleX(-1);
