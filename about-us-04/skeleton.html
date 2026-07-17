@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skeleton Loading - About Us Blob</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #eef2f8;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 60px 20px;
+      }
+
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+        background-color: #d1d5db;
+      }
+
+      .shimmer::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        height: 100%;
+        width: 150%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        animation: shimmer 1.6s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -150%;
+        }
+        100% {
+          left: 150%;
+        }
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 70px 60px;
+        max-width: 1500px;
+        margin: 0 auto;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      /* Left column */
+      .eyebrow {
+        width: 70px;
+        height: 16px;
+        border-radius: 6px;
+        background-color: #d1d5db;
+        margin-bottom: 22px;
+      }
+
+      .heading-line {
+        height: 34px;
+        border-radius: 8px;
+        background-color: #9ca3af;
+        margin-bottom: 14px;
+      }
+
+      .heading-line.w1 {
+        width: 92%;
+      }
+      .heading-line.w2 {
+        width: 96%;
+      }
+      .heading-line.w3 {
+        width: 88%;
+      }
+      .heading-line.w4 {
+        width: 60%;
+        margin-bottom: 30px;
+      }
+
+      .body-block {
+        margin-bottom: 36px;
+      }
+
+      .body-line {
+        height: 13px;
+        border-radius: 6px;
+        background-color: #d1d5db;
+        margin-bottom: 10px;
+      }
+
+      .body-line.full {
+        width: 100%;
+      }
+      .body-line.last {
+        width: 50%;
+        margin-bottom: 0;
+      }
+
+      .button-skeleton {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        height: 62px;
+        border-radius: 999px;
+        border: 2px solid #9ca3af;
+        padding: 8px;
+      }
+
+      .button-text {
+        width: 130px;
+        height: 15px;
+        border-radius: 6px;
+        background-color: #9ca3af;
+        margin-left: 14px;
+      }
+
+      .button-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        border-radius: 50%;
+        background-color: #9ca3af;
+      }
+
+      /* Right column - blob visual */
+      .visual-col {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        aspect-ratio: 404 / 357;
+        margin: 0 auto;
+      }
+
+      .blob-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transform: scaleX(-1);
+        z-index: 2;
+        position: relative;
+      }
+
+      .blob-shimmer-rect {
+        animation: svgShimmer 1.6s infinite;
+      }
+
+      @keyframes svgShimmer {
+        0% {
+          transform: translateX(-300px);
+        }
+        100% {
+          transform: translateX(700px);
+        }
+      }
+
+      .dot {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #d1d5db;
+      }
+
+      .dot.dot-blue {
+        width: 46px;
+        height: 46px;
+        top: 8%;
+        left: 8%;
+      }
+
+      .dot.dot-orange {
+        width: 42px;
+        height: 42px;
+        top: 10%;
+        right: 20%;
+      }
+
+      .badge {
+        z-index: 3;
+        position: absolute;
+        bottom: 4%;
+        right: 8%;
+        width: 190px;
+        height: 190px;
+        background: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .badge-number {
+        width: 60px;
+        height: 30px;
+        border-radius: 6px;
+        background-color: #9ca3af;
+      }
+
+      .badge-label {
+        width: 90px;
+        height: 12px;
+        border-radius: 6px;
+        background-color: #d1d5db;
+      }
+
+      @media (max-width: 950px) {
+        .card {
+          grid-template-columns: 1fr;
+          padding: 40px 24px;
+        }
+        .visual-col {
+          max-width: 360px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="text-col">
+        <div class="eyebrow shimmer"></div>
+
+        <div class="heading-line w1 shimmer"></div>
+        <div class="heading-line w2 shimmer"></div>
+        <div class="heading-line w3 shimmer"></div>
+        <div class="heading-line w4 shimmer"></div>
+
+        <div class="body-block">
+          <div class="body-line full shimmer"></div>
+          <div class="body-line full shimmer"></div>
+          <div class="body-line full shimmer"></div>
+          <div class="body-line full shimmer"></div>
+          <div class="body-line last shimmer"></div>
+        </div>
+
+        <div class="button-skeleton">
+          <div class="button-text shimmer"></div>
+          <div class="button-icon shimmer"></div>
+        </div>
+      </div>
+
+      <div class="visual-col">
+        <svg
+          class="blob-svg"
+          viewBox="0 0 404 357"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <clipPath id="blobClip">
+              <path
+                d="M403.122 215.223C403.122 295.017 372.497 356.334 292.703 356.334C212.909 356.334 0 272.185 0 192.391C0 112.596 176.976 0 256.77 0C336.565 0 403.122 135.429 403.122 215.223Z"
+              />
+            </clipPath>
+            <linearGradient id="blobShimmerGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+              <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6" />
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <g clip-path="url(#blobClip)">
+            <rect x="0" y="0" width="404" height="357" fill="#9ca3af" />
+            <rect
+              class="blob-shimmer-rect"
+              x="-150"
+              y="0"
+              width="150"
+              height="357"
+              fill="url(#blobShimmerGrad)"
+            />
+          </g>
+        </svg>
+        <div class="dot dot-blue shimmer"></div>
+        <div class="dot dot-orange shimmer"></div>
+        <div class="badge">
+          <div class="badge-number shimmer"></div>
+          <div class="badge-label shimmer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

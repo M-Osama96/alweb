@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skeleton Loading - About Us Mosaic</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #eef2f8;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 60px 20px;
+      }
+
+      .shimmer {
+        position: relative;
+        overflow: hidden;
+        background-color: #d1d5db;
+      }
+
+      .shimmer::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        height: 100%;
+        width: 150%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        animation: shimmer 1.6s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -150%;
+        }
+        100% {
+          left: 150%;
+        }
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 70px 60px;
+        max-width: 1500px;
+        margin: 0 auto;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        display: grid;
+        grid-template-columns: 590px 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      /* Left mosaic */
+      .mosaic {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 473 / 443;
+      }
+
+      .mosaic-svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transform: scalex(-1);
+      }
+
+      .mosaic-shimmer-rect {
+        animation: svgShimmer 1.6s infinite;
+      }
+
+      @keyframes svgShimmer {
+        0% {
+          transform: translateX(-350px);
+        }
+        100% {
+          transform: translateX(820px);
+        }
+      }
+
+      .mosaic-piece {
+        position: absolute;
+        border-radius: 24px;
+      }
+
+      .piece-stat {
+        left: 0%;
+        top: 0%;
+        width: 36.9%;
+        height: 38.7%;
+        background-color: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .stat-number {
+        width: 50px;
+        height: 26px;
+        border-radius: 6px;
+        background-color: #9ca3af;
+      }
+
+      .stat-label {
+        width: 70%;
+        height: 12px;
+        border-radius: 6px;
+        background-color: #d1d5db;
+      }
+
+      .piece-play {
+        left: 62.5%;
+        top: 61.3%;
+        width: 37.5%;
+        height: 38.7%;
+        background-color: #6b7280;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .play-triangle {
+        width: 0;
+        height: 0;
+        border-top: 18px solid transparent;
+        border-bottom: 18px solid transparent;
+        border-left: 26px solid #d1d5db;
+        margin-left: 6px;
+      }
+
+      /* Right column */
+      .eyebrow {
+        width: 70px;
+        height: 16px;
+        border-radius: 6px;
+        background-color: #d1d5db;
+        margin-bottom: 22px;
+      }
+
+      .heading-line {
+        height: 34px;
+        border-radius: 8px;
+        background-color: #9ca3af;
+        margin-bottom: 14px;
+      }
+
+      .heading-line.w1 {
+        width: 90%;
+      }
+      .heading-line.w2 {
+        width: 94%;
+      }
+      .heading-line.w3 {
+        width: 86%;
+      }
+      .heading-line.w4 {
+        width: 55%;
+        margin-bottom: 30px;
+      }
+
+      .body-block {
+        margin-bottom: 36px;
+      }
+
+      .body-line {
+        height: 13px;
+        border-radius: 6px;
+        background-color: #d1d5db;
+        margin-bottom: 10px;
+      }
+
+      .body-line.full {
+        width: 100%;
+      }
+      .body-line.last {
+        width: 50%;
+        margin-bottom: 0;
+      }
+
+      .button-skeleton {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        height: 62px;
+        border-radius: 999px;
+        border: 2px solid #9ca3af;
+        padding: 8px;
+      }
+
+      .button-text {
+        width: 130px;
+        height: 15px;
+        border-radius: 6px;
+        background-color: #9ca3af;
+        margin-left: 14px;
+      }
+
+      .button-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        border-radius: 50%;
+        background-color: #9ca3af;
+      }
+
+      @media (max-width: 1050px) {
+        .card {
+          grid-template-columns: 1fr;
+          padding: 40px 24px;
+        }
+        .mosaic {
+          max-width: 480px;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="mosaic">
+        <svg
+          class="mosaic-svg"
+          viewBox="0 0 473 443"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <clipPath id="mosaicClip">
+              <path
+                d="M283 153C283 170.673 297.327 185 315 185H441C458.673 185 473 199.327 473 217V411C473 428.673 458.673 443 441 443H222C204.327 443 190 428.673 190 411V290C190 272.327 175.673 258 158 258H32C14.3269 258 0 243.673 0 226V32C0 14.3269 14.3269 0 32 0H251C268.673 0 283 14.3269 283 32V153Z"
+              />
+            </clipPath>
+            <linearGradient id="mosaicShimmerGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+              <stop offset="50%" stop-color="#ffffff" stop-opacity="0.6" />
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <g clip-path="url(#mosaicClip)">
+            <rect x="0" y="0" width="473" height="443" fill="#9ca3af" />
+            <rect
+              class="mosaic-shimmer-rect"
+              x="-175"
+              y="0"
+              width="175"
+              height="443"
+              fill="url(#mosaicShimmerGrad)"
+            />
+          </g>
+        </svg>
+        <div class="mosaic-piece piece-stat">
+          <div class="stat-number shimmer"></div>
+          <div class="stat-label shimmer"></div>
+        </div>
+        <div class="mosaic-piece piece-play">
+          <div class="play-triangle"></div>
+        </div>
+      </div>
+
+      <div class="text-col">
+        <div class="eyebrow shimmer"></div>
+
+        <div class="heading-line w1 shimmer"></div>
+        <div class="heading-line w2 shimmer"></div>
+        <div class="heading-line w3 shimmer"></div>
+        <div class="heading-line w4 shimmer"></div>
+
+        <div class="body-block">
+          <div class="body-line full shimmer"></div>
+          <div class="body-line full shimmer"></div>
+          <div class="body-line full shimmer"></div>
+          <div class="body-line full shimmer"></div>
+          <div class="body-line last shimmer"></div>
+        </div>
+
+        <div class="button-skeleton">
+          <div class="button-text shimmer"></div>
+          <div class="button-icon shimmer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
