@@ -1,0 +1,116 @@
+.clients {
+  padding: 70px 0;
+  background: radial-gradient(
+    at left,
+    lighten($setting_primary_color, 43%) 0%,
+    #ffffff 100%
+  );
+  @include sm {
+    padding: 30px 0;
+    background-color: #fff;
+  }
+}
+.clients-cont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  @include sm {
+    gap: 15px;
+  }
+  @include xs {
+  }
+  @include xs {
+    flex-direction: column;
+  }
+
+  .clients-text {
+    max-width: 700px;
+    position: relative;
+    z-index: 5;
+
+    .clients-title {
+      font-size: 48px;
+      font-weight: $weight-bold;
+      margin-bottom: 14px;
+      color: $setting_text_color;
+      text-align: center;
+      @include sm {
+        font-size: 36px;
+        margin: 0 0 12px;
+      }
+      @include xs {
+        font-size: 32px;
+      }
+    }
+    .clients-p {
+      font-size: 18px;
+      font-weight: $weight-bold;
+      color: lighten($setting_text_color, $amount: 20%);
+      margin: 0;
+      @include sm {
+        font-size: 16px;
+      }
+      @include xs {
+      }
+    }
+  }
+  .clients-flex-cont {
+    border-radius: 46px;
+    padding: 30px 40px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    @include sm {
+      border-radius: 28px;
+    }
+    @include xs {
+      padding: 20px;
+      border-radius: 16px;
+    }
+  }
+  .clients-flex {
+    display: flex;
+    width: 100%;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1px;
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+      background-color: rgba(#b6b6b6, $alpha: 0.2);
+      z-index: 0;
+    }
+    @include sm {
+    }
+    @include xs {
+    }
+    .clients-img {
+      min-width: calc(100% / 6 - 1px);
+      height: 146px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      flex: 1;
+      position: relative;
+      z-index: 2;
+      @include sm {
+        min-width: calc(100% / 5 - 1px);
+        height: 100px;
+      }
+      @include xs {
+        min-width: calc(100% / 2 - 1px);
+        height: 60px;
+      }
+    }
+  }
+}
