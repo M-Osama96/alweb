@@ -230,6 +230,13 @@
   // transform: translateX(-80px);
   box-shadow: 20px 0px 0px 10px rgba(0, 0, 0, 0.01);
   @include sm {
+    aspect-ratio: 600/250;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  @include xs {
     aspect-ratio: 600/350;
   }
   @media (min-width: 1300px) {

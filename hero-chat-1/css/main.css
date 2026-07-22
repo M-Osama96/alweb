@@ -471,6 +471,15 @@ html[dir=ltr] .hero::after {
 }
 @media (max-width: 991px) {
   .hero-img {
+    aspect-ratio: 600/250;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-img {
     aspect-ratio: 600/350;
   }
 }
