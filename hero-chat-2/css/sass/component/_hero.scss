@@ -192,6 +192,9 @@
     border-radius: 50%;
     overflow: hidden;
     border: 6px solid #fff;
+    @include xs {
+      width: 68%;
+    }
   }
   .hero-img-2 {
     position: absolute;

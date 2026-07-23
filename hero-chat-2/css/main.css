@@ -435,6 +435,11 @@ iframe {
   overflow: hidden;
   border: 6px solid #fff;
 }
+@media (max-width: 767px) {
+  .hero-imgs .hero-img {
+    width: 68%;
+  }
+}
 .hero-imgs .hero-img-2 {
   position: absolute;
   bottom: 40px;
