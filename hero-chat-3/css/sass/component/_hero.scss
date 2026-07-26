@@ -1,0 +1,149 @@
+.hero {
+  padding: 100px 0;
+  position: relative;
+
+  @include sm {
+    padding: 30px 0;
+  }
+}
+
+.hero-cont {
+  position: relative;
+  @include md {
+  }
+
+  @include sm {
+  }
+  @include xs {
+  }
+}
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 55%;
+  position: relative;
+  z-index: 2;
+  @include xs {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+  .title {
+    font-size: 44px;
+    font-weight: $weight_bold;
+    color: darken($setting_primary_color, $amount: 40%);
+    text-align: start;
+    margin-bottom: 0;
+    @include md {
+      font-size: 40px;
+    }
+    @include sm {
+      font-size: 32px;
+    }
+    @include xs {
+      font-size: 26px;
+    }
+  }
+
+  .desc {
+    font-size: 24px;
+    font-weight: $weight_medium;
+    color: lighten($setting_text_color, $amount: 20%);
+    width: 90%;
+    margin: 24px 0;
+    // overflow: hidden;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 3;
+    // -webkit-box-orient: vertical;
+    // height: 65px;
+    @include sm {
+      font-size: 20px;
+    }
+    @include xs {
+      font-size: 18px;
+      width: 100%;
+      margin: 14px 0;
+    }
+  }
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 68px;
+    border-radius: 50px;
+    width: 100%;
+    max-width: 280px;
+    gap: 28px;
+
+    transition: all 0.4s ease-in-out;
+    background: linear-gradient(
+      90deg,
+      $setting_secondary_color 0%,
+      $setting_primary_color 100%
+    );
+    color: #fff;
+    box-shadow: 0 0px 100px rgba(0, 0, 0, 0.2);
+    @include sm {
+      height: 58px;
+    }
+    @include xxs {
+      max-width: 100%;
+    }
+
+    .las {
+      font-size: 24px;
+      transform: translateX(-30px);
+      font-weight: $weight_bold;
+      @include sm {
+        font-size: 20px;
+      }
+      @include ltr {
+        transform: translateX(30px) scaleX(-1);
+      }
+    }
+    .btn-text {
+      font-size: 20px;
+      font-weight: $weight_medium;
+    }
+  }
+}
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: linear-gradient(
+      to left,
+      #f5f3fb 0 50%,
+      rgba(245, 243, 251, 0) 75%
+    );
+    @include xs {
+      background: linear-gradient(
+        to bottom,
+        #f5f3fb 0 40%,
+        rgba(245, 243, 251, 0) 75%
+      );
+    }
+    @include ltr {
+      background: linear-gradient(
+        to right,
+        #f5f3fb 0 50%,
+        rgba(245, 243, 251, 0) 75%
+      );
+      @include xs {
+        background: linear-gradient(
+          to bottom,
+          #f5f3fb 0 40%,
+          rgba(245, 243, 251, 0) 75%
+        );
+      }
+    }
+  }
+}
