@@ -1,0 +1,151 @@
+<div class="skeleton-wrapper sk-about">
+  <div class="sk-info-split">
+
+    <div class="sk-about-img-group">
+      <div class="sk-about-img-main skeleton-shimmer"></div>
+      <div class="sk-about-badge skeleton-shimmer">
+        <div class="sk-badge-num skeleton-shimmer"></div>
+        <div class="sk-badge-label skeleton-shimmer"></div>
+      </div>
+      <div class="sk-about-img-sub skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-info-text">
+      <div class="sk-line sk-eyebrow skeleton-shimmer"></div>
+      <div class="sk-line sk-heading skeleton-shimmer"></div>
+      <div class="sk-line sk-heading skeleton-shimmer"></div>
+      <div class="sk-line sk-heading-short skeleton-shimmer"></div>
+      <div class="sk-line skeleton-shimmer"></div>
+      <div class="sk-line skeleton-shimmer"></div>
+      <div class="sk-line skeleton-shimmer"></div>
+      <div class="sk-line skeleton-shimmer"></div>
+      <div class="sk-line sk-body-short skeleton-shimmer"></div>
+      <div class="sk-btn skeleton-shimmer">
+        <div class="sk-btn-icon skeleton-shimmer"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:80px; width:100%; }
+.skeleton-shimmer { position:relative; overflow:hidden; background:#d4d4d4; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.7),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+
+/* Layout */
+.sk-info-split {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+/* Image group */
+.sk-about-img-group {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 5/4;
+}
+.sk-about-img-main {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  width: 78%;
+  aspect-ratio: 4/3.4;
+  border-radius: 16px;
+}
+.sk-about-img-sub {
+  position: absolute;
+  inset-inline-end: 5%;
+  inset-block-end: 0;
+  width: 55%;
+  aspect-ratio: 4/3;
+  border-radius: 16px;
+}
+.sk-about-badge {
+  position: absolute;
+  inset-inline-end: 8%;
+  inset-block-start: 10%;
+  width: 130px;
+  aspect-ratio: 130/110;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #c2c2c2;
+}
+.sk-badge-num {
+  height: 30px;
+  width: 60%;
+  border-radius: 4px;
+}
+.sk-badge-label {
+  height: 12px;
+  width: 75%;
+  border-radius: 4px;
+}
+
+/* Text column */
+.sk-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sk-eyebrow { height: 14px; width: 15%; border-radius: 4px; }
+.sk-heading { height: 2em; width: 90%; border-radius: 4px; }
+.sk-heading-short { height: 2em; width: 55%; border-radius: 4px; }
+.sk-info-text > .sk-line:not(.sk-eyebrow):not(.sk-heading):not(.sk-heading-short) {
+  height: 14px;
+  width: 100%;
+  border-radius: 4px;
+  margin-block-start: 6px;
+}
+.sk-body-short { width: 45%; }
+
+.sk-btn {
+  height: 56px;
+  width: 220px;
+  border-radius: 999px;
+  margin-block-start: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline-end: 6px;
+}
+.sk-btn-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #b8b8b8;
+}
+
+@media (max-width: 768px) {
+  .sk-info-split { grid-template-columns: 1fr; gap: 40px; }
+  .sk-about-img-group { max-width: 100%; margin-inline: auto; }
+}
+@media (max-width: 480px) {
+  .sk-heading, .sk-heading-short { width: 100%; }
+  .sk-btn { width: 180px; height: 48px; }
+  .sk-btn-icon { width: 36px; height: 36px; }
+}
+</style>
