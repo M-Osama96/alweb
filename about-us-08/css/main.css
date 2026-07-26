@@ -377,7 +377,6 @@ html[dir=ltr] .about-cont .about-info .about-btn .las::before {
 .about-cont .about-imgs .about-img {
   width: 76%;
   aspect-ratio: 330/340;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1215686275);
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -397,7 +396,6 @@ html[dir=ltr] .about-cont .about-info .about-btn .las::before {
   margin-inline-start: auto;
   width: 65%;
   aspect-ratio: 276/177;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1215686275);
   border-radius: 20px;
   overflow: hidden;
   margin-top: -60px;
