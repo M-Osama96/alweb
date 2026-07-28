@@ -1,0 +1,264 @@
+<section class="skeleton-wrapper sk-hero">
+  <div class="sk-hero-bg skeleton-shimmer">
+    <div class="sk-hero-card skeleton-shimmer">
+      <div class="sk-badge skeleton-shimmer"></div>
+
+      <div class="sk-hero-heading">
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-hero-body">
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-hero-stats-row skeleton-shimmer">
+        <div class="sk-hero-stat">
+          <div class="sk-line sk-stat-num skeleton-shimmer"></div>
+          <div class="sk-line sk-stat-label skeleton-shimmer"></div>
+        </div>
+        <div class="sk-hero-stat">
+          <div class="sk-line sk-stat-num skeleton-shimmer"></div>
+          <div class="sk-line sk-stat-label skeleton-shimmer"></div>
+        </div>
+        <div class="sk-hero-stat">
+          <div class="sk-line sk-stat-num skeleton-shimmer"></div>
+          <div class="sk-line sk-stat-label skeleton-shimmer"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sk-scroll-indicator">
+      <div class="sk-scroll-pill skeleton-shimmer">
+        <div class="sk-scroll-dot skeleton-shimmer"></div>
+      </div>
+      <div class="sk-scroll-chevron skeleton-shimmer"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(168, 168, 168, 1);
+  }
+  .skeleton-wrapper.sk-hero {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-header {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-strip {
+    padding-block: 60px;
+  }
+  .skeleton-wrapper.sk-footer {
+    padding-block: 60px 0;
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+
+  .skeleton-wrapper.sk-hero {
+    padding-block: 0;
+  }
+  .sk-hero-bg {
+    width: 100%;
+    min-height: 910px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-inline: 60px;
+    padding-block: 60px;
+    background-color: #b6b6b6;
+  }
+
+  .sk-hero-card {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .sk-badge {
+    height: 38px;
+    width: 180px;
+    border-radius: 999px;
+  }
+
+  .sk-hero-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sk-hero-heading .sk-line {
+    height: 2em;
+    border-radius: 6px;
+  }
+  .sk-hero-heading .sk-line:nth-child(1) {
+    width: 95%;
+  }
+  .sk-hero-heading .sk-line:nth-child(2) {
+    width: 85%;
+  }
+  .sk-hero-heading .sk-line:nth-child(3) {
+    width: 60%;
+  }
+
+  .sk-hero-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sk-hero-body .sk-line {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-hero-body .sk-line:nth-child(1) {
+    width: 100%;
+  }
+  .sk-hero-body .sk-line:nth-child(2) {
+    width: 96%;
+  }
+  .sk-hero-body .sk-line:nth-child(3) {
+    width: 90%;
+  }
+  .sk-hero-body .sk-line:nth-child(4) {
+    width: 55%;
+  }
+
+  .sk-hero-stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-block-start: 10px;
+  }
+  .sk-hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .sk-stat-num {
+    height: 1.5em;
+    width: 44px;
+    border-radius: 5px;
+  }
+  .sk-stat-label {
+    height: 11px;
+    width: 75px;
+    border-radius: 4px;
+  }
+
+  .sk-scroll-indicator {
+    position: absolute;
+    inset-block-end: 40px;
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .sk-scroll-pill {
+    width: 36px;
+    height: 60px;
+    border-radius: 999px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-block-start: 10px;
+  }
+  .sk-scroll-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+  .sk-scroll-chevron {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 900px) {
+    .sk-hero-bg {
+      min-height: auto;
+      padding-block: 40px;
+    }
+    .sk-hero-card {
+      max-width: 100%;
+      padding: 28px;
+    }
+    .sk-hero-stats-row {
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .sk-hero-heading .sk-line {
+      height: 1.6em;
+    }
+    .sk-hero-card {
+      padding: 20px;
+    }
+  }
+</style>

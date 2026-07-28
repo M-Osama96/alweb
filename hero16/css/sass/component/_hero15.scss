@@ -1,0 +1,192 @@
+// Hero 16 Component (Without Header)
+.hero16 {
+  position: relative;
+  overflow: hidden;
+  padding: 180px 0 100px;
+  @include sm {
+    padding: 100px 0 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        $setting_primary_color 0%,
+        rgba($setting_primary_color, 0.88) 100%
+      );
+    }
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .info {
+      max-width: 890px;
+
+      .hero-title {
+        font-size: 48px;
+        font-weight: $weight_bold;
+        line-height: 1.35;
+        color: #ffffff;
+        margin-bottom: 16px;
+        text-align: center;
+
+        @include md {
+          font-size: 34px;
+        }
+
+        @include sm {
+          font-size: 26px;
+          max-width: 600px;
+          margin: 0 auto 12px;
+        }
+
+        @include xs {
+          font-size: 22px;
+        }
+      }
+
+      .hero-desc {
+        font-size: 16px;
+        font-weight: $weight_regular;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.88);
+        max-width: 710px;
+        margin: 0 auto 22px;
+        text-align: center;
+
+        @include sm {
+          font-size: 14px;
+          max-width: 500px;
+          margin: 0 auto 12px;
+        }
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 60px;
+        @include sm {
+          margin-bottom: 40px;
+        }
+
+        @include xs {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .btn-white {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 175px;
+          height: 48px;
+          padding: 0 18px;
+          background-color: #ffffff;
+          color: $setting_primary_color;
+          font-size: 16px;
+          font-weight: $weight_bold;
+          border-radius: 8px;
+          text-decoration: none;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background-color: #f8fafc;
+          }
+
+          @include xs {
+            width: 100%;
+            max-width: 280px;
+          }
+        }
+      }
+    }
+
+    // 5 Glassmorphism Stats Cards
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      width: 100%;
+
+      @include md {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include xs {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-card {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 14px;
+        padding: 37px;
+        text-align: center;
+        transition: all 0.3s ease;
+        @include sm {
+          border-radius: 10px;
+          padding: 25px;
+        }
+
+        &:hover {
+          transform: translateY(-4px);
+          background: rgba(255, 255, 255, 0.18);
+          border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .stat-number {
+          font-size: 40px;
+          font-weight: $weight_bold;
+          color: #ffffff;
+          margin: 0 0 6px;
+          line-height: 1.2;
+
+          @include sm {
+            font-size: 26px;
+          }
+        }
+
+        .stat-label {
+          font-size: 20px;
+          font-weight: $weight_bold;
+          color: rgba(255, 255, 255, 0.9);
+          margin: 0;
+
+          @include sm {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .hero-wave {
+    position: absolute;
+    bottom: 0px;
+    height: 60px;
+    width: 110%;
+    inset-inline-end: -5%;
+    overflow: hidden;
+    z-index: 6;
+    .svg-wave {
+    }
+  }
+}
