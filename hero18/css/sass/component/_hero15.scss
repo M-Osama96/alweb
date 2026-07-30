@@ -163,18 +163,28 @@
     }
   }
   .bottom-svg {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     z-index: 3;
   }
 
   // Scroll Down Indicator Button
   .scroll-down-wrapper {
-    position: relative;
+    position: absolute;
+    bottom: 80px;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     width: 100%;
+    @include sm {
+      bottom: 50px;
+    }
+    @include xs {
+      bottom: 30px;
+    }
 
     .scroll-notch {
       position: relative;

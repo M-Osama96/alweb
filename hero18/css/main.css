@@ -369,16 +369,30 @@ iframe {
   }
 }
 .hero18 .bottom-svg {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 3;
 }
 .hero18 .scroll-down-wrapper {
-  position: relative;
+  position: absolute;
+  bottom: 80px;
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   width: 100%;
+}
+@media (max-width: 991px) {
+  .hero18 .scroll-down-wrapper {
+    bottom: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .hero18 .scroll-down-wrapper {
+    bottom: 30px;
+  }
 }
 .hero18 .scroll-down-wrapper .scroll-notch {
   position: relative;
