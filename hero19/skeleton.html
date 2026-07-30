@@ -1,0 +1,255 @@
+<section class="skeleton-wrapper sk-hero3">
+  <svg
+    class="sk-hero3-bg"
+    viewBox="0 0 1440 719"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M0 23H428L427.949 162C427.961 128.867 401.104 102 367.971 102H0V23Z"
+    ></path>
+    <path
+      d="M428 23H-3.05176e-05L0.0513306 162C0.039093 128.867 26.8957 102 60.0292 102H428V23Z"
+    ></path>
+    <path
+      d="M1440 24H1012L1012.05 163C1012.04 129.867 1038.9 103 1072.03 103H1440V24Z"
+    ></path>
+    <path
+      d="M1012 24H1440L1439.95 163C1439.96 129.867 1413.1 103 1379.97 103H1012V24Z"
+    ></path>
+    <rect width="1440" height="103"></rect>
+    <path
+      d="M428 102H1012V649C1012 687.66 980.66 719 942 719H797.536C778.638 719 762.388 705.614 758.768 687.066C750.459 644.488 689.541 644.488 681.232 687.066C677.612 705.614 661.362 719 642.464 719H498C459.34 719 428 687.66 428 649V102Z"
+    ></path>
+  </svg>
+
+  <div
+    class="sk-hero3-panel sk-hero3-img sk-hero3-img-start skeleton-shimmer"
+  ></div>
+
+  <div class="sk-hero3-panel sk-hero3-text">
+    <div class="sk-line sk-hero3-title skeleton-shimmer"></div>
+    <div
+      class="sk-line sk-hero3-title sk-hero3-title-sm skeleton-shimmer"
+    ></div>
+    <div class="sk-hero3-body">
+      <div class="sk-line skeleton-shimmer"></div>
+      <div class="sk-line skeleton-shimmer"></div>
+      <div class="sk-line skeleton-shimmer"></div>
+      <div class="sk-line skeleton-shimmer"></div>
+    </div>
+    <div class="sk-hero3-btn skeleton-shimmer"></div>
+  </div>
+
+  <div
+    class="sk-hero3-panel sk-hero3-img sk-hero3-img-end skeleton-shimmer"
+  ></div>
+
+  <div class="sk-hero3-arrow skeleton-shimmer"></div>
+</section>
+
+<style>
+  .skeleton-wrapper.sk-hero3 {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440 / 719;
+    padding-block: 0;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .sk-hero3-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .sk-hero3-bg path,
+  .sk-hero3-bg rect {
+    fill: #d1d5db;
+  }
+
+  .sk-hero3-panel {
+    position: absolute;
+    inset-block-start: 14.5%;
+    block-size: 75%;
+    border-radius: 20px;
+    z-index: 1;
+  }
+  .sk-hero3-img-start {
+    inset-inline-start: 1.1%;
+    inline-size: 27.7%;
+    top: 18%;
+  }
+  .sk-hero3-img-end {
+    inset-inline-end: 1.1%;
+    inline-size: 27.7%;
+    inset-inline-end: -71.5%;
+    top: -58%;
+  }
+
+  .sk-hero3-text {
+    inset-inline-start: 29.8%;
+    inline-size: 40.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-inline: 40px;
+    text-align: center;
+  }
+  .sk-hero3-title {
+    height: 2.4em;
+    width: 90%;
+    border-radius: 6px;
+  }
+  .sk-hero3-title-sm {
+    width: 55%;
+  }
+
+  .sk-hero3-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-block-start: 8px;
+  }
+  .sk-hero3-body .sk-line {
+    height: 14px;
+    border-radius: 4px;
+    width: 95%;
+  }
+  .sk-hero3-body .sk-line:last-child {
+    width: 60%;
+  }
+
+  .sk-hero3-btn {
+    height: 52px;
+    width: 60%;
+    border-radius: 999px;
+    margin-block-start: 16px;
+  }
+
+  .sk-hero3-arrow {
+    position: absolute;
+    inset-inline-start: 50%;
+    inset-block-start: 87%;
+    inline-size: 56px;
+    block-size: 56px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  @media (max-width: 768px) {
+    .skeleton-wrapper.sk-hero3 {
+      aspect-ratio: unset;
+      background: rgba(229, 231, 235, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding-block: 40px;
+    }
+    .sk-hero3-bg {
+      display: none;
+    }
+    .sk-hero3-panel,
+    .sk-hero3-arrow {
+      position: relative;
+      inset: auto !important;
+      transform: none !important;
+    }
+    .sk-hero3-img-start,
+    .sk-hero3-img-end {
+      inline-size: 90%;
+      block-size: 220px;
+    }
+    .sk-hero3-text {
+      inline-size: 90%;
+      padding-inline: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-hero3-img-start,
+    .sk-hero3-img-end {
+      block-size: 180px;
+    }
+    .sk-hero3-btn {
+      width: 80%;
+    }
+  }
+</style>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+  .skeleton-wrapper.sk-hero {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-header {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-strip {
+    padding-block: 60px;
+  }
+  .skeleton-wrapper.sk-footer {
+    padding-block: 60px 0;
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>

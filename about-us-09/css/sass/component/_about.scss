@@ -1,7 +1,12 @@
 .about {
   padding: 90px 0;
   position: relative;
-  background-color: #040914;
+  background: radial-gradient(
+    47.9% 47.92% at 50% 52.08%,
+    darken($setting_primary_color, 30%) 0%,
+    darken($setting_primary_color, 40%) 100%
+  );
+
   color: #ffffff;
   overflow: hidden;
 
@@ -18,17 +23,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
+  gap: 20px;
   position: relative;
   z-index: 2;
 
   @include md {
-    gap: 32px;
   }
 
   @include sm {
-    flex-direction: column-reverse;
-    gap: 40px;
+    flex-direction: column;
   }
 
   .about-info {
@@ -51,7 +54,7 @@
       border: 1px solid rgba($setting_primary_color, 0.3);
       border-radius: 50px;
       width: fit-content;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
 
       .badge-dot {
         width: 8px;
@@ -64,14 +67,14 @@
 
       .badge-text {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: $weight-medium;
         color: lighten($setting_primary_color, 15%);
       }
     }
 
     .title {
-      font-size: 38px;
-      font-weight: 800;
+      font-size: 40px;
+      font-weight: $weight-bold;
       color: #ffffff;
       margin: 0 0 16px 0;
       line-height: 1.2;
@@ -86,8 +89,8 @@
     }
 
     .about-subtitle {
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 24px;
+      font-weight: $weight-bold;
       color: #ffffff;
       line-height: 1.5;
       margin: 0 0 20px 0;
@@ -103,14 +106,14 @@
 
     .about-text {
       font-size: 16px;
-      font-weight: 400;
+      font-weight: $weight-medium;
       color: rgba(255, 255, 255, 0.65);
-      line-height: 1.8;
-      margin: 0 0 36px 0;
+      line-height: 21px;
+      margin: 0 0 20px 0;
 
       @include md {
         font-size: 15px;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
       }
 
       @include xs {
@@ -129,34 +132,39 @@
       }
 
       .feature-card {
-        background: rgba(13, 27, 56, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(255, 255, 255, 0.04);
+
         border-radius: 18px;
-        padding: 24px 20px;
+        padding: 20px;
         transition: all 0.3s ease;
 
         &:hover {
           border-color: rgba($setting_primary_color, 0.4);
           transform: translateY(-3px);
-          background: rgba(18, 36, 74, 0.8);
+          background: rgba(darken($setting_primary_color, 30%), 0.8);
+        }
+        @include xs {
+          padding: 16px;
+          border-radius: 12px;
         }
 
         .feature-icon {
-          width: 44px;
-          height: 44px;
+          width: 40px;
+          height: 40px;
           border-radius: 12px;
           background: rgba($setting_primary_color, 0.15);
           color: lighten($setting_primary_color, 12%);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 22px;
+          font-size: 16px;
           margin-bottom: 16px;
         }
 
         .feature-title {
-          font-size: 17px;
-          font-weight: 700;
+          font-size: 16px;
+          font-weight: $weight-bold;
           color: #ffffff;
           margin: 0 0 10px 0;
 
@@ -166,10 +174,14 @@
         }
 
         .feature-desc {
-          font-size: 13.5px;
+          font-size: 16px;
+          font-weight: $weight-regular;
           color: rgba(255, 255, 255, 0.6);
           line-height: 1.6;
           margin: 0;
+          @include md {
+            font-size: 13px;
+          }
         }
       }
     }
@@ -177,17 +189,11 @@
 
   .about-imgs {
     position: relative;
-    width: 44%;
+    width: 46%;
     flex-shrink: 0;
-
-    @include md {
-      width: 45%;
-    }
 
     @include sm {
       width: 100%;
-      max-width: 540px;
-      margin: 0 auto;
     }
 
     .about-img {
@@ -195,12 +201,15 @@
       border-radius: 28px;
       overflow: hidden;
       position: relative;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      aspect-ratio: 1 / 1;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      aspect-ratio: 520/490;
+      @include sm {
+        aspect-ratio: 520/240;
+      }
 
       @include xs {
-        border-radius: 20px;
+        border-radius: 14px;
+        aspect-ratio: 1/1;
       }
 
       .img-cover {
@@ -212,29 +221,34 @@
 
       .stat-card {
         position: absolute;
-        bottom: 24px;
-        inset-inline-start: 24px;
-        background: linear-gradient(135deg, rgba(16, 86, 203, 0.95) 0%, rgba(12, 62, 150, 0.95) 100%);
+        bottom: 12px;
+        inset-inline-end: 12px;
+        background: rgba($setting_primary_color, 0.48);
+
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 20px;
-        padding: 20px 24px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        padding: 10px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
         max-width: 250px;
+        width: 100%;
+        height: 117px;
         z-index: 3;
 
         @include xs {
-          bottom: 16px;
-          inset-inline-start: 16px;
-          padding: 16px 20px;
+          padding: 16px;
           max-width: 210px;
-          border-radius: 16px;
+          border-radius: 12px;
         }
 
         .stat-number {
-          font-size: 38px;
-          font-weight: 800;
+          font-size: 32px;
+          font-weight: $weight-bold;
           color: #ffffff;
           line-height: 1;
           margin: 0 0 6px 0;
@@ -246,8 +260,8 @@
         }
 
         .stat-label {
-          font-size: 13.5px;
-          font-weight: 500;
+          font-size: 16px;
+          font-weight: $weight-regular;
           color: rgba(255, 255, 255, 0.9);
           line-height: 1.4;
           margin: 0;
