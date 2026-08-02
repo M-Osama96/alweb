@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skeleton Loading - Projects Grid</title>
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+body { padding:0; background:#0a0e1a; }
+
+.skeleton-wrapper { height:fit-content; padding-block:100px; width:100%; }
+.skeleton-wrapper.sk-full-bg { background:#0a0e1a; }
+
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1440px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:rgba(255,255,255,0.08); }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.14),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+
+.sk-section-head-split { display:flex; align-items:center; justify-content:space-between; margin-block-end:48px; gap:24px; flex-wrap:wrap; }
+.sk-section-title { height:2.2em; width:280px; border-radius:6px; }
+.sk-section-btn { height:52px; width:220px; border-radius:8px; }
+
+.sk-card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.sk-card { display:flex; flex-direction:column; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); }
+.sk-card-img { width:100%; aspect-ratio:16/10; }
+.sk-card-body { display:flex; flex-direction:column; gap:14px; padding:22px; }
+.sk-badge { height:24px; width:100px; border-radius:999px; }
+.sk-card-title { height:22px; width:80%; border-radius:5px; }
+.sk-card-divider { height:1px; width:100%; background:rgba(255,255,255,0.08); margin-block:2px; }
+.sk-card-meta { display:flex; align-items:center; justify-content:space-between; }
+.sk-card-meta .sk-line { height:13px; width:110px; border-radius:4px; }
+.sk-meta-icon { width:38px; height:38px; border-radius:50%; }
+
+@media (max-width: 1000px) {
+  .sk-card-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 600px) {
+  .sk-card-grid { grid-template-columns:1fr; }
+  .sk-section-head-split { flex-direction:column; align-items:flex-start; }
+  .sk-section-btn { width:100%; }
+}
+</style>
+</head>
+<body>
+
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+
+    <div class="sk-section-head-split">
+      <div class="sk-section-title skeleton-shimmer"></div>
+      <div class="sk-section-btn skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-card-grid">
+
+      <div class="sk-card">
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-card-title skeleton-shimmer"></div>
+          <div class="sk-card-divider"></div>
+          <div class="sk-card-meta">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-meta-icon skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-card-title skeleton-shimmer"></div>
+          <div class="sk-card-divider"></div>
+          <div class="sk-card-meta">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-meta-icon skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-card-title skeleton-shimmer"></div>
+          <div class="sk-card-divider"></div>
+          <div class="sk-card-meta">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-meta-icon skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-card-title skeleton-shimmer"></div>
+          <div class="sk-card-divider"></div>
+          <div class="sk-card-meta">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-meta-icon skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-card-title skeleton-shimmer"></div>
+          <div class="sk-card-divider"></div>
+          <div class="sk-card-meta">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-meta-icon skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-card-img skeleton-shimmer"></div>
+        <div class="sk-card-body">
+          <div class="sk-badge skeleton-shimmer"></div>
+          <div class="sk-card-title skeleton-shimmer"></div>
+          <div class="sk-card-divider"></div>
+          <div class="sk-card-meta">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-meta-icon skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

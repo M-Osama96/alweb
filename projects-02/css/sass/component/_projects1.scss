@@ -1,0 +1,202 @@
+.projects {
+  padding: 70px 0;
+  overflow: hidden;
+  background: radial-gradient(
+    47.9% 47.92% at 50% 52.08%,
+    darken($setting_primary_color, $amount: 30%) 0%,
+    darken($setting_primary_color, $amount: 40%) 100%
+  );
+
+  @include sm {
+    padding: 40px 0;
+  }
+}
+.projects-cont {
+  position: relative;
+  @include sm {
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    @include sm {
+      margin-bottom: 22px;
+    }
+    @include xs {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .project-title {
+      font-size: 40px;
+      font-weight: $weight_bold;
+      color: #fff;
+      @include sm {
+        font-size: 38px;
+      }
+      @include xs {
+        font-size: 34px;
+      }
+    }
+  }
+}
+.projects-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 23px;
+  gap: 8px;
+  border: 2px solid lighten($setting_primary_color, $amount: 45%);
+  background-color: $setting_primary_color;
+  border-radius: 8px;
+  width: fit-content;
+  min-width: 202px;
+  transition: all 0.5s ease-in-out;
+  font-size: 16px;
+  font-weight: $weight_bold;
+  color: #fff;
+  &:hover {
+    background: #fff;
+    color: $setting_primary_color;
+  }
+  @include xs {
+    display: none;
+  }
+  &.xs {
+    display: none;
+    @include xs {
+      display: flex;
+      margin: auto;
+      margin-top: 24px;
+    }
+  }
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
+  gap: 24px;
+  @include sm {
+    gap: 20px;
+  }
+  .project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all 0.5s ease-in-out;
+    .project-img {
+      aspect-ratio: 357/260;
+      width: 100%;
+      border-radius: 12px;
+      overflow: hidden;
+      .img-cover {
+        display: flex;
+        transition: all 0.5s ease-in-out;
+      }
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .project-type {
+        padding: 4px 10px;
+        border-radius: 24px;
+        border: 1px solid rgba($setting_primary_color, 0.25);
+        background: rgba($setting_primary_color, 0.12);
+        font-size: 12px;
+        font-weight: $weight_medium;
+        color: $setting_primary_color;
+        width: fit-content;
+        transition: all 0.5s ease-in-out;
+      }
+      .project-name {
+        font-size: 24px;
+        font-weight: $weight_bold;
+        color: #fff;
+        padding-bottom: 12px;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        @include md {
+          font-size: 20px;
+        }
+        @include sm {
+          font-size: 18px;
+        }
+        @include xs {
+          font-size: 18px;
+        }
+      }
+      .more-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .btn-text {
+          font-size: 16px;
+          font-weight: $weight_bold;
+          color: lighten($setting_primary_color, $amount: 45%);
+          transition: all 0.5s ease-in-out;
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+            background-color: #fff;
+            opacity: 0;
+          }
+        }
+        .las {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: #fff;
+          transition: all 0.5s ease-in-out;
+          font-size: 18px;
+          font-weight: $weight_bold;
+          @include ltr {
+            transform: scaleX(-1);
+          }
+        }
+      }
+    }
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 1);
+      .project-img {
+        .img-cover {
+          transform: scale(1.03);
+        }
+      }
+      .info {
+        .project-type {
+          color: #fff;
+        }
+        .more-btn {
+          .btn-text {
+            color: #fff;
+            &::after {
+              opacity: 1;
+            }
+          }
+          .las {
+            background: #fff;
+            border-color: #fff;
+            color: $setting_primary_color;
+          }
+        }
+      }
+    }
+  }
+}

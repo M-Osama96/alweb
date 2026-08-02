@@ -1,0 +1,314 @@
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-section-title skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-card-grid">
+      <div class="sk-card">
+        <div class="sk-plan-name skeleton-shimmer"></div>
+        <div class="sk-price-row">
+          <div class="sk-price-num skeleton-shimmer"></div>
+          <div class="sk-price-label skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-divider"></div>
+        <div class="sk-feature-list">
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+        </div>
+        <div class="sk-card-btn skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-card sk-card-highlight">
+        <div class="sk-highlight-badge skeleton-shimmer"></div>
+        <div class="sk-plan-name skeleton-shimmer"></div>
+        <div class="sk-price-row">
+          <div class="sk-price-num skeleton-shimmer"></div>
+          <div class="sk-price-label skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-divider"></div>
+        <div class="sk-feature-list">
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+        </div>
+        <div class="sk-card-btn skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-card">
+        <div class="sk-plan-name skeleton-shimmer"></div>
+        <div class="sk-price-row">
+          <div class="sk-price-num skeleton-shimmer"></div>
+          <div class="sk-price-label skeleton-shimmer"></div>
+        </div>
+        <div class="sk-card-divider"></div>
+        <div class="sk-feature-list">
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+          <div class="sk-feature-row">
+            <div class="sk-feature-check skeleton-shimmer"></div>
+            <div class="sk-feature-text skeleton-shimmer"></div>
+          </div>
+        </div>
+        <div class="sk-card-btn skeleton-shimmer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  body {
+    padding: 0;
+    background: #080d1a;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: #b6b6b6;
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.14),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+
+  .sk-section-head {
+    display: flex;
+    justify-content: center;
+    margin-block-end: 56px;
+  }
+  .sk-section-title {
+    height: 2.4em;
+    width: 420px;
+    max-width: 80vw;
+    border-radius: 6px;
+  }
+
+  .sk-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .sk-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .sk-card.sk-card-highlight {
+    border-color: rgba(#b6b6b6, 0.5);
+    padding-block-start: 56px;
+    margin-block-start: -24px;
+    padding-block-end: 56px;
+  }
+
+  .sk-highlight-badge {
+    position: absolute;
+    inset-block-start: -22px;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    height: 34px;
+    width: 160px;
+    border-radius: 999px;
+  }
+
+  .sk-plan-name {
+    height: 24px;
+    width: 90px;
+    border-radius: 5px;
+  }
+
+  .sk-price-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+  }
+  .sk-price-num {
+    height: 2.6em;
+    width: 110px;
+    border-radius: 8px;
+  }
+  .sk-price-label {
+    height: 14px;
+    width: 60px;
+    border-radius: 4px;
+    margin-block-end: 8px;
+  }
+
+  .sk-card-divider {
+    height: 1px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .sk-feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .sk-feature-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .sk-feature-check {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 5px;
+  }
+  .sk-feature-text {
+    height: 14px;
+    border-radius: 4px;
+  }
+  .sk-feature-row:nth-child(1) .sk-feature-text {
+    width: 60%;
+  }
+  .sk-feature-row:nth-child(2) .sk-feature-text {
+    width: 85%;
+  }
+  .sk-feature-row:nth-child(3) .sk-feature-text {
+    width: 65%;
+  }
+  .sk-feature-row:nth-child(4) .sk-feature-text {
+    width: 45%;
+  }
+  .sk-feature-row:nth-child(5) .sk-feature-text {
+    width: 60%;
+  }
+  .sk-feature-row:nth-child(6) .sk-feature-text {
+    width: 70%;
+  }
+
+  .sk-card-btn {
+    height: 56px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  .sk-card-highlight .sk-card-btn {
+    border: none;
+    background: rgba(#b6b6b6, 0.5);
+  }
+
+  @media (max-width: 1000px) {
+    .sk-card-grid {
+      grid-template-columns: 1fr;
+    }
+    .sk-card.sk-card-highlight {
+      margin-block-start: 0;
+      padding-block-start: 32px;
+      padding-block-end: 32px;
+    }
+  }
+</style>

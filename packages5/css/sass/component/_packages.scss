@@ -1,0 +1,176 @@
+.packages {
+  padding: 70px 0;
+  overflow: hidden;
+  background: radial-gradient(
+    47.9% 47.92% at 50% 52.08%,
+    darken($color: $setting_primary_color, $amount: 30%) 0%,
+    darken($color: $setting_primary_color, $amount: 40%) 100%
+  );
+
+  @include sm {
+    padding: 40px 0;
+  }
+}
+.packages-cont {
+  position: relative;
+  @include sm {
+  }
+  .package-title {
+    font-size: 40px;
+    font-weight: $weight_bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 56px;
+    @include sm {
+      font-size: 32px;
+      margin-bottom: 28px;
+    }
+    @include xs {
+    }
+  }
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  @include sm {
+    gap: 10px;
+  }
+  @include xs {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 26px;
+  }
+}
+
+.Package {
+  padding: 36px;
+  border-radius: 24px;
+  position: relative;
+  background: rgba(darken($color: $setting_primary_color, $amount: 40%), 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  @include sm {
+    padding: 26px 16px 16px 16px;
+    border-radius: 14px;
+  }
+  @include xs {
+  }
+  .Popular {
+    display: none;
+    position: absolute;
+    top: -16px;
+    inset-inline-start: 20px;
+    border: 1px solid rgba(18, 99, 220, 1);
+    border-radius: 20px;
+    background: darken($color: $setting_primary_color, $amount: 40%);
+    padding: 6px 14px;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: $weight_bold;
+    color: $setting_primary_color;
+    box-shadow: 0 0 20px rgba(lighten($setting_primary_color, 35%), 0.3);
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $setting_primary_color;
+    }
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: $weight_bold;
+    color: #fff;
+    margin-bottom: 12px;
+    @include sm {
+      font-size: 22px;
+    }
+    @include xs {
+    }
+  }
+  .price {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 32px;
+    @include sm {
+      margin-bottom: 10px;
+    }
+    .num {
+      font-size: 48px;
+      font-weight: $weight_bold;
+      color: #fff;
+    }
+    .duration {
+      font-size: 16px;
+      font-weight: $weight_regular;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+  .package-adv {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 16px;
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    @include sm {
+      gap: 12px;
+      padding: 20px 0;
+    }
+    .adv-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      i {
+        color: $setting_primary_color;
+        font-size: 16px;
+      }
+      .adv-p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: $weight_regular;
+        color: #fff;
+        @include sm {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .package-btn {
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: $weight_bold;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 24px;
+    @include sm {
+      height: 45px;
+    }
+    @include xs {
+    }
+  }
+  &.popular {
+    background: rgba($setting_primary_color, 0.1);
+    border: 2px solid rgba($setting_primary_color, 1);
+    .Popular {
+      display: flex;
+    }
+    .title {
+      color: $setting_primary_color;
+    }
+    .package-btn {
+      background: $setting_primary_color;
+      border-color: $setting_primary_color;
+      box-shadow: 0 0 20px rgba(lighten($setting_primary_color, 35%), 0.3);
+    }
+  }
+}
