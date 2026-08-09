@@ -1,0 +1,296 @@
+<section class="skeleton-wrapper">
+  <div class="skeleton-container">
+    <div class="sk-header">
+      <div class="sk-eyebrow">
+        <span class="sk-dot skeleton-shimmer"></span>
+        <span class="sk-eyebrow-text skeleton-shimmer"></span>
+      </div>
+
+      <div class="sk-heading skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-faq">
+      <article class="sk-faq-item sk-faq-open">
+        <div class="sk-faq-head">
+          <div class="sk-question skeleton-shimmer"></div>
+          <div class="sk-arrow skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-answer">
+          <div class="sk-answer-line skeleton-shimmer"></div>
+          <div class="sk-answer-line skeleton-shimmer"></div>
+          <div class="sk-answer-line w-95 skeleton-shimmer"></div>
+        </div>
+      </article>
+
+      <article class="sk-faq-item">
+        <div class="sk-faq-head">
+          <div class="sk-question skeleton-shimmer"></div>
+          <div class="sk-arrow skeleton-shimmer"></div>
+        </div>
+      </article>
+
+      <article class="sk-faq-item">
+        <div class="sk-faq-head">
+          <div class="sk-question skeleton-shimmer"></div>
+          <div class="sk-arrow skeleton-shimmer"></div>
+        </div>
+      </article>
+
+      <article class="sk-faq-item">
+        <div class="sk-faq-head">
+          <div class="sk-question skeleton-shimmer"></div>
+          <div class="sk-arrow skeleton-shimmer"></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --sk-bg: #f5f5f5;
+    --sk-card: #ececec;
+    --sk-border: #d7d7d7;
+    --sk-title: #c5c5c5;
+    --sk-text: #d7d7d7;
+    --sk-icon: #b7b7b7;
+  }
+
+  .skeleton-wrapper {
+    width: 100%;
+    padding: 80px 0;
+    background: var(--sk-bg);
+  }
+
+  .skeleton-container {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  /* =========================
+        Header
+========================= */
+
+  .sk-header {
+    margin-bottom: 70px;
+  }
+
+  .sk-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid var(--sk-border);
+    background: var(--sk-card);
+    border-radius: 999px;
+    margin-bottom: 28px;
+  }
+
+  .sk-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sk-icon);
+    flex-shrink: 0;
+  }
+
+  .sk-eyebrow-text {
+    width: 245px;
+    height: 13px;
+    border-radius: 4px;
+    background: var(--sk-text);
+  }
+
+  .sk-heading {
+    width: 590px;
+    max-width: 100%;
+    height: 50px;
+    border-radius: 7px;
+    background: var(--sk-title);
+  }
+
+  /* =========================
+          FAQ
+========================= */
+
+  .sk-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .sk-faq-item {
+    width: 100%;
+    border: 1px solid var(--sk-border);
+    border-radius: 26px;
+    background: var(--sk-card);
+    overflow: hidden;
+  }
+
+  .sk-faq-open {
+    padding: 0 28px 28px;
+  }
+
+  .sk-faq-head {
+    min-height: 102px;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .sk-faq-open .sk-faq-head {
+    padding-inline: 0;
+    border-bottom: 1px solid var(--sk-border);
+  }
+
+  .sk-question {
+    width: 360px;
+    max-width: 80%;
+    height: 18px;
+    border-radius: 5px;
+    background: var(--sk-title);
+  }
+
+  .sk-arrow {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    border-radius: 50%;
+    background: var(--sk-icon);
+  }
+
+  .sk-answer {
+    padding-top: 25px;
+  }
+
+  .sk-answer-line {
+    width: 100%;
+    height: 14px;
+    border-radius: 4px;
+    background: var(--sk-text);
+    margin-bottom: 12px;
+  }
+
+  .sk-answer-line.w-95 {
+    width: 95%;
+    margin-bottom: 0;
+  }
+
+  /* =========================
+       Shimmer
+========================= */
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+    animation: skeleton-loading 1.4s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* =========================
+       Responsive
+========================= */
+
+  @media (max-width: 768px) {
+    .skeleton-wrapper {
+      padding: 60px 0;
+    }
+
+    .sk-header {
+      margin-bottom: 45px;
+    }
+
+    .sk-heading {
+      width: 380px;
+      height: 42px;
+    }
+
+    .sk-faq {
+      gap: 16px;
+    }
+
+    .sk-faq-item {
+      border-radius: 20px;
+    }
+
+    .sk-faq-head {
+      min-height: 82px;
+      padding: 16px 20px;
+    }
+
+    .sk-faq-open {
+      padding: 0 20px 22px;
+    }
+
+    .sk-faq-open .sk-faq-head {
+      padding-inline: 0;
+    }
+
+    .sk-question {
+      width: 280px;
+    }
+
+    .sk-arrow {
+      width: 42px;
+      height: 42px;
+      flex-basis: 42px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-eyebrow-text {
+      width: 170px;
+    }
+
+    .sk-heading {
+      width: 280px;
+      height: 36px;
+    }
+
+    .sk-faq-head {
+      min-height: 75px;
+      gap: 15px;
+    }
+
+    .sk-question {
+      width: 200px;
+      height: 16px;
+    }
+
+    .sk-arrow {
+      width: 38px;
+      height: 38px;
+      flex-basis: 38px;
+    }
+  }
+</style>

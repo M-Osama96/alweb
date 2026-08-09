@@ -1,0 +1,394 @@
+<section class="skeleton-wrapper">
+  <div class="skeleton-container">
+    <div class="sk-contact-grid">
+      <!-- Left Content -->
+      <div class="sk-contact-info">
+        <div class="sk-eyebrow">
+          <span class="sk-dot skeleton-shimmer"></span>
+          <span class="sk-eyebrow-text skeleton-shimmer"></span>
+        </div>
+
+        <div class="sk-heading skeleton-shimmer"></div>
+
+        <div class="sk-description">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line w-80 skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-contact-list">
+          <div class="sk-contact-card">
+            <div class="sk-contact-icon skeleton-shimmer"></div>
+
+            <div class="sk-contact-content">
+              <div class="sk-small-title skeleton-shimmer"></div>
+              <div class="sk-contact-text skeleton-shimmer"></div>
+              <div class="sk-contact-text w-80 skeleton-shimmer"></div>
+            </div>
+          </div>
+
+          <div class="sk-contact-card">
+            <div class="sk-contact-icon skeleton-shimmer"></div>
+
+            <div class="sk-contact-content">
+              <div class="sk-small-title skeleton-shimmer"></div>
+              <div class="sk-contact-text skeleton-shimmer"></div>
+            </div>
+          </div>
+
+          <div class="sk-contact-card">
+            <div class="sk-contact-icon skeleton-shimmer"></div>
+
+            <div class="sk-contact-content">
+              <div class="sk-small-title skeleton-shimmer"></div>
+              <div class="sk-contact-text skeleton-shimmer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="sk-form">
+        <div class="sk-form-row">
+          <div class="sk-field">
+            <div class="sk-label skeleton-shimmer"></div>
+            <div class="sk-input skeleton-shimmer"></div>
+          </div>
+
+          <div class="sk-field">
+            <div class="sk-label skeleton-shimmer"></div>
+            <div class="sk-input skeleton-shimmer"></div>
+          </div>
+        </div>
+
+        <div class="sk-field">
+          <div class="sk-label skeleton-shimmer"></div>
+          <div class="sk-input skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-field">
+          <div class="sk-label skeleton-shimmer"></div>
+          <div class="sk-textarea skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-submit skeleton-shimmer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --sk-bg: #f5f5f5;
+    --sk-card: #ececec;
+    --sk-input: #e1e1e1;
+    --sk-border: #d6d6d6;
+    --sk-title: #c5c5c5;
+    --sk-text: #d5d5d5;
+    --sk-icon: #b7b7b7;
+  }
+
+  .skeleton-wrapper {
+    width: 100%;
+    padding: 80px 0;
+    background: var(--sk-bg);
+  }
+
+  .skeleton-container {
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  /* =========================
+        Main Layout
+========================= */
+
+  .sk-contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr;
+    gap: 90px;
+    align-items: start;
+  }
+
+  /* =========================
+        Left Content
+========================= */
+
+  .sk-contact-info {
+    min-width: 0;
+  }
+
+  .sk-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: var(--sk-card);
+    border: 1px solid var(--sk-border);
+    margin-bottom: 24px;
+  }
+
+  .sk-dot {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 10px;
+    border-radius: 50%;
+    background: var(--sk-icon);
+  }
+
+  .sk-eyebrow-text {
+    width: 220px;
+    height: 13px;
+    border-radius: 4px;
+    background: var(--sk-text);
+  }
+
+  .sk-heading {
+    width: 230px;
+    height: 48px;
+    border-radius: 7px;
+    background: var(--sk-title);
+    margin-bottom: 28px;
+  }
+
+  .sk-description {
+    width: 100%;
+    max-width: 510px;
+    margin-bottom: 52px;
+  }
+
+  .sk-line {
+    width: 100%;
+    height: 14px;
+    border-radius: 4px;
+    background: var(--sk-text);
+    margin-bottom: 14px;
+  }
+
+  .sk-line.w-80 {
+    width: 80%;
+    margin-bottom: 0;
+  }
+
+  /* =========================
+       Contact Cards
+========================= */
+
+  .sk-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .sk-contact-card {
+    width: 100%;
+    min-height: 96px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-radius: 18px;
+    background: var(--sk-card);
+    border: 1px solid var(--sk-border);
+  }
+
+  .sk-contact-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    border-radius: 14px;
+    background: var(--sk-icon);
+  }
+
+  .sk-contact-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .sk-small-title {
+    width: 130px;
+    height: 14px;
+    border-radius: 4px;
+    background: var(--sk-text);
+    margin-bottom: 12px;
+  }
+
+  .sk-contact-text {
+    width: 90%;
+    height: 17px;
+    border-radius: 5px;
+    background: var(--sk-title);
+    margin-bottom: 7px;
+  }
+
+  .sk-contact-text.w-80 {
+    width: 80%;
+    margin-bottom: 0;
+  }
+
+  /* =========================
+           Form
+========================= */
+
+  .sk-form {
+    width: 100%;
+    padding: 38px;
+    border-radius: 28px;
+    background: var(--sk-card);
+    border: 1px solid var(--sk-border);
+  }
+
+  .sk-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .sk-field {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .sk-label {
+    width: 125px;
+    height: 16px;
+    border-radius: 4px;
+    background: var(--sk-title);
+    margin-bottom: 14px;
+  }
+
+  .sk-input {
+    width: 100%;
+    height: 58px;
+    border-radius: 14px;
+    background: var(--sk-input);
+    border: 1px solid var(--sk-border);
+  }
+
+  .sk-textarea {
+    width: 100%;
+    height: 176px;
+    border-radius: 14px;
+    background: var(--sk-input);
+    border: 1px solid var(--sk-border);
+  }
+
+  .sk-submit {
+    width: 100%;
+    height: 58px;
+    border-radius: 14px;
+    background: var(--sk-title);
+    margin-top: 2px;
+  }
+
+  /* =========================
+          Shimmer
+========================= */
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+
+    animation: skeleton-loading 1.4s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* =========================
+        Responsive
+========================= */
+
+  @media (max-width: 991px) {
+    .sk-contact-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .sk-description {
+      max-width: 650px;
+    }
+
+    .sk-form {
+      padding: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .skeleton-wrapper {
+      padding: 60px 0;
+    }
+
+    .sk-form-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .sk-form {
+      padding: 22px;
+      border-radius: 22px;
+    }
+
+    .sk-heading {
+      width: 190px;
+      height: 40px;
+    }
+
+    .sk-eyebrow-text {
+      width: 170px;
+    }
+
+    .sk-contact-card {
+      min-height: 88px;
+    }
+
+    .sk-contact-icon {
+      width: 46px;
+      height: 46px;
+      flex-basis: 46px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .sk-contact-card {
+      padding: 14px;
+      gap: 12px;
+    }
+
+    .sk-form {
+      padding: 18px;
+    }
+
+    .sk-eyebrow-text {
+      width: 140px;
+    }
+  }
+</style>

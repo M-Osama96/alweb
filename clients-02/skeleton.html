@@ -1,0 +1,186 @@
+<section class="skeleton-wrapper">
+  <div class="skeleton-container">
+    <div class="sk-heading skeleton-shimmer"></div>
+
+    <div class="sk-grid">
+      <article class="sk-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-content">
+          <div class="sk-title skeleton-shimmer"></div>
+          <div class="sk-text skeleton-shimmer"></div>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-content">
+          <div class="sk-title skeleton-shimmer"></div>
+          <div class="sk-text skeleton-shimmer"></div>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-content">
+          <div class="sk-title skeleton-shimmer"></div>
+          <div class="sk-text skeleton-shimmer"></div>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-content">
+          <div class="sk-title skeleton-shimmer"></div>
+          <div class="sk-text skeleton-shimmer"></div>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-content">
+          <div class="sk-title skeleton-shimmer"></div>
+          <div class="sk-text skeleton-shimmer"></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --sk-bg: #f5f5f5;
+    --sk-card: #ececec;
+    --sk-border: #d8d8d8;
+    --sk-title: #c7c7c7;
+    --sk-text: #d9d9d9;
+    --sk-image: #d3d3d3;
+  }
+
+  .skeleton-wrapper {
+    width: 100%;
+    padding: 100px 0;
+    background: var(--sk-bg);
+  }
+
+  .skeleton-container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  .sk-heading {
+    width: 460px;
+    max-width: 90%;
+    height: 52px;
+    border-radius: 8px;
+    background: var(--sk-title);
+    margin: 0 auto 70px;
+  }
+
+  .sk-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 28px;
+  }
+
+  .sk-card {
+    background: var(--sk-card);
+    border: 1px solid var(--sk-border);
+    border-radius: 26px;
+    padding: 36px;
+  }
+
+  .sk-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 28px;
+    background: var(--sk-image);
+    margin-bottom: 34px;
+  }
+
+  .sk-content {
+    text-align: center;
+  }
+
+  .sk-title {
+    width: 78%;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--sk-title);
+    margin: 0 auto 20px;
+  }
+
+  .sk-text {
+    width: 62%;
+    height: 16px;
+    border-radius: 4px;
+    background: var(--sk-text);
+    margin: auto;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+    animation: skeleton-loading 1.4s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .sk-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sk-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sk-heading {
+      width: 320px;
+      height: 42px;
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sk-card {
+      padding: 24px;
+    }
+  }
+</style>

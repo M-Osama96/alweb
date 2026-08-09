@@ -1,0 +1,122 @@
+.clients {
+  padding: 70px 0;
+  background-color: darken($setting_primary_color, $amount: 40%);
+  @include sm {
+    padding: 30px 0;
+  }
+}
+.container {
+  max-width: 1280px;
+}
+.clients-cont {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 64px;
+  position: relative;
+  @include sm {
+    gap: 30px;
+  }
+  @include xs {
+  }
+  @include xs {
+    flex-direction: column;
+  }
+
+  .clients-title {
+    font-size: 40px;
+    font-weight: $weight-bold;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    @include sm {
+      font-size: 36px;
+    }
+    @include xs {
+      font-size: 26px;
+    }
+  }
+  .clients-flex {
+    display: flex;
+    width: 100%;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+
+    position: relative;
+
+    @include sm {
+      gap: 20px;
+    }
+    @include xs {
+    }
+
+    .client {
+      width: calc(100% / 5 - 19.2px);
+
+      background: rgba(darken($setting_primary_color, $amount: 40%), 0.6);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      // flex: 1;
+      position: relative;
+      z-index: 2;
+      padding: 24px 28px;
+      transition: all 0.3s ease;
+      @include md {
+        padding: 20px;
+        width: calc(100% / 4 - 18px);
+      }
+      @include sm {
+        padding: 16px;
+        width: calc(100% / 3 - 14px);
+        border-radius: 14px;
+      }
+      @include xs {
+        width: calc(100% / 2 - 10px);
+      }
+      &:hover {
+        box-shadow: 0px 48px 48px -24px rgba(15, 23, 42, 0.35);
+        transform: translateY(-2px);
+        background: rgba(darken($setting_primary_color, $amount: 30%), 0.1);
+      }
+      .clients-img {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        overflow: hidden;
+        width: 100%;
+        aspect-ratio: 1;
+        margin-bottom: 24px;
+        max-height: 200px;
+        @include sm {
+          border-radius: 14px;
+          margin-bottom: 16px;
+        }
+      }
+      .name {
+        font-size: 16px;
+        font-weight: $weight_medium;
+        color: #fff;
+        margin-bottom: 6px;
+        text-align: center;
+        @include xs {
+          font-size: 14px;
+        }
+      }
+      .position {
+        font-size: 16px;
+        font-weight: $weight_regular;
+        color: rgba(255, 255, 255, 0.5);
+        margin: 0;
+        text-align: center;
+        @include xs {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

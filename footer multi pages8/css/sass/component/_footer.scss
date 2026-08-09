@@ -1,0 +1,303 @@
+.contact-section {
+  padding: 90px 0;
+  background-color: darken($setting_primary_color, 42%);
+  position: relative;
+  overflow: hidden;
+
+  @include sm {
+    padding: 60px 0;
+  }
+
+  @include xs {
+    padding: 40px 0;
+  }
+
+  .container {
+    max-width: 1280px;
+  }
+}
+
+.contact-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  @include md {
+    gap: 32px;
+  }
+
+  @include sm {
+    flex-direction: column;
+    gap: 40px;
+
+    @include ltr {
+      flex-direction: column;
+    }
+  }
+}
+
+/* --- Form Card (Left side in RTL) --- */
+.contact-form-card {
+  width: 62%;
+  background: rgba(darken($setting_primary_color, 42%), 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 32px;
+
+  @include md {
+    padding: 28px 24px;
+  }
+
+  @include sm {
+    width: 100%;
+  }
+
+  @include xs {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .form-row-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include xs {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-label {
+    font-size: 16px;
+    font-weight: $weight_bold;
+    color: #ffffff;
+    text-align: start;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    background: rgba(darken($setting_primary_color, 42%), 0.6);
+    border: 1px solid rgba($setting_primary_color, 0.2);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: $weight_medium;
+    transition: all 0.3s ease;
+    text-align: start;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      outline: none;
+      border-color: rgba($setting_primary_color, 0.7);
+      box-shadow: 0 0 12px rgba($setting_primary_color, 0.25);
+      background: rgba(darken($setting_primary_color, 43%), 0.95);
+    }
+  }
+
+  .en-input {
+    direction: ltr;
+
+    @include rtl {
+      text-align: right;
+    }
+  }
+
+  .form-textarea {
+    resize: none;
+    min-height: 140px;
+    border-radius: 14px;
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 49px;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 24px;
+    background: $setting_primary_color;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: $weight_bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @include xs {
+      border-radius: 10px;
+    }
+
+    &:hover {
+      background: lighten($setting_primary_color, 6%);
+      box-shadow: 0 8px 20px rgba($setting_primary_color, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .btn-icon {
+      font-size: 18px;
+
+      @include ltr {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+/* --- Info Column (Right side in RTL) --- */
+.contact-info {
+  width: 41%;
+  display: flex;
+  flex-direction: column;
+
+  @include sm {
+    width: 100%;
+  }
+
+  .contact-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 18px;
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    width: fit-content;
+    margin-bottom: 16px;
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $setting_primary_color;
+      box-shadow: 0 0 10px $setting_primary_color;
+      display: inline-block;
+    }
+
+    .badge-text {
+      font-size: 13px;
+      font-weight: $weight_medium;
+      color: #fff;
+    }
+  }
+
+  .contact-title {
+    font-size: 40px;
+    font-weight: $weight_bold;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+    text-align: start;
+
+    @include md {
+      font-size: 32px;
+    }
+
+    @include xs {
+      font-size: 28px;
+    }
+  }
+
+  .contact-desc {
+    font-size: 16px;
+    font-weight: $weight_regular;
+    color: rgba(255, 255, 255, 0.5);
+
+    line-height: 1.8;
+    margin: 0 0 40px 0;
+    text-align: start;
+
+    @include md {
+      font-size: 14.5px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .info-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 16px;
+    background: rgba(darken($setting_primary_color, 42%), 0.4);
+
+    border: 1px solid rgba($setting_primary_color, 0.12);
+    border-radius: 16px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    @include xs {
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    &:hover {
+      border-color: rgba($setting_primary_color, 0.4);
+      background: rgba(darken($setting_primary_color, 38%), 0.8);
+    }
+
+    .info-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: start;
+    }
+
+    .info-label {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: $weight_regular;
+    }
+
+    .info-value {
+      font-size: 16px;
+      font-weight: $weight_bold;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.5;
+
+      @include md {
+        font-size: 14px;
+      }
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba($setting_primary_color, 0.15);
+      border: 1px solid rgba($setting_primary_color, 0.3);
+      color: lighten($setting_primary_color, 12%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+  }
+}
