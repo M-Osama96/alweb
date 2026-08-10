@@ -1,0 +1,311 @@
+<section class="skeleton-wrapper">
+  <div class="skeleton-container">
+    <div class="sk-header">
+      <div class="sk-header-content">
+        <div class="sk-heading skeleton-shimmer"></div>
+
+        <div class="sk-description">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-button skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-slider">
+      <div class="sk-card skeleton-shimmer">
+        <div class="sk-badge skeleton-shimmer"></div>
+        <div class="sk-card-title skeleton-shimmer"></div>
+        <div class="sk-card-title w-75 skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-card skeleton-shimmer">
+        <div class="sk-badge skeleton-shimmer"></div>
+        <div class="sk-card-title skeleton-shimmer"></div>
+        <div class="sk-card-title w-75 skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-card skeleton-shimmer">
+        <div class="sk-badge skeleton-shimmer"></div>
+        <div class="sk-card-title skeleton-shimmer"></div>
+        <div class="sk-card-title w-75 skeleton-shimmer"></div>
+      </div>
+    </div>
+
+    <div class="sk-prev skeleton-shimmer"></div>
+    <div class="sk-next skeleton-shimmer"></div>
+  </div>
+</section>
+
+<style>
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --sk-bg: #f5f5f5;
+    --sk-card: #e5e5e5;
+    --sk-card-dark: #d8d8d8;
+    --sk-border: #cccccc;
+    --sk-title: #bdbdbd;
+    --sk-text: #d0d0d0;
+    --sk-button: #c5c5c5;
+  }
+
+  .skeleton-wrapper {
+    width: 100%;
+    padding: 80px 0;
+    background: var(--sk-bg);
+    overflow: hidden;
+  }
+
+  .skeleton-container {
+    position: relative;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 40px;
+  }
+
+  /* =========================
+        Header
+========================= */
+
+  .sk-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .sk-header-content {
+    width: 55%;
+  }
+
+  .sk-heading {
+    width: 260px;
+    height: 50px;
+    border-radius: 7px;
+    background: var(--sk-title);
+    margin-bottom: 20px;
+  }
+
+  .sk-description {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  .sk-line {
+    width: 100%;
+    height: 16px;
+    border-radius: 5px;
+    background: var(--sk-text);
+    margin-bottom: 12px;
+  }
+
+  .sk-button {
+    width: 280px;
+    height: 58px;
+    border: 1px solid var(--sk-border);
+    border-radius: 0;
+    background: var(--sk-card);
+  }
+
+  /* =========================
+          Slider
+========================= */
+
+  .sk-slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-left: 90px;
+    margin-right: 90px;
+  }
+
+  .sk-card {
+    position: relative;
+    height: 570px;
+    padding: 24px;
+    background: var(--sk-card);
+    border: 1px solid var(--sk-border);
+    overflow: hidden;
+  }
+
+  /* =========================
+          Badge
+========================= */
+
+  .sk-badge {
+    width: 130px;
+    height: 38px;
+    border-radius: 3px;
+    background: var(--sk-card-dark);
+    margin-bottom: 32px;
+  }
+
+  /* =========================
+          Title
+========================= */
+
+  .sk-card-title {
+    width: 90%;
+    height: 22px;
+    border-radius: 5px;
+    background: var(--sk-title);
+    margin-bottom: 14px;
+  }
+
+  .sk-card-title.w-75 {
+    width: 75%;
+  }
+
+  /* =========================
+       Navigation
+========================= */
+
+  .sk-prev,
+  .sk-next {
+    position: absolute !important;
+    top: 50%;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--sk-border);
+    background: var(--sk-card);
+    transform: translateY(-50%);
+  }
+
+  .sk-prev {
+    left: 0;
+  }
+
+  .sk-next {
+    right: 0;
+  }
+
+  /* =========================
+          Shimmer
+========================= */
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    transform: translateX(-100%);
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+
+    animation: skeleton-loading 1.4s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* =========================
+        Responsive
+========================= */
+
+  @media (max-width: 1100px) {
+    .sk-slider {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sk-card:last-child {
+      display: none;
+    }
+
+    .sk-header-content {
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .skeleton-wrapper {
+      padding: 60px 0;
+    }
+
+    .skeleton-container {
+      padding: 0 20px;
+    }
+
+    .sk-header {
+      flex-direction: column;
+      margin-bottom: 35px;
+    }
+
+    .sk-header-content {
+      width: 100%;
+    }
+
+    .sk-heading {
+      width: 220px;
+      height: 42px;
+    }
+
+    .sk-button {
+      width: 220px;
+      height: 52px;
+    }
+
+    .sk-slider {
+      grid-template-columns: 1fr;
+      margin: 0 45px;
+    }
+
+    .sk-card {
+      height: 500px;
+    }
+
+    .sk-card:nth-child(n + 2) {
+      display: none;
+    }
+
+    .sk-prev {
+      left: 0;
+    }
+
+    .sk-next {
+      right: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-description {
+      max-width: 100%;
+    }
+
+    .sk-slider {
+      margin: 0 35px;
+    }
+
+    .sk-card {
+      height: 450px;
+      padding: 20px;
+    }
+
+    .sk-prev,
+    .sk-next {
+      width: 44px;
+      height: 44px;
+    }
+  }
+</style>
