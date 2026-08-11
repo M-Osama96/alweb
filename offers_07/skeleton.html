@@ -1,0 +1,440 @@
+<section class="skeleton-wrapper">
+  <div class="skeleton-container">
+    <!-- Header -->
+    <div class="sk-header">
+      <div class="sk-heading skeleton-shimmer"></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="sk-offers">
+      <!-- Card 1 -->
+      <article class="sk-offer-card">
+        <div class="sk-image skeleton-shimmer">
+          <div class="sk-badge skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-content">
+          <div class="sk-card-title skeleton-shimmer"></div>
+
+          <div class="sk-features">
+            <div class="sk-feature">
+              <span class="sk-check skeleton-shimmer"></span>
+              <span class="sk-feature-line skeleton-shimmer"></span>
+            </div>
+
+            <div class="sk-feature">
+              <span class="sk-check skeleton-shimmer"></span>
+              <span class="sk-feature-line skeleton-shimmer"></span>
+            </div>
+
+            <div class="sk-feature">
+              <span class="sk-check skeleton-shimmer"></span>
+              <span class="sk-feature-line skeleton-shimmer"></span>
+            </div>
+          </div>
+
+          <div class="sk-divider skeleton-shimmer"></div>
+
+          <div class="sk-bottom">
+            <div class="sk-price">
+              <div class="sk-price-title skeleton-shimmer"></div>
+
+              <div class="sk-price-row">
+                <div class="sk-old-price skeleton-shimmer"></div>
+                <div class="sk-new-price skeleton-shimmer"></div>
+              </div>
+            </div>
+
+            <div class="sk-button skeleton-shimmer"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="sk-offer-card">
+        <div class="sk-image skeleton-shimmer">
+          <div class="sk-badge skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-content">
+          <div class="sk-card-title skeleton-shimmer"></div>
+
+          <div class="sk-features">
+            <div class="sk-feature">
+              <span class="sk-check skeleton-shimmer"></span>
+              <span class="sk-feature-line skeleton-shimmer"></span>
+            </div>
+
+            <div class="sk-feature">
+              <span class="sk-check skeleton-shimmer"></span>
+              <span class="sk-feature-line skeleton-shimmer"></span>
+            </div>
+
+            <div class="sk-feature">
+              <span class="sk-check skeleton-shimmer"></span>
+              <span class="sk-feature-line skeleton-shimmer"></span>
+            </div>
+          </div>
+
+          <div class="sk-divider skeleton-shimmer"></div>
+
+          <div class="sk-bottom">
+            <div class="sk-price">
+              <div class="sk-price-title skeleton-shimmer"></div>
+
+              <div class="sk-price-row">
+                <div class="sk-old-price skeleton-shimmer"></div>
+                <div class="sk-new-price skeleton-shimmer"></div>
+              </div>
+            </div>
+
+            <div class="sk-button skeleton-shimmer"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --sk-bg: #f1f1f1;
+
+    --sk-card: #e4e4e4;
+    --sk-card-light: #eeeeee;
+
+    --sk-border: #d0d0d0;
+
+    --sk-title: #bcbcbc;
+    --sk-text: #d0d0d0;
+
+    --sk-icon: #b5b5b5;
+    --sk-button: #c3c3c3;
+  }
+
+  /* =========================
+        Wrapper
+========================= */
+
+  .skeleton-wrapper {
+    width: 100%;
+    padding: 70px 0 80px;
+    background: var(--sk-bg);
+  }
+
+  .skeleton-container {
+    width: min(1300px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  /* =========================
+          Header
+========================= */
+
+  .sk-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .sk-heading {
+    width: 320px;
+    height: 50px;
+
+    margin-inline: auto;
+
+    border-radius: 7px;
+    background: var(--sk-title);
+  }
+
+  /* =========================
+          Cards
+========================= */
+
+  .sk-offers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .sk-offer-card {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: var(--sk-card-light);
+    border: 1px solid var(--sk-border);
+  }
+
+  /* =========================
+           Image
+========================= */
+
+  .sk-image {
+    position: relative;
+
+    width: 100%;
+    height: 285px;
+
+    background: var(--sk-card);
+  }
+
+  /* Badge فوق الصورة */
+
+  .sk-badge {
+    position: absolute;
+
+    top: 24px;
+    right: -24px;
+
+    width: 135px;
+    height: 31px;
+
+    border-radius: 999px;
+
+    background: var(--sk-title);
+  }
+
+  /* =========================
+          Content
+========================= */
+
+  .sk-content {
+    padding: 30px 32px 38px;
+  }
+
+  /* =========================
+          Title
+========================= */
+
+  .sk-card-title {
+    width: 370px;
+    max-width: 80%;
+    height: 34px;
+
+    margin-bottom: 28px;
+
+    border-radius: 6px;
+
+    background: var(--sk-title);
+  }
+
+  /* =========================
+         Features
+========================= */
+
+  .sk-features {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .sk-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sk-check {
+    width: 14px;
+    height: 14px;
+
+    flex: 0 0 14px;
+
+    border-radius: 50%;
+
+    background: var(--sk-icon);
+  }
+
+  .sk-feature-line {
+    width: 175px;
+    height: 14px;
+
+    border-radius: 4px;
+
+    background: var(--sk-text);
+  }
+
+  /* =========================
+          Divider
+========================= */
+
+  .sk-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 28px 0;
+
+    background: var(--sk-border);
+  }
+
+  /* =========================
+          Bottom
+========================= */
+
+  .sk-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+  }
+
+  .sk-price {
+    min-width: 0;
+  }
+
+  .sk-price-title {
+    width: 150px;
+    height: 39px;
+
+    margin-bottom: 12px;
+
+    border-radius: 6px;
+
+    background: var(--sk-title);
+  }
+
+  .sk-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sk-old-price {
+    width: 60px;
+    height: 13px;
+
+    border-radius: 4px;
+
+    background: var(--sk-text);
+  }
+
+  .sk-new-price {
+    width: 75px;
+    height: 16px;
+
+    border-radius: 4px;
+
+    background: var(--sk-title);
+  }
+
+  .sk-button {
+    width: 195px;
+    height: 68px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: var(--sk-button);
+  }
+
+  /* =========================
+          Shimmer
+========================= */
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    transform: translateX(-100%);
+
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 100%
+    );
+
+    animation: skeleton-loading 1.4s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* =========================
+        Responsive
+========================= */
+
+  @media (max-width: 900px) {
+    .sk-offers {
+      grid-template-columns: 1fr;
+    }
+
+    .sk-image {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .skeleton-wrapper {
+      padding: 50px 0 60px;
+    }
+
+    .skeleton-container {
+      width: min(100% - 30px, 500px);
+    }
+
+    .sk-header {
+      margin-bottom: 45px;
+    }
+
+    .sk-heading {
+      width: 240px;
+      height: 42px;
+    }
+
+    .sk-image {
+      height: 240px;
+    }
+
+    .sk-content {
+      padding: 24px 20px 28px;
+    }
+
+    .sk-card-title {
+      width: 280px;
+      height: 30px;
+    }
+
+    .sk-button {
+      width: 150px;
+      height: 58px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .sk-image {
+      height: 210px;
+    }
+
+    .sk-bottom {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .sk-button {
+      width: 100%;
+    }
+  }
+</style>

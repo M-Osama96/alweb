@@ -1,0 +1,402 @@
+<section class="skeleton-wrapper">
+  <div class="skeleton-container">
+    <!-- Header -->
+    <div class="sk-header">
+      <div class="sk-heading skeleton-shimmer"></div>
+
+      <div class="sk-description">
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line w-70 skeleton-shimmer"></div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="sk-offers">
+      <!-- Card 1 -->
+      <article class="sk-offer-card">
+        <div class="sk-offer-content">
+          <div class="sk-offer-box">
+            <div class="sk-box-title skeleton-shimmer"></div>
+
+            <div class="sk-box-line skeleton-shimmer"></div>
+            <div class="sk-box-line skeleton-shimmer"></div>
+            <div class="sk-box-line w-75 skeleton-shimmer"></div>
+          </div>
+
+          <div class="sk-bottom">
+            <div class="sk-price">
+              <div class="sk-price-title skeleton-shimmer"></div>
+
+              <div class="sk-price-old skeleton-shimmer"></div>
+              <div class="sk-price-new skeleton-shimmer"></div>
+            </div>
+
+            <div class="sk-button skeleton-shimmer"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="sk-offer-card">
+        <div class="sk-offer-content">
+          <div class="sk-offer-box">
+            <div class="sk-box-title skeleton-shimmer"></div>
+
+            <div class="sk-box-line skeleton-shimmer"></div>
+            <div class="sk-box-line skeleton-shimmer"></div>
+            <div class="sk-box-line w-75 skeleton-shimmer"></div>
+          </div>
+
+          <div class="sk-bottom">
+            <div class="sk-price">
+              <div class="sk-price-title skeleton-shimmer"></div>
+
+              <div class="sk-price-old skeleton-shimmer"></div>
+              <div class="sk-price-new skeleton-shimmer"></div>
+            </div>
+
+            <div class="sk-button skeleton-shimmer"></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --sk-bg: #f1f1f1;
+
+    --sk-card: #dcdcdc;
+    --sk-card-dark: #cfcfcf;
+
+    --sk-border: #c7c7c7;
+
+    --sk-title: #b9b9b9;
+    --sk-text: #cccccc;
+
+    --sk-button: #bcbcbc;
+  }
+
+  /* =========================
+        Wrapper
+========================= */
+
+  .skeleton-wrapper {
+    width: 100%;
+    padding: 70px 0 80px;
+    background: var(--sk-bg);
+    overflow: hidden;
+  }
+
+  .skeleton-container {
+    width: min(1300px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+
+  /* =========================
+          Header
+========================= */
+
+  .sk-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .sk-heading {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto 18px;
+
+    border-radius: 7px;
+    background: var(--sk-title);
+  }
+
+  .sk-description {
+    width: 420px;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .sk-line {
+    width: 100%;
+    height: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 5px;
+    background: var(--sk-text);
+  }
+
+  .sk-line.w-70 {
+    width: 70%;
+    margin-inline: auto;
+  }
+
+  /* =========================
+          Offers
+========================= */
+
+  .sk-offers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  /* =========================
+          Card
+========================= */
+
+  .sk-offer-card {
+    position: relative;
+
+    min-height: 615px;
+
+    border-radius: 18px;
+
+    background: var(--sk-card);
+
+    border: 1px solid var(--sk-border);
+
+    overflow: hidden;
+  }
+
+  .sk-offer-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    padding: 28px;
+  }
+
+  /* =========================
+        Offer Box
+========================= */
+
+  .sk-offer-box {
+    width: 100%;
+
+    padding: 24px 20px;
+
+    margin-bottom: 22px;
+
+    border: 1px solid var(--sk-border);
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .sk-box-title {
+    width: 60%;
+    height: 31px;
+
+    margin-bottom: 25px;
+
+    border-radius: 6px;
+
+    background: var(--sk-title);
+  }
+
+  .sk-box-line {
+    width: 35%;
+    height: 14px;
+
+    margin-bottom: 10px;
+
+    border-radius: 4px;
+
+    background: var(--sk-text);
+  }
+
+  .sk-box-line.w-75 {
+    width: 30%;
+    margin-bottom: 0;
+  }
+
+  /* =========================
+        Bottom Area
+========================= */
+
+  .sk-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 25px;
+  }
+
+  .sk-price {
+    min-width: 0;
+  }
+
+  .sk-price-title {
+    width: 145px;
+    height: 39px;
+
+    margin-bottom: 13px;
+
+    border-radius: 6px;
+
+    background: var(--sk-title);
+  }
+
+  .sk-price-old {
+    width: 70px;
+    height: 13px;
+
+    display: inline-block;
+
+    margin-right: 8px;
+
+    border-radius: 4px;
+
+    background: var(--sk-text);
+  }
+
+  .sk-price-new {
+    width: 85px;
+    height: 16px;
+
+    display: inline-block;
+
+    border-radius: 4px;
+
+    background: var(--sk-title);
+  }
+
+  .sk-button {
+    width: 190px;
+    height: 66px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: var(--sk-button);
+  }
+
+  /* =========================
+          Shimmer
+========================= */
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    transform: translateX(-100%);
+
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 100%
+    );
+
+    animation: skeleton-loading 1.4s infinite;
+  }
+
+  @keyframes skeleton-loading {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* =========================
+        Responsive
+========================= */
+
+  @media (max-width: 900px) {
+    .sk-offers {
+      grid-template-columns: 1fr;
+    }
+
+    .sk-offer-card {
+      min-height: 560px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .skeleton-wrapper {
+      padding: 50px 0 60px;
+    }
+
+    .skeleton-container {
+      width: min(100% - 30px, 500px);
+    }
+
+    .sk-heading {
+      width: 230px;
+      height: 42px;
+    }
+
+    .sk-description {
+      width: 340px;
+    }
+
+    .sk-offer-card {
+      min-height: 500px;
+      border-radius: 14px;
+    }
+
+    .sk-offer-content {
+      padding: 18px;
+    }
+
+    .sk-offer-box {
+      padding: 20px 16px;
+    }
+
+    .sk-box-title {
+      width: 70%;
+    }
+
+    .sk-bottom {
+      align-items: flex-end;
+      gap: 15px;
+    }
+
+    .sk-button {
+      width: 145px;
+      height: 55px;
+    }
+
+    .sk-price-title {
+      width: 110px;
+      height: 32px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .sk-offer-card {
+      min-height: 450px;
+    }
+
+    .sk-bottom {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .sk-button {
+      width: 100%;
+    }
+  }
+</style>
