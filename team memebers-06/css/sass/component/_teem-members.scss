@@ -1,0 +1,186 @@
+.members {
+  padding: 70px 0;
+  position: relative;
+
+  @include sm {
+    padding: 30px 0;
+  }
+
+  .members-cont {
+    z-index: 2;
+    position: relative;
+    @include sm {
+    }
+
+    .members-head {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      overflow: hidden;
+      @include xs {
+        justify-content: center;
+      }
+    }
+    .badge {
+      background-color: lighten($setting_primary_color, 50%);
+      color: $setting_text_color;
+      font-size: 16px;
+      padding: 4px 20px;
+      border-radius: 5px;
+      margin-bottom: 16px;
+      font-weight: $weight_regular;
+      transition: all 0.4s ease-in-out;
+      position: relative;
+      width: fit-content;
+    }
+    .members-title {
+      font-size: 48px;
+      font-weight: $weight_bold;
+      color: darken($setting_primary_color, 20%);
+      text-align: center;
+      margin-bottom: 14px;
+      @include sm {
+        font-size: 34px;
+      }
+      @include xs {
+        font-size: 24px;
+      }
+    }
+    .desc {
+      font-size: 20px;
+      font-weight: $weight_regular;
+      color: lighten($setting_text_color, 20%);
+      text-align: center;
+      max-width: 646px;
+      margin: 0 0 40px 0;
+      @include sm {
+        font-size: 16px;
+        margin: 0 0 20px 0;
+      }
+      @include xs {
+        font-size: 14px;
+      }
+    }
+
+    .member-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 11px;
+      padding: 20px 16px;
+      border-radius: 16px;
+      background-color: lighten($setting_primary_color, 50%);
+      position: relative;
+      transition: all 0.4s ease-in-out;
+      @include sm {
+      }
+      @include xs {
+      }
+      &:hover {
+      }
+
+      .member-img {
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 0.9;
+        transition: all 0.4s ease-in-out;
+        border-radius: 12px;
+        overflow: hidden;
+        @include xs {
+        }
+        .img-cover {
+          @include xs {
+          }
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        .name {
+          font-size: 16px;
+          font-weight: $weight_medium;
+          color: $setting_text_color;
+          margin: 0;
+        }
+        .position {
+          font-size: 14px;
+          font-weight: $weight_medium;
+          color: lighten($setting_text_color, 20%);
+          margin: 0;
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 30px;
+      @include lg {
+        display: none;
+      }
+      @include xs {
+        // margin-top: 20px;
+      }
+      .swiper-pagination-bullet {
+        background-color: $setting_primary_color;
+        opacity: 1;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: darken($setting_primary_color, 30%);
+      }
+    }
+    .swiper-button-next {
+      margin-inline-start: -32px;
+      transform: translateY(90px);
+      @include ltr {
+        margin-inline-end: -32px;
+      }
+      &::after {
+        font-size: 20px;
+        content: "\f061";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+      }
+    }
+    .swiper-button-prev {
+      margin-inline-end: -32px;
+      transform: translateY(90px);
+      @include ltr {
+        margin-inline-start: -32px;
+      }
+      &::after {
+        font-size: 20px;
+        content: "\f060";
+        font-family: "Line Awesome Free";
+        font-weight: 900;
+      }
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 43px;
+      height: 43px;
+      background: $setting_primary_color;
+      box-shadow: 0px 3.46px 5.19px 0px rgba(0, 0, 0, 0.04);
+      border: 1px solid $setting_primary_color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: #fff;
+      @include md {
+        display: none;
+      }
+      &.swiper-button-disabled {
+        opacity: 1;
+        background-color: transparent;
+        color: $setting_primary_color;
+      }
+    }
+  }
+}

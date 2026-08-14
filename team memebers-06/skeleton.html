@@ -1,0 +1,239 @@
+<section class="team-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="sk-section-header">
+      <div class="sk-badge skeleton-shimmer"></div>
+      <div class="sk-title skeleton-shimmer"></div>
+      <div class="sk-subtitle skeleton-shimmer"></div>
+    </div>
+
+    <!-- Cards -->
+    <div class="sk-team-grid">
+      <!-- Card -->
+      <article class="sk-team-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-card-title skeleton-shimmer"></div>
+
+        <div class="sk-card-text skeleton-shimmer"></div>
+      </article>
+
+      <!-- Card -->
+      <article class="sk-team-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-card-title skeleton-shimmer"></div>
+
+        <div class="sk-card-text skeleton-shimmer"></div>
+      </article>
+
+      <!-- Card -->
+      <article class="sk-team-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-card-title skeleton-shimmer"></div>
+
+        <div class="sk-card-text skeleton-shimmer"></div>
+      </article>
+
+      <!-- Card -->
+      <article class="sk-team-card">
+        <div class="sk-image skeleton-shimmer"></div>
+
+        <div class="sk-card-title skeleton-shimmer"></div>
+
+        <div class="sk-card-text skeleton-shimmer"></div>
+      </article>
+    </div>
+  </div>
+</section>
+<style>
+  .team-section {
+    padding: 80px 0;
+    background: #f5f5f5;
+  }
+
+  .container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+  }
+
+  /* =========================
+   Skeleton Base
+========================= */
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+
+    background: #d8d8d8;
+  }
+
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    transform: translateX(-100%);
+
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.45) 50%,
+      transparent 100%
+    );
+
+    animation: skeleton-shimmer 1.5s infinite;
+  }
+
+  @keyframes skeleton-shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* =========================
+   Section Header
+========================= */
+
+  .sk-section-header {
+    text-align: center;
+    margin-bottom: 55px;
+  }
+
+  .sk-badge {
+    width: 165px;
+    height: 38px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 6px;
+  }
+
+  .sk-title {
+    width: 520px;
+    max-width: 80%;
+    height: 48px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 6px;
+  }
+
+  .sk-subtitle {
+    width: 500px;
+    max-width: 80%;
+    height: 22px;
+
+    margin: 0 auto;
+
+    border-radius: 5px;
+  }
+
+  /* =========================
+   Cards Grid
+========================= */
+
+  .sk-team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  /* =========================
+   Card
+========================= */
+
+  .sk-team-card {
+    padding: 24px;
+
+    background: #eeeeee;
+
+    border-radius: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* =========================
+   Image
+========================= */
+
+  .sk-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 12px;
+
+    margin-bottom: 18px;
+  }
+
+  /* =========================
+   Card Text
+========================= */
+
+  .sk-card-title {
+    width: 70%;
+    height: 20px;
+
+    margin-bottom: 14px;
+
+    border-radius: 5px;
+  }
+
+  .sk-card-text {
+    width: 55%;
+    height: 16px;
+
+    border-radius: 5px;
+  }
+
+  /* =========================
+   Responsive
+========================= */
+
+  @media (max-width: 1100px) {
+    .sk-team-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .team-section {
+      padding: 60px 0;
+    }
+
+    .sk-team-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .sk-team-card {
+      padding: 18px;
+    }
+
+    .sk-title {
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sk-section-header {
+      margin-bottom: 35px;
+    }
+
+    .sk-title {
+      width: 80%;
+      height: 34px;
+    }
+
+    .sk-subtitle {
+      width: 70%;
+    }
+  }
+</style>
