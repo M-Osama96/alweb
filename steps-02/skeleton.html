@@ -1,0 +1,139 @@
+<section class="skeleton-wrapper sk-steps02-section">
+  <div class="skeleton-container">
+
+    <div class="sk-section-head-start">
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-steps02-grid">
+      <div class="sk-steps02-row">
+        <div class="sk-icon-block skeleton-shimmer"></div>
+        <div class="sk-steps02-text">
+          <div class="sk-line sk-steps02-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-steps02-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-steps02-num skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-steps02-row">
+        <div class="sk-icon-block skeleton-shimmer"></div>
+        <div class="sk-steps02-text">
+          <div class="sk-line sk-steps02-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-steps02-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-steps02-num skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-steps02-row">
+        <div class="sk-icon-block skeleton-shimmer"></div>
+        <div class="sk-steps02-text">
+          <div class="sk-line sk-steps02-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-steps02-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-steps02-num skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-steps02-row">
+        <div class="sk-icon-block skeleton-shimmer"></div>
+        <div class="sk-steps02-text">
+          <div class="sk-line sk-steps02-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-steps02-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-steps02-num skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-steps02-row">
+        <div class="sk-icon-block skeleton-shimmer"></div>
+        <div class="sk-steps02-text">
+          <div class="sk-line sk-steps02-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-steps02-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-steps02-num skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-steps02-row">
+        <div class="sk-icon-block skeleton-shimmer"></div>
+        <div class="sk-steps02-text">
+          <div class="sk-line sk-steps02-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-steps02-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-steps02-num skeleton-shimmer"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.skeleton-wrapper.sk-steps02-section { padding-block:80px; }
+
+.sk-section-head-start { display:flex; flex-direction:column; gap:14px; margin-block-end:48px; }
+.sk-section-title { height:2.2em; width:28%; border-radius:4px; }
+.sk-section-sub { height:14px; width:34%; border-radius:4px; }
+
+.sk-steps02-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+
+.sk-steps02-row {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:24px;
+}
+
+.sk-icon-block { width:64px; height:64px; border-radius:14px; flex-shrink:0; }
+
+.sk-steps02-text { display:flex; flex-direction:column; gap:8px; flex:1; min-width:0; }
+.sk-steps02-title { height:16px; width:35%; border-radius:4px; }
+.sk-steps02-text .sk-line:not(.sk-steps02-title) { height:13px; width:95%; border-radius:4px; }
+.sk-steps02-line-short { width:25% !important; }
+
+.sk-steps02-num { width:70px; height:48px; border-radius:6px; flex-shrink:0; }
+
+@media (max-width: 992px) {
+  .sk-steps02-grid { grid-template-columns:1fr; }
+}
+
+@media (max-width: 480px) {
+  .sk-steps02-row { flex-wrap:wrap; }
+  .sk-steps02-num { order:-1; margin-inline-start:auto; }
+  .sk-section-title { width:60%; }
+  .sk-section-sub { width:80%; }
+}
+</style>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:100px; width:100%; }
+.skeleton-wrapper.sk-full-bg  { background:rgba(229,231,235,0.45); }
+
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1180px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#e5e7eb; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+</style>

@@ -1,0 +1,149 @@
+.steps {
+  padding: 70px 0;
+  position: relative;
+  background-color: lighten($setting_primary_color, $amount: 50%);
+  @include sm {
+    padding: 40px 0;
+  }
+}
+.steps-cont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  @include sm {
+    gap: 26px;
+  }
+  .steps-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    .badge {
+      padding: 8px 20px;
+      border-radius: 99px;
+      background-color: lighten($setting_primary_color, $amount: 45%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: $weight_medium;
+      color: $setting_primary_color;
+      width: fit-content;
+
+      @include sm {
+        font-size: 12px;
+      }
+    }
+    .title {
+      font-size: 40px;
+      font-weight: $weight_bold;
+      color: $setting_text_color;
+      margin: 0;
+      @include md {
+        font-size: 34px;
+      }
+      @include sm {
+        font-size: 24px;
+      }
+      @include xs {
+        text-align: center;
+      }
+    }
+    .desc {
+      font-size: 18px;
+      font-weight: $weight_light;
+      color: lighten($setting_text_color, $amount: 20%);
+      text-align: center;
+      margin: 0;
+      @include sm {
+        font-size: 14px;
+      }
+      @include xs {
+        text-align: center;
+      }
+    }
+  }
+  .staps-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include xxs {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .step-card {
+      position: relative;
+      padding: 46px 24px;
+      border-radius: 20px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0px 4px 20px 0px #0000000f;
+      border: 1px solid transparent;
+      transition: all 0.5s ease-in-out;
+      @include md {
+        padding: 26px 24px;
+      }
+      @include sm {
+        border-radius: 14px;
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: lighten($setting_primary_color, $amount: 35%);
+        transition: all 0.3s ease;
+        margin-bottom: 8px;
+      }
+      .step-number {
+        border-radius: 50%;
+        padding: 14px 0 10px;
+        background-color: lighten($setting_primary_color, $amount: 50%);
+        color: darken($setting_primary_color, $amount: 35%);
+        font-size: 22px;
+        font-weight: $weight_bold;
+        transition: all 0.5s ease-in-out;
+        aspect-ratio: 1;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .step-title {
+        font-size: 20px;
+        font-weight: $weight_semibold;
+        color: $setting_text_color;
+        margin: 0;
+        margin-bottom: 12px;
+        @include sm {
+          font-size: 18px;
+        }
+      }
+      .step-desc {
+        font-size: 16px;
+        font-weight: $weight_light;
+        color: lighten($setting_text_color, $amount: 20%);
+        margin: 0;
+      }
+      &:hover {
+        border-color: lighten($setting_primary_color, $amount: 0%);
+        .dot {
+          background-color: $setting_primary_color;
+        }
+        .step-number {
+          background-color: lighten($setting_primary_color, $amount: 0%);
+          color: darken($setting_primary_color, $amount: 0%);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
