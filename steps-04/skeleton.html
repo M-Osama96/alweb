@@ -1,0 +1,83 @@
+<section class="skeleton-wrapper sk-steps04-section">
+  <div class="skeleton-container">
+
+    <div class="sk-section-head">
+      <div class="sk-badge skeleton-shimmer"></div>
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-steps04-row">
+      <div class="sk-step04">
+        <div class="sk-step04-bar skeleton-shimmer"></div>
+        <div class="sk-step04-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-step04">
+        <div class="sk-step04-bar skeleton-shimmer"></div>
+        <div class="sk-step04-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-step04">
+        <div class="sk-step04-bar skeleton-shimmer"></div>
+        <div class="sk-step04-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-step04">
+        <div class="sk-step04-bar skeleton-shimmer"></div>
+        <div class="sk-step04-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-step04">
+        <div class="sk-step04-bar skeleton-shimmer"></div>
+        <div class="sk-step04-num skeleton-shimmer"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.skeleton-wrapper.sk-steps04-section { padding-block:80px; }
+
+.sk-section-head { display:flex; flex-direction:column; align-items:center; gap:14px; margin-block-end:56px; }
+.sk-badge { height:30px; width:90px; border-radius:999px; }
+.sk-section-title { height:2.2em; width:26%; border-radius:4px; }
+.sk-section-sub { height:14px; width:32%; border-radius:4px; }
+
+.sk-steps04-row { display:flex; gap:32px; }
+
+.sk-step04 { display:flex; flex-direction:column; gap:14px; flex:1; }
+
+.sk-step04-bar { height:2px; width:100%; border-radius:2px; }
+.sk-step04-num { height:70px; width:75%; border-radius:6px; }
+
+@media (max-width: 768px) {
+  .sk-steps04-row { flex-wrap:wrap; }
+  .sk-step04 { flex:0 0 calc(33.33% - 22px); }
+}
+
+@media (max-width: 480px) {
+  .sk-step04 { flex:0 0 calc(50% - 16px); }
+  .sk-section-title { width:60%; }
+  .sk-section-sub { width:80%; }
+}
+</style>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:100px; width:100%; }
+.skeleton-wrapper.sk-full-bg  { background:rgba(229,231,235,0.45); }
+
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1180px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#e5e7eb; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+</style>

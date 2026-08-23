@@ -1,0 +1,144 @@
+<section class="skeleton-wrapper sk-steps03-section">
+  <div class="skeleton-container">
+
+    <div class="sk-section-head">
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-steps03-row">
+
+      <div class="sk-step03">
+        <div class="sk-step03-pill skeleton-shimmer">
+          <div class="sk-step03-num skeleton-shimmer"></div>
+          <div class="sk-step03-icon skeleton-shimmer"></div>
+        </div>
+        <div class="sk-line sk-step03-title skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line sk-step03-line-short skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-step03-arrow skeleton-shimmer"></div>
+
+      <div class="sk-step03">
+        <div class="sk-step03-pill skeleton-shimmer">
+          <div class="sk-step03-num skeleton-shimmer"></div>
+          <div class="sk-step03-icon skeleton-shimmer"></div>
+        </div>
+        <div class="sk-line sk-step03-title skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line sk-step03-line-short skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-step03-arrow skeleton-shimmer"></div>
+
+      <div class="sk-step03">
+        <div class="sk-step03-pill skeleton-shimmer">
+          <div class="sk-step03-num skeleton-shimmer"></div>
+          <div class="sk-step03-icon skeleton-shimmer"></div>
+        </div>
+        <div class="sk-line sk-step03-title skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line sk-step03-line-short skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-step03-arrow skeleton-shimmer"></div>
+
+      <div class="sk-step03">
+        <div class="sk-step03-pill skeleton-shimmer">
+          <div class="sk-step03-num skeleton-shimmer"></div>
+          <div class="sk-step03-icon skeleton-shimmer"></div>
+        </div>
+        <div class="sk-line sk-step03-title skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line sk-step03-line-short skeleton-shimmer"></div>
+      </div>
+
+      <div class="sk-step03-arrow skeleton-shimmer"></div>
+
+      <div class="sk-step03">
+        <div class="sk-step03-pill skeleton-shimmer">
+          <div class="sk-step03-num skeleton-shimmer"></div>
+          <div class="sk-step03-icon skeleton-shimmer"></div>
+        </div>
+        <div class="sk-line sk-step03-title skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line skeleton-shimmer"></div>
+        <div class="sk-line sk-step03-line-short skeleton-shimmer"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.skeleton-wrapper.sk-steps03-section { padding-block:80px; }
+
+.sk-section-head { display:flex; flex-direction:column; align-items:center; gap:14px; margin-block-end:56px; }
+.sk-section-title { height:2.2em; width:26%; border-radius:4px; }
+.sk-section-sub { height:14px; width:32%; border-radius:4px; }
+
+.sk-steps03-row { display:flex; align-items:flex-start; gap:12px; }
+
+.sk-step03 { display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; flex:1; min-width:0; }
+
+.sk-step03-pill {
+  width:100%;
+  max-width:130px;
+  aspect-ratio:13/17;
+  border-radius:999px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding-block:20px;
+}
+
+.sk-step03-num { height:1.8em; width:50%; border-radius:4px; }
+.sk-step03-icon { width:56px; height:56px; border-radius:50%; }
+
+.sk-step03-title { height:16px; width:60%; border-radius:4px; margin-block-start:6px; }
+.sk-step03 .sk-line:not(.sk-step03-title) { height:13px; width:85%; border-radius:4px; }
+.sk-step03-line-short { width:55% !important; }
+
+.sk-step03-arrow { width:32px; height:24px; border-radius:6px; flex-shrink:0; margin-block-start:80px; }
+
+@media (max-width: 992px) {
+  .sk-steps03-row { flex-wrap:wrap; justify-content:center; }
+  .sk-step03 { flex:0 0 45%; }
+  .sk-step03-arrow { display:none; }
+}
+
+@media (max-width: 480px) {
+  .sk-step03 { flex:0 0 100%; }
+  .sk-section-title { width:60%; }
+  .sk-section-sub { width:80%; }
+}
+</style>
+
+<style>
+*, :before, :after { box-sizing:border-box; border:none; margin:0; }
+:root { --sk-shimmer-dir:1; }
+[dir="rtl"] { --sk-shimmer-dir:-1; }
+
+.skeleton-wrapper { height:fit-content; padding-block:100px; width:100%; }
+.skeleton-wrapper.sk-full-bg  { background:rgba(229,231,235,0.45); }
+
+.skeleton-container { padding-inline:20px; margin-inline:auto; width:100%; max-width:1180px; }
+
+.skeleton-shimmer { position:relative; overflow:hidden; background:#e5e7eb; }
+.skeleton-shimmer::after {
+  content:""; position:absolute; inset:0;
+  transform:translateX(calc(-100% * var(--sk-shimmer-dir)));
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent);
+  animation:skeleton-shimmer-animation 1.5s infinite;
+}
+@keyframes skeleton-shimmer-animation {
+  100% { transform:translateX(calc(100% * var(--sk-shimmer-dir))); }
+}
+</style>
