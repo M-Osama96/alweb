@@ -1,0 +1,169 @@
+.why-choose-us {
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+
+  @include sm {
+    padding: 30px 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 10%;
+    bottom: -40%;
+    width: 37%;
+    aspect-ratio: 1;
+    background-color: lighten($setting_primary_color, $amount: 50%);
+    border-radius: 50%;
+    @include md {
+      inset-inline-start: 20px;
+      bottom: -33%;
+      width: 40%;
+    }
+    @include sm {
+      display: none;
+    }
+  }
+
+  .why-choose-us-cont {
+    display: flex;
+    justify-content: end;
+    gap: 63px;
+    z-index: 2;
+    position: relative;
+    @include md {
+      gap: 30px;
+    }
+
+    @include sm {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .info {
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      @include sm {
+        max-width: 80%;
+        align-items: center;
+        gap: 10px;
+      }
+      @include xs {
+        max-width: 100%;
+      }
+      .title {
+        font-size: 48px;
+        font-weight: $weight_bold;
+        color: $setting_text_color;
+        margin: 0;
+        @include sm {
+          font-size: 32px;
+          text-align: center;
+        }
+        @include xs {
+          font-size: 24px;
+          text-align: center;
+        }
+      }
+      .desc {
+        font-size: 24px;
+        font-weight: $weight_bold;
+        color: lighten($setting_text_color, $amount: 10%);
+        margin: 0;
+        @include sm {
+          font-size: 18px;
+          text-align: center;
+        }
+        @include xs {
+          font-size: 16px;
+        }
+      }
+      .details {
+        font-size: 16px;
+        font-weight: $weight_light;
+        color: lighten($setting_text_color, $amount: 10%);
+        margin: 0;
+        @include sm {
+          font-size: 14px;
+          text-align: center;
+        }
+        @include xs {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .why-choose-us-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+      row-gap: 10px;
+      width: 100%;
+      max-width: 560px;
+      @include sm {
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 100%;
+      }
+      @include xs {
+        grid-template-columns: 1fr;
+      }
+      .why-choose-us-item {
+        position: relative;
+        border-radius: 16px;
+        padding: 18px 18px 84px 18px;
+        box-shadow: 0px 4px 12px 0px #0000000a;
+        border: 2px solid lighten($setting_primary_color, $amount: 50%);
+        transition: all 0.5s ease;
+        overflow: hidden;
+
+        @include md {
+        }
+        @include sm {
+          border-radius: 12px;
+        }
+        .num {
+          position: absolute;
+          bottom: 0;
+          inset-inline-end: 0;
+          font-size: 40px;
+          font-weight: $weight_bold;
+          color: lighten($setting_primary_color, $amount: 35%);
+          background-color: lighten($setting_primary_color, $amount: 48%);
+          padding: 10px 27px 0 27px;
+          border-start-start-radius: 48px;
+          transition: all 0.5s ease;
+        }
+        .item-p {
+          font-size: 18px;
+          font-weight: $weight_light;
+          color: lighten($setting_text_color, $amount: 10%);
+          margin: 0;
+          transition: all 0.5s ease;
+          @include sm {
+            font-size: 14px;
+          }
+          @include xs {
+            font-size: 16px;
+          }
+        }
+        &:hover {
+          border-color: $setting_primary_color;
+          .num {
+            background-color: $setting_primary_color;
+            color: white;
+            padding: 10px 32px 0 22px;
+            @include ltr {
+              padding: 10px 22px 0 32px;
+            }
+          }
+          .item-p {
+            transform: translateY(10px);
+          }
+        }
+      }
+    }
+  }
+}

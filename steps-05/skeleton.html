@@ -1,0 +1,212 @@
+<section class="skeleton-wrapper sk-steps05-section">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-badge skeleton-shimmer"></div>
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+    </div>
+
+    <div class="sk-steps05-panel">
+      <div class="sk-steps05-row">
+        <div class="sk-step05">
+          <div class="sk-icon-block skeleton-shimmer"></div>
+          <div class="sk-line sk-step05-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-step05-line-short skeleton-shimmer"></div>
+          <div class="sk-step05-num skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-step05-connector skeleton-shimmer"></div>
+
+        <div class="sk-step05">
+          <div class="sk-icon-block skeleton-shimmer"></div>
+          <div class="sk-line sk-step05-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-step05-line-short skeleton-shimmer"></div>
+          <div class="sk-step05-num skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-step05-connector skeleton-shimmer"></div>
+
+        <div class="sk-step05">
+          <div class="sk-icon-block skeleton-shimmer"></div>
+          <div class="sk-line sk-step05-title skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-step05-line-short skeleton-shimmer"></div>
+          <div class="sk-step05-num skeleton-shimmer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skeleton-wrapper.sk-steps05-section {
+    padding-block: 80px;
+  }
+
+  .sk-section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-block-end: 64px;
+  }
+  .sk-badge {
+    height: 30px;
+    width: 90px;
+    border-radius: 999px;
+  }
+  .sk-section-title {
+    height: 2.2em;
+    width: 26%;
+    border-radius: 4px;
+  }
+  .sk-section-sub {
+    height: 14px;
+    width: 34%;
+    border-radius: 4px;
+  }
+
+  .sk-steps05-panel {
+    border-radius: 60px;
+    padding: 80px 60px 48px;
+  }
+
+  .sk-steps05-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .sk-step05 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    flex: 1;
+    margin-block-start: -70px;
+  }
+
+  .sk-icon-block {
+    width: 110px;
+    height: 110px;
+    border-radius: 24px;
+  }
+
+  .sk-step05-title {
+    height: 16px;
+    width: 40%;
+    border-radius: 4px;
+    margin-block-start: 8px;
+  }
+  .sk-step05 .sk-line:not(.sk-step05-title) {
+    height: 13px;
+    width: 90%;
+    border-radius: 4px;
+  }
+  .sk-step05-line-short {
+    width: 50% !important;
+  }
+
+  .sk-step05-num {
+    height: 2.6em;
+    width: 80px;
+    border-radius: 6px;
+    margin-block-start: 8px;
+  }
+
+  .sk-step05-connector {
+    width: 80px;
+    height: 1px;
+    border-radius: 2px;
+    margin-block-start: 35px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 992px) {
+    .sk-steps05-row {
+      flex-wrap: wrap;
+    }
+    .sk-step05 {
+      flex: 0 0 100%;
+      margin-block-start: 0;
+    }
+    .sk-step05-connector {
+      display: none;
+    }
+    .sk-steps05-panel {
+      border-radius: 24px;
+      padding: 48px 24px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-section-title {
+      width: 60%;
+    }
+    .sk-section-sub {
+      width: 80%;
+    }
+  }
+</style>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>
