@@ -1,0 +1,177 @@
+<section class="skeleton-wrapper sk-full-bg sk-info-section">
+  <div class="skeleton-container">
+    <div class="sk-info-split">
+      <div class="sk-info-text">
+        <div class="sk-line sk-heading skeleton-shimmer"></div>
+        <div
+          class="sk-line sk-heading sk-heading-accent skeleton-shimmer"
+        ></div>
+        <div class="sk-line sk-body-line skeleton-shimmer"></div>
+        <div class="sk-btn skeleton-shimmer"></div>
+      </div>
+      <div class="sk-info-img skeleton-shimmer"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skeleton-wrapper.sk-info-section {
+    padding-block: 88px 58px;
+    background: #eaf2ff;
+  }
+
+  .sk-info-split {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .sk-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .sk-info-text .sk-heading {
+    height: 2.2em;
+    width: 76%;
+    border-radius: 4px;
+  }
+
+  .sk-info-text .sk-heading-accent {
+    width: 44%;
+  }
+
+  .sk-info-text .sk-body-line {
+    height: 14px;
+    width: 72%;
+    border-radius: 4px;
+    margin-block-start: 30px;
+  }
+
+  .sk-info-text .sk-btn {
+    width: 282px;
+    height: 73px;
+    border-radius: 999px;
+    margin-block-start: 18px;
+  }
+
+  .sk-info-img {
+    width: 100%;
+    aspect-ratio: 1.08 / 1;
+    border-radius: 34px;
+    outline: 3px solid #b6b6b6;
+    outline-offset: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .sk-info-split {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .sk-info-img {
+      max-width: 620px;
+      margin-inline: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .skeleton-wrapper.sk-info-section {
+      padding-block: 56px 40px;
+    }
+
+    .sk-info-text .sk-heading {
+      width: 88%;
+    }
+
+    .sk-info-text .sk-heading-accent {
+      width: 58%;
+    }
+
+    .sk-info-text .sk-body-line {
+      width: 86%;
+      margin-block-start: 20px;
+    }
+
+    .sk-info-text .sk-btn {
+      width: 220px;
+      height: 56px;
+    }
+
+    .sk-info-img {
+      outline-offset: 8px;
+      border-radius: 24px;
+    }
+  }
+
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+  .skeleton-wrapper.sk-hero {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-header {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-strip {
+    padding-block: 60px;
+  }
+  .skeleton-wrapper.sk-footer {
+    padding-block: 60px 0;
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>
