@@ -1,0 +1,122 @@
+.contact {
+  padding: 70px 0;
+  position: relative;
+  background-color: darken($setting_primary_color, $amount: 20%);
+  @include sm {
+    padding: 40px 0;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 35, 77, 0) 0%,
+      darken($setting_primary_color, $amount: 30%) 55.28%,
+      rgba(6, 35, 77, 0) 100%
+    );
+  }
+  .contact-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .contact-cont {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 80px;
+    grid-template-columns: 450px 1fr;
+    padding: 60px;
+    border-radius: 32px;
+    background: $setting_primary_color;
+    align-items: center;
+    @include md {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 25px;
+    }
+    @include sm {
+      padding: 0;
+      background-color: transparent;
+    }
+    @include xs {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .details {
+      .title {
+        font-size: 48px;
+        font-weight: $weight_bold;
+        color: #fff;
+        margin-bottom: 32px;
+        line-height: 1.3;
+        @include md {
+          font-size: 40px;
+          margin-bottom: 24px;
+        }
+        @include sm {
+          font-size: 32px;
+        }
+      }
+      .details-cont {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 16px 24px;
+          background-color: darken($setting_primary_color, $amount: 10%);
+          border-radius: 8px;
+          @include md {
+            padding: 14px 20px;
+          }
+          @include sm {
+            padding: 10px;
+          }
+          .las {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 50%;
+            font-size: 36px;
+            color: $setting_primary_color;
+            @include sm {
+              font-size: 22px;
+              width: 44px;
+              height: 44px;
+            }
+          }
+          .item-text {
+            color: #fff;
+            font-size: 18px;
+            font-weight: $weight_bold;
+            margin: 0;
+            @include sm {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    .contact-img {
+      aspect-ratio: 491/417;
+      overflow: hidden;
+      border-radius: 16px;
+      .img-cover {
+        display: flex;
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+<section class="skeleton-wrapper sk-full-bg sk-info">
+  <div class="skeleton-container">
+    <div class="sk-info-card">
+      <div class="sk-info-split">
+        <div class="sk-info-text">
+          <div class="sk-line sk-heading skeleton-shimmer"></div>
+          <div class="sk-contact-list">
+            <div class="sk-contact-item">
+              <div class="sk-icon-circle skeleton-shimmer"></div>
+              <div class="sk-contact-content">
+                <div class="sk-line skeleton-shimmer"></div>
+              </div>
+            </div>
+            <div class="sk-contact-item">
+              <div class="sk-icon-circle skeleton-shimmer"></div>
+              <div class="sk-contact-content">
+                <div class="sk-line skeleton-shimmer"></div>
+                <div class="sk-line skeleton-shimmer"></div>
+              </div>
+            </div>
+            <div class="sk-contact-item">
+              <div class="sk-icon-circle skeleton-shimmer"></div>
+              <div class="sk-contact-content">
+                <div class="sk-line skeleton-shimmer"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sk-info-img skeleton-shimmer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skeleton-wrapper.sk-info {
+    background: #082456;
+  }
+  .sk-info-card {
+    background: #b6b6b6;
+    border-radius: 24px;
+    padding: 48px;
+  }
+  .sk-info-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .sk-info-text {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .sk-heading {
+    height: 2.2em;
+    width: 65%;
+    border-radius: 6px;
+  }
+  .sk-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .sk-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+  }
+  .sk-icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .sk-contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+  }
+  .sk-contact-content .sk-line {
+    height: 14px;
+    border-radius: 4px;
+  }
+  .sk-contact-item:nth-child(1) .sk-contact-content .sk-line {
+    width: 80%;
+  }
+  .sk-contact-item:nth-child(2) .sk-contact-content .sk-line:nth-child(1) {
+    width: 85%;
+  }
+  .sk-contact-item:nth-child(2) .sk-contact-content .sk-line:nth-child(2) {
+    width: 35%;
+  }
+  .sk-contact-item:nth-child(3) .sk-contact-content .sk-line {
+    width: 70%;
+  }
+  .sk-info-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+  }
+  @media (max-width: 768px) {
+    .sk-info-split {
+      grid-template-columns: 1fr;
+    }
+    .sk-info-card {
+      padding: 24px;
+    }
+  }
+
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+  .skeleton-wrapper.sk-hero {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-header {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-strip {
+    padding-block: 60px;
+  }
+  .skeleton-wrapper.sk-footer {
+    padding-block: 60px 0;
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>
