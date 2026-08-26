@@ -1,0 +1,162 @@
+<section class="skeleton-wrapper sk-contact03-section">
+  <div class="skeleton-container">
+    <div class="sk-line sk-contact03-heading skeleton-shimmer"></div>
+    <div class="sk-line sk-contact03-heading2 skeleton-shimmer"></div>
+
+    <div class="sk-contact03-media">
+      <div class="sk-contact03-img skeleton-shimmer"></div>
+
+      <div class="sk-contact03-card skeleton-shimmer">
+        <div class="sk-contact03-row">
+          <div class="sk-contact03-icon skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+        </div>
+        <div class="sk-contact03-row">
+          <div class="sk-contact03-icon skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+        </div>
+        <div class="sk-contact03-row">
+          <div class="sk-contact03-icon skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skeleton-wrapper.sk-contact03-section {
+    padding-block: 100px;
+  }
+
+  .sk-contact03-heading {
+    height: 2.4em;
+    width: 32%;
+    border-radius: 4px;
+    margin-block-end: 14px;
+  }
+  .sk-contact03-heading2 {
+    height: 2.4em;
+    width: 20%;
+    border-radius: 4px;
+    margin-block-end: 40px;
+  }
+
+  .sk-contact03-media {
+    position: relative;
+  }
+
+  .sk-contact03-img {
+    width: 100%;
+    aspect-ratio: 16/8;
+    border-radius: 20px;
+  }
+
+  .sk-contact03-card {
+    position: absolute !important;
+    inset-inline-end: 5%;
+    inset-block-start: -40px;
+    width: 44%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    top: -30%;
+  }
+  .sk-contact03-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-block: 18px;
+    border-block-end: 1px solid #e5e7eb;
+  }
+  .sk-contact03-row:last-child {
+    border-block-end: none;
+  }
+
+  .sk-contact03-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .sk-contact03-row .sk-line {
+    height: 15px;
+    width: 70%;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .sk-contact03-card {
+      position: static;
+      width: 100%;
+      margin-block-start: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-contact03-heading {
+      width: 60%;
+    }
+    .sk-contact03-heading2 {
+      width: 40%;
+    }
+  }
+</style>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>

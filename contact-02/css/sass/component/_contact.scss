@@ -1,0 +1,144 @@
+.contact {
+  padding: 70px 0;
+  position: relative;
+  background-color: lighten($setting_primary_color, $amount: 50%);
+  @include sm {
+    padding: 40px 0;
+  }
+
+  .contact-cont {
+    position: relative;
+    z-index: 2;
+    padding: 28px;
+    aspect-ratio: 1140/567;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    @include md {
+    }
+    @include sm {
+      aspect-ratio: unset;
+      padding: 20px;
+      padding-top: 60px;
+      border-radius: 12px;
+    }
+    @include xs {
+      padding: 60px 14px 14px 14px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: linear-gradient(
+        180deg,
+        rgba($setting_primary_color, 0) 0%,
+        $setting_primary_color 91.53%
+      );
+    }
+    .details {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 12px;
+      @include sm {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      @include xs {
+        flex-direction: column;
+      }
+
+      .title {
+        font-size: 48px;
+        font-weight: $weight_bold;
+        color: #fff;
+        margin-bottom: 20px;
+        line-height: 1.3;
+        text-align: center;
+        @include md {
+          font-size: 40px;
+          margin-bottom: 24px;
+        }
+        @include sm {
+          font-size: 32px;
+          width: 100%;
+          margin-bottom: 4px;
+        }
+      }
+      .details-cont {
+        display: flex;
+        gap: 14px;
+        @include sm {
+          width: calc(50% - 5px);
+          flex-direction: column;
+        }
+        @include xs {
+          width: 100%;
+        }
+        .contact-item {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 16px 24px;
+          background: rgba($setting_primary_color, 0.1);
+          border: 1px solid
+            rgba(lighten($setting_primary_color, $amount: 40%), 0.4);
+
+          border-radius: 8px;
+          @include md {
+            padding: 14px 20px;
+          }
+          @include sm {
+            padding: 10px;
+          }
+          .las {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 50%;
+            font-size: 24px;
+            color: $setting_primary_color;
+            flex-shrink: 0;
+            @include sm {
+              font-size: 18px;
+              width: 34px;
+              height: 34px;
+            }
+          }
+          .item-text {
+            color: #fff;
+            font-size: 18px;
+            font-weight: $weight_bold;
+            margin: 0;
+            @include sm {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .contact-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      .img-cover {
+        display: flex;
+      }
+    }
+  }
+}
