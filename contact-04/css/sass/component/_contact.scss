@@ -1,0 +1,114 @@
+.contact {
+  padding: 70px 0;
+  position: relative;
+  background-color: lighten($setting_primary_color, $amount: 50%);
+  @include sm {
+    padding: 40px 0 40px;
+  }
+
+  .contact-cont {
+    position: relative;
+    z-index: 2;
+    padding: 97px;
+    border-radius: 220px;
+    overflow: hidden;
+
+    @include md {
+    }
+    @include sm {
+      padding: 50px;
+    }
+    @include xs {
+      padding: 60px 20px;
+      border-radius: 16px;
+    }
+    .details {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      padding: 70px;
+
+      background: rgba(255, 255, 255, 0.2);
+
+      border-radius: 420px;
+      width: 100%;
+      box-shadow: 0px -16px 20px 0px rgba(0, 0, 0, 0.08);
+
+      backdrop-filter: blur(4px);
+      @include sm {
+        padding: 40px;
+      }
+      @include xs {
+        padding: 20px;
+        border-radius: 16px;
+      }
+    }
+    .details-cont {
+      display: grid;
+      grid-template-columns: 376px 1fr;
+      column-gap: 48px;
+      row-gap: 28px;
+      position: relative;
+      z-index: 2;
+      @include md {
+      }
+      @include sm {
+        grid-template-columns: 320px 1fr;
+        column-gap: 28px;
+      }
+      @include xs {
+        grid-template-columns: 1fr;
+        row-gap: 18px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        @include md {
+        }
+        @include sm {
+        }
+        .las {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: lighten($setting_primary_color, 48%);
+          border-radius: 50%;
+          font-size: 24px;
+          color: $setting_primary_color;
+          flex-shrink: 0;
+          @include sm {
+            font-size: 20px;
+            width: 34px;
+            height: 34px;
+          }
+        }
+        .item-text {
+          color: #fff;
+          font-size: 18px;
+          font-weight: $weight_bold;
+          margin: 0;
+          @include sm {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .contact-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+
+      .img-cover {
+        display: flex;
+      }
+    }
+  }
+}

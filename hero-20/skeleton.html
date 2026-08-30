@@ -1,0 +1,254 @@
+<section class="skeleton-wrapper sk-full-bg sk-hero20-section">
+  <div class="skeleton-container">
+    <div class="sk-hero20-row">
+      <div class="sk-hero20-text">
+        <div class="sk-line sk-hero20-title skeleton-shimmer"></div>
+        <div class="sk-line sk-hero20-title2 skeleton-shimmer"></div>
+        <div class="sk-hero20-body">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-hero20-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-hero20-btns">
+          <div class="sk-btn sk-hero20-btn-primary skeleton-shimmer"></div>
+          <div class="sk-btn sk-hero20-btn-outline skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-hero20-scribble skeleton-shimmer"></div>
+
+      <div class="sk-hero20-media">
+        <div class="sk-hero20-fan">
+          <div class="sk-hero20-card sk-hero20-card-a skeleton-shimmer"></div>
+          <div class="sk-hero20-card sk-hero20-card-c skeleton-shimmer"></div>
+          <div class="sk-hero20-card sk-hero20-card-b skeleton-shimmer"></div>
+        </div>
+
+        <div class="sk-hero20-dots">
+          <div
+            class="sk-hero20-dot sk-hero20-dot-active skeleton-shimmer"
+          ></div>
+          <div class="sk-hero20-dot-line skeleton-shimmer"></div>
+          <div class="sk-hero20-dot skeleton-shimmer"></div>
+          <div class="sk-hero20-dot-line skeleton-shimmer"></div>
+          <div class="sk-hero20-dot skeleton-shimmer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skeleton-wrapper.sk-hero20-section {
+    padding-block: 70px;
+  }
+
+  .sk-hero20-row {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .sk-hero20-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 32%;
+  }
+  .sk-hero20-title,
+  .sk-hero20-title2 {
+    height: 2.4em;
+    width: 80%;
+    border-radius: 4px;
+  }
+
+  .sk-hero20-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .sk-hero20-body .sk-line {
+    height: 14px;
+    width: 100%;
+    border-radius: 4px;
+  }
+  .sk-hero20-line-short {
+    width: 55% !important;
+  }
+
+  .sk-hero20-btns {
+    display: flex;
+    gap: 14px;
+    margin-block-start: 8px;
+  }
+  .sk-hero20-btn-primary {
+    height: 52px;
+    width: 150px;
+    border-radius: 8px;
+  }
+  .sk-hero20-btn-outline {
+    height: 52px;
+    width: 130px;
+    border-radius: 8px;
+    border: 1px solid #dbdbdb;
+    background: transparent;
+  }
+
+  .sk-hero20-scribble {
+    width: 120px;
+    height: 100px;
+    border-radius: 16px;
+    flex-shrink: 0;
+  }
+
+  .sk-hero20-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    flex: 1;
+  }
+
+  .sk-hero20-fan {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sk-hero20-card {
+    position: absolute;
+    width: 180px;
+    height: 250px;
+    border-radius: 16px;
+  }
+  .sk-hero20-card-a {
+    transform: rotate(-30deg) translateX(0px) scale(0.9);
+    opacity: 0.7;
+  }
+  .sk-hero20-card-b {
+    transform: rotate(30deg) translateX(0px) scale(0.9);
+    opacity: 0.7;
+  }
+  .sk-hero20-card-c {
+    z-index: 1;
+  }
+
+  .sk-hero20-dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sk-hero20-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+  .sk-hero20-dot-active {
+    width: 44px;
+    height: 44px;
+  }
+  .sk-hero20-dot-line {
+    width: 50px;
+    height: 2px;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 992px) {
+    .sk-hero20-row {
+      flex-direction: column;
+    }
+    .sk-hero20-text {
+      flex: 0 0 auto;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+    .sk-hero20-title,
+    .sk-hero20-title2 {
+      width: 70%;
+    }
+    .sk-hero20-scribble {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sk-hero20-btns {
+      flex-direction: column;
+      width: 100%;
+    }
+    .sk-hero20-btn-primary,
+    .sk-hero20-btn-outline {
+      width: 100%;
+    }
+    .sk-hero20-fan {
+      max-width: 300px;
+      height: 220px;
+    }
+    .sk-hero20-card {
+      width: 140px;
+      height: 200px;
+    }
+  }
+</style>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(233, 233, 233, 0.4);
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>

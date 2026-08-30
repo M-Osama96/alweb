@@ -1,34 +1,15 @@
-.hero14 {
+.hero20 {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    270deg,
-    lighten($setting_primary_color, 45%) 0%,
-    #ffffff 55%
-  );
+  background-color: lighten($setting_primary_color, 50%);
   padding: 70px 0;
   @include sm {
     padding: 35px 0;
   }
   @include xs {
-    background: linear-gradient(
-      180deg,
-      lighten($setting_primary_color, 45%) 0%,
-      #ffffff 55%
-    );
   }
   @include ltr {
-    background: linear-gradient(
-      90deg,
-      lighten($setting_primary_color, 45%) 0%,
-      #ffffff 55%
-    );
     @include xs {
-      background: linear-gradient(
-        180deg,
-        lighten($setting_primary_color, 45%) 0%,
-        #ffffff 55%
-      );
     }
   }
 }
@@ -40,16 +21,14 @@
 .hero-cont {
   display: grid;
   grid-template-columns: 422px 1fr;
-  gap: 100px;
+  gap: 200px;
   position: relative;
-  padding-inline-end: 80px;
   @include md {
-    gap: 20px;
+    gap: 100px;
   }
 
   @include sm {
     grid-template-columns: 1fr 1fr;
-    padding: 0 0 60px 0;
     gap: 50px;
   }
   @include xs {
@@ -76,6 +55,7 @@
       }
       @include sm {
         font-size: 32px;
+        text-align: center;
       }
       @include xs {
         font-size: 23px;
@@ -96,6 +76,7 @@
         font-size: 14px;
         font-weight: $weight_light;
         margin-bottom: 16px;
+        text-align: center;
       }
       @include xs {
         max-width: 100%;
@@ -155,53 +136,87 @@
       }
     }
   }
+  .slide-svg {
+    position: absolute;
+    inset-inline-start: 432px;
+    top: 50%;
+    // transform: translateY(-50%);
+    color: $setting_secondary_color;
+    @include md {
+      display: none;
+    }
+    @include ltr {
+      transform: scaleX(-1);
+    }
+  }
 }
-.hero-img {
+.hero-img-cont {
   display: flex;
   align-items: center;
   justify-content: center;
+  .hero-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 202px;
+    aspect-ratio: 202/396;
+    position: relative;
+    box-shadow: 0px 16px 44px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    @include sm {
+      max-width: 300px;
+      aspect-ratio: 202/260;
+      box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
+    }
+    .img-cover {
+      display: flex;
+    }
+  }
 }
 
 .hero-pagination {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: 422px 1fr;
+  gap: 200px;
+  @include md {
+    gap: 100px;
+  }
+  @include sm {
+    grid-template-columns: 1fr;
+    .empty-space {
+      display: none;
+    }
+  }
   .swiper-pagination {
-    inset-inline-end: 0;
-    top: 50%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 38px;
-    width: fit-content;
     height: fit-content;
-    transform: translateY(-50%);
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1;
+    @include sm {
+    }
     &::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 50%;
-      width: 1px;
-      height: 100%;
-      background-color: lighten($setting_primary_color, 45%);
+      left: 0;
+      bottom: 50%;
+      height: 1px;
+      width: 100%;
+      background-color: lighten($setting_primary_color, 40%);
       z-index: -1;
       @include sm {
-        top: 50%;
-        left: 0;
-        width: 100%;
-        height: 1px;
+        // display: none;
       }
     }
     @include sm {
-      top: unset;
-      bottom: 0;
-      flex-direction: row;
-      transform: translate(-50%, 0);
-      inset-inline-end: 50%;
-      gap: 20px;
     }
-    @include ltr {
-      left: unset;
-      @include sm {
-        transform: translate(50%, 0);
-      }
-    }
+
     .swiper-pagination-bullet {
       background-color: transparent;
       opacity: 1;
@@ -226,6 +241,43 @@
       color: #fff;
       font-size: 24px;
       font-weight: $weight_bold;
+    }
+  }
+}
+.swiper-slide-active {
+  z-index: 100;
+}
+.swiper-slide-next,
+.swiper-slide:has(+ .swiper-slide-prev) {
+  @media (min-width: 992px) {
+    opacity: 1 !important;
+    z-index: 0;
+    .hero-info {
+      opacity: 0 !important;
+    }
+    .hero-img-cont {
+      .hero-img {
+        transform: rotate(30deg) scale(0.8) translateY(-13%);
+        transform-origin: bottom;
+        opacity: 0.5 !important;
+      }
+    }
+  }
+}
+.swiper-slide-next + .swiper-slide,
+.swiper-slide-prev {
+  @media (min-width: 992px) {
+    opacity: 1 !important;
+    z-index: 0;
+    .hero-info {
+      opacity: 0 !important;
+    }
+    .hero-img-cont {
+      .hero-img {
+        transform: rotate(-30deg) scale(0.8) translateY(-13%);
+        transform-origin: bottom;
+        opacity: 0.5 !important;
+      }
     }
   }
 }
