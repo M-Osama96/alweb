@@ -1,0 +1,223 @@
+<section class="skeleton-wrapper sk-full-bg">
+  <div class="skeleton-container">
+    <div class="sk-section-head">
+      <div class="sk-line sk-section-title skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+      <div class="sk-line sk-section-sub skeleton-shimmer"></div>
+    </div>
+    <div class="sk-card-grid">
+      <div class="sk-card">
+        <div class="sk-card-icon skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-card-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-card-icon skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-card-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-card-icon skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-card-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-card-icon skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-card-num skeleton-shimmer"></div>
+      </div>
+      <div class="sk-card">
+        <div class="sk-card-icon skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-line sk-card-text skeleton-shimmer"></div>
+        <div class="sk-card-num skeleton-shimmer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sk-section-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-block-end: 48px;
+  }
+  .sk-section-title {
+    height: 2.2em;
+    width: 35%;
+    border-radius: 4px;
+  }
+  .sk-section-sub {
+    height: 14px;
+    border-radius: 4px;
+  }
+  .sk-section-sub:nth-of-type(1) {
+    width: 55%;
+  }
+  .sk-section-sub:nth-of-type(2) {
+    width: 50%;
+  }
+  .sk-section-sub:nth-of-type(3) {
+    width: 35%;
+  }
+
+  .sk-card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .sk-card {
+    background: #ffffff;
+    border-radius: 192px;
+    padding: 32px 18px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+  .sk-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-block-end: 4px;
+  }
+  .sk-card-text {
+    height: 13px;
+    border-radius: 4px;
+  }
+  .sk-card-text:nth-of-type(1) {
+    width: 85%;
+  }
+  .sk-card-text:nth-of-type(2) {
+    width: 75%;
+  }
+  .sk-card-text:nth-of-type(3) {
+    width: 80%;
+  }
+  .sk-card-text:nth-of-type(4) {
+    width: 60%;
+  }
+  .sk-card-num {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-block-start: 12px;
+  }
+
+  @media (max-width: 992px) {
+    .sk-card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .sk-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .sk-section-title {
+      width: 60%;
+    }
+    .sk-section-sub:nth-of-type(1) {
+      width: 80%;
+    }
+    .sk-section-sub:nth-of-type(2) {
+      width: 75%;
+    }
+    .sk-section-sub:nth-of-type(3) {
+      width: 55%;
+    }
+  }
+  @media (max-width: 480px) {
+    .sk-card-grid {
+      grid-template-columns: 1fr;
+    }
+    .sk-card {
+      border-radius: 32px;
+    }
+  }
+
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+  .skeleton-wrapper.sk-hero {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-header {
+    padding-block: 0;
+  }
+  .skeleton-wrapper.sk-strip {
+    padding-block: 60px;
+  }
+  .skeleton-wrapper.sk-footer {
+    padding-block: 60px 0;
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>

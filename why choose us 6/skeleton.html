@@ -1,0 +1,270 @@
+<section class="skeleton-wrapper sk-why06-section">
+  <div class="skeleton-container">
+    <div class="sk-why06-row">
+      <div class="sk-why06-panel skeleton-shimmer">
+        <div class="sk-line sk-why06-title skeleton-shimmer"></div>
+        <div class="sk-why06-heading">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-why06-line-short skeleton-shimmer"></div>
+        </div>
+        <div class="sk-why06-body">
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line skeleton-shimmer"></div>
+          <div class="sk-line sk-why06-line-short skeleton-shimmer"></div>
+        </div>
+      </div>
+
+      <div class="sk-why06-cluster">
+        <div class="sk-why06-bigcircle skeleton-shimmer"></div>
+
+        <div class="sk-why06-node sk-why06-node-center">
+          <div class="sk-why06-icon skeleton-shimmer"></div>
+          <div class="sk-why06-node-text">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line sk-why06-line-short skeleton-shimmer"></div>
+          </div>
+        </div>
+
+        <div class="sk-why06-node sk-why06-node-top skeleton-shimmer">
+          <div class="sk-why06-icon skeleton-shimmer"></div>
+          <div class="sk-why06-node-text">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line sk-why06-line-short skeleton-shimmer"></div>
+          </div>
+        </div>
+
+        <div class="sk-why06-node sk-why06-node-left skeleton-shimmer">
+          <div class="sk-why06-icon skeleton-shimmer"></div>
+          <div class="sk-why06-node-text">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line sk-why06-line-short skeleton-shimmer"></div>
+          </div>
+        </div>
+
+        <div class="sk-why06-node sk-why06-node-bottom skeleton-shimmer">
+          <div class="sk-why06-icon skeleton-shimmer"></div>
+          <div class="sk-why06-node-text">
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line skeleton-shimmer"></div>
+            <div class="sk-line sk-why06-line-short skeleton-shimmer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skeleton-wrapper.sk-why06-section {
+    padding-block: 70px;
+  }
+
+  .sk-why06-row {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .sk-why06-panel {
+    flex: 0 0 34%;
+    border-start-start-radius: 220px;
+    border-start-end-radius: 220px;
+    border-end-start-radius: 16px;
+    border-end-end-radius: 16px;
+    padding: 60px 36px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .sk-why06-title {
+    height: 2.4em;
+    width: 65%;
+    border-radius: 4px;
+  }
+
+  .sk-why06-heading,
+  .sk-why06-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .sk-why06-heading .sk-line {
+    height: 16px;
+    width: 90%;
+    border-radius: 4px;
+  }
+  .sk-why06-body .sk-line {
+    height: 14px;
+    width: 90%;
+    border-radius: 4px;
+  }
+  .sk-why06-line-short {
+    width: 55% !important;
+  }
+
+  .sk-why06-cluster {
+    position: relative;
+    flex: 1;
+    aspect-ratio: 1/1;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .sk-why06-bigcircle {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 8%;
+    width: 75%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  .sk-why06-node {
+    position: absolute !important;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .sk-why06-node-center {
+    inset-inline-end: 14%;
+    inset-block-start: 32%;
+    width: 32%;
+    aspect-ratio: 1/1;
+    z-index: 2;
+    border: 1px solid #e5e7eb;
+  }
+
+  .sk-why06-node-top {
+    inset-inline-start: 32%;
+    inset-block-start: 0;
+    width: 28%;
+    aspect-ratio: 1/1;
+    border: 1px solid #e5e7eb;
+  }
+
+  .sk-why06-node-left {
+    inset-inline-start: 0;
+    inset-block-start: 32%;
+    width: 26%;
+    aspect-ratio: 1/1;
+    border: 1px solid #e5e7eb;
+  }
+
+  .sk-why06-node-bottom {
+    inset-inline-start: 32%;
+    inset-block-end: 0;
+    width: 28%;
+    aspect-ratio: 1/1;
+    border: 1px solid #e5e7eb;
+  }
+
+  .sk-why06-icon {
+    width: 24%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+  }
+
+  .sk-why06-node-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 90%;
+  }
+  .sk-why06-node-text .sk-line {
+    height: 9px;
+    width: 90%;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 992px) {
+    .sk-why06-row {
+      flex-direction: column;
+    }
+    .sk-why06-panel {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+    .sk-why06-cluster {
+      max-width: 420px;
+    }
+  }
+</style>
+
+<style>
+  *,
+  :before,
+  :after {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+  }
+  :root {
+    --sk-shimmer-dir: 1;
+  }
+  [dir="rtl"] {
+    --sk-shimmer-dir: -1;
+  }
+
+  .skeleton-wrapper {
+    height: fit-content;
+    padding-block: 100px;
+    width: 100%;
+  }
+  .skeleton-wrapper.sk-full-bg {
+    background: rgba(229, 231, 235, 0.45);
+  }
+
+  .skeleton-container {
+    padding-inline: 20px;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+  }
+
+  .skeleton-shimmer {
+    /* position: relative; */
+    overflow: hidden;
+    background: #e5e7eb;
+  }
+  .skeleton-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(calc(-100% * var(--sk-shimmer-dir)));
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
+    animation: skeleton-shimmer-animation 1.5s infinite;
+  }
+  @keyframes skeleton-shimmer-animation {
+    100% {
+      transform: translateX(calc(100% * var(--sk-shimmer-dir)));
+    }
+  }
+</style>
